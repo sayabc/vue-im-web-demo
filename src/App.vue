@@ -94,7 +94,8 @@ export default {
   computed: {
     // 是否显示导航条
     showNav () {
-      return pageUtil.showNav(this.$route.path)
+      // return pageUtil.showNav(this.$route.path)
+      return false
     }
   }
 }
