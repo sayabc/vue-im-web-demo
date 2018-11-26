@@ -13,7 +13,8 @@ import {onMyInfo, onUserInfo} from './userInfo'
 import {onSessions, onUpdateSession} from './session'
 import {onRoamingMsgs, onOfflineMsgs, onMsg} from './msgs'
 import {onSysMsgs, onSysMsg, onSysMsgUnread, onCustomSysMsgs} from './sysMsgs'
-import { onTeams, onSynCreateTeam, onCreateTeam, onUpdateTeam, onTeamMembers, onUpdateTeamMember, onAddTeamMembers, onRemoveTeamMembers, onUpdateTeamManagers, onDismissTeam, onUpdateTeamMembersMute, onTeamMsgReceipt} from './team'
+import { onTeams, onSynCreateTeam, onCreateTeam, onUpdateTeam, onTeamMembers, onUpdateTeamMember, onAddTeamMembers,
+  onRemoveTeamMembers, onUpdateTeamManagers, onDismissTeam, onUpdateTeamMembersMute, onTeamMsgReceipt} from './team'
 
 const SDK = require('@/sdk/' + config.sdk)
 

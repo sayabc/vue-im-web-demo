@@ -19,6 +19,8 @@ import router from './router'
 
 require('./utils/polyfill')
 
+require('./sdk/rtcSupport')
+
 new Vue({
   router,
   store,
