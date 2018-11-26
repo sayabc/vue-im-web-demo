@@ -250,7 +250,33 @@ exports.push([module.i, "\n.p-session .vux-cell-primary {\n    max-width: 70%;\n
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('group', {
     staticClass: "u-list"
-  }, _vm._l((_vm.sessionlist), function(session) {
+  }, [_c('cell', {
+    staticClass: "u-list-item",
+    attrs: {
+      "title": "消息中心"
+    },
+    nativeOn: {
+      "click": function($event) {
+        return _vm.enterSysMsgs($event)
+      }
+    }
+  }, [_c('img', {
+    staticClass: "icon",
+    attrs: {
+      "slot": "icon",
+      "width": "24",
+      "src": _vm.noticeIcon
+    },
+    slot: "icon"
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.sysMsgUnread > 0),
+      expression: "sysMsgUnread > 0"
+    }],
+    staticClass: "u-unread"
+  }, [_vm._v(_vm._s(_vm.sysMsgUnread))])]), _vm._v(" "), _vm._l((_vm.sessionlist), function(session) {
     return _c('cell', {
       directives: [{
         name: "touch",
@@ -304,7 +330,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "click": _vm.deleteSession
       }
     })])
-  }))
+  })], 2)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

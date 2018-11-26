@@ -1,11 +1,11 @@
 <template>
   <!-- <div class="g-inherit m-main p-session"> -->
     <group class="u-list">
-      <!-- <cell class="u-list-item" title="消息中心" @click.native="enterSysMsgs">
+      <cell class="u-list-item" title="消息中心" @click.native="enterSysMsgs">
         <img class="icon" slot="icon" width="24" :src="noticeIcon">
         <span v-show="sysMsgUnread > 0" class="u-unread">{{sysMsgUnread}}</span>
       </cell>
-      <cell class="u-list-item" title="我的手机" @click.native="enterMyChat">
+      <!-- <cell class="u-list-item" title="我的手机" @click.native="enterMyChat">
         <img class="icon" slot="icon" width="24" :src="myPhoneIcon">
       </cell> -->
       <cell
