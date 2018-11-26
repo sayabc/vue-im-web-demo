@@ -5,6 +5,45 @@ Vue.use(VueRouter)
 // 定义路由
 // 每个路由应该映射一个组件。 其中"component"是一个组件配置对象。
 const routes = [
+  // 重构页面 start
+  // 首页展示
+  {
+    path: '/sayabc',
+    redirect: {
+      name: 'sayabc'
+    }
+  },
+  {
+    path: '/sayabc',
+    name: 'sayabc',
+    component (resolve) {
+      require(['../pages/sayabc/Index'], resolve)
+    }
+  },
+  // 最近消息列表（会话）
+  {
+    path: '/sayabc/session',
+    name: 'session1',
+    component (resolve) {
+      require(['../pages/sayabc/Session'], resolve)
+    }
+  },
+  // 聊天记录
+  {
+    path: '/sayabc/chat/:sessionId',
+    name: 'chat1',
+    component (resolve) {
+      require(['../pages/sayabc/Chat'], resolve)
+    }
+  },
+  // 重构页面 end
+
+
+
+
+
+
+
   // 设置聊天列表页面为首页
   {
     path: '/',
@@ -133,7 +172,7 @@ const routes = [
     }
   },
   // 群设置
-  { 
+  {
     path: '/teamsetting',
     name: 'teamsetting',
     component(resolve) {

@@ -148,6 +148,7 @@ Utils.formatDate = function (datetime, simple = false) {
 }
 
 Utils.parseSession = function (sessionId) {
+  console.warn('util.parseSession: ', sessionId) // undefined ?
   if (/^p2p-/.test(sessionId)) {
     return {
       scene: 'p2p',
@@ -322,11 +323,11 @@ Utils.getTeamUpdateInfo = function(msg) {
     text = `${op}修改群名为${team['name']}`
   } else if (team['intro']) {
     text = `${op}修改群介绍为${team['intro']}`
-  } 
+  }
   // 由于群公告的交互与 Android iOS 不一致，现版本不适配群公告
   // else if (team['announcement']) {
   //   text = `${op}修改群公告为${team['announcement']}`
-  // } 
+  // }
   else if (team['joinMode']) {
     text = `群身份验证模式更新为${team.joinMode === 'noVerify' ? '不需要验证' : team.joinMode === 'needVerify' ? '需要验证' : '禁止任何人加入'}`
   } else if (team['inviteMode']) {

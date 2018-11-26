@@ -1,5 +1,6 @@
 <template>
   <div class="g-window">
+  <!-- <div> -->
     <nav-bar v-show="showNav"></nav-bar>
     <!-- 切页动画设置 -->
     <transition :name="transitionName">
@@ -100,4 +101,18 @@ export default {
   }
 }
 </script>
+
+<style  type="text/css">
+/* 覆盖全局样式 */
+.vux-cell-primary {
+  flex-grow: 1;
+  overflow: hidden;
+  padding-right: 12%;
+}
+.vux-label {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+</style>
 

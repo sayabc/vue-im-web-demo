@@ -1,30 +1,30 @@
 webpackJsonp([14],{
 
-/***/ 324:
+/***/ 330:
 /* no static exports found */
 /* all exports used */
-/*!*******************************!*\
-  !*** ./src/pages/Session.vue ***!
-  \*******************************/
+/*!********************************!*\
+  !*** ./src/pages/TeamList.vue ***!
+  \********************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-2dd948d1","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./Session.vue */ 478)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-0ed13920","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./TeamList.vue */ 509)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 2)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./Session.vue */ 417),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./TeamList.vue */ 454),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-2dd948d1"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./Session.vue */ 456),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0ed13920"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./TeamList.vue */ 485),
   /* scopeId */
-  null,
+  "data-v-0ed13920",
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/Session.vue"
+Component.options.__file = "/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/TeamList.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Session.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] TeamList.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -33,9 +33,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2dd948d1", Component.options)
+    hotAPI.createRecord("data-v-0ed13920", Component.options)
   } else {
-    hotAPI.reload("data-v-2dd948d1", Component.options)
+    hotAPI.reload("data-v-0ed13920", Component.options)
   }
 })()}
 
@@ -44,20 +44,16 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 417:
+/***/ 454:
 /* exports provided: default */
 /* all exports used */
-/*!*******************************************************************************************************************************************!*\
-  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/Session.vue ***!
-  \*******************************************************************************************************************************************/
+/*!********************************************************************************************************************************************!*\
+  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/TeamList.vue ***!
+  \********************************************************************************************************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(/*! ../utils */ 16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__utils__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__configs__ = __webpack_require__(/*! ../configs */ 6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__configs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__configs__);
 //
 //
 //
@@ -75,152 +71,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  mounted() {
+    this.$nextTick(() => {
+      this.teamType = this.$route.params.teamType;
+    });
+  },
   data() {
     return {
-      delSessionId: null,
-      stopBubble: false,
-      noticeIcon: __WEBPACK_IMPORTED_MODULE_1__configs___default.a.noticeIcon,
-      myPhoneIcon: __WEBPACK_IMPORTED_MODULE_1__configs___default.a.myPhoneIcon,
-      myGroupIcon: __WEBPACK_IMPORTED_MODULE_1__configs___default.a.defaultGroupIcon,
-      myAdvancedIcon: __WEBPACK_IMPORTED_MODULE_1__configs___default.a.defaultAdvancedIcon
+      teamType: 'normal' // normal or advanced
     };
   },
   computed: {
-    sysMsgUnread() {
-      let temp = this.$store.state.sysMsgUnread;
-      let sysMsgUnread = temp.addFriend || 0;
-      sysMsgUnread += temp.team || 0;
-      let customSysMsgUnread = this.$store.state.customSysMsgUnread;
-      return sysMsgUnread + customSysMsgUnread;
-    },
-    userInfos() {
-      return this.$store.state.userInfos;
-    },
-    myInfo() {
-      return this.$store.state.myInfo;
-    },
-    myPhoneId() {
-      return `${this.$store.state.userUID}`;
-    },
-    sessionlist() {
-      let sessionlist = this.$store.state.sessionlist.filter(item => {
-        item.name = '';
-        item.avatar = '';
-        if (item.scene === 'p2p') {
-          let userInfo = null;
-          if (item.to !== this.myPhoneId) {
-            userInfo = this.userInfos[item.to];
-          } else {
-            // userInfo = this.myInfo
-            // userInfo.alias = '我的手机'
-            // userInfo.avatar = `${config.myPhoneIcon}`
-            return false;
-          }
-          if (userInfo) {
-            item.name = __WEBPACK_IMPORTED_MODULE_0__utils___default.a.getFriendAlias(userInfo);
-            item.avatar = userInfo.avatar;
-          }
-        } else if (item.scene === 'team') {
-          let teamInfo = null;
-          teamInfo = this.$store.state.teamlist.find(team => {
-            return team.teamId === item.to;
-          });
-          if (teamInfo) {
-            item.name = teamInfo.name;
-            item.avatar = teamInfo.avatar || (teamInfo.type === 'normal' ? this.myGroupIcon : this.myAdvancedIcon);
-          } else {
-            item.name = `群${item.to}`;
-            item.avatar = item.avatar || this.myGroupIcon;
-          }
-        }
-        let lastMsg = item.lastMsg || {};
-        if (lastMsg.type === 'text') {
-          item.lastMsgShow = lastMsg.text || '';
-        } else if (lastMsg.type === 'custom') {
-          item.lastMsgShow = __WEBPACK_IMPORTED_MODULE_0__utils___default.a.parseCustomMsg(lastMsg);
-        } else if (lastMsg.scene === 'team' && lastMsg.type === 'notification') {
-          item.lastMsgShow = __WEBPACK_IMPORTED_MODULE_0__utils___default.a.generateTeamSysmMsg(lastMsg);
-        } else if (__WEBPACK_IMPORTED_MODULE_0__utils___default.a.mapMsgType(lastMsg)) {
-          item.lastMsgShow = `[${__WEBPACK_IMPORTED_MODULE_0__utils___default.a.mapMsgType(lastMsg)}]`;
-        } else {
-          item.lastMsgShow = '';
-        }
-        if (item.updateTime) {
-          item.updateTimeShow = __WEBPACK_IMPORTED_MODULE_0__utils___default.a.formatDate(item.updateTime, true);
-        }
-        return item;
+    teamList: function () {
+      return this.$store.state.teamlist && this.$store.state.teamlist.filter(team => {
+        return team.type === this.teamType && team.validToCurrentUser;
       });
-      return sessionlist;
-    }
-  },
-  methods: {
-    enterSysMsgs() {
-      if (this.hideDelBtn()) return;
-      location.href = '#/sysmsgs';
     },
-    enterChat(session) {
-      if (this.hideDelBtn()) return;
-      if (session && session.id) location.href = `#/chat/${session.id}`;
-    },
-    enterMyChat() {
-      // 我的手机页面
-      location.href = `#/chat/p2p-${this.myPhoneId}`;
-    },
-    deleteSession() {
-      if (this.delSessionId !== null) {
-        this.$store.dispatch('deleteSession', this.delSessionId);
-      }
-    },
-    showDelBtn(vNode) {
-      if (vNode && vNode.data && vNode.data.attrs) {
-        this.delSessionId = vNode.data.attrs.sessionId;
-        this.stopBubble = true;
-        setTimeout(() => {
-          this.stopBubble = false;
-        }, 20);
-      }
-    },
-    hideDelBtn() {
-      if (this.delSessionId !== null && !this.stopBubble) {
-        // 用于判断是否前置状态是显示删除按钮
-        this.delSessionId = null;
-        return true;
-      }
-      return false;
+    pageTitle: function () {
+      return this.teamType === 'advanced' ? '高级群' : '讨论组';
     }
   }
 });
 
 /***/ }),
 
-/***/ 435:
+/***/ 464:
 /* no static exports found */
 /* all exports used */
 /*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-2dd948d1","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/Session.vue ***!
+  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-0ed13920","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamList.vue ***!
   \***********************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -229,114 +110,91 @@ exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-ba
 
 
 // module
-exports.push([module.i, "\n.p-session .vux-cell-primary {\n    max-width: 70%;\n}\n", "", {"version":3,"sources":["/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/Session.vue"],"names":[],"mappings":";AAkKE;IACE,eAAe;CAChB","file":"Session.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-session {\n  .vux-cell-primary {\n    max-width: 70%;\n  }\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.p-teamlist .m-list[data-v-0ed13920] {\n    padding-top: 3.6rem;\n}\n.p-teamlist .empty-hint[data-v-0ed13920]{\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: 5rem;\n    margin: auto;\n    text-align: center;\n}\n", "", {"version":3,"sources":["/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/TeamList.vue"],"names":[],"mappings":";AA4CE;IACE,oBAAoB;CACrB;AACD;IACE,mBAAmB;IACnB,QAAQ;IACR,SAAS;IACT,UAAU;IACV,aAAa;IACb,mBAAmB;CACpB","file":"TeamList.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-teamlist {\n  .m-list {\n    padding-top: 3.6rem;\n  }\n  .empty-hint{\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: 5rem;  \n    margin: auto;\n    text-align: center;\n  }\n}\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 456:
+/***/ 485:
 /* no static exports found */
 /* all exports used */
-/*!**********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-2dd948d1"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/Session.vue ***!
-  \**********************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-0ed13920"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/TeamList.vue ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "g-inherit m-main p-session"
-  }, [_c('group', {
-    staticClass: "u-list"
-  }, _vm._l((_vm.sessionlist), function(session, index) {
-    return _c('cell', {
-      directives: [{
-        name: "touch",
-        rawName: "v-touch:swipeleft",
-        value: (_vm.showDelBtn),
-        expression: "showDelBtn",
-        arg: "swipeleft"
-      }, {
-        name: "touch",
-        rawName: "v-touch:swiperight",
-        value: (_vm.hideDelBtn),
-        expression: "hideDelBtn",
-        arg: "swiperight"
-      }],
-      key: session.id,
-      staticClass: "u-list-item",
-      attrs: {
-        "title": session.name,
-        "inline-desc": session.lastMsgShow,
-        "sessionId": session.id
-      },
-      nativeOn: {
-        "click": function($event) {
-          _vm.enterChat(session)
-        }
+    staticClass: "g-inherit m-article p-teamlist"
+  }, [_c('x-header', {
+    staticClass: "m-tab",
+    attrs: {
+      "left-options": {
+        backText: ' '
       }
-    }, [_c('img', {
-      staticClass: "icon u-circle",
+    }
+  }, [_c('h1', {
+    staticClass: "m-tab-top"
+  }, [_vm._v(_vm._s(_vm.pageTitle))]), _vm._v(" "), _c('a', {
+    attrs: {
+      "slot": "left"
+    },
+    slot: "left"
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "m-list"
+  }, [_c('group', _vm._l((_vm.teamList), function(team) {
+    return _c('cell', {
+      key: team.teamId,
       attrs: {
-        "slot": "icon",
-        "width": "24",
-        "src": session.avatar
+        "title": team.name,
+        "is-link": "",
+        "link": ("/chat/team-" + (team.teamId))
+      }
+    }, [_c('span', {
+      staticClass: "icon icon-team-advanced",
+      attrs: {
+        "slot": "icon"
       },
       slot: "icon"
-    }), _vm._v(" "), _c('span', {
-      staticClass: "u-session-time"
-    }, [_vm._v("\n        " + _vm._s(session.updateTimeShow) + "\n      ")]), _vm._v(" "), _c('span', {
-      directives: [{
-        name: "show",
-        rawName: "v-show",
-        value: (session.unread > 0),
-        expression: "session.unread > 0"
-      }],
-      staticClass: "u-unread"
-    }, [_vm._v(_vm._s(session.unread))]), _vm._v(" "), _c('span', {
-      staticClass: "u-tag-del",
-      class: {
-        active: _vm.delSessionId === session.id
-      },
-      on: {
-        "click": _vm.deleteSession
-      }
     })])
-  }))], 1)
+  }))], 1), _vm._v(" "), (!_vm.teamList || _vm.teamList.length < 1) ? _c('div', {
+    staticClass: "empty-hint"
+  }, [_vm._v("暂无内容")]) : _vm._e()], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-2dd948d1", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-0ed13920", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 478:
+/***/ 509:
 /* no static exports found */
 /* all exports used */
 /*!********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-2dd948d1","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/Session.vue ***!
+  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-0ed13920","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamList.vue ***!
   \********************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-2dd948d1","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./Session.vue */ 435);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-0ed13920","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./TeamList.vue */ 464);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 5)("c4c885f6", content, false);
+var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 5)("318fcf4d", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-2dd948d1\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Session.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-2dd948d1\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Session.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-0ed13920\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamList.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-0ed13920\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamList.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

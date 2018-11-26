@@ -1,30 +1,30 @@
 webpackJsonp([12],{
 
-/***/ 326:
+/***/ 335:
 /* no static exports found */
 /* all exports used */
-/*!********************************!*\
-  !*** ./src/pages/TeamCard.vue ***!
-  \********************************/
+/*!******************************************!*\
+  !*** ./src/pages/TeamSendMsgReceipt.vue ***!
+  \******************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-b036b63c","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./TeamCard.vue */ 490)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-55bb4af1","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./TeamSendMsgReceipt.vue */ 523)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 2)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./TeamCard.vue */ 419),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./TeamSendMsgReceipt.vue */ 459),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-b036b63c"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./TeamCard.vue */ 469),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-55bb4af1"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./TeamSendMsgReceipt.vue */ 499),
   /* scopeId */
-  "data-v-b036b63c",
+  null,
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/TeamCard.vue"
+Component.options.__file = "/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/TeamSendMsgReceipt.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] TeamCard.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] TeamSendMsgReceipt.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -33,9 +33,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-b036b63c", Component.options)
+    hotAPI.createRecord("data-v-55bb4af1", Component.options)
   } else {
-    hotAPI.reload("data-v-b036b63c", Component.options)
+    hotAPI.reload("data-v-55bb4af1", Component.options)
   }
 })()}
 
@@ -44,12 +44,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 419:
+/***/ 459:
 /* exports provided: default */
 /* all exports used */
-/*!********************************************************************************************************************************************!*\
-  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/TeamCard.vue ***!
-  \********************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************!*\
+  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/TeamSendMsgReceipt.vue ***!
+  \******************************************************************************************************************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -71,93 +71,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data() {
+    return {
+      inputMsg: ''
+    };
+  },
   computed: {
-    teamId() {
+    to() {
       return this.$route.params.teamId;
-    },
-    teamInfo() {
-      return this.$store.state.searchedTeams.find(team => {
-        return team.teamId === this.teamId;
-      });
-    },
-    teamDesc() {
-      if (!this.teamInfo) {
-        return '';
-      }
-      let teamType = this.teamInfo.type === "advanced" ? "高级群" : "普通群";
-      return `${teamType}:${this.teamInfo.memberNum}人`;
     }
   },
   methods: {
-    applyClick() {
-      var team = this.$store.state.teamlist.find(team => {
-        return team.teamId === this.teamId;
-      });
-      if (team && team.validToCurrentUser) {
-        // 查询到该群且该群对自己有效，说明已在群中
-        this.$toast('已在群中');
+    sendMsg() {
+      if (/^\s*$/.test(this.inputMsg)) {
+        this.$vux.alert.show({
+          title: '请不要发送空消息'
+        });
         return;
       }
-      switch (this.teamInfo.joinMode) {
-        case 'rejectAll':
-          this.$toast('该群禁止任何人加入');
-          break;
-        case 'noVerify':
-          this.applyTeam();
-          break;
-        case 'needVerify':
-          this.showConfirm();
-          break;
-      }
-    },
-    showConfirm() {
-      this.$vux.confirm.prompt('限十字以内', {
-        title: '请输入验证信息',
-        closeOnConfirm: false,
-        inputAttrs: {
-          maxlength: '10'
-        },
-        onConfirm: msg => {
-          if (msg) {
-            this.applyTeam(msg);
-            this.$vux.confirm.hide();
-          } else {
-            this.$toast('请输入验证信息');
-          }
-        }
+      this.$store.dispatch('sendMsg', {
+        type: 'text',
+        scene: 'team',
+        to: this.to,
+        text: this.inputMsg,
+        needMsgReceipt: true
       });
-    },
-    applyTeam(msg) {
-      this.$store.dispatch('delegateTeamFunction', {
-        functionName: 'applyTeam',
-        options: {
-          teamId: this.teamId,
-          ps: msg || '',
-          done: (error, obj) => {
-            if (error) {
-              this.$toast(error);
-              return;
-            }
-            this.$toast(msg ? '申请成功 等待验证' : '已加入群');
-            history.go(-2);
-          }
-        }
-      });
+      history.go(-1);
     }
-
   }
 });
 
 /***/ }),
 
-/***/ 447:
+/***/ 478:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-b036b63c","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamCard.vue ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-55bb4af1","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamSendMsgReceipt.vue ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-base.js */ 4)(true);
@@ -165,24 +119,24 @@ exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-ba
 
 
 // module
-exports.push([module.i, "\n.g-body[data-v-b036b63c] {\n  margin-top: 5rem;\n  text-align: center;\n}\n.g-body div[data-v-b036b63c] {\n  margin: 1rem auto;\n}\n", "", {"version":3,"sources":["/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/TeamCard.vue"],"names":[],"mappings":";AAkGA;EACE,iBAAiB;EACjB,mBAAmB;CAKpB;AAHC;EACE,kBAAkB;CACnB","file":"TeamCard.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.g-body {\n  margin-top: 5rem;\n  text-align: center;\n  \n  div {\n    margin: 1rem auto;\n  }\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.p-msg-receipt {\n  background-color: #ebeef3;\n}\n.p-msg-receipt .tip {\n  padding: 1rem;\n  color: #666;\n}\n", "", {"version":3,"sources":["/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/TeamSendMsgReceipt.vue"],"names":[],"mappings":";AAoDA;EACE,0BAA0B;CAM3B;AAJC;EACE,cAAc;EACd,YAAY;CACb","file":"TeamSendMsgReceipt.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-msg-receipt {\n  background-color: #ebeef3;\n\n  .tip {\n    padding: 1rem;\n    color: #666;\n  }\n}\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 469:
+/***/ 499:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-b036b63c"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/TeamCard.vue ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-55bb4af1"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/TeamSendMsgReceipt.vue ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "g-inherit m-article"
+    staticClass: "g-inherit m-article p-msg-receipt"
   }, [_c('x-header', {
     staticClass: "m-tab",
     attrs: {
@@ -192,68 +146,69 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('h1', {
     staticClass: "m-tab-top"
-  }, [_vm._v("加入群")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("发送已读回执消息")]), _vm._v(" "), _c('a', {
     attrs: {
       "slot": "left"
     },
     slot: "left"
   })]), _vm._v(" "), _c('div', {
     staticClass: "g-body"
-  }, [_c('img', {
-    staticClass: "icon u-circle",
+  }, [_c('group', [_c('x-textarea', {
     attrs: {
-      "slot": "icon",
-      "width": "50",
-      "height": "50",
-      "src": _vm.teamInfo && _vm.teamInfo.avatar
+      "placeholder": "输入消息内容"
     },
-    slot: "icon"
-  }), _vm._v(" "), _c('div', [_vm._v(_vm._s(_vm.teamInfo && _vm.teamInfo.name))]), _vm._v(" "), _c('div', [_vm._v(_vm._s(_vm.teamDesc))]), _vm._v(" "), _c('div', {
-    staticClass: "u-bottom"
-  }, [_c('x-button', {
+    model: {
+      value: (_vm.inputMsg),
+      callback: function($$v) {
+        _vm.inputMsg = $$v
+      },
+      expression: "inputMsg"
+    }
+  }), _vm._v(" "), _c('x-button', {
     attrs: {
-      "type": "primary",
-      "action-type": "button"
+      "type": "primary"
     },
     nativeOn: {
       "click": function($event) {
-        return _vm.applyClick($event)
+        return _vm.sendMsg($event)
       }
     }
-  }, [_vm._v("申请加入")])], 1)])], 1)
+  }, [_vm._v("发送")])], 1), _vm._v(" "), _c('p', {
+    staticClass: "tip"
+  }, [_vm._v("\n      已读回执能力支持文本、图片、音频、视频、文件、自定义等消息类型。此处仅以文本消息作为演示，开发者可以根据具体业务场景进行功能设计。\n    ")])], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-b036b63c", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-55bb4af1", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 490:
+/***/ 523:
 /* no static exports found */
 /* all exports used */
-/*!********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-b036b63c","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamCard.vue ***!
-  \********************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-55bb4af1","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamSendMsgReceipt.vue ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-b036b63c","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./TeamCard.vue */ 447);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-55bb4af1","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./TeamSendMsgReceipt.vue */ 478);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 5)("7f4fe2ca", content, false);
+var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 5)("796928fd", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-b036b63c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamCard.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-b036b63c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamCard.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-55bb4af1\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamSendMsgReceipt.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-55bb4af1\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamSendMsgReceipt.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

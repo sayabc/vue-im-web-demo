@@ -1,4 +1,10 @@
 ## web demo (html5) 二次开发指南
+本项目改造成PC版本 需求类似于网页版本的聊天
+
+## 启动
+1. 前端开发执行 npm run dev
+2. 后端服务 npm run server
+3. 更改后需要强制刷新或者浏览器禁用chache
 
 ### 工程结构
 - 前端工程构建文件夹 build

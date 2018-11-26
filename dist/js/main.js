@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		20: 0
+/******/ 		23: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -11926,6 +11926,7 @@ Utils.formatDate = function (datetime) {
 };
 
 Utils.parseSession = function (sessionId) {
+  console.warn('util.parseSession: ', sessionId); // undefined ?
   if (/^p2p-/.test(sessionId)) {
     return {
       scene: 'p2p',
@@ -12117,7 +12118,7 @@ Utils.getTeamUpdateInfo = function (msg) {
   // 由于群公告的交互与 Android iOS 不一致，现版本不适配群公告
   // else if (team['announcement']) {
   //   text = `${op}修改群公告为${team['announcement']}`
-  // } 
+  // }
   else if (team['joinMode']) {
       text = '\u7FA4\u8EAB\u4EFD\u9A8C\u8BC1\u6A21\u5F0F\u66F4\u65B0\u4E3A' + (team.joinMode === 'noVerify' ? '不需要验证' : team.joinMode === 'needVerify' ? '需要验证' : '禁止任何人加入');
     } else if (team['inviteMode']) {
@@ -25366,6 +25367,8 @@ exports.default = {
   // 会话列表
   sessionlist: [],
   sessionMap: {},
+  // 当前会话ID (即当前聊天列表，TODO计划实现通用)
+  sessionId: null,
   // 当前会话ID（即当前聊天列表，只有单聊群聊采用，可用于判别）
   currSessionId: null,
   currSessionMsgs: [],
@@ -27678,6 +27681,39 @@ _vue2.default.use(_vueRouter2.default);
 // 定义路由
 // 每个路由应该映射一个组件。 其中"component"是一个组件配置对象。
 var routes = [
+// 重构页面 start
+// 首页展示
+{
+  path: '/sayabc',
+  redirect: {
+    name: 'sayabc'
+  }
+}, {
+  path: '/sayabc',
+  name: 'sayabc',
+  component: function component(resolve) {
+    __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/sayabc/Index */ 532)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+  }
+},
+// 最近消息列表（会话）
+{
+  path: '/sayabc/session',
+  name: 'session1',
+  component: function component(resolve) {
+    __webpack_require__.e/* require */(10).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/sayabc/Session */ 316)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+  }
+},
+// 聊天记录
+{
+  path: '/sayabc/chat/:sessionId',
+  name: 'chat1',
+  component: function component(resolve) {
+    __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/sayabc/Chat */ 315)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+  }
+},
+// 重构页面 end
+
+
 // 设置聊天列表页面为首页
 {
   path: '/',
@@ -27690,7 +27726,7 @@ var routes = [
   path: '/session',
   name: 'session',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(14).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/Session */ 324)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(17).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/Session */ 326)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 系统消息
@@ -27698,7 +27734,7 @@ var routes = [
   path: '/sysmsgs',
   name: 'sysmsgs',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(13).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/SysMsgs */ 325)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(16).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/SysMsgs */ 327)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 聊天记录
@@ -27706,7 +27742,7 @@ var routes = [
   path: '/chat/:sessionId',
   name: 'chat',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/Chat */ 315)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/Chat */ 317)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 聊天历史记录
@@ -27714,7 +27750,7 @@ var routes = [
   path: '/chathistory/:sessionId',
   name: 'chathistory',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/ChatHistory */ 316)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/ChatHistory */ 318)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 直播间
@@ -27722,7 +27758,7 @@ var routes = [
   path: '/room',
   name: 'room',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/Room */ 321)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/Room */ 323)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 直播聊天页
@@ -27730,7 +27766,7 @@ var routes = [
   path: '/roomChat/:chatroomId',
   name: 'roomChat',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/RoomChat */ 322)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/RoomChat */ 324)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 通讯录
@@ -27738,7 +27774,7 @@ var routes = [
   path: '/contacts',
   name: 'contacts',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(16).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/Contacts */ 317)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(19).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/Contacts */ 319)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 好友名片
@@ -27746,7 +27782,7 @@ var routes = [
   path: '/namecard/:userId',
   name: 'namecard',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(15).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/NameCard */ 319)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(18).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/NameCard */ 321)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 好友名片-设置备注
@@ -27754,7 +27790,7 @@ var routes = [
   path: '/namecardremark/:userId',
   name: 'namecardremark',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(18).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/NameCardRemark */ 320)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(21).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/NameCardRemark */ 322)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 好友名片-搜索好友/群
@@ -27762,7 +27798,7 @@ var routes = [
   path: '/searchuser/:searchType',
   name: 'searchuser',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(17).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/SearchUser */ 323)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(20).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/SearchUser */ 325)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 邀请好友-加入群
@@ -27770,7 +27806,7 @@ var routes = [
   path: '/teaminvite/:teamId',
   name: 'teaminvite',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(7).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamInvite */ 327)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(9).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamInvite */ 329)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 通用页面
@@ -27778,7 +27814,7 @@ var routes = [
   path: '/general',
   name: 'general',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(19).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/General */ 318)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(22).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/General */ 320)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 群列表
@@ -27786,7 +27822,7 @@ var routes = [
   path: '/teamlist/:teamType',
   name: 'teamlist',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(11).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamList */ 328)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(14).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamList */ 330)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 群名片
@@ -27794,7 +27830,7 @@ var routes = [
   path: '/teamcard/:teamId',
   name: 'teamcard',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(12).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamCard */ 326)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(15).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamCard */ 328)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 群管理
@@ -27802,7 +27838,7 @@ var routes = [
   path: '/teammanage/:teamId',
   name: 'teammanage',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(6).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamManage */ 329)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(8).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamManage */ 331)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 群设置
@@ -27810,7 +27846,7 @@ var routes = [
   path: '/teamsetting',
   name: 'teamsetting',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(8).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamSetting */ 334)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(11).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamSetting */ 336)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 群成员列表
@@ -27818,7 +27854,7 @@ var routes = [
   path: '/teammembers/:teamId',
   name: 'teammembers',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamMembers */ 331)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(7).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamMembers */ 333)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 群成员名片
@@ -27826,7 +27862,7 @@ var routes = [
   path: '/teammembercard/:member',
   name: 'teammembercard',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(10).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamMemberCard */ 330)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(13).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamMemberCard */ 332)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 发送群消息回执页
@@ -27834,7 +27870,7 @@ var routes = [
   path: '/teamSendMsgReceipt/:teamId',
   name: 'TeamSeamMsgReceipt',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(9).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamSendMsgReceipt */ 333)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(12).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamSendMsgReceipt */ 335)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 },
 // 群消息回执详情页
@@ -27842,7 +27878,7 @@ var routes = [
   path: '/msgReceiptDetail/:msgInfo',
   name: 'msgReceiptDetail',
   component: function component(resolve) {
-    __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamMsgReceiptDetail */ 332)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    __webpack_require__.e/* require */(6).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../pages/TeamMsgReceiptDetail */ 334)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
   }
 }];
 
@@ -27964,6 +28000,10 @@ if (!Array.prototype.findIndex) {
   !*** ./src/App.vue ***!
   \*********************/
 /***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../~/vue-loader/lib/style-compiler/index?{"id":"data-v-636933b2","scoped":false,"hasInlineConfig":true}!../~/vux-loader/src/style-loader.js!../~/vue-loader/lib/selector?type=styles&index=0!./App.vue */ 540)
 
 var Component = __webpack_require__(/*! ../~/vue-loader/lib/component-normalizer */ 2)(
   /* script */
@@ -42983,6 +43023,280 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
+
+/***/ }),
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */,
+/* 433 */,
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */,
+/* 442 */,
+/* 443 */,
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */,
+/* 450 */,
+/* 451 */,
+/* 452 */,
+/* 453 */,
+/* 454 */,
+/* 455 */,
+/* 456 */,
+/* 457 */,
+/* 458 */,
+/* 459 */,
+/* 460 */,
+/* 461 */,
+/* 462 */,
+/* 463 */,
+/* 464 */,
+/* 465 */,
+/* 466 */,
+/* 467 */,
+/* 468 */,
+/* 469 */,
+/* 470 */,
+/* 471 */,
+/* 472 */,
+/* 473 */,
+/* 474 */,
+/* 475 */,
+/* 476 */,
+/* 477 */,
+/* 478 */,
+/* 479 */,
+/* 480 */,
+/* 481 */,
+/* 482 */,
+/* 483 */,
+/* 484 */,
+/* 485 */,
+/* 486 */,
+/* 487 */,
+/* 488 */,
+/* 489 */,
+/* 490 */,
+/* 491 */,
+/* 492 */,
+/* 493 */,
+/* 494 */,
+/* 495 */,
+/* 496 */,
+/* 497 */,
+/* 498 */,
+/* 499 */,
+/* 500 */,
+/* 501 */,
+/* 502 */,
+/* 503 */,
+/* 504 */,
+/* 505 */,
+/* 506 */,
+/* 507 */,
+/* 508 */,
+/* 509 */,
+/* 510 */,
+/* 511 */,
+/* 512 */,
+/* 513 */,
+/* 514 */,
+/* 515 */,
+/* 516 */,
+/* 517 */,
+/* 518 */,
+/* 519 */,
+/* 520 */,
+/* 521 */,
+/* 522 */,
+/* 523 */,
+/* 524 */,
+/* 525 */,
+/* 526 */,
+/* 527 */,
+/* 528 */,
+/* 529 */,
+/* 530 */,
+/* 531 */,
+/* 532 */,
+/* 533 */,
+/* 534 */,
+/* 535 */,
+/* 536 */,
+/* 537 */,
+/* 538 */,
+/* 539 */
+/* no static exports found */
+/* all exports used */
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-636933b2","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/App.vue ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../~/css-loader/lib/css-base.js */ 4)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* 覆盖全局样式 */\n.vux-cell-primary {\n  -webkit-box-flex: 1;\n  -webkit-flex-grow: 1;\n     -moz-box-flex: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1;\n  overflow: hidden;\n  padding-right: 12%;\n}\n.vux-label {\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  overflow: hidden;\n}\n", "", {"version":3,"sources":["/Users/wangxudong/me/sayabc/vue-im-web-demo/src/App.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAyGA,YAAY;AACZ;EACE,oBAAa;EAAb,qBAAa;KAAb,iBAAa;MAAb,qBAAa;UAAb,aAAa;EACb,iBAAiB;EACjB,mBAAmB;CACpB;AACD;EACE,oBAAoB;EACpB,wBAAwB;EACxB,iBAAiB;CAClB","file":"App.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* 覆盖全局样式 */\n.vux-cell-primary {\n  flex-grow: 1;\n  overflow: hidden;\n  padding-right: 12%;\n}\n.vux-label {\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  overflow: hidden;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 540 */
+/* no static exports found */
+/* all exports used */
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-636933b2","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/App.vue ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../~/css-loader?sourceMap!../~/vue-loader/lib/style-compiler?{"id":"data-v-636933b2","scoped":false,"hasInlineConfig":true}!../~/vux-loader/src/style-loader.js!../~/vue-loader/lib/selector.js?type=styles&index=0!./App.vue */ 539);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(/*! ../~/vue-style-loader/lib/addStylesClient.js */ 5)("8896eb00", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-636933b2\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vux-loader/src/style-loader.js!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
+     var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-636933b2\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vux-loader/src/style-loader.js!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

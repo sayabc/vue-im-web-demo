@@ -11472,6 +11472,7 @@ Utils.formatDate = function (datetime) {
 };
 
 Utils.parseSession = function (sessionId) {
+  console.warn('util.parseSession: ', sessionId); // undefined ?
   if (/^p2p-/.test(sessionId)) {
     return {
       scene: 'p2p',
@@ -11663,7 +11664,7 @@ Utils.getTeamUpdateInfo = function (msg) {
   // 由于群公告的交互与 Android iOS 不一致，现版本不适配群公告
   // else if (team['announcement']) {
   //   text = `${op}修改群公告为${team['announcement']}`
-  // } 
+  // }
   else if (team['joinMode']) {
       text = '\u7FA4\u8EAB\u4EFD\u9A8C\u8BC1\u6A21\u5F0F\u66F4\u65B0\u4E3A' + (team.joinMode === 'noVerify' ? '不需要验证' : team.joinMode === 'needVerify' ? '需要验证' : '禁止任何人加入');
     } else if (team['inviteMode']) {
@@ -25750,6 +25751,8 @@ exports.default = {
   // 会话列表
   sessionlist: [],
   sessionMap: {},
+  // 当前会话ID (即当前聊天列表，TODO计划实现通用)
+  sessionId: null,
   // 当前会话ID（即当前聊天列表，只有单聊群聊采用，可用于判别）
   currSessionId: null,
   currSessionMsgs: [],
