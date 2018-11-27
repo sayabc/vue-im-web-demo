@@ -45,11 +45,29 @@ import pageUtil from './utils/page'
 
 const sessionHistory = window.sessionStorage
 
+// require('./sdk/rtcSupport')
+// require('./sdk/NIM_Web_Netcall_v5.6.0')
+// console.warn("NetcallBridge", window.NetcallBridge)
+// require('./sdk/NIM_Web_NRTC_v5.8.0.js')
+// require('./sdk/NIM_Web_NRTC_v5.8.0.js')
+import  WebRTC from './sdk/NIM_Web_WebRTC_v5.8.0'
+
 export default {
   data () {
     return {
       transitionName: 'forward'
     }
+  },
+  mounted() {
+    // const Netcall = WebRTC;
+    // const netcall = Netcall.getInstance({
+    //   nim: window.nim,
+    //   container: document.getElementById('container'),
+    //   remoteContainer: document.getElementById('remoteContainer'),
+    //   // 是否开启日志打印
+    //   debug: true
+    // });
+    // console.warn('netcall', netcall)
   },
   watch: {
     // 更新页面所在位置，用于判断是前进页还是后退页

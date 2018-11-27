@@ -1,30 +1,30 @@
 webpackJsonp([13],{
 
-/***/ 332:
+/***/ 344:
 /* no static exports found */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./src/pages/TeamMemberCard.vue ***!
-  \**************************************/
+/*!******************************************!*\
+  !*** ./src/pages/TeamSendMsgReceipt.vue ***!
+  \******************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-6fd0861c","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./TeamMemberCard.vue */ 526)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-55bb4af1","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./TeamSendMsgReceipt.vue */ 535)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 2)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./TeamMemberCard.vue */ 456),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./TeamSendMsgReceipt.vue */ 469),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-6fd0861c"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./TeamMemberCard.vue */ 503),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-55bb4af1"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./TeamSendMsgReceipt.vue */ 510),
   /* scopeId */
-  "data-v-6fd0861c",
+  null,
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/TeamMemberCard.vue"
+Component.options.__file = "/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/TeamSendMsgReceipt.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] TeamMemberCard.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] TeamSendMsgReceipt.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -33,9 +33,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6fd0861c", Component.options)
+    hotAPI.createRecord("data-v-55bb4af1", Component.options)
   } else {
-    hotAPI.reload("data-v-6fd0861c", Component.options)
+    hotAPI.reload("data-v-55bb4af1", Component.options)
   }
 })()}
 
@@ -44,20 +44,16 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 456:
+/***/ 469:
 /* exports provided: default */
 /* all exports used */
-/*!**************************************************************************************************************************************************!*\
-  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/TeamMemberCard.vue ***!
-  \**************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************!*\
+  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/TeamSendMsgReceipt.vue ***!
+  \******************************************************************************************************************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__configs__ = __webpack_require__(/*! ../configs */ 6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__configs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__configs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(/*! ../utils */ 16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__utils__);
 //
 //
 //
@@ -76,205 +72,71 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data() {
     return {
-      avatar: __WEBPACK_IMPORTED_MODULE_0__configs___default.a.defaultUserIcon,
-      teamId: '',
-      account: '',
-      mute: false,
-      selfType: 'normal'
+      inputMsg: ''
     };
   },
   computed: {
-    member() {
-      var parseReg = /(\d+)-(\w+)/;
-      var result = parseReg.exec(this.$route.params.member);
-      var teamId = result[1];
-      this.teamId = teamId;
-      var account = result[2];
-      this.account = account;
-      var member = {};
-      this.$store.state.teamMembers[teamId] && this.$store.state.teamMembers[teamId].forEach(item => {
-        if (item.account === account) {
-          member = Object.assign(member, item);
-        }
-        if (item.account === this.$store.state.userUID) {
-          this.selfType = item.type;
-        }
-      });
-      var userInfo = this.$store.state.userInfos[member.account];
-      if (member.account === this.$store.state.userUID) {
-        userInfo = this.$store.state.myInfo;
-      }
-      member.avatar = userInfo ? userInfo.avatar : member.avatar || this.avatar;
-      member.alias = userInfo ? userInfo.nick : member.account || 'account';
-      this.mute = !!member.mute;
-      return member;
-    },
-    memberType() {
-      if (this.member) {
-        switch (this.member.type) {
-          case 'owner':
-            return '群主';
-          case 'manager':
-            return '管理员';
-          case 'normal':
-            return '普通成员';
-        }
-      }
-      return '普通成员';
-    },
-    infoInTeam() {
-      return {
-        nickInTeam: this.member.nickInTeam,
-        memberType: this.member.type
-      };
-    },
-    hasSetMemberTypePermission() {
-      return this.selfType === 'owner' && this.member.type !== 'owner';
-    },
-    hasMuteOrRemovePermission() {
-      if (this.selfType === 'owner') {
-        return this.member.type !== 'owner';
-      }
-      if (this.selfType === 'manager') {
-        return this.member.type === 'normal';
-      }
-      return false;
-    },
-    isSelf() {
-      return this.member.account === this.$store.state.userUID;
-    },
-    hasSetNickPermission() {
-      return this.selfType !== 'normal' || this.isSelf;
+    to() {
+      return this.$route.params.teamId;
     }
   },
   methods: {
-    changeMute() {
-      this.$store.dispatch('delegateTeamFunction', {
-        functionName: 'updateMuteStateInTeam',
-        options: {
-          teamId: this.teamId,
-          account: this.account,
-          mute: this.mute,
-          done: (error, obj) => {
-            if (error) {
-              this.$toast(error);
-            } else {
-              this.$toast(this.mute ? '已禁言' : '已取消禁言');
-            }
-          }
-        }
-      });
-    },
-    getUpdateCallBcak() {
-      var account = this.member.account;
-      var store = this.$store;
-      var toast = this.$toast;
-
-      var doneCallBack = (error, obj) => {
-        if (error) {
-          this.$toast(error);
-        } else {
-          this.$toast('更改成功');
-          setTimeout(() => {
-            history.go(-1);
-          }, 200);
-        }
-        store.dispatch('hideLoading');
-      };
-      return function (teamId, updateKey, newValue) {
-        store.dispatch('showLoading');
-        let action = null;
-        let opts = {};
-        if (updateKey === 'nickInTeam') {
-          action = 'updateNickInTeam';
-          opts.account = account;
-          opts.nickInTeam = newValue;
-        } else if (updateKey === 'memberType') {
-          action = newValue === 'manager' ? 'addTeamManagers' : 'removeTeamManagers';
-          opts.accounts = [account];
-        }
-        store.dispatch('delegateTeamFunction', {
-          functionName: action,
-          options: Object.assign({
-            teamId: teamId,
-            done: doneCallBack
-          }, opts)
+    sendMsg() {
+      if (/^\s*$/.test(this.inputMsg)) {
+        this.$vux.alert.show({
+          title: '请不要发送空消息'
         });
-      };
-    },
-    onEditItemClick(title, inputType, updateKey, confirmCallback) {
-      var updateSelfNick = this.isSelf && updateKey === 'nickInTeam';
-      this.$store.dispatch('enterSettingPage', {
-        title: title,
-        inputType: inputType,
-        updateKey: updateKey,
-        teamId: this.teamId,
-        updateInfoInTeam: updateSelfNick ? true : false,
-        defaultValue: this.infoInTeam[updateKey],
-        confirmCallback: updateSelfNick ? null : confirmCallback,
-        enable: true
+        return;
+      }
+      this.$store.dispatch('sendMsg', {
+        type: 'text',
+        scene: 'team',
+        to: this.to,
+        text: this.inputMsg,
+        needMsgReceipt: true
       });
-    },
-    remove() {
-      this.$store.dispatch('showLoading');
-      this.$store.dispatch('delegateTeamFunction', {
-        functionName: 'removeTeamMembers',
-        options: {
-          teamId: this.teamId,
-          accounts: [this.member.account],
-          done: (error, obj) => {
-            this.$toast(error ? error : '移除成功');
-            history.go(-1);
-            this.$store.dispatch('hideLoading');
-          }
-        }
-      });
+      history.go(-1);
     }
   }
 });
 
 /***/ }),
 
-/***/ 481:
+/***/ 488:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-6fd0861c","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamMemberCard.vue ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-55bb4af1","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamSendMsgReceipt.vue ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-base.js */ 4)(true);
+exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-base.js */ 5)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\n.g-body[data-v-6fd0861c]{\n}\n.g-avatar[data-v-6fd0861c]{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn[data-v-6fd0861c]{\n  width: 80%;\n  margin: 1rem 10%;\n}\n", "", {"version":3,"sources":["/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/TeamMemberCard.vue"],"names":[],"mappings":";AA0LA;CAEC;AACD;EACE,kBAAkB;EAClB,YAAY;EACZ,mBAAmB;CACpB;AACD;EACE,WAAW;EACX,iBAAiB;CAClB","file":"TeamMemberCard.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.g-body{\n  \n}\n.g-avatar{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn{\n  width: 80%;\n  margin: 1rem 10%;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.p-msg-receipt {\n  background-color: #ebeef3;\n}\n.p-msg-receipt .tip {\n  padding: 1rem;\n  color: #666;\n}\n", "", {"version":3,"sources":["/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/TeamSendMsgReceipt.vue"],"names":[],"mappings":";AAoDA;EACE,0BAA0B;CAM3B;AAJC;EACE,cAAc;EACd,YAAY;CACb","file":"TeamSendMsgReceipt.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-msg-receipt {\n  background-color: #ebeef3;\n\n  .tip {\n    padding: 1rem;\n    color: #666;\n  }\n}\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 503:
+/***/ 510:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-6fd0861c"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/TeamMemberCard.vue ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-55bb4af1"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/TeamSendMsgReceipt.vue ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "g-inherit m-article p-membercard"
+    staticClass: "g-inherit m-article p-msg-receipt"
   }, [_c('x-header', {
     staticClass: "m-tab",
     attrs: {
@@ -284,108 +146,69 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('h1', {
     staticClass: "m-tab-top"
-  }, [_vm._v("群名片")]), _vm._v(" "), _c('a', {
+  }, [_vm._v("发送已读回执消息")]), _vm._v(" "), _c('a', {
     attrs: {
       "slot": "left"
     },
     slot: "left"
   })]), _vm._v(" "), _c('div', {
     staticClass: "g-body"
-  }, [_c('div', {
-    staticClass: "g-avatar"
-  }, [_c('img', {
-    staticClass: "icon u-circle",
+  }, [_c('group', [_c('x-textarea', {
     attrs: {
-      "slot": "icon",
-      "width": "50",
-      "height": "50",
-      "src": _vm.member && _vm.member.avatar
-    },
-    slot: "icon"
-  }), _vm._v(" "), _c('div', [_vm._v(_vm._s(_vm.member && _vm.member.alias))])]), _vm._v(" "), _c('group', {
-    staticClass: "m-group"
-  }, [_c('cell', {
-    attrs: {
-      "title": "群昵称",
-      "value": _vm.member.nickInTeam || '未设置',
-      "is-link": ""
-    },
-    nativeOn: {
-      "click": function($event) {
-        return (function () { return _vm.hasSetNickPermission ? _vm.onEditItemClick('修改群昵称', 'text', 'nickInTeam', _vm.getUpdateCallBcak()) : _vm.$toast('无权限'); })($event)
-      }
-    }
-  }), _vm._v(" "), _c('cell', {
-    attrs: {
-      "title": "身份",
-      "value": _vm.memberType,
-      "is-link": ""
-    },
-    nativeOn: {
-      "click": function($event) {
-        return (function () { return _vm.hasSetMemberTypePermission ? _vm.onEditItemClick('身份', 'select', 'memberType', _vm.getUpdateCallBcak()) : _vm.$toast('无权限'); })($event)
-      }
-    }
-  }), _vm._v(" "), (_vm.hasMuteOrRemovePermission) ? _c('x-switch', {
-    staticClass: "u-switch",
-    attrs: {
-      "title": "设置禁言"
-    },
-    on: {
-      "on-change": _vm.changeMute
+      "placeholder": "输入消息内容"
     },
     model: {
-      value: (_vm.mute),
+      value: (_vm.inputMsg),
       callback: function($$v) {
-        _vm.mute = $$v
+        _vm.inputMsg = $$v
       },
-      expression: "mute"
+      expression: "inputMsg"
     }
-  }) : _vm._e()], 1), _vm._v(" "), (_vm.hasMuteOrRemovePermission) ? _c('x-button', {
-    staticClass: "u-btn",
+  }), _vm._v(" "), _c('x-button', {
     attrs: {
-      "mini": "",
-      "type": "warn"
+      "type": "primary"
     },
     nativeOn: {
       "click": function($event) {
-        return _vm.remove($event)
+        return _vm.sendMsg($event)
       }
     }
-  }, [_vm._v("移出本群")]) : _vm._e()], 1)], 1)
+  }, [_vm._v("发送")])], 1), _vm._v(" "), _c('p', {
+    staticClass: "tip"
+  }, [_vm._v("\n      已读回执能力支持文本、图片、音频、视频、文件、自定义等消息类型。此处仅以文本消息作为演示，开发者可以根据具体业务场景进行功能设计。\n    ")])], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6fd0861c", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-55bb4af1", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 526:
+/***/ 535:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-6fd0861c","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamMemberCard.vue ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-55bb4af1","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamSendMsgReceipt.vue ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-6fd0861c","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./TeamMemberCard.vue */ 481);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-55bb4af1","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./TeamSendMsgReceipt.vue */ 488);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 5)("3c97f507", content, false);
+var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 6)("796928fd", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6fd0861c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamMemberCard.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6fd0861c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamMemberCard.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-55bb4af1\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamSendMsgReceipt.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-55bb4af1\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamSendMsgReceipt.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

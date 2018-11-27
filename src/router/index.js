@@ -36,6 +36,14 @@ const routes = [
       require(['../pages/sayabc/Chat'], resolve)
     }
   },
+  // 系统消息
+  {
+    path: '/sayabc/sysmsgs',
+    name: 'sysmsgs1',
+    component (resolve) {
+      require(['../pages/sayabc/SysMsgs'], resolve)
+    }
+  },
   // 重构页面 end
 
 

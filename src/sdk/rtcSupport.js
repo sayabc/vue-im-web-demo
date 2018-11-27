@@ -1,7 +1,7 @@
 // 验证当前浏览器是否支持webrtc
 // created by @HenrikJoreteg
 (function () {
-    console.warn('检测webrtc...')
+    console.warn('检测webrtc...开始')
     var prefix;
     var version;
 
@@ -47,5 +47,5 @@
         MediaStream: MediaStream,
         getUserMedia: getUserMedia
     };
-
+    console.warn('检测webrtc...结束，结果挂载 window.rtcSupport')
 })()

@@ -6,6 +6,7 @@ import pageUtil from '../../utils/page'
 /* 导出actions方法 */
 import {showLoading, hideLoading, showFullscreenImg, hideFullscreenImg} from './widgetUi'
 import {initNimSDK} from './initNimSDK'
+import {initWebRTC} from './initWebRTC'
 import {initChatroomSDK, resetChatroomSDK} from './initChatroomSDK'
 import {updateBlack} from './blacks'
 import {updateFriend, addFriend, deleteFriend} from './friends'
@@ -33,6 +34,7 @@ function connectNim ({state, commit, dispatch}, obj) {
     } else {
       // 有cookie，重新登录
       dispatch('initNimSDK', loginInfo)
+      dispatch('initWebRTC')
     }
   }
 }
@@ -154,5 +156,8 @@ export default {
   checkTeamMsgReceipt,
   // 查询群消息回执已读列表
   getTeamMsgReads,
+
+  // 音视频
+  initWebRTC,
 
 }

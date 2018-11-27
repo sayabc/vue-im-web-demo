@@ -30,6 +30,12 @@
         :invalidHint="sendInvalidHint"
         :advancedTeam="teamInfo && teamInfo.type === 'advanced'"
       ></chat-editor>
+      <div id="container">
+        #container
+      </div>
+      <div id="remoteContainer">
+        #remoteContainer
+      </div>
     </div>
   </div>
 </template>
@@ -87,7 +93,6 @@ export default {
   computed: {
     sessionId () {
       let sessionId = this.$route.params.sessionId || this.$store.state.currSessionId
-      console.warn('sessionId哈哈 ', sessionId)
       return sessionId
     },
     sessionName () {

@@ -285,7 +285,7 @@ export default {
       if (lenCurrMsgs > 0) {
         lastMsgTime = state.currSessionMsgs[lenCurrMsgs - 1].time
       }
-      if (newMsg) { 
+      if (newMsg) {
         if ((newMsg.time - lastMsgTime) > 1000 * 60 * 5) {
           state.currSessionMsgs.push({
             type: 'timeTag',
@@ -366,11 +366,13 @@ export default {
     })
     // state.customSysMsgs = nim.mergeSysMsgs(state.customSysMsgs, sysMsgs)
     state.customSysMsgs = state.customSysMsgs.concat(sysMsgs)
-    Vue.set(state, customSysMsgs, state.customSysMsgs)
+    // Vue.set(state, customSysMsgs, state.customSysMsgs)
+    Vue.set(state, sysMsgs, state.customSysMsgs)
     store.commit('updateCustomSysMsgUnread', {
       type: 'add',
       unread: sysMsgs.length
     })
+    console.log('ttt: updateCustomSysMsgs')
   },
   updateCustomSysMsgUnread (state, obj) {
     let {type, unread} = obj
@@ -538,7 +540,7 @@ export default {
       state.currReceiptQueryTeamId = obj.teamId
     }
     var needQuery = obj.msgs
-    .filter(msg => 
+    .filter(msg =>
       msg.needMsgReceipt && msg.from === state.myInfo.account &&  !state.receiptQueryList.find(item => item.idServer === msg.idServer)
     )
     .map(msg => {

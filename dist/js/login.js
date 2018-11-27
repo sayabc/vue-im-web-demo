@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "dist/js/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 209);
+/******/ 	return __webpack_require__(__webpack_require__.s = 217);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,21 +71,6 @@
 /* 1 */,
 /* 2 */,
 /* 3 */
-/* no static exports found */
-/* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/library/modules/_core.js ***!
-  \********************************************/
-/***/ (function(module, exports) {
-
-var core = module.exports = { version: '2.5.7' };
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
-
-
-/***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */
 /* no static exports found */
 /* all exports used */
 /*!******************************!*\
@@ -105,7 +90,9 @@ var _assign2 = _interopRequireDefault(_assign);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var config = {
-  sdk: 'NIM_Web_SDK_v5.6.0',
+  // sdk: 'NIM_Web_SDK_v5.6.0',
+  sdk: 'NIM_Web_SDK_v5.8.0',
+  webrtcSDK: 'NIM_Web_WebRTC_v5.8.0',
   // 用户自定义的登录注册地址
   loginUrl: '/webdemo/h5/login.html',
   registUrl: '/webdemo/h5/regist.html',
@@ -150,6 +137,21 @@ exports.default = config;
 module.exports = exports['default'];
 
 /***/ }),
+/* 4 */
+/* no static exports found */
+/* all exports used */
+/*!********************************************!*\
+  !*** ./~/core-js/library/modules/_core.js ***!
+  \********************************************/
+/***/ (function(module, exports) {
+
+var core = module.exports = { version: '2.5.7' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+
+/***/ }),
+/* 5 */,
+/* 6 */,
 /* 7 */
 /* no static exports found */
 /* all exports used */
@@ -175,7 +177,7 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
   \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/assign */ 73), __esModule: true };
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/assign */ 75), __esModule: true };
 
 /***/ }),
 /* 9 */,
@@ -11502,8 +11504,8 @@ process.umask = function() { return 0; };
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(/*! ./_global */ 7);
-var core = __webpack_require__(/*! ./_core */ 3);
-var ctx = __webpack_require__(/*! ./_ctx */ 77);
+var core = __webpack_require__(/*! ./_core */ 4);
+var ctx = __webpack_require__(/*! ./_ctx */ 79);
 var hide = __webpack_require__(/*! ./_hide */ 17);
 var has = __webpack_require__(/*! ./_has */ 11);
 var PROTOTYPE = 'prototype';
@@ -11723,7 +11725,7 @@ module.exports = exports['default'];
   \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/create */ 74), __esModule: true };
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/create */ 76), __esModule: true };
 
 /***/ }),
 /* 44 */
@@ -11801,7 +11803,7 @@ module.exports = function (it) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = __webpack_require__(/*! ./_an-object */ 35);
-var dPs = __webpack_require__(/*! ./_object-dps */ 81);
+var dPs = __webpack_require__(/*! ./_object-dps */ 83);
 var enumBugKeys = __webpack_require__(/*! ./_enum-bug-keys */ 45);
 var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 46)('IE_PROTO');
 var Empty = function () { /* empty */ };
@@ -11816,7 +11818,7 @@ var createDict = function () {
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(/*! ./_html */ 78).appendChild(iframe);
+  __webpack_require__(/*! ./_html */ 80).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -11863,7 +11865,7 @@ exports.f = Object.getOwnPropertySymbols;
   \**********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var core = __webpack_require__(/*! ./_core */ 3);
+var core = __webpack_require__(/*! ./_core */ 4);
 var global = __webpack_require__(/*! ./_global */ 7);
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
@@ -12141,7 +12143,7 @@ module.exports = !__webpack_require__(/*! ./_descriptors */ 10) && !__webpack_re
 
 var has = __webpack_require__(/*! ./_has */ 11);
 var toIObject = __webpack_require__(/*! ./_to-iobject */ 15);
-var arrayIndexOf = __webpack_require__(/*! ./_array-includes */ 76)(false);
+var arrayIndexOf = __webpack_require__(/*! ./_array-includes */ 78)(false);
 var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 46)('IE_PROTO');
 
 module.exports = function (object, names) {
@@ -12223,7 +12225,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(/*! setimmediate */ 89);
+__webpack_require__(/*! setimmediate */ 91);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -12243,7 +12245,9 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* 70 */,
 /* 71 */,
 /* 72 */,
-/* 73 */
+/* 73 */,
+/* 74 */,
+/* 75 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
@@ -12251,12 +12255,12 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
   \***********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../../modules/es6.object.assign */ 86);
-module.exports = __webpack_require__(/*! ../../modules/_core */ 3).Object.assign;
+__webpack_require__(/*! ../../modules/es6.object.assign */ 88);
+module.exports = __webpack_require__(/*! ../../modules/_core */ 4).Object.assign;
 
 
 /***/ }),
-/* 74 */
+/* 76 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
@@ -12264,15 +12268,15 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ 3).Object.assign
   \***********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../../modules/es6.object.create */ 87);
-var $Object = __webpack_require__(/*! ../../modules/_core */ 3).Object;
+__webpack_require__(/*! ../../modules/es6.object.create */ 89);
+var $Object = __webpack_require__(/*! ../../modules/_core */ 4).Object;
 module.exports = function create(P, D) {
   return $Object.create(P, D);
 };
 
 
 /***/ }),
-/* 75 */
+/* 77 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
@@ -12287,7 +12291,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 76 */
+/* 78 */
 /* no static exports found */
 /* all exports used */
 /*!******************************************************!*\
@@ -12298,8 +12302,8 @@ module.exports = function (it) {
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(/*! ./_to-iobject */ 15);
-var toLength = __webpack_require__(/*! ./_to-length */ 85);
-var toAbsoluteIndex = __webpack_require__(/*! ./_to-absolute-index */ 84);
+var toLength = __webpack_require__(/*! ./_to-length */ 87);
+var toAbsoluteIndex = __webpack_require__(/*! ./_to-absolute-index */ 86);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -12321,7 +12325,7 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 77 */
+/* 79 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
@@ -12330,7 +12334,7 @@ module.exports = function (IS_INCLUDES) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(/*! ./_a-function */ 75);
+var aFunction = __webpack_require__(/*! ./_a-function */ 77);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -12352,7 +12356,7 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 78 */
+/* 80 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************!*\
@@ -12365,8 +12369,8 @@ module.exports = document && document.documentElement;
 
 
 /***/ }),
-/* 79 */,
-/* 80 */
+/* 81 */,
+/* 82 */
 /* no static exports found */
 /* all exports used */
 /*!*****************************************************!*\
@@ -12412,7 +12416,7 @@ module.exports = !$assign || __webpack_require__(/*! ./_fails */ 12)(function ()
 
 
 /***/ }),
-/* 81 */
+/* 83 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
@@ -12436,9 +12440,9 @@ module.exports = __webpack_require__(/*! ./_descriptors */ 10) ? Object.definePr
 
 
 /***/ }),
-/* 82 */,
-/* 83 */,
-/* 84 */
+/* 84 */,
+/* 85 */,
+/* 86 */
 /* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
@@ -12456,7 +12460,7 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 85 */
+/* 87 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************************!*\
@@ -12473,7 +12477,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 86 */
+/* 88 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
@@ -12484,11 +12488,11 @@ module.exports = function (it) {
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(/*! ./_export */ 23);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(/*! ./_object-assign */ 80) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(/*! ./_object-assign */ 82) });
 
 
 /***/ }),
-/* 87 */
+/* 89 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
@@ -12502,8 +12506,8 @@ $export($export.S, 'Object', { create: __webpack_require__(/*! ./_object-create 
 
 
 /***/ }),
-/* 88 */,
-/* 89 */
+/* 90 */,
+/* 91 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************!*\
@@ -12701,11 +12705,15 @@ $export($export.S, 'Object', { create: __webpack_require__(/*! ./_object-create 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../process/browser.js */ 22)))
 
 /***/ }),
-/* 90 */,
-/* 91 */,
 /* 92 */,
 /* 93 */,
-/* 94 */
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */
 /* no static exports found */
 /* all exports used */
 /*!**************************!*\
@@ -12949,7 +12957,7 @@ exports.default = MD5;
 module.exports = exports["default"];
 
 /***/ }),
-/* 95 */
+/* 101 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************!*\
@@ -13802,12 +13810,6 @@ var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
 
 
 /***/ }),
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
 /* 102 */,
 /* 103 */,
 /* 104 */,
@@ -13915,7 +13917,15 @@ var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
 /* 206 */,
 /* 207 */,
 /* 208 */,
-/* 209 */
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */
 /* no static exports found */
 /* all exports used */
 /*!**********************!*\
@@ -13930,7 +13940,7 @@ var _vue = __webpack_require__(/*! vue */ 13);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _fastclick = __webpack_require__(/*! fastclick */ 95);
+var _fastclick = __webpack_require__(/*! fastclick */ 101);
 
 var _fastclick2 = _interopRequireDefault(_fastclick);
 
@@ -13938,7 +13948,7 @@ var _touchEvent = __webpack_require__(/*! ./plugins/touchEvent */ 56);
 
 var _touchEvent2 = _interopRequireDefault(_touchEvent);
 
-var _md = __webpack_require__(/*! ./utils/md5 */ 94);
+var _md = __webpack_require__(/*! ./utils/md5 */ 100);
 
 var _md2 = _interopRequireDefault(_md);
 
@@ -13946,7 +13956,7 @@ var _cookie = __webpack_require__(/*! ./utils/cookie */ 41);
 
 var _cookie2 = _interopRequireDefault(_cookie);
 
-var _configs = __webpack_require__(/*! ./configs */ 6);
+var _configs = __webpack_require__(/*! ./configs */ 3);
 
 var _configs2 = _interopRequireDefault(_configs);
 
