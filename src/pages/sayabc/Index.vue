@@ -5,7 +5,7 @@
       <session />
     </div>
     <div id="im-chat-box">
-      <chat-header />
+      <!-- <chat-header/> -->
       <!-- 要显示聊天界面要有sessionId  通过store传递 -->
       <chat v-if="sessionId"/>
     </div>

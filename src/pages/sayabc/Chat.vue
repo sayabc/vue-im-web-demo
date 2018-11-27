@@ -9,6 +9,18 @@
         <span v-if="scene==='team'" class='icon-team' @click="onTeamManageClick"></span>
       </div>
     </x-header> -->
+    <div>
+      <div class='chat-name'>
+         {{sessionName}}
+      </div>
+      <div class='handle'>
+        <button class='follow-up-btn'>跟进</button>
+        <span
+          @click='checkMember'
+          class='check-member'
+        >{{isCheckMember ? '查看成员' : '关闭查看'}}</span>
+      </div>
+    </div>
     <div class="m-chat-main">
       <div class='invalidHint' v-if='scene==="team" && teamInvalid'>
         {{`您已退出该${teamInfo && teamInfo.type==='normal' ? '讨论组':'群'}`}}
@@ -92,6 +104,7 @@ export default {
   },
   computed: {
     sessionId () {
+      console.log('1234567890000')
       let sessionId = this.$route.params.sessionId || this.$store.state.currSessionId
       return sessionId
     },
@@ -124,6 +137,9 @@ export default {
     },
     to () {
       return util.parseSession(this.sessionId).to
+    },
+    isCheckMember () {
+      return this.$store.state.isCheckMember
     },
     // 判断是否是机器人
     isRobot () {
@@ -213,6 +229,15 @@ export default {
         location.href = `#/chathistory/${this.sessionId}`
       } else {
         this.$toast('您已退出该群')
+      }
+    },
+    checkMember() {
+      this.$store.commit("isCheckMember");
+      let { isCheckMember } = this.$store.state;
+      if (isCheckMember) {
+        //获取成员
+      } else {
+        //获取老师信息
       }
     }
   }
