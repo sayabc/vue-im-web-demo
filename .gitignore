@@ -6,4 +6,5 @@ node_modules/*
 .eslintrc.js
 package-lock.json
 .history
-dist/*
+/dist/js
+/dist/css
