@@ -89,15 +89,15 @@ var _vuex = __webpack_require__(/*! vuex */ 108);
 
 var _vuex2 = _interopRequireDefault(_vuex);
 
-var _mutations = __webpack_require__(/*! ./mutations */ 125);
+var _mutations = __webpack_require__(/*! ./mutations */ 124);
 
 var _mutations2 = _interopRequireDefault(_mutations);
 
-var _actions = __webpack_require__(/*! ./actions */ 119);
+var _actions = __webpack_require__(/*! ./actions */ 118);
 
 var _actions2 = _interopRequireDefault(_actions);
 
-var _state = __webpack_require__(/*! ./state */ 126);
+var _state = __webpack_require__(/*! ./state */ 125);
 
 var _state2 = _interopRequireDefault(_state);
 
@@ -190,9 +190,9 @@ module.exports = exports['default'];
 /* 4 */
 /* no static exports found */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/library/modules/_core.js ***!
-  \********************************************/
+/*!***********************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_core.js ***!
+  \***********************************************************/
 /***/ (function(module, exports) {
 
 var core = module.exports = { version: '2.5.7' };
@@ -205,9 +205,9 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 /* 7 */
 /* no static exports found */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/library/modules/_global.js ***!
-  \**********************************************/
+/*!*************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_global.js ***!
+  \*************************************************************/
 /***/ (function(module, exports) {
 
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -222,9 +222,9 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 /* 8 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/babel-runtime/core-js/object/assign.js ***!
-  \**************************************************/
+/*!************************************************************************!*\
+  !*** ./~/_babel-runtime@6.26.0@babel-runtime/core-js/object/assign.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/assign */ 80), __esModule: true };
@@ -234,9 +234,9 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/
 /* 10 */
 /* no static exports found */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/library/modules/_descriptors.js ***!
-  \***************************************************/
+/*!******************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_descriptors.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // Thank's IE8 for his funny defineProperty
@@ -249,9 +249,9 @@ module.exports = !__webpack_require__(/*! ./_fails */ 13)(function () {
 /* 11 */
 /* no static exports found */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/library/modules/_has.js ***!
-  \*******************************************/
+/*!**********************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_has.js ***!
+  \**********************************************************/
 /***/ (function(module, exports) {
 
 var hasOwnProperty = {}.hasOwnProperty;
@@ -690,9 +690,9 @@ module.exports = exports['default'];
 /* 13 */
 /* no static exports found */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/library/modules/_fails.js ***!
-  \*********************************************/
+/*!************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_fails.js ***!
+  \************************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -708,9 +708,9 @@ module.exports = function (exec) {
 /* 14 */
 /* no static exports found */
 /* all exports used */
-/*!***************************!*\
-  !*** ./~/vue/dist/vue.js ***!
-  \***************************/
+/*!***************************************!*\
+  !*** ./~/_vue@2.5.17@vue/dist/vue.js ***!
+  \***************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
@@ -11661,15 +11661,15 @@ return Vue;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../../timers-browserify/main.js */ 71).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../_webpack@2.7.0@webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../../_timers-browserify@2.0.10@timers-browserify/main.js */ 71).setImmediate))
 
 /***/ }),
 /* 15 */
 /* no static exports found */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/modules/_object-dp.js ***!
-  \*************************************************/
+/*!****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-dp.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(/*! ./_an-object */ 36);
@@ -11694,9 +11694,9 @@ exports.f = __webpack_require__(/*! ./_descriptors */ 10) ? Object.definePropert
 /* 16 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/library/modules/_to-iobject.js ***!
-  \**************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-iobject.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
@@ -11711,9 +11711,9 @@ module.exports = function (it) {
 /* 17 */
 /* no static exports found */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/modules/_is-object.js ***!
-  \*************************************************/
+/*!****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_is-object.js ***!
+  \****************************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -11725,9 +11725,9 @@ module.exports = function (it) {
 /* 18 */
 /* no static exports found */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/library/modules/_hide.js ***!
-  \********************************************/
+/*!***********************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_hide.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(/*! ./_object-dp */ 15);
@@ -11778,9 +11778,9 @@ module.exports = g;
 /* 22 */
 /* no static exports found */
 /* all exports used */
-/*!******************************!*\
-  !*** ./~/process/browser.js ***!
-  \******************************/
+/*!***********************************************!*\
+  !*** ./~/_process@0.11.10@process/browser.js ***!
+  \***********************************************/
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -11973,9 +11973,9 @@ process.umask = function() { return 0; };
 /* 23 */
 /* no static exports found */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/library/modules/_export.js ***!
-  \**********************************************/
+/*!*************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_export.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(/*! ./_global */ 7);
@@ -12046,9 +12046,9 @@ module.exports = $export;
 /* 24 */
 /* no static exports found */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/library/modules/_object-keys.js ***!
-  \***************************************************/
+/*!******************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-keys.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
@@ -12074,9 +12074,9 @@ module.exports = Object.keys || function keys(O) {
 /* 35 */
 /* no static exports found */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/library/modules/_wks.js ***!
-  \*******************************************/
+/*!**********************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_wks.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var store = __webpack_require__(/*! ./_shared */ 53)('wks');
@@ -12096,9 +12096,9 @@ $exports.store = store;
 /* 36 */
 /* no static exports found */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/modules/_an-object.js ***!
-  \*************************************************/
+/*!****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_an-object.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(/*! ./_is-object */ 17);
@@ -12200,9 +12200,9 @@ module.exports = exports['default'];
 /* 38 */
 /* no static exports found */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/library/modules/_library.js ***!
-  \***********************************************/
+/*!**************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_library.js ***!
+  \**************************************************************/
 /***/ (function(module, exports) {
 
 module.exports = true;
@@ -12602,9 +12602,9 @@ function continueRobotMsg(_ref8, robotAccid) {
 /* 40 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/library/modules/_object-pie.js ***!
-  \**************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-pie.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
@@ -12614,9 +12614,9 @@ exports.f = {}.propertyIsEnumerable;
 /* 41 */
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/library/modules/_property-desc.js ***!
-  \*****************************************************/
+/*!********************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_property-desc.js ***!
+  \********************************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -12633,9 +12633,9 @@ module.exports = function (bitmap, value) {
 /* 42 */
 /* no static exports found */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/library/modules/_uid.js ***!
-  \*******************************************/
+/*!**********************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_uid.js ***!
+  \**********************************************************/
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -12693,9 +12693,9 @@ module.exports = exports['default'];
 /* 44 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/babel-runtime/core-js/object/create.js ***!
-  \**************************************************/
+/*!************************************************************************!*\
+  !*** ./~/_babel-runtime@6.26.0@babel-runtime/core-js/object/create.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/create */ 81), __esModule: true };
@@ -12704,9 +12704,9 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/
 /* 45 */
 /* no static exports found */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/library/modules/_defined.js ***!
-  \***********************************************/
+/*!**************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_defined.js ***!
+  \**************************************************************/
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -12720,9 +12720,9 @@ module.exports = function (it) {
 /* 46 */
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/library/modules/_enum-bug-keys.js ***!
-  \*****************************************************/
+/*!********************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_enum-bug-keys.js ***!
+  \********************************************************************/
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -12735,9 +12735,9 @@ module.exports = (
 /* 47 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/library/modules/_shared-key.js ***!
-  \**************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_shared-key.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var shared = __webpack_require__(/*! ./_shared */ 53)('keys');
@@ -12751,9 +12751,9 @@ module.exports = function (key) {
 /* 48 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/library/modules/_to-integer.js ***!
-  \**************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-integer.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -13038,9 +13038,9 @@ function onUserInfo(users) {
 /* 51 */
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/library/modules/_object-create.js ***!
-  \*****************************************************/
+/*!********************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-create.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
@@ -13090,9 +13090,9 @@ module.exports = Object.create || function create(O, Properties) {
 /* 52 */
 /* no static exports found */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/library/modules/_object-gops.js ***!
-  \***************************************************/
+/*!******************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-gops.js ***!
+  \******************************************************************/
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
@@ -13102,9 +13102,9 @@ exports.f = Object.getOwnPropertySymbols;
 /* 53 */
 /* no static exports found */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/library/modules/_shared.js ***!
-  \**********************************************/
+/*!*************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_shared.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var core = __webpack_require__(/*! ./_core */ 4);
@@ -13125,9 +13125,9 @@ var store = global[SHARED] || (global[SHARED] = {});
 /* 54 */
 /* no static exports found */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/modules/_to-object.js ***!
-  \*************************************************/
+/*!****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-object.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
@@ -13141,9 +13141,9 @@ module.exports = function (it) {
 /* 55 */
 /* no static exports found */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/library/modules/_to-primitive.js ***!
-  \****************************************************/
+/*!*******************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-primitive.js ***!
+  \*******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -13164,9 +13164,9 @@ module.exports = function (it, S) {
 /* 56 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/library/modules/_dom-create.js ***!
-  \**************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_dom-create.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(/*! ./_is-object */ 17);
@@ -13182,9 +13182,9 @@ module.exports = function (it) {
 /* 57 */
 /* no static exports found */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/library/modules/_iobject.js ***!
-  \***********************************************/
+/*!**************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_iobject.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
@@ -13345,9 +13345,9 @@ module.exports = exports['default'];
 /* 59 */
 /* no static exports found */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/library/modules/_cof.js ***!
-  \*******************************************/
+/*!**********************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_cof.js ***!
+  \**********************************************************/
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -13361,9 +13361,9 @@ module.exports = function (it) {
 /* 60 */
 /* no static exports found */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/modules/_iterators.js ***!
-  \*************************************************/
+/*!****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_iterators.js ***!
+  \****************************************************************/
 /***/ (function(module, exports) {
 
 module.exports = {};
@@ -13373,9 +13373,9 @@ module.exports = {};
 /* 61 */
 /* no static exports found */
 /* all exports used */
-/*!*********************************************************!*\
-  !*** ./~/core-js/library/modules/_set-to-string-tag.js ***!
-  \*********************************************************/
+/*!************************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_set-to-string-tag.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var def = __webpack_require__(/*! ./_object-dp */ 15).f;
@@ -14018,20 +14018,20 @@ function getTeamMsgReads(_ref8, needQuery) {
 /* 66 */
 /* no static exports found */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/babel-runtime/core-js/json/stringify.js ***!
-  \***************************************************/
+/*!*************************************************************************!*\
+  !*** ./~/_babel-runtime@6.26.0@babel-runtime/core-js/json/stringify.js ***!
+  \*************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/json/stringify */ 129), __esModule: true };
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/json/stringify */ 128), __esModule: true };
 
 /***/ }),
 /* 67 */
 /* no static exports found */
 /* all exports used */
-/*!******************************************************!*\
-  !*** ./~/core-js/library/modules/_ie8-dom-define.js ***!
-  \******************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_ie8-dom-define.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(/*! ./_descriptors */ 10) && !__webpack_require__(/*! ./_fails */ 13)(function () {
@@ -14043,9 +14043,9 @@ module.exports = !__webpack_require__(/*! ./_descriptors */ 10) && !__webpack_re
 /* 68 */
 /* no static exports found */
 /* all exports used */
-/*!************************************************************!*\
-  !*** ./~/core-js/library/modules/_object-keys-internal.js ***!
-  \************************************************************/
+/*!***************************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-keys-internal.js ***!
+  \***************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var has = __webpack_require__(/*! ./_has */ 11);
@@ -14071,9 +14071,9 @@ module.exports = function (object, names) {
 /* 69 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/library/modules/_wks-define.js ***!
-  \**************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_wks-define.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(/*! ./_global */ 7);
@@ -14091,9 +14091,9 @@ module.exports = function (name) {
 /* 70 */
 /* no static exports found */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/library/modules/_wks-ext.js ***!
-  \***********************************************/
+/*!**************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_wks-ext.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 exports.f = __webpack_require__(/*! ./_wks */ 35);
@@ -14103,9 +14103,9 @@ exports.f = __webpack_require__(/*! ./_wks */ 35);
 /* 71 */
 /* no static exports found */
 /* all exports used */
-/*!*************************************!*\
-  !*** ./~/timers-browserify/main.js ***!
-  \*************************************/
+/*!***************************************************************!*\
+  !*** ./~/_timers-browserify@2.0.10@timers-browserify/main.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -14172,7 +14172,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 21)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../_webpack@2.7.0@webpack/buildin/global.js */ 21)))
 
 /***/ }),
 /* 72 */
@@ -14242,9 +14242,9 @@ webpackContext.id = 72;
 /* 74 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/library/modules/_a-function.js ***!
-  \**************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_a-function.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -14257,9 +14257,9 @@ module.exports = function (it) {
 /* 75 */
 /* no static exports found */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/library/modules/_ctx.js ***!
-  \*******************************************/
+/*!**********************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_ctx.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
@@ -14288,9 +14288,9 @@ module.exports = function (fn, that, length) {
 /* 76 */
 /* no static exports found */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/library/modules/_html.js ***!
-  \********************************************/
+/*!***********************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_html.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var document = __webpack_require__(/*! ./_global */ 7).document;
@@ -14301,9 +14301,9 @@ module.exports = document && document.documentElement;
 /* 77 */
 /* no static exports found */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/modules/_to-length.js ***!
-  \*************************************************/
+/*!****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-length.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
@@ -14552,9 +14552,9 @@ function onRobots(robots) {
 /* 80 */
 /* no static exports found */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/library/fn/object/assign.js ***!
-  \***********************************************/
+/*!**************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/fn/object/assign.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ../../modules/es6.object.assign */ 89);
@@ -14565,9 +14565,9 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ 4).Object.assign
 /* 81 */
 /* no static exports found */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/library/fn/object/create.js ***!
-  \***********************************************/
+/*!**************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/fn/object/create.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ../../modules/es6.object.create */ 90);
@@ -14581,9 +14581,9 @@ module.exports = function create(P, D) {
 /* 82 */
 /* no static exports found */
 /* all exports used */
-/*!******************************************************!*\
-  !*** ./~/core-js/library/modules/_array-includes.js ***!
-  \******************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_array-includes.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
@@ -14615,9 +14615,9 @@ module.exports = function (IS_INCLUDES) {
 /* 83 */
 /* no static exports found */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/library/modules/_iter-define.js ***!
-  \***************************************************/
+/*!******************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_iter-define.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14627,9 +14627,9 @@ var $export = __webpack_require__(/*! ./_export */ 23);
 var redefine = __webpack_require__(/*! ./_redefine */ 87);
 var hide = __webpack_require__(/*! ./_hide */ 18);
 var Iterators = __webpack_require__(/*! ./_iterators */ 60);
-var $iterCreate = __webpack_require__(/*! ./_iter-create */ 136);
+var $iterCreate = __webpack_require__(/*! ./_iter-create */ 135);
 var setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 61);
-var getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 141);
+var getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 140);
 var ITERATOR = __webpack_require__(/*! ./_wks */ 35)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
@@ -14696,9 +14696,9 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 /* 84 */
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/library/modules/_object-assign.js ***!
-  \*****************************************************/
+/*!********************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-assign.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14742,9 +14742,9 @@ module.exports = !$assign || __webpack_require__(/*! ./_fails */ 13)(function ()
 /* 85 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/library/modules/_object-dps.js ***!
-  \**************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-dps.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(/*! ./_object-dp */ 15);
@@ -14766,9 +14766,9 @@ module.exports = __webpack_require__(/*! ./_descriptors */ 10) ? Object.definePr
 /* 86 */
 /* no static exports found */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/library/modules/_object-gopn.js ***!
-  \***************************************************/
+/*!******************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-gopn.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
@@ -14784,9 +14784,9 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 /* 87 */
 /* no static exports found */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/library/modules/_redefine.js ***!
-  \************************************************/
+/*!***************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_redefine.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! ./_hide */ 18);
@@ -14796,9 +14796,9 @@ module.exports = __webpack_require__(/*! ./_hide */ 18);
 /* 88 */
 /* no static exports found */
 /* all exports used */
-/*!*********************************************************!*\
-  !*** ./~/core-js/library/modules/_to-absolute-index.js ***!
-  \*********************************************************/
+/*!************************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-absolute-index.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(/*! ./_to-integer */ 48);
@@ -14814,9 +14814,9 @@ module.exports = function (index, length) {
 /* 89 */
 /* no static exports found */
 /* all exports used */
-/*!********************************************************!*\
-  !*** ./~/core-js/library/modules/es6.object.assign.js ***!
-  \********************************************************/
+/*!***********************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/es6.object.assign.js ***!
+  \***********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
@@ -14829,9 +14829,9 @@ $export($export.S + $export.F, 'Object', { assign: __webpack_require__(/*! ./_ob
 /* 90 */
 /* no static exports found */
 /* all exports used */
-/*!********************************************************!*\
-  !*** ./~/core-js/library/modules/es6.object.create.js ***!
-  \********************************************************/
+/*!***********************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/es6.object.create.js ***!
+  \***********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(/*! ./_export */ 23);
@@ -14844,9 +14844,9 @@ $export($export.S, 'Object', { create: __webpack_require__(/*! ./_object-create 
 /* 92 */
 /* no static exports found */
 /* all exports used */
-/*!****************************************!*\
-  !*** ./~/setimmediate/setImmediate.js ***!
-  \****************************************/
+/*!************************************************************!*\
+  !*** ./~/_setimmediate@1.0.5@setimmediate/setImmediate.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -15036,7 +15036,7 @@ $export($export.S, 'Object', { create: __webpack_require__(/*! ./_object-create 
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../process/browser.js */ 22)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../_webpack@2.7.0@webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../_process@0.11.10@process/browser.js */ 22)))
 
 /***/ }),
 /* 93 */,
@@ -17176,9 +17176,9 @@ module.exports = exports["default"];
 /* 104 */
 /* no static exports found */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./~/fastclick/lib/fastclick.js ***!
-  \**************************************/
+/*!*******************************************************!*\
+  !*** ./~/_fastclick@1.0.6@fastclick/lib/fastclick.js ***!
+  \*******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
@@ -18032,9 +18032,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
 /* 108 */
 /* exports provided: Store, install, mapState, mapMutations, mapGetters, mapActions, createNamespacedHelpers, default */
 /* all exports used */
-/*!*********************************!*\
-  !*** ./~/vuex/dist/vuex.esm.js ***!
-  \*********************************/
+/*!*********************************************!*\
+  !*** ./~/_vuex@2.5.0@vuex/dist/vuex.esm.js ***!
+  \*********************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18978,26 +18978,26 @@ var index_esm = {
 
 /* harmony default export */ __webpack_exports__["default"] = (index_esm);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(/*! ./../../process/browser.js */ 22)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(/*! ./../../_process@0.11.10@process/browser.js */ 22)))
 
 /***/ }),
 /* 109 */
 /* no static exports found */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/babel-runtime/core-js/object/keys.js ***!
-  \************************************************/
+/*!**********************************************************************!*\
+  !*** ./~/_babel-runtime@6.26.0@babel-runtime/core-js/object/keys.js ***!
+  \**********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/keys */ 130), __esModule: true };
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/keys */ 129), __esModule: true };
 
 /***/ }),
 /* 110 */
 /* no static exports found */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/babel-runtime/helpers/typeof.js ***!
-  \*******************************************/
+/*!*****************************************************************!*\
+  !*** ./~/_babel-runtime@6.26.0@babel-runtime/helpers/typeof.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19005,11 +19005,11 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/
 
 exports.__esModule = true;
 
-var _iterator = __webpack_require__(/*! ../core-js/symbol/iterator */ 128);
+var _iterator = __webpack_require__(/*! ../core-js/symbol/iterator */ 127);
 
 var _iterator2 = _interopRequireDefault(_iterator);
 
-var _symbol = __webpack_require__(/*! ../core-js/symbol */ 127);
+var _symbol = __webpack_require__(/*! ../core-js/symbol */ 126);
 
 var _symbol2 = _interopRequireDefault(_symbol);
 
@@ -19027,9 +19027,9 @@ exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.d
 /* 111 */
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************!*\
-  !*** ./~/core-js/library/modules/es6.object.to-string.js ***!
-  \***********************************************************/
+/*!**************************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/es6.object.to-string.js ***!
+  \**************************************************************************/
 /***/ (function(module, exports) {
 
 
@@ -19038,14 +19038,14 @@ exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.d
 /* 112 */
 /* no static exports found */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/core-js/library/modules/es6.string.iterator.js ***!
-  \**********************************************************/
+/*!*************************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/es6.string.iterator.js ***!
+  \*************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var $at = __webpack_require__(/*! ./_string-at */ 143)(true);
+var $at = __webpack_require__(/*! ./_string-at */ 142)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
 __webpack_require__(/*! ./_iter-define */ 83)(String, 'String', function (iterated) {
@@ -19067,12 +19067,12 @@ __webpack_require__(/*! ./_iter-define */ 83)(String, 'String', function (iterat
 /* 113 */
 /* no static exports found */
 /* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/core-js/library/modules/web.dom.iterable.js ***!
-  \*******************************************************/
+/*!**********************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/web.dom.iterable.js ***!
+  \**********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./es6.array.iterator */ 144);
+__webpack_require__(/*! ./es6.array.iterator */ 143);
 var global = __webpack_require__(/*! ./_global */ 7);
 var hide = __webpack_require__(/*! ./_hide */ 18);
 var Iterators = __webpack_require__(/*! ./_iterators */ 60);
@@ -19094,12 +19094,2614 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 
 /***/ }),
-/* 114 */
-/* exports provided: default */
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */
+/* no static exports found */
+/* all exports used */
+/*!********************************************!*\
+  !*** ./src/store/actions/chatroomInfos.js ***!
+  \********************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 8);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+exports.initChatroomInfos = initChatroomInfos;
+exports.getChatroomInfo = getChatroomInfo;
+exports.getChatroomMembers = getChatroomMembers;
+exports.clearChatroomMembers = clearChatroomMembers;
+
+var _ = __webpack_require__(/*! ../ */ 1);
+
+var _2 = _interopRequireDefault(_);
+
+var _configs = __webpack_require__(/*! ../../configs */ 3);
+
+var _configs2 = _interopRequireDefault(_configs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// 用于demo记录封面
+function initChatroomInfos(_ref, obj) {
+  var state = _ref.state,
+      commit = _ref.commit;
+
+  commit('initChatroomInfos', obj);
+}
+
+function getChatroomInfo(_ref2) {
+  var state = _ref2.state,
+      commit = _ref2.commit,
+      dispatch = _ref2.dispatch;
+
+  var chatroom = state.currChatroom;
+  if (chatroom) {
+    chatroom.getChatroom({
+      done: function getChatroomDone(error, info) {
+        if (error) {
+          alert(error.message);
+          return;
+        }
+        info = info.chatroom || { creator: '' };
+        var creator = info.creator;
+        chatroom.getChatroomMembersInfo({
+          accounts: [creator],
+          done: function getChatroomMembersInfoDone(error, user) {
+            if (error) {
+              alert(error.message);
+              return;
+            }
+            commit('getChatroomInfo', (0, _assign2.default)(info, { actor: user.members[0] }));
+          }
+        });
+      }
+    });
+  }
+}
+
+function getChatroomMembers(_ref3) {
+  var state = _ref3.state,
+      commit = _ref3.commit,
+      dispatch = _ref3.dispatch;
+
+  // 先拉管理员
+  getChatroomMembersLocal(false, function (obj) {
+    commit('updateChatroomMembers', (0, _assign2.default)(obj, { type: 'put' }));
+    // 再拉成员列表
+    getChatroomMembersLocal(true, function (obj) {
+      commit('updateChatroomMembers', (0, _assign2.default)(obj, { type: 'put' }));
+    });
+  });
+}
+
+function getChatroomMembersLocal(isGuest, callback) {
+  var chatroom = _2.default.state.currChatroom;
+  if (chatroom) {
+    chatroom.getChatroomMembers({
+      guest: isGuest,
+      limit: 100,
+      done: function getChatroomMembersDone(error, obj) {
+        if (error) {
+          alert(error.message);
+          return;
+        }
+        callback(obj);
+      }
+    });
+  }
+}
+
+function clearChatroomMembers(_ref4) {
+  var state = _ref4.state,
+      commit = _ref4.commit;
+
+  commit('updateChatroomMembers', { type: 'destroy' });
+}
+
+/***/ }),
+/* 118 */
+/* no static exports found */
+/* all exports used */
+/*!************************************!*\
+  !*** ./src/store/actions/index.js ***!
+  \************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 8);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _cookie = __webpack_require__(/*! ../../utils/cookie */ 43);
+
+var _cookie2 = _interopRequireDefault(_cookie);
+
+var _page = __webpack_require__(/*! ../../utils/page */ 37);
+
+var _page2 = _interopRequireDefault(_page);
+
+var _widgetUi = __webpack_require__(/*! ./widgetUi */ 123);
+
+var _initNimSDK = __webpack_require__(/*! ./initNimSDK */ 120);
+
+var _initWebRTC = __webpack_require__(/*! ./initWebRTC */ 121);
+
+var _initChatroomSDK = __webpack_require__(/*! ./initChatroomSDK */ 119);
+
+var _blacks = __webpack_require__(/*! ./blacks */ 62);
+
+var _friends = __webpack_require__(/*! ./friends */ 49);
+
+var _search = __webpack_require__(/*! ./search */ 122);
+
+var _session = __webpack_require__(/*! ./session */ 63);
+
+var _msgs = __webpack_require__(/*! ./msgs */ 39);
+
+var _sysMsgs = __webpack_require__(/*! ./sysMsgs */ 64);
+
+var _chatroomMsgs = __webpack_require__(/*! ./chatroomMsgs */ 78);
+
+var _chatroomInfos = __webpack_require__(/*! ./chatroomInfos */ 117);
+
+var _team = __webpack_require__(/*! ./team */ 65);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function connectNim(_ref, obj) {
+  var state = _ref.state,
+      commit = _ref.commit,
+      dispatch = _ref.dispatch;
+
+  console.log('22222');
+
+  var _Object$assign = (0, _assign2.default)({}, obj),
+      force = _Object$assign.force;
+  // 操作为内容页刷新页面，此时无nim实例
+
+
+  if (!state.nim || force) {
+    var loginInfo = {
+      uid: _cookie2.default.readCookie('uid'),
+      sdktoken: _cookie2.default.readCookie('sdktoken')
+    };
+    if (!loginInfo.uid) {
+      // 无cookie，直接跳转登录页
+      _page2.default.turnPage('无历史登录记录，请重新登录', 'login');
+    } else {
+      // 有cookie，重新登录
+      dispatch('initNimSDK', loginInfo);
+      dispatch('initWebRTC');
+    }
+  }
+}
+
+/* 导出actions方法 */
+// Action 提交的是 mutation，而不是直接变更状态。
+// Action 可以包含任意异步操作。
+
+
+function connectChatroom(_ref2, obj) {
+  var state = _ref2.state,
+      commit = _ref2.commit,
+      dispatch = _ref2.dispatch;
+
+  var _Object$assign3 = (0, _assign2.default)({}, obj),
+      chatroomId = _Object$assign3.chatroomId;
+
+  var nim = state.nim;
+  if (nim) {
+    dispatch('showLoading');
+    nim.getChatroomAddress({
+      chatroomId: chatroomId,
+      done: function getChatroomAddressDone(error, obj) {
+        if (error) {
+          alert(error.message);
+          location.href = '#/room';
+          return;
+        }
+        dispatch('initChatroomSDK', obj);
+      }
+    });
+  }
+}
+
+exports.default = {
+  updateRefreshState: function updateRefreshState(_ref3) {
+    var commit = _ref3.commit;
+
+    commit('updateRefreshState');
+  },
+
+
+  // UI 及页面状态变更
+  showLoading: _widgetUi.showLoading,
+  hideLoading: _widgetUi.hideLoading,
+  showFullscreenImg: _widgetUi.showFullscreenImg,
+  hideFullscreenImg: _widgetUi.hideFullscreenImg,
+  continueRobotMsg: _msgs.continueRobotMsg,
+
+  // 连接sdk请求，false表示强制重连
+  connect: function connect(store, obj) {
+    console.log();
+
+    var _Object$assign4 = (0, _assign2.default)({}, obj),
+        type = _Object$assign4.type;
+    // type 可为 nim chatroom
+
+
+    type = type || 'nim';
+    switch (type) {
+      case 'nim':
+        connectNim(store, obj);
+        break;
+      case 'chatroom':
+        connectChatroom(store, obj);
+        break;
+    }
+  },
+
+
+  // 用户触发的登出逻辑
+  logout: function logout(_ref4) {
+    var state = _ref4.state,
+        commit = _ref4.commit;
+
+    _cookie2.default.delCookie('uid');
+    _cookie2.default.delCookie('sdktoken');
+    if (state.nim) {
+      state.nim.disconnect();
+    }
+    _page2.default.turnPage('', 'login');
+  },
+
+
+  // 初始化 重新连接SDK
+  initNimSDK: _initNimSDK.initNimSDK,
+  // 清空所有搜索历史纪录
+  resetSearchResult: _search.resetSearchResult,
+  // 搜索用户信息
+  searchUsers: _search.searchUsers,
+  // 更新黑名单
+  updateBlack: _blacks.updateBlack,
+  // 更新好友
+  addFriend: _friends.addFriend,
+  deleteFriend: _friends.deleteFriend,
+  updateFriend: _friends.updateFriend,
+  // 删除会话
+  deleteSession: _session.deleteSession,
+  // 设置当前会话
+  setCurrSession: _session.setCurrSession,
+  // 重置当前会话
+  resetCurrSession: _session.resetCurrSession,
+  // 发送消息
+  sendMsg: _msgs.sendMsg,
+  sendFileMsg: _msgs.sendFileMsg,
+  sendRobotMsg: _msgs.sendRobotMsg,
+  // 发送消息已读回执
+  sendMsgReceipt: _msgs.sendMsgReceipt,
+  // 消息撤回
+  revocateMsg: _msgs.revocateMsg,
+  getHistoryMsgs: _msgs.getHistoryMsgs,
+  // 重置历史消息状态
+  resetNoMoreHistoryMsgs: _msgs.resetNoMoreHistoryMsgs,
+  // 标记系统消息已读
+  markSysMsgRead: _sysMsgs.markSysMsgRead,
+  markCustomSysMsgRead: _sysMsgs.markCustomSysMsgRead,
+  resetSysMsgs: _sysMsgs.resetSysMsgs,
+  deleteSysMsgs: _sysMsgs.deleteSysMsgs,
+
+  initChatroomSDK: _initChatroomSDK.initChatroomSDK,
+  initChatroomInfos: _chatroomInfos.initChatroomInfos,
+  resetChatroomSDK: _initChatroomSDK.resetChatroomSDK,
+  sendChatroomMsg: _chatroomMsgs.sendChatroomMsg,
+  sendChatroomRobotMsg: _chatroomMsgs.sendChatroomRobotMsg,
+  sendChatroomFileMsg: _chatroomMsgs.sendChatroomFileMsg,
+  getChatroomHistoryMsgs: _chatroomMsgs.getChatroomHistoryMsgs,
+  getChatroomInfo: _chatroomInfos.getChatroomInfo,
+  getChatroomMembers: _chatroomInfos.getChatroomMembers,
+  clearChatroomMembers: _chatroomInfos.clearChatroomMembers,
+
+  // 搜索群
+  searchTeam: _search.searchTeam,
+  // 代理sdk中的群方法
+  delegateTeamFunction: _team.delegateTeamFunction,
+  // 处理群消息回调
+  onTeamNotificationMsg: _team.onTeamNotificationMsg,
+  // 进入群信息设置页
+  enterSettingPage: _team.enterSettingPage,
+  // 获取群成员
+  getTeamMembers: _team.getTeamMembers,
+  // 群消息回执检查
+  checkTeamMsgReceipt: _team.checkTeamMsgReceipt,
+  // 查询群消息回执已读列表
+  getTeamMsgReads: _team.getTeamMsgReads,
+
+  // 音视频
+  initWebRTC: _initWebRTC.initWebRTC
+
+};
+module.exports = exports['default'];
+
+/***/ }),
+/* 119 */
+/* no static exports found */
+/* all exports used */
+/*!**********************************************!*\
+  !*** ./src/store/actions/initChatroomSDK.js ***!
+  \**********************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.initChatroomSDK = initChatroomSDK;
+exports.resetChatroomSDK = resetChatroomSDK;
+
+var _configs = __webpack_require__(/*! @/configs */ 3);
+
+var _configs2 = _interopRequireDefault(_configs);
+
+var _page = __webpack_require__(/*! @/utils/page */ 37);
+
+var _page2 = _interopRequireDefault(_page);
+
+var _utils = __webpack_require__(/*! @/utils */ 12);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+var _ = __webpack_require__(/*! ../ */ 1);
+
+var _2 = _interopRequireDefault(_);
+
+var _chatroomMsgs = __webpack_require__(/*! ./chatroomMsgs */ 78);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SDK = __webpack_require__(/*! @/sdk */ 72)("./" + _configs2.default.sdk);
+
+// 切换聊天室之前需要断开连接，原因是移动端不断累积连接实例，消息并发较大时会有性能问题
+// 重新初始化 NIM SDK
+/* 
+ * 聊天室SDK，依赖于nim sdk
+ */
+
+function initChatroomSDK(_ref, obj) {
+  var state = _ref.state,
+      commit = _ref.commit,
+      dispatch = _ref.dispatch;
+  var chatroomId = obj.chatroomId,
+      address = obj.address;
+
+  if (chatroomId && address) {
+    if (state.chatroomInsts[chatroomId]) {
+      state.chatroomInsts[chatroomId].connect();
+    } else {
+      state.chatroomInsts[chatroomId] = SDK.Chatroom.getInstance({
+        appKey: _configs2.default.appkey,
+        account: state.userUID,
+        token: state.sdktoken,
+        transports: ['websocket'],
+        chatroomId: chatroomId,
+        chatroomAddresses: address,
+        onconnect: function onChatroomConnect(chatroom) {
+          dispatch('hideLoading');
+          commit('setCurrChatroom', chatroomId);
+        },
+        onerror: function onChatroomError(error, obj) {
+          dispatch('hideLoading');
+          if (error) {
+            alert('网络连接状态异常');
+            location.href = '#/room';
+          }
+        },
+        onwillreconnect: function onChatroomWillReconnect(obj) {
+          // 此时说明 `SDK` 已经断开连接, 请开发者在界面上提示用户连接已断开, 而且正在重新建立连接
+          console.log('即将重连', obj);
+        },
+        ondisconnect: function onChatroomDisconnect(error) {
+          // 此时说明 `SDK` 处于断开状态, 切换聊天室也会触发次回调
+          dispatch('hideLoading');
+          if (error) {
+            switch (error.code) {
+              // 账号或者密码错误, 请跳转到登录页面并提示错误
+              case 302:
+                // 此逻辑与nim sdk错误逻辑相同，复用nim sdk的
+                // 如果单用聊天室功能需要在此做处理
+                break;
+              case 13003:
+                alert('抱歉，你已被主播拉入了黑名单');
+                location.href = '#/room';
+                break;
+              // 被踢, 请提示错误后跳转到登录页面
+              case 'kicked':
+                if (error.reason === 'managerKick') {
+                  alert('你已被管理员移出聊天室');
+                  location.href = '#/room';
+                } else if (error.reason === 'blacked') {
+                  alert('你已被管理员拉入黑名单，不能再进入');
+                  location.href = '#/room';
+                }
+                break;
+              default:
+                console.log(error.message);
+                break;
+            }
+          }
+        },
+        // 聊天室消息
+        onmsgs: _chatroomMsgs.onChatroomMsgs
+      });
+    }
+  } else {
+    alert('没有聊天室地址');
+  }
+}
+
+function resetChatroomSDK(_ref2, chatroomId) {
+  var state = _ref2.state,
+      commit = _ref2.commit,
+      dispatch = _ref2.dispatch;
+
+  if (chatroomId) {
+    state.chatroomInsts[chatroomId].disconnect();
+  } else {
+    for (var tempRoomId in state.chatroomInsts) {
+      state.chatroomInsts[tempRoomId].disconnect();
+    }
+  }
+  commit('resetCurrChatroom');
+}
+
+/***/ }),
+/* 120 */
+/* no static exports found */
+/* all exports used */
+/*!*****************************************!*\
+  !*** ./src/store/actions/initNimSDK.js ***!
+  \*****************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.initNimSDK = initNimSDK;
+
+var _configs = __webpack_require__(/*! @/configs */ 3);
+
+var _configs2 = _interopRequireDefault(_configs);
+
+var _page = __webpack_require__(/*! @/utils/page */ 37);
+
+var _page2 = _interopRequireDefault(_page);
+
+var _utils = __webpack_require__(/*! @/utils */ 12);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+var _ = __webpack_require__(/*! ../ */ 1);
+
+var _2 = _interopRequireDefault(_);
+
+var _friends = __webpack_require__(/*! ./friends */ 49);
+
+var _robots = __webpack_require__(/*! ./robots */ 79);
+
+var _blacks = __webpack_require__(/*! ./blacks */ 62);
+
+var _userInfo = __webpack_require__(/*! ./userInfo */ 50);
+
+var _session = __webpack_require__(/*! ./session */ 63);
+
+var _msgs = __webpack_require__(/*! ./msgs */ 39);
+
+var _sysMsgs = __webpack_require__(/*! ./sysMsgs */ 64);
+
+var _team = __webpack_require__(/*! ./team */ 65);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*
+ * SDK连接相关
+ */
+
+var SDK = __webpack_require__(/*! @/sdk */ 72)("./" + _configs2.default.sdk);
+
+// 重新初始化 NIM SDK
+function initNimSDK(_ref, loginInfo) {
+  var state = _ref.state,
+      commit = _ref.commit,
+      dispatch = _ref.dispatch;
+
+  if (state.nim) {
+    state.nim.disconnect();
+  }
+  dispatch('showLoading');
+  // 初始化SDK
+  window.nim = state.nim = SDK.NIM.getInstance({
+    //debug: true,
+    appKey: _configs2.default.appkey,
+    account: loginInfo.uid,
+    token: loginInfo.sdktoken,
+    transports: ['websocket'],
+    db: false,
+    // logFunc: new SDK.NIM.LoggerPlugin({
+    //   url: '/webdemo/h5/getlogger',
+    //   level: 'info'
+    // }),
+    syncSessionUnread: true,
+    syncRobots: true,
+    autoMarkRead: true, // 默认为true
+    onconnect: function onConnect(event) {
+      if (loginInfo) {
+        // 连接上以后更新uid
+        commit('updateUserUID', loginInfo);
+      }
+    },
+    onerror: function onError(event) {
+      // alert(JSON.stringify(event))
+      debugger;
+      alert('网络连接状态异常');
+      location.href = _configs2.default.loginUrl;
+    },
+    onwillreconnect: function onWillReconnect() {
+      console.log(event);
+    },
+    ondisconnect: function onDisconnect(error) {
+      switch (error.code) {
+        // 账号或者密码错误, 请跳转到登录页面并提示错误
+        case 302:
+          _page2.default.turnPage('帐号或密码错误', 'login');
+          break;
+        // 被踢, 请提示错误后跳转到登录页面
+        case 'kicked':
+          var map = {
+            PC: '电脑版',
+            Web: '网页版',
+            Android: '手机版',
+            iOS: '手机版',
+            WindowsPhone: '手机版'
+          };
+          var str = error.from;
+          var errorMsg = '\u4F60\u7684\u5E10\u53F7\u4E8E' + _utils2.default.formatDate(new Date()) + '\u88AB' + (map[str] || '其他端') + '\u8E22\u51FA\u4E0B\u7EBF\uFF0C\u8BF7\u786E\u5B9A\u5E10\u53F7\u4FE1\u606F\u5B89\u5168!';
+          _page2.default.turnPage(errorMsg, 'login');
+          break;
+        default:
+          break;
+      }
+    },
+    // // 多端登录
+    // onloginportschange: onLoginPortsChange,
+    // 用户关系及好友关系
+    onblacklist: _blacks.onBlacklist,
+    onsyncmarkinblacklist: _blacks.onMarkInBlacklist,
+    // onmutelist: onMutelist,
+    // onsyncmarkinmutelist: onMarkInMutelist,
+    onfriends: _friends.onFriends,
+    onsyncfriendaction: _friends.onSyncFriendAction,
+    // 机器人
+    onrobots: _robots.onRobots,
+    // 用户名片 - actions/userInfo
+    onmyinfo: _userInfo.onMyInfo,
+    onupdatemyinfo: _userInfo.onMyInfo,
+    onusers: _userInfo.onUserInfo,
+    onupdateuser: _userInfo.onUserInfo,
+    // // 群组
+    onteams: _team.onTeams,
+    onsynccreateteam: _team.onSynCreateTeam,
+    syncTeams: true,
+    onteammembers: _team.onTeamMembers,
+    onCreateTeam: _team.onCreateTeam,
+    onDismissTeam: _team.onDismissTeam,
+    onUpdateTeam: _team.onUpdateTeam,
+    onAddTeamMembers: _team.onAddTeamMembers,
+    onRemoveTeamMembers: _team.onRemoveTeamMembers,
+    onUpdateTeamManagers: _team.onUpdateTeamManagers,
+    onupdateteammember: _team.onUpdateTeamMember,
+    onUpdateTeamMembersMute: _team.onUpdateTeamMembersMute,
+    onTeamMsgReceipt: _team.onTeamMsgReceipt,
+    // // 会话
+    onsessions: _session.onSessions,
+    onupdatesession: _session.onUpdateSession,
+    // // 消息
+    onroamingmsgs: _msgs.onRoamingMsgs,
+    onofflinemsgs: _msgs.onOfflineMsgs,
+    onmsg: _msgs.onMsg,
+    // // 系统通知
+    onsysmsg: _sysMsgs.onSysMsg,
+    onofflinesysmsgs: _sysMsgs.onSysMsgs,
+    onupdatesysmsg: _sysMsgs.onSysMsg, // 通过、拒绝好友申请会收到此回调
+
+    onsysmsgunread: _sysMsgs.onSysMsgUnread,
+    onupdatesysmsgunread: _sysMsgs.onSysMsgUnread,
+
+    onofflinecustomsysmsgs: _sysMsgs.onCustomSysMsgs,
+    oncustomsysmsg: _sysMsgs.onCustomSysMsgs,
+    // // 同步完成
+    onsyncdone: function onSyncDone() {
+      dispatch('hideLoading');
+      // 说明在聊天列表页
+      if (_2.default.state.currSessionId) {
+        dispatch('setCurrSession', _2.default.state.currSessionId);
+      }
+    }
+  });
+}
+
+/***/ }),
+/* 121 */
+/* no static exports found */
+/* all exports used */
+/*!*****************************************!*\
+  !*** ./src/store/actions/initWebRTC.js ***!
+  \*****************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.initWebRTC = initWebRTC;
+
+var _configs = __webpack_require__(/*! @/configs */ 3);
+
+var _configs2 = _interopRequireDefault(_configs);
+
+var _page = __webpack_require__(/*! @/utils/page */ 37);
+
+var _page2 = _interopRequireDefault(_page);
+
+var _utils = __webpack_require__(/*! @/utils */ 12);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+var _ = __webpack_require__(/*! ../ */ 1);
+
+var _2 = _interopRequireDefault(_);
+
+var _friends = __webpack_require__(/*! ./friends */ 49);
+
+var _robots = __webpack_require__(/*! ./robots */ 79);
+
+var _blacks = __webpack_require__(/*! ./blacks */ 62);
+
+var _userInfo = __webpack_require__(/*! ./userInfo */ 50);
+
+var _session = __webpack_require__(/*! ./session */ 63);
+
+var _msgs = __webpack_require__(/*! ./msgs */ 39);
+
+var _sysMsgs = __webpack_require__(/*! ./sysMsgs */ 64);
+
+var _team = __webpack_require__(/*! ./team */ 65);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*
+ * SDK连接相关
+ */
+
+var WebRTCSDK = __webpack_require__(/*! @/sdk */ 72)("./" + _configs2.default.webrtcSDK);
+
+// 重写 begin
+
+/** 初始化webrtc事件 */
+
+// 重写 end
+
+
+// 重新初始化 web rtc SDK
+// export function initWebRTC ({ state, commit, dispatch }, loginInfo) {
+function initWebRTC() {
+  // window.WebRTC = state.WebRTC = SDK.WebRTC.getInstance({
+  //   nim: window.nim,
+  //   container: document.getElementById('container'),
+  //   remoteContainer: document.getElementById('remoteContainer'),
+  //   chromeId: '',
+  //   // 是否开启日志打印
+  //   debug: true
+  // })
+  var netcall = WebRTCSDK.getInstance({
+    nim: window.nim,
+    container: document.getElementById('container'),
+    remoteContainer: document.getElementById('remoteContainer'),
+    // 是否开启日志打印
+    debug: true
+  });
+
+  // 是否被叫中
+  var beCalling = false;
+  // 呼叫类型
+  var type = null;
+  // 被叫信息
+  var beCalledInfo = null;
+  // 是否正忙
+  var busy = false;
+  // 开启监听
+  netcall.on('beCalling', function (obj) {
+    console.warn('on beCalling', obj);
+    var channelId = obj.channelId;
+    // 被叫回应主叫自己已经收到了通话请求
+    netcall.control({
+      channelId: channelId,
+      command: Netcall.NETCALL_CONTROL_COMMAND_START_NOTIFY_RECEIVED
+    });
+    // 只有在没有通话并且没有被叫的时候才记录被叫信息, 否则通知对方忙并拒绝通话
+    if (!netcall.calling && !beCalling) {
+      type = obj.type;
+      beCalling = true;
+      beCalledInfo = obj;
+    } else {
+      if (netcall.calling) {
+        busy = netcall.notCurrentChannelId(obj);
+      } else if (beCalling) {
+        busy = beCalledInfo.channelId !== channelId;
+      }
+      if (busy) {
+        netcall.control({
+          channelId: channelId,
+          command: Netcall.NETCALL_CONTROL_COMMAND_BUSY
+        });
+        // 拒绝通话
+        netcall.response({
+          accepted: false,
+          beCalledInfo: obj
+        });
+      }
+    }
+  });
+
+  // 被叫接受的通知
+  netcall.on('callAccepted', function (obj) {
+    console.warn('on callAccepted', obj);
+    // 如果呼叫之前，启动了超时倒计时，这里可以取消呼叫倒计时
+    clearCallTimer();
+    // 可以开启音视频连接操作。。。
+  });
+
+  // 被叫拒绝的通知
+  netcall.on('callRejected', function (obj) {
+    console.log('on callRejected', obj);
+    // 如果呼叫之前，启动了超时倒计时，这里可以取消呼叫倒计时
+    clearCallTimer();
+    // 挂断
+    hangup();
+    // 做清理工作
+    resetWhenHangup();
+  });
+
+  netcall.on('control', function (obj) {
+    console.warn('收到指令', obj);
+  });
+
+  netcall.on('hangup', function (obj) {
+    console.warn('on hangup', obj);
+    // 判断需要挂断的通话是否是当前正在进行中的通话
+    if (!beCalledInfo || beCalledInfo.channelId === obj.channelId) {
+      // 清理工作
+      resetWhenHangup();
+    }
+  });
+
+  netcall.on('callerAckSync', function (obj) {
+    console.warn('其他端已经做了处理', obj);
+  });
+
+  netcall.on('error', function (obj) {
+    console.warn('sdk反馈错误信息', obj);
+    if (obj.code) {
+      if (obj.code == 509) {
+        console.warn('你被踢出房间了');
+      } else if (obj.code == 500) {
+        console.warn('你的web不支持H264视频编码，无法进行呼叫，请检测浏览器的H264插件是否正常');
+      }
+    }
+  });
+
+  netcall.on('joinChannel', function (obj) {
+    // 通知上层有其他用户加入了房间，上层做相应逻辑和UI处理
+    // 这里可以播放加入的同学的视频流
+    // 以及播放对方声音
+    netcall.startDevice({
+      type: Netcall.DEVICE_TYPE_AUDIO_OUT_CHAT
+    }).catch(function () {
+      console.log('播放对方的声音失败');
+    });
+
+    // 预览加入的同学的视频流
+    netcall.startRemoteStream({
+      account: obj.account,
+      node: document.getElementById('remoteContainer')
+    });
+
+    // 设置对方预览画面大小
+    netcall.setVideoViewRemoteSize({
+      account: 'testAccount',
+      with: 500,
+      height: 500,
+      cut: true
+    });
+  });
+
+  netcall.on('leaveChannel', function (obj) {
+    // 通知上层有其他用户离开了会议，上层做相应逻辑和UI处理
+
+    // 停止预览该同伴的视频流
+    netcall.stopRemoteStream({
+      account: obj.account
+    });
+  });
+
+  netcall.on('remoteTrack', function (obj) {
+    console.log('收到远程轨道信息', obj);
+    // 音频：播放对方的音频
+    if (obj.track.kind === 'audio') {
+      // 播放对方声音
+      netcall.startDevice({
+        type: Netcall.DEVICE_TYPE_AUDIO_OUT_CHAT
+      }).catch(function () {
+        console.log('播放对方的声音失败');
+      });
+    }
+
+    // 视频：展示对方的画面
+    if (obj.track.kind === 'video') {
+      // 预览加入的同学的视频流
+      netcall.startRemoteStream({
+        account: obj.account,
+        node: document.getElementById('remoteContainer')
+      });
+
+      // 设置对方预览画面大小
+      netcall.setVideoViewRemoteSize({
+        account: 'testUid',
+        with: 500,
+        height: 500,
+        cut: true
+      });
+    }
+  });
+
+  netcall.on('deviceAdd', function (devices) {
+    console.log('新增设备列表', devices);
+  });
+
+  netcall.on('deviceRemove', function (devices) {
+    console.log('移除设备列表', devices);
+  });
+
+  netcall.on('deviceStatus', function (obj) {
+    console.log('设备状态发生变化', obj);
+
+    // 检查摄像头
+    netcall.getDevicesOfType(WebRTC.DEVICE_TYPE_VIDEO).then(function (devices) {
+      console.log('摄像头', devices);
+    });
+
+    // 检查麦克风
+    netcall.getDevicesOfType(WebRTC.DEVICE_TYPE_AUDIO_IN).then(function (devices) {
+      console.log('麦克风', devices);
+    });
+
+    // 检查扬声器
+    netcall.getDevicesOfType(WebRTC.DEVICE_TYPE_AUDIO_OUT_CHAT).then(function (devices) {
+      console.log('扬声器', devices);
+    });
+  });
+
+  // // 清除上层逻辑自己维护的各种状态
+  // clear();
+
+  // // 停止本地视频预览
+  // netcall.stopLocalStream();
+
+  // // 停止对端视频预览
+  // netcall.stopRemoteStream();
+
+  // // 停止设备麦克风
+  // netcall.stopDevice(Netcall.DEVICE_TYPE_AUDIO_IN);
+
+  // // 停止设备摄像头
+  // netcall.stopDevice(Netcall.DEVICE_TYPE_VIDEO);
+
+  // // 停止播放本地音频
+  // netcall.stopDevice(Netcall.DEVICE_TYPE_AUDIO_OUT_LOCAL);
+
+  // // 停止播放对端音频
+  // netcall.stopDevice(Netcall.DEVICE_TYPE_AUDIO_OUT_CHAT);
+
+
+  console.warn('WebRTC netcall', netcall);
+}
+
+/***/ }),
+/* 122 */
+/* no static exports found */
+/* all exports used */
+/*!*************************************!*\
+  !*** ./src/store/actions/search.js ***!
+  \*************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.resetSearchResult = resetSearchResult;
+exports.searchUsers = searchUsers;
+exports.searchTeam = searchTeam;
+
+var _userInfo = __webpack_require__(/*! ./userInfo */ 50);
+
+function resetSearchResult(_ref) {
+  var state = _ref.state,
+      commit = _ref.commit;
+
+  commit('updateSearchlist', {
+    type: 'user',
+    list: []
+  });
+  commit('updateSearchlist', {
+    type: 'team',
+    list: []
+  });
+}
+
+function searchUsers(_ref2, obj) {
+  var state = _ref2.state,
+      commit = _ref2.commit;
+  var accounts = obj.accounts,
+      done = obj.done;
+
+  var nim = state.nim;
+  if (!Array.isArray(accounts)) {
+    accounts = [accounts];
+  }
+  nim.getUsers({
+    accounts: accounts,
+    done: function searchUsersDone(error, users) {
+      if (error) {
+        alert(error);
+        return;
+      }
+      commit('updateSearchlist', {
+        type: 'user',
+        list: users
+      });
+      var updateUsers = users.filter(function (item) {
+        var account = item.account;
+        if (item.account === state.userUID) {
+          return false;
+        }
+        var userInfo = state.userInfos[account] || {};
+        if (userInfo.isFriend) {
+          return false;
+        }
+        return true;
+      });
+      updateUsers = updateUsers.map(function (item) {
+        return (0, _userInfo.formatUserInfo)(item);
+      });
+      commit('updateUserInfo', updateUsers);
+      if (done instanceof Function) {
+        done(users);
+      }
+    }
+  });
+}
+
+function searchTeam(_ref3, obj) {
+  var state = _ref3.state,
+      commit = _ref3.commit;
+  var teamId = obj.teamId,
+      done = obj.done;
+
+  var nim = state.nim;
+  nim.getTeam({
+    teamId: teamId,
+    done: function searchTeamDone(error, teams) {
+      if (error) {
+        if (error.code === 803) {
+          // 群不存在或未发生变化
+          teams = [];
+        } else {
+          alert(error);
+          return;
+        }
+      }
+      if (!Array.isArray(teams)) {
+        teams = [teams];
+      }
+      teams.forEach(function (team) {
+        if (team.avatar && team.avatar.indexOf('nim.nosdn.127') > 0 && team.avatar.indexOf('?imageView') === -1) {
+          team.avatar = team.avatar + '?imageView&thumbnail=300y300';
+        }
+      });
+      commit('updateSearchlist', {
+        type: 'team',
+        list: teams
+      });
+      if (done instanceof Function) {
+        done(teams);
+      }
+    }
+  });
+}
+
+/***/ }),
+/* 123 */
+/* no static exports found */
 /* all exports used */
 /*!***************************************!*\
-  !*** ./~/Vue/dist/vue.runtime.esm.js ***!
+  !*** ./src/store/actions/widgetUi.js ***!
   \***************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.showLoading = showLoading;
+exports.hideLoading = hideLoading;
+exports.showFullscreenImg = showFullscreenImg;
+exports.hideFullscreenImg = hideFullscreenImg;
+
+var _page = __webpack_require__(/*! ../../utils/page */ 37);
+
+var _page2 = _interopRequireDefault(_page);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// 显示加载中进度条
+function showLoading(_ref) {
+  var state = _ref.state,
+      commit = _ref.commit;
+
+  commit('updateLoading', true);
+}
+
+// 隐藏加载中进度条
+function hideLoading(_ref2) {
+  var state = _ref2.state,
+      commit = _ref2.commit;
+
+  commit('updateLoading', false);
+}
+
+// 显示原图片
+function showFullscreenImg(_ref3, obj) {
+  var state = _ref3.state,
+      commit = _ref3.commit;
+
+  if (obj) {
+    obj.type = 'show';
+    commit('updateFullscreenImage', obj);
+  }
+}
+
+// 隐藏原图片
+function hideFullscreenImg(_ref4) {
+  var state = _ref4.state,
+      commit = _ref4.commit;
+
+  commit('updateFullscreenImage', {
+    type: 'hide'
+  });
+}
+
+/***/ }),
+/* 124 */
+/* no static exports found */
+/* all exports used */
+/*!**************************************!*\
+  !*** ./src/store/mutations/index.js ***!
+  \**************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 8);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 66);
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
+var _create = __webpack_require__(/*! babel-runtime/core-js/object/create */ 44);
+
+var _create2 = _interopRequireDefault(_create);
+
+var _ = __webpack_require__(/*! ../ */ 1);
+
+var _2 = _interopRequireDefault(_);
+
+var _cookie = __webpack_require__(/*! ../../utils/cookie */ 43);
+
+var _cookie2 = _interopRequireDefault(_cookie);
+
+var _utils = __webpack_require__(/*! ../../utils */ 12);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+var _configs = __webpack_require__(/*! ../../configs */ 3);
+
+var _configs2 = _interopRequireDefault(_configs);
+
+var _Vue = __webpack_require__(/*! Vue */ 149);
+
+var _Vue2 = _interopRequireDefault(_Vue);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  updateRefreshState: function updateRefreshState(state) {
+    state.isRefresh = false;
+  },
+  updateLoading: function updateLoading(state, status) {
+    clearTimeout(state.loadingTimer);
+    state.loadingTimer = setTimeout(function () {
+      state.isLoading = status;
+    }, 20);
+  },
+  updateFullscreenImage: function updateFullscreenImage(state, obj) {
+    obj = obj || {};
+    if (obj.src && obj.type === 'show') {
+      state.fullscreenImgSrc = obj.src;
+      state.isFullscreenImgShow = true;
+    } else if (obj.type === 'hide') {
+      state.fullscreenImgSrc = ' ';
+      state.isFullscreenImgShow = false;
+    }
+  },
+  updateUserUID: function updateUserUID(state, loginInfo) {
+    state.userUID = loginInfo.uid;
+    state.sdktoken = loginInfo.sdktoken;
+    _cookie2.default.setCookie('uid', loginInfo.uid);
+    _cookie2.default.setCookie('sdktoken', loginInfo.sdktoken);
+  },
+  updateMyInfo: function updateMyInfo(state, myInfo) {
+    state.myInfo = _utils2.default.mergeObject(state.myInfo, myInfo);
+  },
+  updateUserInfo: function updateUserInfo(state, users) {
+    var userInfos = state.userInfos;
+    users.forEach(function (user) {
+      var account = user.account;
+      if (account) {
+        userInfos[account] = _utils2.default.mergeObject(userInfos[account], user);
+      }
+    });
+    state.userInfos = _utils2.default.mergeObject(state.userInfos, userInfos);
+  },
+  updateFriends: function updateFriends(state, friends) {
+    var cutFriends = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+
+    var nim = state.nim;
+    state.friendslist = nim.mergeFriends(state.friendslist, friends);
+    // state.friendslist = nim.cutFriends(state.friendslist, cutFriends)
+    state.friendslist = nim.cutFriends(state.friendslist, friends.invalid);
+  },
+  updateRobots: function updateRobots(state, robots) {
+    var nim = state.nim;
+    robots = robots.map(function (item) {
+      if (item.avatar) {
+        item.originAvatar = item.avatar;
+        item.avatar = nim.viewImageSync({
+          url: item.avatar, // 必填
+          thumbnail: { // 生成缩略图， 可选填
+            width: 40,
+            height: 40,
+            mode: 'cover'
+          }
+        });
+      } else {
+        item.avatar = _configs2.default.defaultUserIcon;
+      }
+      return item;
+    });
+    state.robotslist = robots;
+    state.robotInfos = (0, _create2.default)(null);
+    robots.forEach(function (robot) {
+      state.robotInfos[robot.account] = robot;
+      state.robotInfosByNick[robot.nick] = robot;
+    });
+  },
+  updateBlacklist: function updateBlacklist(state, blacks) {
+    var nim = state.nim;
+    state.blacklist = nim.cutFriends(state.blacklist, blacks.invalid);
+    var addBlacks = blacks.filter(function (item) {
+      return item.isBlack === true;
+    });
+    var remBlacks = blacks.filter(function (item) {
+      return item.isBlack === false;
+    });
+    // 添加黑名单
+    state.blacklist = nim.mergeFriends(state.blacklist, addBlacks);
+    // 解除黑名单
+    state.blacklist = nim.cutFriends(state.blacklist, remBlacks);
+  },
+  updateSearchlist: function updateSearchlist(state, obj) {
+    var type = obj.type;
+    switch (type) {
+      case 'user':
+        if (obj.list.length !== 0 || state.searchedUsers.length !== 0) {
+          state.searchedUsers = obj.list;
+        } else {
+          state.searchedUsers = [];
+        }
+        break;
+      case 'team':
+        if (obj.list.length !== 0 || state.searchedTeams.length !== 0) {
+          state.searchedTeams = obj.list;
+        } else {
+          state.searchedTeams = [];
+        }
+        break;
+    }
+  },
+  updateSessions: function updateSessions(state, sessions) {
+    console.log((0, _stringify2.default)(sessions), 'sessions is :');
+    var nim = state.nim;
+    state.sessionlist = nim.mergeSessions(state.sessionlist, sessions);
+    state.sessionlist.sort(function (a, b) {
+      return b.updateTime - a.updateTime;
+    });
+    state.sessionlist.forEach(function (item) {
+      state.sessionMap[item.id] = item;
+    });
+  },
+  deleteSessions: function deleteSessions(state, sessionIds) {
+    var nim = state.nim;
+    state.sessionlist = nim.cutSessionsByIds(state.sessionlist, sessionIds);
+  },
+
+  // 初始化，收到离线漫游消息时调用
+  updateMsgs: function updateMsgs(state, msgs) {
+    var nim = state.nim;
+    var tempSessionMap = {};
+    msgs.forEach(function (msg) {
+      var sessionId = msg.sessionId;
+      tempSessionMap[sessionId] = true;
+      if (!state.msgs[sessionId]) {
+        state.msgs[sessionId] = [];
+      }
+      // sdk会做消息去重
+      state.msgs[sessionId] = nim.mergeMsgs(state.msgs[sessionId], [msg]);
+      // state.msgs[sessionId].push(msg)
+    });
+    _2.default.commit('updateMsgByIdClient', msgs);
+    for (var sessionId in tempSessionMap) {
+      state.msgs[sessionId].sort(function (a, b) {
+        if (a.time === b.time) {
+          // 机器人消息，回复消息时间和提问消息时间相同，提问在前，回复在后
+          if (a.type === 'robot' && b.type === 'robot') {
+            if (a.content && a.content.msgOut) {
+              return 1;
+            }
+            if (b.content && b.content.msgOut) {
+              return -1;
+            }
+          }
+        }
+        return a.time - b.time;
+      });
+      if (sessionId === state.currSessionId) {
+        _2.default.commit('updateCurrSessionMsgs', {
+          type: 'init'
+        });
+      }
+    }
+  },
+
+  // 更新追加消息，追加一条消息
+  putMsg: function putMsg(state, msg) {
+    var sessionId = msg.sessionId;
+    if (!state.msgs[sessionId]) {
+      state.msgs[sessionId] = [];
+    }
+    _2.default.commit('updateMsgByIdClient', msg);
+    var tempMsgs = state.msgs[sessionId];
+    var lastMsgIndex = tempMsgs.length - 1;
+    if (tempMsgs.length === 0 || msg.time >= tempMsgs[lastMsgIndex].time) {
+      tempMsgs.push(msg);
+    } else {
+      for (var i = lastMsgIndex; i >= 0; i--) {
+        var currMsg = tempMsgs[i];
+        if (msg.time >= currMsg.time) {
+          state.msgs[sessionId].splice(i, 0, msg);
+          break;
+        }
+      }
+    }
+  },
+
+  // 删除消息列表消息
+  deleteMsg: function deleteMsg(state, msg) {
+    var sessionId = msg.sessionId;
+    var tempMsgs = state.msgs[sessionId];
+    if (!tempMsgs || tempMsgs.length === 0) {
+      return;
+    }
+    var lastMsgIndex = tempMsgs.length - 1;
+    for (var i = lastMsgIndex; i >= 0; i--) {
+      var currMsg = tempMsgs[i];
+      if (msg.idClient === currMsg.idClient) {
+        state.msgs[sessionId].splice(i, 1);
+        break;
+      }
+    }
+  },
+
+  // 替换消息列表消息，如消息撤回
+  replaceMsg: function replaceMsg(state, obj) {
+    var sessionId = obj.sessionId,
+        idClient = obj.idClient,
+        msg = obj.msg;
+
+    var tempMsgs = state.msgs[sessionId];
+    if (!tempMsgs || tempMsgs.length === 0) {
+      return;
+    }
+    var lastMsgIndex = tempMsgs.length - 1;
+    for (var i = lastMsgIndex; i >= 0; i--) {
+      var currMsg = tempMsgs[i];
+      console.log(idClient, currMsg.idClient, currMsg.text);
+      if (idClient === currMsg.idClient) {
+        state.msgs[sessionId].splice(i, 1, msg);
+        break;
+      }
+    }
+  },
+
+  // 用idClient 更新消息，目前用于消息撤回
+  updateMsgByIdClient: function updateMsgByIdClient(state, msgs) {
+    if (!Array.isArray(msgs)) {
+      msgs = [msgs];
+    }
+    var tempTime = new Date().getTime();
+    msgs.forEach(function (msg) {
+      // 有idClient 且 5分钟以内的消息
+      if (msg.idClient && tempTime - msg.time < 1000 * 300) {
+        state.msgsMap[msg.idClient] = msg;
+      }
+    });
+  },
+
+  // 更新当前会话id，用于唯一判定是否在current session状态
+  updateCurrSessionId: function updateCurrSessionId(state, obj) {
+    var type = obj.type || '';
+    if (type === 'destroy') {
+      state.currSessionId = null;
+    } else if (type === 'init') {
+      if (obj.sessionId && obj.sessionId !== state.currSessionId) {
+        state.currSessionId = obj.sessionId;
+      }
+    }
+  },
+
+  // 更新当前会话列表的聊天记录，包括历史消息、单聊消息等，不包括聊天室消息
+  // replace: 替换idClient的消息
+  updateCurrSessionMsgs: function updateCurrSessionMsgs(state, obj) {
+    var type = obj.type || '';
+    if (type === 'destroy') {
+      // 清空会话消息
+      state.currSessionMsgs = [];
+      state.currSessionLastMsg = null;
+      _2.default.commit('updateCurrSessionId', {
+        type: 'destroy'
+      });
+    } else if (type === 'init') {
+      // 初始化会话消息列表
+      if (state.currSessionId) {
+        var sessionId = state.currSessionId;
+        var currSessionMsgs = [].concat(state.msgs[sessionId] || []);
+        // 做消息截断
+        var limit = _configs2.default.localMsglimit;
+        var msgLen = currSessionMsgs.length;
+        if (msgLen - limit > 0) {
+          state.currSessionLastMsg = currSessionMsgs[msgLen - limit];
+          currSessionMsgs = currSessionMsgs.slice(msgLen - limit, msgLen);
+        } else if (msgLen > 0) {
+          state.currSessionLastMsg = currSessionMsgs[0];
+        } else {
+          state.currSessionLastMsg = null;
+        }
+        state.currSessionMsgs = [];
+        var lastMsgTime = 0;
+        currSessionMsgs.forEach(function (msg) {
+          if (msg.time - lastMsgTime > 1000 * 60 * 5) {
+            lastMsgTime = msg.time;
+            state.currSessionMsgs.push({
+              type: 'timeTag',
+              text: _utils2.default.formatDate(msg.time, false)
+            });
+          }
+          state.currSessionMsgs.push(msg);
+        });
+        _2.default.dispatch('checkTeamMsgReceipt', state.currSessionMsgs);
+      }
+    } else if (type === 'put') {
+      // 追加一条消息
+      var newMsg = obj.msg;
+      var _lastMsgTime = 0;
+      var lenCurrMsgs = state.currSessionMsgs.length;
+      if (lenCurrMsgs > 0) {
+        _lastMsgTime = state.currSessionMsgs[lenCurrMsgs - 1].time;
+      }
+      if (newMsg) {
+        if (newMsg.time - _lastMsgTime > 1000 * 60 * 5) {
+          state.currSessionMsgs.push({
+            type: 'timeTag',
+            text: _utils2.default.formatDate(newMsg.time, false)
+          });
+        }
+        state.currSessionMsgs.push(newMsg);
+        _2.default.dispatch('checkTeamMsgReceipt', [newMsg]);
+      }
+    } else if (type === 'concat') {
+      // 一般用于历史消息拼接
+      var _currSessionMsgs = [];
+      var _lastMsgTime2 = 0;
+      obj.msgs.forEach(function (msg) {
+        if (msg.time - _lastMsgTime2 > 1000 * 60 * 5) {
+          _lastMsgTime2 = msg.time;
+          _currSessionMsgs.push({
+            type: 'timeTag',
+            text: _utils2.default.formatDate(msg.time, false)
+          });
+        }
+        _currSessionMsgs.push(msg);
+      });
+      _currSessionMsgs.reverse();
+      _currSessionMsgs.forEach(function (msg) {
+        state.currSessionMsgs.unshift(msg);
+      });
+      if (obj.msgs[0]) {
+        state.currSessionLastMsg = obj.msgs[0];
+      }
+      _2.default.dispatch('checkTeamMsgReceipt', _currSessionMsgs);
+    } else if (type === 'replace') {
+      var _msgLen = state.currSessionMsgs.length;
+      var lastMsgIndex = _msgLen - 1;
+      if (_msgLen > 0) {
+        for (var i = lastMsgIndex; i >= 0; i--) {
+          if (state.currSessionMsgs[i].idClient === obj.idClient) {
+            state.currSessionMsgs.splice(i, 1, obj.msg);
+            break;
+          }
+        }
+      }
+    }
+  },
+  updateSysMsgs: function updateSysMsgs(state, sysMsgs) {
+    var nim = state.nim;
+    if (!Array.isArray(sysMsgs)) {
+      sysMsgs = [sysMsgs];
+    }
+    sysMsgs = sysMsgs.map(function (msg) {
+      msg.showTime = _utils2.default.formatDate(msg.time, false);
+      return msg;
+    });
+    // state.sysMsgs = nim.mergeSysMsgs(state.sysMsgs, sysMsgs)
+    state.sysMsgs = [].concat(nim.mergeSysMsgs(state.sysMsgs, sysMsgs));
+    // https://cn.vuejs.org/v2/guide/list.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
+    _Vue2.default.set(state, sysMsgs, state.sysMsgs);
+  },
+
+  // 更新消息的状态，如管理员批准或拒绝入群后，会收到新消息，更新入群申请的状态
+  updateSysMsgState: function updateSysMsgState(state, sysMsg) {
+    var exitMsg = state.sysMsgs.find(function (msg) {
+      return msg.idServer === sysMsg.idServer;
+    });
+    if (exitMsg) {
+      exitMsg.state = sysMsg.state;
+    }
+  },
+  updateSysMsgUnread: function updateSysMsgUnread(state, obj) {
+    state.sysMsgUnread = (0, _assign2.default)({}, obj);
+  },
+  updateCustomSysMsgs: function updateCustomSysMsgs(state, sysMsgs) {
+    var nim = state.nim;
+    if (!Array.isArray(sysMsgs)) {
+      sysMsgs = [sysMsgs];
+    }
+    sysMsgs = sysMsgs.map(function (msg) {
+      msg.showTime = _utils2.default.formatDate(msg.time, false);
+      return msg;
+    });
+    // state.customSysMsgs = nim.mergeSysMsgs(state.customSysMsgs, sysMsgs)
+    state.customSysMsgs = state.customSysMsgs.concat(sysMsgs);
+    // Vue.set(state, customSysMsgs, state.customSysMsgs)
+    _Vue2.default.set(state, sysMsgs, state.customSysMsgs);
+    _2.default.commit('updateCustomSysMsgUnread', {
+      type: 'add',
+      unread: sysMsgs.length
+    });
+    console.log('ttt: updateCustomSysMsgs');
+  },
+  updateCustomSysMsgUnread: function updateCustomSysMsgUnread(state, obj) {
+    var type = obj.type,
+        unread = obj.unread;
+
+    switch (type) {
+      case 'reset':
+        state.customSysMsgUnread = unread || 0;
+        break;
+      case 'add':
+        state.customSysMsgUnread += unread;
+        break;
+    }
+  },
+  resetSysMsgs: function resetSysMsgs(state, obj) {
+    var type = obj.type;
+    switch (type) {
+      case 0:
+        state.sysMsgs = [];
+        break;
+      case 1:
+        state.customSysMsgs = [];
+        _2.default.commit('updateCustomSysMsgUnread', {
+          type: 'reset'
+        });
+        break;
+    }
+  },
+  deleteSysMsgs: function deleteSysMsgs(state, obj) {
+    var type = obj.type;
+    var idServer = obj.idServer;
+    var arr = type === 0 ? state.sysMsgs : state.customSysMsgs;
+    arr = arr.filter(function (msg) {
+      return msg.idServer !== idServer;
+    });
+    _Vue2.default.set(state, 'sysMsgs', arr);
+  },
+  setNoMoreHistoryMsgs: function setNoMoreHistoryMsgs(state) {
+    state.noMoreHistoryMsgs = true;
+  },
+  resetNoMoreHistoryMsgs: function resetNoMoreHistoryMsgs(state) {
+    state.noMoreHistoryMsgs = false;
+  },
+
+  // 继续与机器人会话交互
+  continueRobotMsg: function continueRobotMsg(state, robotAccid) {
+    state.continueRobotAccid = robotAccid;
+  },
+  initChatroomInfos: function initChatroomInfos(state, obj) {
+    state.chatroomInfos = obj;
+  },
+  setCurrChatroom: function setCurrChatroom(state, chatroomId) {
+    state.currChatroomId = chatroomId;
+    state.currChatroom = state.chatroomInsts[chatroomId];
+    state.currChatroomMsgs = [];
+    state.currChatroomInfo = {};
+    state.currChatroomMembers = [];
+  },
+  resetCurrChatroom: function resetCurrChatroom(state) {
+    state.currChatroomId = null;
+    state.currChatroom = null;
+    state.currChatroomMsgs = [];
+    state.currChatroomInfo = {};
+    state.currChatroomMembers = [];
+  },
+
+  // 聊天室相关逻辑
+  updateChatroomInfo: function updateChatroomInfo(state, obj) {
+    state.currChatroomInfo = (0, _assign2.default)(state.currChatroomInfo, obj);
+  },
+  updateCurrChatroomMsgs: function updateCurrChatroomMsgs(state, obj) {
+    var _Object$assign2 = (0, _assign2.default)({}, obj),
+        type = _Object$assign2.type,
+        msgs = _Object$assign2.msgs;
+
+    if (type === 'put') {
+      msgs.forEach(function (msg) {
+        var chatroomId = msg.chatroomId;
+        if (chatroomId === state.currChatroomId) {
+          msgs.forEach(function (msg) {
+            state.currChatroomMsgs.push(msg);
+          });
+        }
+      });
+    } else if (type === 'concat') {
+      // 一般用于历史消息拼接
+      var currSessionMsgs = obj.msgs;
+      currSessionMsgs.reverse();
+      currSessionMsgs.forEach(function (msg) {
+        state.currSessionMsgs.unshift(msg);
+      });
+      if (obj.msgs[0]) {
+        state.currSessionLastMsg = obj.msgs[0];
+      }
+    }
+  },
+  getChatroomInfo: function getChatroomInfo(state, obj) {
+    state.currChatroomInfo = obj;
+  },
+  updateChatroomMembers: function updateChatroomMembers(state, obj) {
+    var type = obj.type,
+        members = obj.members;
+
+    if (type === 'destroy') {
+      state.currChatroomMembers = [];
+    } else if (type === 'put') {
+      members.forEach(function (member) {
+        if (member.online) {
+          state.currChatroomMembers.push(member);
+        }
+      });
+    }
+  },
+  updateTeamList: function updateTeamList(state, teams) {
+    var nim = state.nim;
+    _2.default.state.teamlist = nim.mergeTeams(_2.default.state.teamlist, teams);
+    _2.default.state.teamlist = nim.cutTeams(_2.default.state.teamlist, teams.invalid);
+  },
+  updateTeamMembers: function updateTeamMembers(state, obj) {
+    var nim = state.nim;
+    var teamId = obj.teamId;
+    var members = obj.members;
+    state.teamMembers = state.teamMembers || {};
+    state.teamMembers[teamId] = nim.mergeTeamMembers(state.teamMembers[teamId], members);
+    state.teamMembers[teamId] = nim.cutTeamMembers(state.teamMembers[teamId], members.invalid);
+    state.teamMembers[teamId].sort(function (a, b) {
+      // 将群主和管理员排在队列前方
+      if (a.type === 'owner' || b.type === 'owner') {
+        return a.type === 'owner' ? -1 : 1;
+      }
+      if (a.type === 'manager' || b.type === 'manager') {
+        return a.type === 'manager' ? -1 : b.type === 'manager' ? 1 : 0;
+      }
+      return -1;
+    });
+    state.teamMembers = (0, _assign2.default)({}, state.teamMembers);
+  },
+  removeTeamMembersByAccounts: function removeTeamMembersByAccounts(state, obj) {
+    var teamId = obj.teamId;
+    var invalidAccounts = obj.accounts;
+    if (state.teamMembers[teamId] === undefined) return;
+    state.teamMembers[teamId] = state.teamMembers[teamId].filter(function (member, index) {
+      return invalidAccounts.indexOf(member.account) === -1;
+    });
+    state.teamMembers = (0, _assign2.default)({}, state.teamMembers);
+  },
+  updateTeamInfo: function updateTeamInfo(state, team) {
+    var index = state.teamlist.findIndex(function (item) {
+      return item.teamId === team.teamId;
+    });
+    if (index === -1) return;
+    for (var key in team) {
+      if (key !== 'teamId' && team.hasOwnProperty(key) && team[key]) {
+        state.teamlist[index][key] = team[key];
+      }
+    }
+  },
+  updateTeamSettingConfig: function updateTeamSettingConfig(state, obj) {
+    state.teamSettingConfig = obj;
+  },
+  updateSentReceipedMap: function updateSentReceipedMap(state, obj) {
+    var _state$sentReceipedMa;
+
+    if (!obj || obj.length < 1) {
+      return;
+    }
+    var teamId = obj[0].teamId;
+    if (!state.sentReceipedMap[teamId]) {
+      state.sentReceipedMap[teamId] = [];
+    }
+    (_state$sentReceipedMa = state.sentReceipedMap[teamId]).push.apply(_state$sentReceipedMa, obj.map(function (msg) {
+      return msg.idServer;
+    }));
+  },
+  updateReceiptQueryList: function updateReceiptQueryList(state, obj) {
+    if (state.currReceiptQueryTeamId !== obj.teamId) {
+      state.receiptQueryList = [];
+      state.teamMsgReads = [];
+      state.currReceiptQueryTeamId = obj.teamId;
+    }
+    var needQuery = obj.msgs.filter(function (msg) {
+      return msg.needMsgReceipt && msg.from === state.myInfo.account && !state.receiptQueryList.find(function (item) {
+        return item.idServer === msg.idServer;
+      });
+    }).map(function (msg) {
+      return {
+        teamId: obj.teamId,
+        idServer: msg.idServer
+      };
+    });
+    if (needQuery.length > 0) {
+      var _state$receiptQueryLi;
+
+      (_state$receiptQueryLi = state.receiptQueryList).push.apply(_state$receiptQueryLi, needQuery);
+    }
+    if (needQuery.length > 0) {
+      _2.default.dispatch('getTeamMsgReads', needQuery);
+    }
+  },
+  updateTeamMsgReads: function updateTeamMsgReads(state, obj) {
+    var _state$teamMsgReads;
+
+    (_state$teamMsgReads = state.teamMsgReads).push.apply(_state$teamMsgReads, obj.teamMsgReceipts);
+  },
+  updateSingleTeamMsgReads: function updateSingleTeamMsgReads(state, obj) {
+    state.teamMsgReads.forEach(function (item) {
+      if (item.idServer === obj.idServer) {
+        item.unread = obj.unread;
+        item.read = obj.read;
+      }
+    });
+    // 更新已读未读账号列表
+    var unreadAccounts = state.teamMsgReadsDetail.unreadAccounts;
+    var findIndex = unreadAccounts.findIndex(function (account) {
+      return account === obj.account;
+    });
+    if (findIndex >= 0) {
+      unreadAccounts.splice(findIndex, 1);
+      state.teamMsgReadsDetail.readAccounts.push(obj.account);
+    }
+  },
+  initMsgReceiptDetail: function initMsgReceiptDetail(state, obj) {
+    state.teamMsgReadsDetail.readAccounts = obj.readAccounts;
+    state.teamMsgReadsDetail.unreadAccounts = obj.unreadAccounts;
+  },
+  isCheckMember: function isCheckMember(state) {
+    state.isCheckMember = !state.isCheckMember;
+  }
+}; // 更改 Vuex 的 store 中的状态的唯一方法是提交 mutation
+// this.$store.commit(method, params)
+
+module.exports = exports['default'];
+
+/***/ }),
+/* 125 */
+/* no static exports found */
+/* all exports used */
+/*!****************************!*\
+  !*** ./src/store/state.js ***!
+  \****************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+/* 内存数据状态 */
+
+exports.default = {
+  // 正在加载中
+  isLoading: true,
+  // 操作是否是刷新页面，刷新初始没有nim实例，会导致时序问题
+  isRefresh: true,
+  // 全屏显示的原图
+  isFullscreenImgShow: false,
+  fullscreenImgSrc: '',
+  // 切页动画 forward，backward
+  transitionName: 'forward',
+
+  // IM相关
+  // NIM SDK 实例
+  nim: null,
+  // 登录账户ID
+  userUID: null,
+  // 用户名片
+  myInfo: {},
+  // 好友/黑名单/陌生人名片, 数据结构如：{cid: {attr: ...}, ...}
+  userInfos: {},
+  // 用户订阅的事件同步, 数据结构如：{cid: {typeid: {...}, ...}, ...}
+  userSubscribes: {},
+
+  // 好友列表
+  friendslist: [],
+  // 机器人列表
+  robotslist: [],
+  // 用于判定帐号是否是robots
+  robotInfos: {},
+  robotInfosByNick: {},
+  // 黑名单列表
+  blacklist: [],
+  // 禁言列表
+  // mutelist: [],
+
+  teamlist: [],
+  // 群自身的属性，数据结构如：{tid: {attr: ...}, ...}
+  // teamAttrs: {},
+  // 群对象的成员列表，数据结构如：{tid: {members: [...], ...}, ...}
+  teamMembers: {},
+  // 关闭群提醒的群id列表
+  muteTeamIds: [],
+  // 群设置传递数据
+  teamSettingConfig: {},
+
+  // 已发送群消息回执Map,key为群Id
+  sentReceipedMap: {},
+  // 当前群消息回执查询的群id
+  currReceiptQueryTeamId: null,
+  // 群消息回执查询的消息列表
+  receiptQueryList: [],
+  // 群消息回执查询结果列表
+  teamMsgReads: [],
+  // 群消息已读未读账号列表
+  teamMsgReadsDetail: {
+    readAccounts: [],
+    unreadAccounts: []
+  },
+
+  // 消息列表
+  msgs: {}, // 以sessionId作为key
+  msgsMap: {}, // 以idClient作为key，诸如消息撤回等的消息查找
+  // 会话列表
+  sessionlist: [],
+  sessionMap: {},
+  // 当前会话ID (即当前聊天列表，TODO计划实现通用)
+  sessionId: null,
+  // 当前会话ID（即当前聊天列表，只有单聊群聊采用，可用于判别）
+  currSessionId: null,
+  currSessionMsgs: [],
+  // 是否有更多历史消息，用于上拉加载更多
+  noMoreHistoryMsgs: false,
+  // 继续对话的机器人id
+  continueRobotAccid: '',
+
+  // 系统消息
+  sysMsgs: [],
+  customSysMsgs: [],
+  sysMsgUnread: {
+    total: 0
+  },
+  customSysMsgUnread: 0,
+
+  // 临时变量
+  // 缓存需要获取的用户信息账号,如searchUser
+  searchedUsers: [],
+  // 缓存需要获取的群组账号
+  searchedTeams: [],
+
+  // 聊天室相关
+  // 聊天室sdk实例
+  chatroomInsts: {},
+  chatroomInfos: {},
+  // 聊天室分房间消息集合
+  chatroomMsgs: {},
+  // 当前聊天室实例及id
+  currChatroom: null,
+  currChatroomId: null,
+  currChatroomMsgs: [],
+  currChatroomInfo: {},
+  // 聊天室成员列表
+  currChatroomMembers: [],
+  //查看成员
+  isCheckMember: false
+};
+module.exports = exports['default'];
+
+/***/ }),
+/* 126 */
+/* no static exports found */
+/* all exports used */
+/*!*****************************************************************!*\
+  !*** ./~/_babel-runtime@6.26.0@babel-runtime/core-js/symbol.js ***!
+  \*****************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/symbol */ 130), __esModule: true };
+
+/***/ }),
+/* 127 */
+/* no static exports found */
+/* all exports used */
+/*!**************************************************************************!*\
+  !*** ./~/_babel-runtime@6.26.0@babel-runtime/core-js/symbol/iterator.js ***!
+  \**************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/symbol/iterator */ 131), __esModule: true };
+
+/***/ }),
+/* 128 */
+/* no static exports found */
+/* all exports used */
+/*!***************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/fn/json/stringify.js ***!
+  \***************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+var core = __webpack_require__(/*! ../../modules/_core */ 4);
+var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
+module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
+  return $JSON.stringify.apply($JSON, arguments);
+};
+
+
+/***/ }),
+/* 129 */
+/* no static exports found */
+/* all exports used */
+/*!************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/fn/object/keys.js ***!
+  \************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es6.object.keys */ 144);
+module.exports = __webpack_require__(/*! ../../modules/_core */ 4).Object.keys;
+
+
+/***/ }),
+/* 130 */
+/* no static exports found */
+/* all exports used */
+/*!*************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/fn/symbol/index.js ***!
+  \*************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es6.symbol */ 145);
+__webpack_require__(/*! ../../modules/es6.object.to-string */ 111);
+__webpack_require__(/*! ../../modules/es7.symbol.async-iterator */ 146);
+__webpack_require__(/*! ../../modules/es7.symbol.observable */ 147);
+module.exports = __webpack_require__(/*! ../../modules/_core */ 4).Symbol;
+
+
+/***/ }),
+/* 131 */
+/* no static exports found */
+/* all exports used */
+/*!****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/fn/symbol/iterator.js ***!
+  \****************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es6.string.iterator */ 112);
+__webpack_require__(/*! ../../modules/web.dom.iterable */ 113);
+module.exports = __webpack_require__(/*! ../../modules/_wks-ext */ 70).f('iterator');
+
+
+/***/ }),
+/* 132 */
+/* no static exports found */
+/* all exports used */
+/*!*************************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_add-to-unscopables.js ***!
+  \*************************************************************************/
+/***/ (function(module, exports) {
+
+module.exports = function () { /* empty */ };
+
+
+/***/ }),
+/* 133 */
+/* no static exports found */
+/* all exports used */
+/*!****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_enum-keys.js ***!
+  \****************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+// all enumerable object keys, includes symbols
+var getKeys = __webpack_require__(/*! ./_object-keys */ 24);
+var gOPS = __webpack_require__(/*! ./_object-gops */ 52);
+var pIE = __webpack_require__(/*! ./_object-pie */ 40);
+module.exports = function (it) {
+  var result = getKeys(it);
+  var getSymbols = gOPS.f;
+  if (getSymbols) {
+    var symbols = getSymbols(it);
+    var isEnum = pIE.f;
+    var i = 0;
+    var key;
+    while (symbols.length > i) if (isEnum.call(it, key = symbols[i++])) result.push(key);
+  } return result;
+};
+
+
+/***/ }),
+/* 134 */
+/* no static exports found */
+/* all exports used */
+/*!***************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_is-array.js ***!
+  \***************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.2.2 IsArray(argument)
+var cof = __webpack_require__(/*! ./_cof */ 59);
+module.exports = Array.isArray || function isArray(arg) {
+  return cof(arg) == 'Array';
+};
+
+
+/***/ }),
+/* 135 */
+/* no static exports found */
+/* all exports used */
+/*!******************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_iter-create.js ***!
+  \******************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var create = __webpack_require__(/*! ./_object-create */ 51);
+var descriptor = __webpack_require__(/*! ./_property-desc */ 41);
+var setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 61);
+var IteratorPrototype = {};
+
+// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
+__webpack_require__(/*! ./_hide */ 18)(IteratorPrototype, __webpack_require__(/*! ./_wks */ 35)('iterator'), function () { return this; });
+
+module.exports = function (Constructor, NAME, next) {
+  Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
+  setToStringTag(Constructor, NAME + ' Iterator');
+};
+
+
+/***/ }),
+/* 136 */
+/* no static exports found */
+/* all exports used */
+/*!****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_iter-step.js ***!
+  \****************************************************************/
+/***/ (function(module, exports) {
+
+module.exports = function (done, value) {
+  return { value: value, done: !!done };
+};
+
+
+/***/ }),
+/* 137 */
+/* no static exports found */
+/* all exports used */
+/*!***********************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_meta.js ***!
+  \***********************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+var META = __webpack_require__(/*! ./_uid */ 42)('meta');
+var isObject = __webpack_require__(/*! ./_is-object */ 17);
+var has = __webpack_require__(/*! ./_has */ 11);
+var setDesc = __webpack_require__(/*! ./_object-dp */ 15).f;
+var id = 0;
+var isExtensible = Object.isExtensible || function () {
+  return true;
+};
+var FREEZE = !__webpack_require__(/*! ./_fails */ 13)(function () {
+  return isExtensible(Object.preventExtensions({}));
+});
+var setMeta = function (it) {
+  setDesc(it, META, { value: {
+    i: 'O' + ++id, // object ID
+    w: {}          // weak collections IDs
+  } });
+};
+var fastKey = function (it, create) {
+  // return primitive with prefix
+  if (!isObject(it)) return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
+  if (!has(it, META)) {
+    // can't set metadata to uncaught frozen object
+    if (!isExtensible(it)) return 'F';
+    // not necessary to add metadata
+    if (!create) return 'E';
+    // add missing metadata
+    setMeta(it);
+  // return object ID
+  } return it[META].i;
+};
+var getWeak = function (it, create) {
+  if (!has(it, META)) {
+    // can't set metadata to uncaught frozen object
+    if (!isExtensible(it)) return true;
+    // not necessary to add metadata
+    if (!create) return false;
+    // add missing metadata
+    setMeta(it);
+  // return hash weak collections IDs
+  } return it[META].w;
+};
+// add metadata on freeze-family methods calling
+var onFreeze = function (it) {
+  if (FREEZE && meta.NEED && isExtensible(it) && !has(it, META)) setMeta(it);
+  return it;
+};
+var meta = module.exports = {
+  KEY: META,
+  NEED: false,
+  fastKey: fastKey,
+  getWeak: getWeak,
+  onFreeze: onFreeze
+};
+
+
+/***/ }),
+/* 138 */
+/* no static exports found */
+/* all exports used */
+/*!******************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-gopd.js ***!
+  \******************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+var pIE = __webpack_require__(/*! ./_object-pie */ 40);
+var createDesc = __webpack_require__(/*! ./_property-desc */ 41);
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
+var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 55);
+var has = __webpack_require__(/*! ./_has */ 11);
+var IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 67);
+var gOPD = Object.getOwnPropertyDescriptor;
+
+exports.f = __webpack_require__(/*! ./_descriptors */ 10) ? gOPD : function getOwnPropertyDescriptor(O, P) {
+  O = toIObject(O);
+  P = toPrimitive(P, true);
+  if (IE8_DOM_DEFINE) try {
+    return gOPD(O, P);
+  } catch (e) { /* empty */ }
+  if (has(O, P)) return createDesc(!pIE.f.call(O, P), O[P]);
+};
+
+
+/***/ }),
+/* 139 */
+/* no static exports found */
+/* all exports used */
+/*!**********************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-gopn-ext.js ***!
+  \**********************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
+var gOPN = __webpack_require__(/*! ./_object-gopn */ 86).f;
+var toString = {}.toString;
+
+var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
+  ? Object.getOwnPropertyNames(window) : [];
+
+var getWindowNames = function (it) {
+  try {
+    return gOPN(it);
+  } catch (e) {
+    return windowNames.slice();
+  }
+};
+
+module.exports.f = function getOwnPropertyNames(it) {
+  return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
+};
+
+
+/***/ }),
+/* 140 */
+/* no static exports found */
+/* all exports used */
+/*!*****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-gpo.js ***!
+  \*****************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
+var has = __webpack_require__(/*! ./_has */ 11);
+var toObject = __webpack_require__(/*! ./_to-object */ 54);
+var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 47)('IE_PROTO');
+var ObjectProto = Object.prototype;
+
+module.exports = Object.getPrototypeOf || function (O) {
+  O = toObject(O);
+  if (has(O, IE_PROTO)) return O[IE_PROTO];
+  if (typeof O.constructor == 'function' && O instanceof O.constructor) {
+    return O.constructor.prototype;
+  } return O instanceof Object ? ObjectProto : null;
+};
+
+
+/***/ }),
+/* 141 */
+/* no static exports found */
+/* all exports used */
+/*!*****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-sap.js ***!
+  \*****************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+// most Object methods by ES6 should accept primitives
+var $export = __webpack_require__(/*! ./_export */ 23);
+var core = __webpack_require__(/*! ./_core */ 4);
+var fails = __webpack_require__(/*! ./_fails */ 13);
+module.exports = function (KEY, exec) {
+  var fn = (core.Object || {})[KEY] || Object[KEY];
+  var exp = {};
+  exp[KEY] = exec(fn);
+  $export($export.S + $export.F * fails(function () { fn(1); }), 'Object', exp);
+};
+
+
+/***/ }),
+/* 142 */
+/* no static exports found */
+/* all exports used */
+/*!****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/_string-at.js ***!
+  \****************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+var toInteger = __webpack_require__(/*! ./_to-integer */ 48);
+var defined = __webpack_require__(/*! ./_defined */ 45);
+// true  -> String#at
+// false -> String#codePointAt
+module.exports = function (TO_STRING) {
+  return function (that, pos) {
+    var s = String(defined(that));
+    var i = toInteger(pos);
+    var l = s.length;
+    var a, b;
+    if (i < 0 || i >= l) return TO_STRING ? '' : undefined;
+    a = s.charCodeAt(i);
+    return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
+      ? TO_STRING ? s.charAt(i) : a
+      : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
+  };
+};
+
+
+/***/ }),
+/* 143 */
+/* no static exports found */
+/* all exports used */
+/*!************************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/es6.array.iterator.js ***!
+  \************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var addToUnscopables = __webpack_require__(/*! ./_add-to-unscopables */ 132);
+var step = __webpack_require__(/*! ./_iter-step */ 136);
+var Iterators = __webpack_require__(/*! ./_iterators */ 60);
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
+
+// 22.1.3.4 Array.prototype.entries()
+// 22.1.3.13 Array.prototype.keys()
+// 22.1.3.29 Array.prototype.values()
+// 22.1.3.30 Array.prototype[@@iterator]()
+module.exports = __webpack_require__(/*! ./_iter-define */ 83)(Array, 'Array', function (iterated, kind) {
+  this._t = toIObject(iterated); // target
+  this._i = 0;                   // next index
+  this._k = kind;                // kind
+// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
+}, function () {
+  var O = this._t;
+  var kind = this._k;
+  var index = this._i++;
+  if (!O || index >= O.length) {
+    this._t = undefined;
+    return step(1);
+  }
+  if (kind == 'keys') return step(0, index);
+  if (kind == 'values') return step(0, O[index]);
+  return step(0, [index, O[index]]);
+}, 'values');
+
+// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
+Iterators.Arguments = Iterators.Array;
+
+addToUnscopables('keys');
+addToUnscopables('values');
+addToUnscopables('entries');
+
+
+/***/ }),
+/* 144 */
+/* no static exports found */
+/* all exports used */
+/*!*********************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/es6.object.keys.js ***!
+  \*********************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.14 Object.keys(O)
+var toObject = __webpack_require__(/*! ./_to-object */ 54);
+var $keys = __webpack_require__(/*! ./_object-keys */ 24);
+
+__webpack_require__(/*! ./_object-sap */ 141)('keys', function () {
+  return function keys(it) {
+    return $keys(toObject(it));
+  };
+});
+
+
+/***/ }),
+/* 145 */
+/* no static exports found */
+/* all exports used */
+/*!****************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/es6.symbol.js ***!
+  \****************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// ECMAScript 6 symbols shim
+var global = __webpack_require__(/*! ./_global */ 7);
+var has = __webpack_require__(/*! ./_has */ 11);
+var DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ 10);
+var $export = __webpack_require__(/*! ./_export */ 23);
+var redefine = __webpack_require__(/*! ./_redefine */ 87);
+var META = __webpack_require__(/*! ./_meta */ 137).KEY;
+var $fails = __webpack_require__(/*! ./_fails */ 13);
+var shared = __webpack_require__(/*! ./_shared */ 53);
+var setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 61);
+var uid = __webpack_require__(/*! ./_uid */ 42);
+var wks = __webpack_require__(/*! ./_wks */ 35);
+var wksExt = __webpack_require__(/*! ./_wks-ext */ 70);
+var wksDefine = __webpack_require__(/*! ./_wks-define */ 69);
+var enumKeys = __webpack_require__(/*! ./_enum-keys */ 133);
+var isArray = __webpack_require__(/*! ./_is-array */ 134);
+var anObject = __webpack_require__(/*! ./_an-object */ 36);
+var isObject = __webpack_require__(/*! ./_is-object */ 17);
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
+var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 55);
+var createDesc = __webpack_require__(/*! ./_property-desc */ 41);
+var _create = __webpack_require__(/*! ./_object-create */ 51);
+var gOPNExt = __webpack_require__(/*! ./_object-gopn-ext */ 139);
+var $GOPD = __webpack_require__(/*! ./_object-gopd */ 138);
+var $DP = __webpack_require__(/*! ./_object-dp */ 15);
+var $keys = __webpack_require__(/*! ./_object-keys */ 24);
+var gOPD = $GOPD.f;
+var dP = $DP.f;
+var gOPN = gOPNExt.f;
+var $Symbol = global.Symbol;
+var $JSON = global.JSON;
+var _stringify = $JSON && $JSON.stringify;
+var PROTOTYPE = 'prototype';
+var HIDDEN = wks('_hidden');
+var TO_PRIMITIVE = wks('toPrimitive');
+var isEnum = {}.propertyIsEnumerable;
+var SymbolRegistry = shared('symbol-registry');
+var AllSymbols = shared('symbols');
+var OPSymbols = shared('op-symbols');
+var ObjectProto = Object[PROTOTYPE];
+var USE_NATIVE = typeof $Symbol == 'function';
+var QObject = global.QObject;
+// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
+var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
+
+// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
+var setSymbolDesc = DESCRIPTORS && $fails(function () {
+  return _create(dP({}, 'a', {
+    get: function () { return dP(this, 'a', { value: 7 }).a; }
+  })).a != 7;
+}) ? function (it, key, D) {
+  var protoDesc = gOPD(ObjectProto, key);
+  if (protoDesc) delete ObjectProto[key];
+  dP(it, key, D);
+  if (protoDesc && it !== ObjectProto) dP(ObjectProto, key, protoDesc);
+} : dP;
+
+var wrap = function (tag) {
+  var sym = AllSymbols[tag] = _create($Symbol[PROTOTYPE]);
+  sym._k = tag;
+  return sym;
+};
+
+var isSymbol = USE_NATIVE && typeof $Symbol.iterator == 'symbol' ? function (it) {
+  return typeof it == 'symbol';
+} : function (it) {
+  return it instanceof $Symbol;
+};
+
+var $defineProperty = function defineProperty(it, key, D) {
+  if (it === ObjectProto) $defineProperty(OPSymbols, key, D);
+  anObject(it);
+  key = toPrimitive(key, true);
+  anObject(D);
+  if (has(AllSymbols, key)) {
+    if (!D.enumerable) {
+      if (!has(it, HIDDEN)) dP(it, HIDDEN, createDesc(1, {}));
+      it[HIDDEN][key] = true;
+    } else {
+      if (has(it, HIDDEN) && it[HIDDEN][key]) it[HIDDEN][key] = false;
+      D = _create(D, { enumerable: createDesc(0, false) });
+    } return setSymbolDesc(it, key, D);
+  } return dP(it, key, D);
+};
+var $defineProperties = function defineProperties(it, P) {
+  anObject(it);
+  var keys = enumKeys(P = toIObject(P));
+  var i = 0;
+  var l = keys.length;
+  var key;
+  while (l > i) $defineProperty(it, key = keys[i++], P[key]);
+  return it;
+};
+var $create = function create(it, P) {
+  return P === undefined ? _create(it) : $defineProperties(_create(it), P);
+};
+var $propertyIsEnumerable = function propertyIsEnumerable(key) {
+  var E = isEnum.call(this, key = toPrimitive(key, true));
+  if (this === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key)) return false;
+  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
+};
+var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key) {
+  it = toIObject(it);
+  key = toPrimitive(key, true);
+  if (it === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key)) return;
+  var D = gOPD(it, key);
+  if (D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key])) D.enumerable = true;
+  return D;
+};
+var $getOwnPropertyNames = function getOwnPropertyNames(it) {
+  var names = gOPN(toIObject(it));
+  var result = [];
+  var i = 0;
+  var key;
+  while (names.length > i) {
+    if (!has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META) result.push(key);
+  } return result;
+};
+var $getOwnPropertySymbols = function getOwnPropertySymbols(it) {
+  var IS_OP = it === ObjectProto;
+  var names = gOPN(IS_OP ? OPSymbols : toIObject(it));
+  var result = [];
+  var i = 0;
+  var key;
+  while (names.length > i) {
+    if (has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectProto, key) : true)) result.push(AllSymbols[key]);
+  } return result;
+};
+
+// 19.4.1.1 Symbol([description])
+if (!USE_NATIVE) {
+  $Symbol = function Symbol() {
+    if (this instanceof $Symbol) throw TypeError('Symbol is not a constructor!');
+    var tag = uid(arguments.length > 0 ? arguments[0] : undefined);
+    var $set = function (value) {
+      if (this === ObjectProto) $set.call(OPSymbols, value);
+      if (has(this, HIDDEN) && has(this[HIDDEN], tag)) this[HIDDEN][tag] = false;
+      setSymbolDesc(this, tag, createDesc(1, value));
+    };
+    if (DESCRIPTORS && setter) setSymbolDesc(ObjectProto, tag, { configurable: true, set: $set });
+    return wrap(tag);
+  };
+  redefine($Symbol[PROTOTYPE], 'toString', function toString() {
+    return this._k;
+  });
+
+  $GOPD.f = $getOwnPropertyDescriptor;
+  $DP.f = $defineProperty;
+  __webpack_require__(/*! ./_object-gopn */ 86).f = gOPNExt.f = $getOwnPropertyNames;
+  __webpack_require__(/*! ./_object-pie */ 40).f = $propertyIsEnumerable;
+  __webpack_require__(/*! ./_object-gops */ 52).f = $getOwnPropertySymbols;
+
+  if (DESCRIPTORS && !__webpack_require__(/*! ./_library */ 38)) {
+    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
+  }
+
+  wksExt.f = function (name) {
+    return wrap(wks(name));
+  };
+}
+
+$export($export.G + $export.W + $export.F * !USE_NATIVE, { Symbol: $Symbol });
+
+for (var es6Symbols = (
+  // 19.4.2.2, 19.4.2.3, 19.4.2.4, 19.4.2.6, 19.4.2.8, 19.4.2.9, 19.4.2.10, 19.4.2.11, 19.4.2.12, 19.4.2.13, 19.4.2.14
+  'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'
+).split(','), j = 0; es6Symbols.length > j;)wks(es6Symbols[j++]);
+
+for (var wellKnownSymbols = $keys(wks.store), k = 0; wellKnownSymbols.length > k;) wksDefine(wellKnownSymbols[k++]);
+
+$export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
+  // 19.4.2.1 Symbol.for(key)
+  'for': function (key) {
+    return has(SymbolRegistry, key += '')
+      ? SymbolRegistry[key]
+      : SymbolRegistry[key] = $Symbol(key);
+  },
+  // 19.4.2.5 Symbol.keyFor(sym)
+  keyFor: function keyFor(sym) {
+    if (!isSymbol(sym)) throw TypeError(sym + ' is not a symbol!');
+    for (var key in SymbolRegistry) if (SymbolRegistry[key] === sym) return key;
+  },
+  useSetter: function () { setter = true; },
+  useSimple: function () { setter = false; }
+});
+
+$export($export.S + $export.F * !USE_NATIVE, 'Object', {
+  // 19.1.2.2 Object.create(O [, Properties])
+  create: $create,
+  // 19.1.2.4 Object.defineProperty(O, P, Attributes)
+  defineProperty: $defineProperty,
+  // 19.1.2.3 Object.defineProperties(O, Properties)
+  defineProperties: $defineProperties,
+  // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
+  getOwnPropertyDescriptor: $getOwnPropertyDescriptor,
+  // 19.1.2.7 Object.getOwnPropertyNames(O)
+  getOwnPropertyNames: $getOwnPropertyNames,
+  // 19.1.2.8 Object.getOwnPropertySymbols(O)
+  getOwnPropertySymbols: $getOwnPropertySymbols
+});
+
+// 24.3.2 JSON.stringify(value [, replacer [, space]])
+$JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function () {
+  var S = $Symbol();
+  // MS Edge converts symbol values to JSON as {}
+  // WebKit converts symbol values to JSON as null
+  // V8 throws on boxed symbols
+  return _stringify([S]) != '[null]' || _stringify({ a: S }) != '{}' || _stringify(Object(S)) != '{}';
+})), 'JSON', {
+  stringify: function stringify(it) {
+    var args = [it];
+    var i = 1;
+    var replacer, $replacer;
+    while (arguments.length > i) args.push(arguments[i++]);
+    $replacer = replacer = args[1];
+    if (!isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
+    if (!isArray(replacer)) replacer = function (key, value) {
+      if (typeof $replacer == 'function') value = $replacer.call(this, key, value);
+      if (!isSymbol(value)) return value;
+    };
+    args[1] = replacer;
+    return _stringify.apply($JSON, args);
+  }
+});
+
+// 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
+$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(/*! ./_hide */ 18)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+// 19.4.3.5 Symbol.prototype[@@toStringTag]
+setToStringTag($Symbol, 'Symbol');
+// 20.2.1.9 Math[@@toStringTag]
+setToStringTag(Math, 'Math', true);
+// 24.3.3 JSON[@@toStringTag]
+setToStringTag(global.JSON, 'JSON', true);
+
+
+/***/ }),
+/* 146 */
+/* no static exports found */
+/* all exports used */
+/*!*******************************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/es7.symbol.async-iterator.js ***!
+  \*******************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./_wks-define */ 69)('asyncIterator');
+
+
+/***/ }),
+/* 147 */
+/* no static exports found */
+/* all exports used */
+/*!***************************************************************************!*\
+  !*** ./~/_core-js@2.5.7@core-js/library/modules/es7.symbol.observable.js ***!
+  \***************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./_wks-define */ 69)('observable');
+
+
+/***/ }),
+/* 148 */,
+/* 149 */
+/* exports provided: default */
+/* all exports used */
+/*!***************************************************!*\
+  !*** ./~/_vue@2.5.17@vue/dist/vue.runtime.esm.js ***!
+  \***************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27137,2616 +29739,9 @@ if (inBrowser) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(/*! ./../../process/browser.js */ 22), __webpack_require__(/*! ./../../webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../../timers-browserify/main.js */ 71).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(/*! ./../../_process@0.11.10@process/browser.js */ 22), __webpack_require__(/*! ./../../_webpack@2.7.0@webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../../_timers-browserify@2.0.10@timers-browserify/main.js */ 71).setImmediate))
 
 /***/ }),
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */
-/* no static exports found */
-/* all exports used */
-/*!********************************************!*\
-  !*** ./src/store/actions/chatroomInfos.js ***!
-  \********************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 8);
-
-var _assign2 = _interopRequireDefault(_assign);
-
-exports.initChatroomInfos = initChatroomInfos;
-exports.getChatroomInfo = getChatroomInfo;
-exports.getChatroomMembers = getChatroomMembers;
-exports.clearChatroomMembers = clearChatroomMembers;
-
-var _ = __webpack_require__(/*! ../ */ 1);
-
-var _2 = _interopRequireDefault(_);
-
-var _configs = __webpack_require__(/*! ../../configs */ 3);
-
-var _configs2 = _interopRequireDefault(_configs);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// 用于demo记录封面
-function initChatroomInfos(_ref, obj) {
-  var state = _ref.state,
-      commit = _ref.commit;
-
-  commit('initChatroomInfos', obj);
-}
-
-function getChatroomInfo(_ref2) {
-  var state = _ref2.state,
-      commit = _ref2.commit,
-      dispatch = _ref2.dispatch;
-
-  var chatroom = state.currChatroom;
-  if (chatroom) {
-    chatroom.getChatroom({
-      done: function getChatroomDone(error, info) {
-        if (error) {
-          alert(error.message);
-          return;
-        }
-        info = info.chatroom || { creator: '' };
-        var creator = info.creator;
-        chatroom.getChatroomMembersInfo({
-          accounts: [creator],
-          done: function getChatroomMembersInfoDone(error, user) {
-            if (error) {
-              alert(error.message);
-              return;
-            }
-            commit('getChatroomInfo', (0, _assign2.default)(info, { actor: user.members[0] }));
-          }
-        });
-      }
-    });
-  }
-}
-
-function getChatroomMembers(_ref3) {
-  var state = _ref3.state,
-      commit = _ref3.commit,
-      dispatch = _ref3.dispatch;
-
-  // 先拉管理员
-  getChatroomMembersLocal(false, function (obj) {
-    commit('updateChatroomMembers', (0, _assign2.default)(obj, { type: 'put' }));
-    // 再拉成员列表
-    getChatroomMembersLocal(true, function (obj) {
-      commit('updateChatroomMembers', (0, _assign2.default)(obj, { type: 'put' }));
-    });
-  });
-}
-
-function getChatroomMembersLocal(isGuest, callback) {
-  var chatroom = _2.default.state.currChatroom;
-  if (chatroom) {
-    chatroom.getChatroomMembers({
-      guest: isGuest,
-      limit: 100,
-      done: function getChatroomMembersDone(error, obj) {
-        if (error) {
-          alert(error.message);
-          return;
-        }
-        callback(obj);
-      }
-    });
-  }
-}
-
-function clearChatroomMembers(_ref4) {
-  var state = _ref4.state,
-      commit = _ref4.commit;
-
-  commit('updateChatroomMembers', { type: 'destroy' });
-}
-
-/***/ }),
-/* 119 */
-/* no static exports found */
-/* all exports used */
-/*!************************************!*\
-  !*** ./src/store/actions/index.js ***!
-  \************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 8);
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _cookie = __webpack_require__(/*! ../../utils/cookie */ 43);
-
-var _cookie2 = _interopRequireDefault(_cookie);
-
-var _page = __webpack_require__(/*! ../../utils/page */ 37);
-
-var _page2 = _interopRequireDefault(_page);
-
-var _widgetUi = __webpack_require__(/*! ./widgetUi */ 124);
-
-var _initNimSDK = __webpack_require__(/*! ./initNimSDK */ 121);
-
-var _initWebRTC = __webpack_require__(/*! ./initWebRTC */ 122);
-
-var _initChatroomSDK = __webpack_require__(/*! ./initChatroomSDK */ 120);
-
-var _blacks = __webpack_require__(/*! ./blacks */ 62);
-
-var _friends = __webpack_require__(/*! ./friends */ 49);
-
-var _search = __webpack_require__(/*! ./search */ 123);
-
-var _session = __webpack_require__(/*! ./session */ 63);
-
-var _msgs = __webpack_require__(/*! ./msgs */ 39);
-
-var _sysMsgs = __webpack_require__(/*! ./sysMsgs */ 64);
-
-var _chatroomMsgs = __webpack_require__(/*! ./chatroomMsgs */ 78);
-
-var _chatroomInfos = __webpack_require__(/*! ./chatroomInfos */ 118);
-
-var _team = __webpack_require__(/*! ./team */ 65);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function connectNim(_ref, obj) {
-  var state = _ref.state,
-      commit = _ref.commit,
-      dispatch = _ref.dispatch;
-
-  console.log('22222');
-
-  var _Object$assign = (0, _assign2.default)({}, obj),
-      force = _Object$assign.force;
-  // 操作为内容页刷新页面，此时无nim实例
-
-
-  if (!state.nim || force) {
-    var loginInfo = {
-      uid: _cookie2.default.readCookie('uid'),
-      sdktoken: _cookie2.default.readCookie('sdktoken')
-    };
-    if (!loginInfo.uid) {
-      // 无cookie，直接跳转登录页
-      _page2.default.turnPage('无历史登录记录，请重新登录', 'login');
-    } else {
-      // 有cookie，重新登录
-      dispatch('initNimSDK', loginInfo);
-      dispatch('initWebRTC');
-    }
-  }
-}
-
-/* 导出actions方法 */
-// Action 提交的是 mutation，而不是直接变更状态。
-// Action 可以包含任意异步操作。
-
-
-function connectChatroom(_ref2, obj) {
-  var state = _ref2.state,
-      commit = _ref2.commit,
-      dispatch = _ref2.dispatch;
-
-  var _Object$assign3 = (0, _assign2.default)({}, obj),
-      chatroomId = _Object$assign3.chatroomId;
-
-  var nim = state.nim;
-  if (nim) {
-    dispatch('showLoading');
-    nim.getChatroomAddress({
-      chatroomId: chatroomId,
-      done: function getChatroomAddressDone(error, obj) {
-        if (error) {
-          alert(error.message);
-          location.href = '#/room';
-          return;
-        }
-        dispatch('initChatroomSDK', obj);
-      }
-    });
-  }
-}
-
-exports.default = {
-  updateRefreshState: function updateRefreshState(_ref3) {
-    var commit = _ref3.commit;
-
-    commit('updateRefreshState');
-  },
-
-
-  // UI 及页面状态变更
-  showLoading: _widgetUi.showLoading,
-  hideLoading: _widgetUi.hideLoading,
-  showFullscreenImg: _widgetUi.showFullscreenImg,
-  hideFullscreenImg: _widgetUi.hideFullscreenImg,
-  continueRobotMsg: _msgs.continueRobotMsg,
-
-  // 连接sdk请求，false表示强制重连
-  connect: function connect(store, obj) {
-    console.log();
-
-    var _Object$assign4 = (0, _assign2.default)({}, obj),
-        type = _Object$assign4.type;
-    // type 可为 nim chatroom
-
-
-    type = type || 'nim';
-    switch (type) {
-      case 'nim':
-        connectNim(store, obj);
-        break;
-      case 'chatroom':
-        connectChatroom(store, obj);
-        break;
-    }
-  },
-
-
-  // 用户触发的登出逻辑
-  logout: function logout(_ref4) {
-    var state = _ref4.state,
-        commit = _ref4.commit;
-
-    _cookie2.default.delCookie('uid');
-    _cookie2.default.delCookie('sdktoken');
-    if (state.nim) {
-      state.nim.disconnect();
-    }
-    _page2.default.turnPage('', 'login');
-  },
-
-
-  // 初始化 重新连接SDK
-  initNimSDK: _initNimSDK.initNimSDK,
-  // 清空所有搜索历史纪录
-  resetSearchResult: _search.resetSearchResult,
-  // 搜索用户信息
-  searchUsers: _search.searchUsers,
-  // 更新黑名单
-  updateBlack: _blacks.updateBlack,
-  // 更新好友
-  addFriend: _friends.addFriend,
-  deleteFriend: _friends.deleteFriend,
-  updateFriend: _friends.updateFriend,
-  // 删除会话
-  deleteSession: _session.deleteSession,
-  // 设置当前会话
-  setCurrSession: _session.setCurrSession,
-  // 重置当前会话
-  resetCurrSession: _session.resetCurrSession,
-  // 发送消息
-  sendMsg: _msgs.sendMsg,
-  sendFileMsg: _msgs.sendFileMsg,
-  sendRobotMsg: _msgs.sendRobotMsg,
-  // 发送消息已读回执
-  sendMsgReceipt: _msgs.sendMsgReceipt,
-  // 消息撤回
-  revocateMsg: _msgs.revocateMsg,
-  getHistoryMsgs: _msgs.getHistoryMsgs,
-  // 重置历史消息状态
-  resetNoMoreHistoryMsgs: _msgs.resetNoMoreHistoryMsgs,
-  // 标记系统消息已读
-  markSysMsgRead: _sysMsgs.markSysMsgRead,
-  markCustomSysMsgRead: _sysMsgs.markCustomSysMsgRead,
-  resetSysMsgs: _sysMsgs.resetSysMsgs,
-  deleteSysMsgs: _sysMsgs.deleteSysMsgs,
-
-  initChatroomSDK: _initChatroomSDK.initChatroomSDK,
-  initChatroomInfos: _chatroomInfos.initChatroomInfos,
-  resetChatroomSDK: _initChatroomSDK.resetChatroomSDK,
-  sendChatroomMsg: _chatroomMsgs.sendChatroomMsg,
-  sendChatroomRobotMsg: _chatroomMsgs.sendChatroomRobotMsg,
-  sendChatroomFileMsg: _chatroomMsgs.sendChatroomFileMsg,
-  getChatroomHistoryMsgs: _chatroomMsgs.getChatroomHistoryMsgs,
-  getChatroomInfo: _chatroomInfos.getChatroomInfo,
-  getChatroomMembers: _chatroomInfos.getChatroomMembers,
-  clearChatroomMembers: _chatroomInfos.clearChatroomMembers,
-
-  // 搜索群
-  searchTeam: _search.searchTeam,
-  // 代理sdk中的群方法
-  delegateTeamFunction: _team.delegateTeamFunction,
-  // 处理群消息回调
-  onTeamNotificationMsg: _team.onTeamNotificationMsg,
-  // 进入群信息设置页
-  enterSettingPage: _team.enterSettingPage,
-  // 获取群成员
-  getTeamMembers: _team.getTeamMembers,
-  // 群消息回执检查
-  checkTeamMsgReceipt: _team.checkTeamMsgReceipt,
-  // 查询群消息回执已读列表
-  getTeamMsgReads: _team.getTeamMsgReads,
-
-  // 音视频
-  initWebRTC: _initWebRTC.initWebRTC
-
-};
-module.exports = exports['default'];
-
-/***/ }),
-/* 120 */
-/* no static exports found */
-/* all exports used */
-/*!**********************************************!*\
-  !*** ./src/store/actions/initChatroomSDK.js ***!
-  \**********************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.initChatroomSDK = initChatroomSDK;
-exports.resetChatroomSDK = resetChatroomSDK;
-
-var _configs = __webpack_require__(/*! @/configs */ 3);
-
-var _configs2 = _interopRequireDefault(_configs);
-
-var _page = __webpack_require__(/*! @/utils/page */ 37);
-
-var _page2 = _interopRequireDefault(_page);
-
-var _utils = __webpack_require__(/*! @/utils */ 12);
-
-var _utils2 = _interopRequireDefault(_utils);
-
-var _ = __webpack_require__(/*! ../ */ 1);
-
-var _2 = _interopRequireDefault(_);
-
-var _chatroomMsgs = __webpack_require__(/*! ./chatroomMsgs */ 78);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var SDK = __webpack_require__(/*! @/sdk */ 72)("./" + _configs2.default.sdk);
-
-// 切换聊天室之前需要断开连接，原因是移动端不断累积连接实例，消息并发较大时会有性能问题
-// 重新初始化 NIM SDK
-/* 
- * 聊天室SDK，依赖于nim sdk
- */
-
-function initChatroomSDK(_ref, obj) {
-  var state = _ref.state,
-      commit = _ref.commit,
-      dispatch = _ref.dispatch;
-  var chatroomId = obj.chatroomId,
-      address = obj.address;
-
-  if (chatroomId && address) {
-    if (state.chatroomInsts[chatroomId]) {
-      state.chatroomInsts[chatroomId].connect();
-    } else {
-      state.chatroomInsts[chatroomId] = SDK.Chatroom.getInstance({
-        appKey: _configs2.default.appkey,
-        account: state.userUID,
-        token: state.sdktoken,
-        transports: ['websocket'],
-        chatroomId: chatroomId,
-        chatroomAddresses: address,
-        onconnect: function onChatroomConnect(chatroom) {
-          dispatch('hideLoading');
-          commit('setCurrChatroom', chatroomId);
-        },
-        onerror: function onChatroomError(error, obj) {
-          dispatch('hideLoading');
-          if (error) {
-            alert('网络连接状态异常');
-            location.href = '#/room';
-          }
-        },
-        onwillreconnect: function onChatroomWillReconnect(obj) {
-          // 此时说明 `SDK` 已经断开连接, 请开发者在界面上提示用户连接已断开, 而且正在重新建立连接
-          console.log('即将重连', obj);
-        },
-        ondisconnect: function onChatroomDisconnect(error) {
-          // 此时说明 `SDK` 处于断开状态, 切换聊天室也会触发次回调
-          dispatch('hideLoading');
-          if (error) {
-            switch (error.code) {
-              // 账号或者密码错误, 请跳转到登录页面并提示错误
-              case 302:
-                // 此逻辑与nim sdk错误逻辑相同，复用nim sdk的
-                // 如果单用聊天室功能需要在此做处理
-                break;
-              case 13003:
-                alert('抱歉，你已被主播拉入了黑名单');
-                location.href = '#/room';
-                break;
-              // 被踢, 请提示错误后跳转到登录页面
-              case 'kicked':
-                if (error.reason === 'managerKick') {
-                  alert('你已被管理员移出聊天室');
-                  location.href = '#/room';
-                } else if (error.reason === 'blacked') {
-                  alert('你已被管理员拉入黑名单，不能再进入');
-                  location.href = '#/room';
-                }
-                break;
-              default:
-                console.log(error.message);
-                break;
-            }
-          }
-        },
-        // 聊天室消息
-        onmsgs: _chatroomMsgs.onChatroomMsgs
-      });
-    }
-  } else {
-    alert('没有聊天室地址');
-  }
-}
-
-function resetChatroomSDK(_ref2, chatroomId) {
-  var state = _ref2.state,
-      commit = _ref2.commit,
-      dispatch = _ref2.dispatch;
-
-  if (chatroomId) {
-    state.chatroomInsts[chatroomId].disconnect();
-  } else {
-    for (var tempRoomId in state.chatroomInsts) {
-      state.chatroomInsts[tempRoomId].disconnect();
-    }
-  }
-  commit('resetCurrChatroom');
-}
-
-/***/ }),
-/* 121 */
-/* no static exports found */
-/* all exports used */
-/*!*****************************************!*\
-  !*** ./src/store/actions/initNimSDK.js ***!
-  \*****************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.initNimSDK = initNimSDK;
-
-var _configs = __webpack_require__(/*! @/configs */ 3);
-
-var _configs2 = _interopRequireDefault(_configs);
-
-var _page = __webpack_require__(/*! @/utils/page */ 37);
-
-var _page2 = _interopRequireDefault(_page);
-
-var _utils = __webpack_require__(/*! @/utils */ 12);
-
-var _utils2 = _interopRequireDefault(_utils);
-
-var _ = __webpack_require__(/*! ../ */ 1);
-
-var _2 = _interopRequireDefault(_);
-
-var _friends = __webpack_require__(/*! ./friends */ 49);
-
-var _robots = __webpack_require__(/*! ./robots */ 79);
-
-var _blacks = __webpack_require__(/*! ./blacks */ 62);
-
-var _userInfo = __webpack_require__(/*! ./userInfo */ 50);
-
-var _session = __webpack_require__(/*! ./session */ 63);
-
-var _msgs = __webpack_require__(/*! ./msgs */ 39);
-
-var _sysMsgs = __webpack_require__(/*! ./sysMsgs */ 64);
-
-var _team = __webpack_require__(/*! ./team */ 65);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/*
- * SDK连接相关
- */
-
-var SDK = __webpack_require__(/*! @/sdk */ 72)("./" + _configs2.default.sdk);
-
-// 重新初始化 NIM SDK
-function initNimSDK(_ref, loginInfo) {
-  var state = _ref.state,
-      commit = _ref.commit,
-      dispatch = _ref.dispatch;
-
-  if (state.nim) {
-    state.nim.disconnect();
-  }
-  dispatch('showLoading');
-  // 初始化SDK
-  window.nim = state.nim = SDK.NIM.getInstance({
-    //debug: true,
-    appKey: _configs2.default.appkey,
-    account: loginInfo.uid,
-    token: loginInfo.sdktoken,
-    transports: ['websocket'],
-    db: false,
-    // logFunc: new SDK.NIM.LoggerPlugin({
-    //   url: '/webdemo/h5/getlogger',
-    //   level: 'info'
-    // }),
-    syncSessionUnread: true,
-    syncRobots: true,
-    autoMarkRead: true, // 默认为true
-    onconnect: function onConnect(event) {
-      if (loginInfo) {
-        // 连接上以后更新uid
-        commit('updateUserUID', loginInfo);
-      }
-    },
-    onerror: function onError(event) {
-      // alert(JSON.stringify(event))
-      debugger;
-      alert('网络连接状态异常');
-      location.href = _configs2.default.loginUrl;
-    },
-    onwillreconnect: function onWillReconnect() {
-      console.log(event);
-    },
-    ondisconnect: function onDisconnect(error) {
-      switch (error.code) {
-        // 账号或者密码错误, 请跳转到登录页面并提示错误
-        case 302:
-          _page2.default.turnPage('帐号或密码错误', 'login');
-          break;
-        // 被踢, 请提示错误后跳转到登录页面
-        case 'kicked':
-          var map = {
-            PC: '电脑版',
-            Web: '网页版',
-            Android: '手机版',
-            iOS: '手机版',
-            WindowsPhone: '手机版'
-          };
-          var str = error.from;
-          var errorMsg = '\u4F60\u7684\u5E10\u53F7\u4E8E' + _utils2.default.formatDate(new Date()) + '\u88AB' + (map[str] || '其他端') + '\u8E22\u51FA\u4E0B\u7EBF\uFF0C\u8BF7\u786E\u5B9A\u5E10\u53F7\u4FE1\u606F\u5B89\u5168!';
-          _page2.default.turnPage(errorMsg, 'login');
-          break;
-        default:
-          break;
-      }
-    },
-    // // 多端登录
-    // onloginportschange: onLoginPortsChange,
-    // 用户关系及好友关系
-    onblacklist: _blacks.onBlacklist,
-    onsyncmarkinblacklist: _blacks.onMarkInBlacklist,
-    // onmutelist: onMutelist,
-    // onsyncmarkinmutelist: onMarkInMutelist,
-    onfriends: _friends.onFriends,
-    onsyncfriendaction: _friends.onSyncFriendAction,
-    // 机器人
-    onrobots: _robots.onRobots,
-    // 用户名片 - actions/userInfo
-    onmyinfo: _userInfo.onMyInfo,
-    onupdatemyinfo: _userInfo.onMyInfo,
-    onusers: _userInfo.onUserInfo,
-    onupdateuser: _userInfo.onUserInfo,
-    // // 群组
-    onteams: _team.onTeams,
-    onsynccreateteam: _team.onSynCreateTeam,
-    syncTeams: true,
-    onteammembers: _team.onTeamMembers,
-    onCreateTeam: _team.onCreateTeam,
-    onDismissTeam: _team.onDismissTeam,
-    onUpdateTeam: _team.onUpdateTeam,
-    onAddTeamMembers: _team.onAddTeamMembers,
-    onRemoveTeamMembers: _team.onRemoveTeamMembers,
-    onUpdateTeamManagers: _team.onUpdateTeamManagers,
-    onupdateteammember: _team.onUpdateTeamMember,
-    onUpdateTeamMembersMute: _team.onUpdateTeamMembersMute,
-    onTeamMsgReceipt: _team.onTeamMsgReceipt,
-    // // 会话
-    onsessions: _session.onSessions,
-    onupdatesession: _session.onUpdateSession,
-    // // 消息
-    onroamingmsgs: _msgs.onRoamingMsgs,
-    onofflinemsgs: _msgs.onOfflineMsgs,
-    onmsg: _msgs.onMsg,
-    // // 系统通知
-    onsysmsg: _sysMsgs.onSysMsg,
-    onofflinesysmsgs: _sysMsgs.onSysMsgs,
-    onupdatesysmsg: _sysMsgs.onSysMsg, // 通过、拒绝好友申请会收到此回调
-
-    onsysmsgunread: _sysMsgs.onSysMsgUnread,
-    onupdatesysmsgunread: _sysMsgs.onSysMsgUnread,
-
-    onofflinecustomsysmsgs: _sysMsgs.onCustomSysMsgs,
-    oncustomsysmsg: _sysMsgs.onCustomSysMsgs,
-    // // 同步完成
-    onsyncdone: function onSyncDone() {
-      dispatch('hideLoading');
-      // 说明在聊天列表页
-      if (_2.default.state.currSessionId) {
-        dispatch('setCurrSession', _2.default.state.currSessionId);
-      }
-    }
-  });
-}
-
-/***/ }),
-/* 122 */
-/* no static exports found */
-/* all exports used */
-/*!*****************************************!*\
-  !*** ./src/store/actions/initWebRTC.js ***!
-  \*****************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.initWebRTC = initWebRTC;
-
-var _configs = __webpack_require__(/*! @/configs */ 3);
-
-var _configs2 = _interopRequireDefault(_configs);
-
-var _page = __webpack_require__(/*! @/utils/page */ 37);
-
-var _page2 = _interopRequireDefault(_page);
-
-var _utils = __webpack_require__(/*! @/utils */ 12);
-
-var _utils2 = _interopRequireDefault(_utils);
-
-var _ = __webpack_require__(/*! ../ */ 1);
-
-var _2 = _interopRequireDefault(_);
-
-var _friends = __webpack_require__(/*! ./friends */ 49);
-
-var _robots = __webpack_require__(/*! ./robots */ 79);
-
-var _blacks = __webpack_require__(/*! ./blacks */ 62);
-
-var _userInfo = __webpack_require__(/*! ./userInfo */ 50);
-
-var _session = __webpack_require__(/*! ./session */ 63);
-
-var _msgs = __webpack_require__(/*! ./msgs */ 39);
-
-var _sysMsgs = __webpack_require__(/*! ./sysMsgs */ 64);
-
-var _team = __webpack_require__(/*! ./team */ 65);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/*
- * SDK连接相关
- */
-
-var WebRTCSDK = __webpack_require__(/*! @/sdk */ 72)("./" + _configs2.default.webrtcSDK);
-
-// 重写 begin
-
-/** 初始化webrtc事件 */
-
-// 重写 end
-
-
-// 重新初始化 web rtc SDK
-// export function initWebRTC ({ state, commit, dispatch }, loginInfo) {
-function initWebRTC() {
-  // window.WebRTC = state.WebRTC = SDK.WebRTC.getInstance({
-  //   nim: window.nim,
-  //   container: document.getElementById('container'),
-  //   remoteContainer: document.getElementById('remoteContainer'),
-  //   chromeId: '',
-  //   // 是否开启日志打印
-  //   debug: true
-  // })
-  var netcall = WebRTCSDK.getInstance({
-    nim: window.nim,
-    container: document.getElementById('container'),
-    remoteContainer: document.getElementById('remoteContainer'),
-    // 是否开启日志打印
-    debug: true
-  });
-
-  // 是否被叫中
-  var beCalling = false;
-  // 呼叫类型
-  var type = null;
-  // 被叫信息
-  var beCalledInfo = null;
-  // 是否正忙
-  var busy = false;
-  // 开启监听
-  netcall.on('beCalling', function (obj) {
-    console.warn('on beCalling', obj);
-    var channelId = obj.channelId;
-    // 被叫回应主叫自己已经收到了通话请求
-    netcall.control({
-      channelId: channelId,
-      command: Netcall.NETCALL_CONTROL_COMMAND_START_NOTIFY_RECEIVED
-    });
-    // 只有在没有通话并且没有被叫的时候才记录被叫信息, 否则通知对方忙并拒绝通话
-    if (!netcall.calling && !beCalling) {
-      type = obj.type;
-      beCalling = true;
-      beCalledInfo = obj;
-    } else {
-      if (netcall.calling) {
-        busy = netcall.notCurrentChannelId(obj);
-      } else if (beCalling) {
-        busy = beCalledInfo.channelId !== channelId;
-      }
-      if (busy) {
-        netcall.control({
-          channelId: channelId,
-          command: Netcall.NETCALL_CONTROL_COMMAND_BUSY
-        });
-        // 拒绝通话
-        netcall.response({
-          accepted: false,
-          beCalledInfo: obj
-        });
-      }
-    }
-  });
-
-  // 被叫接受的通知
-  netcall.on('callAccepted', function (obj) {
-    console.warn('on callAccepted', obj);
-    // 如果呼叫之前，启动了超时倒计时，这里可以取消呼叫倒计时
-    clearCallTimer();
-    // 可以开启音视频连接操作。。。
-  });
-
-  // 被叫拒绝的通知
-  netcall.on('callRejected', function (obj) {
-    console.log('on callRejected', obj);
-    // 如果呼叫之前，启动了超时倒计时，这里可以取消呼叫倒计时
-    clearCallTimer();
-    // 挂断
-    hangup();
-    // 做清理工作
-    resetWhenHangup();
-  });
-
-  netcall.on('control', function (obj) {
-    console.warn('收到指令', obj);
-  });
-
-  netcall.on('hangup', function (obj) {
-    console.warn('on hangup', obj);
-    // 判断需要挂断的通话是否是当前正在进行中的通话
-    if (!beCalledInfo || beCalledInfo.channelId === obj.channelId) {
-      // 清理工作
-      resetWhenHangup();
-    }
-  });
-
-  netcall.on('callerAckSync', function (obj) {
-    console.warn('其他端已经做了处理', obj);
-  });
-
-  netcall.on('error', function (obj) {
-    console.warn('sdk反馈错误信息', obj);
-    if (obj.code) {
-      if (obj.code == 509) {
-        console.warn('你被踢出房间了');
-      } else if (obj.code == 500) {
-        console.warn('你的web不支持H264视频编码，无法进行呼叫，请检测浏览器的H264插件是否正常');
-      }
-    }
-  });
-
-  netcall.on('joinChannel', function (obj) {
-    // 通知上层有其他用户加入了房间，上层做相应逻辑和UI处理
-    // 这里可以播放加入的同学的视频流
-    // 以及播放对方声音
-    netcall.startDevice({
-      type: Netcall.DEVICE_TYPE_AUDIO_OUT_CHAT
-    }).catch(function () {
-      console.log('播放对方的声音失败');
-    });
-
-    // 预览加入的同学的视频流
-    netcall.startRemoteStream({
-      account: obj.account,
-      node: document.getElementById('remoteContainer')
-    });
-
-    // 设置对方预览画面大小
-    netcall.setVideoViewRemoteSize({
-      account: 'testAccount',
-      with: 500,
-      height: 500,
-      cut: true
-    });
-  });
-
-  netcall.on('leaveChannel', function (obj) {
-    // 通知上层有其他用户离开了会议，上层做相应逻辑和UI处理
-
-    // 停止预览该同伴的视频流
-    netcall.stopRemoteStream({
-      account: obj.account
-    });
-  });
-
-  netcall.on('remoteTrack', function (obj) {
-    console.log('收到远程轨道信息', obj);
-    // 音频：播放对方的音频
-    if (obj.track.kind === 'audio') {
-      // 播放对方声音
-      netcall.startDevice({
-        type: Netcall.DEVICE_TYPE_AUDIO_OUT_CHAT
-      }).catch(function () {
-        console.log('播放对方的声音失败');
-      });
-    }
-
-    // 视频：展示对方的画面
-    if (obj.track.kind === 'video') {
-      // 预览加入的同学的视频流
-      netcall.startRemoteStream({
-        account: obj.account,
-        node: document.getElementById('remoteContainer')
-      });
-
-      // 设置对方预览画面大小
-      netcall.setVideoViewRemoteSize({
-        account: 'testUid',
-        with: 500,
-        height: 500,
-        cut: true
-      });
-    }
-  });
-
-  netcall.on('deviceAdd', function (devices) {
-    console.log('新增设备列表', devices);
-  });
-
-  netcall.on('deviceRemove', function (devices) {
-    console.log('移除设备列表', devices);
-  });
-
-  netcall.on('deviceStatus', function (obj) {
-    console.log('设备状态发生变化', obj);
-
-    // 检查摄像头
-    netcall.getDevicesOfType(WebRTC.DEVICE_TYPE_VIDEO).then(function (devices) {
-      console.log('摄像头', devices);
-    });
-
-    // 检查麦克风
-    netcall.getDevicesOfType(WebRTC.DEVICE_TYPE_AUDIO_IN).then(function (devices) {
-      console.log('麦克风', devices);
-    });
-
-    // 检查扬声器
-    netcall.getDevicesOfType(WebRTC.DEVICE_TYPE_AUDIO_OUT_CHAT).then(function (devices) {
-      console.log('扬声器', devices);
-    });
-  });
-
-  // // 清除上层逻辑自己维护的各种状态
-  // clear();
-
-  // // 停止本地视频预览
-  // netcall.stopLocalStream();
-
-  // // 停止对端视频预览
-  // netcall.stopRemoteStream();
-
-  // // 停止设备麦克风
-  // netcall.stopDevice(Netcall.DEVICE_TYPE_AUDIO_IN);
-
-  // // 停止设备摄像头
-  // netcall.stopDevice(Netcall.DEVICE_TYPE_VIDEO);
-
-  // // 停止播放本地音频
-  // netcall.stopDevice(Netcall.DEVICE_TYPE_AUDIO_OUT_LOCAL);
-
-  // // 停止播放对端音频
-  // netcall.stopDevice(Netcall.DEVICE_TYPE_AUDIO_OUT_CHAT);
-
-
-  console.warn('WebRTC netcall', netcall);
-}
-
-/***/ }),
-/* 123 */
-/* no static exports found */
-/* all exports used */
-/*!*************************************!*\
-  !*** ./src/store/actions/search.js ***!
-  \*************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.resetSearchResult = resetSearchResult;
-exports.searchUsers = searchUsers;
-exports.searchTeam = searchTeam;
-
-var _userInfo = __webpack_require__(/*! ./userInfo */ 50);
-
-function resetSearchResult(_ref) {
-  var state = _ref.state,
-      commit = _ref.commit;
-
-  commit('updateSearchlist', {
-    type: 'user',
-    list: []
-  });
-  commit('updateSearchlist', {
-    type: 'team',
-    list: []
-  });
-}
-
-function searchUsers(_ref2, obj) {
-  var state = _ref2.state,
-      commit = _ref2.commit;
-  var accounts = obj.accounts,
-      done = obj.done;
-
-  var nim = state.nim;
-  if (!Array.isArray(accounts)) {
-    accounts = [accounts];
-  }
-  nim.getUsers({
-    accounts: accounts,
-    done: function searchUsersDone(error, users) {
-      if (error) {
-        alert(error);
-        return;
-      }
-      commit('updateSearchlist', {
-        type: 'user',
-        list: users
-      });
-      var updateUsers = users.filter(function (item) {
-        var account = item.account;
-        if (item.account === state.userUID) {
-          return false;
-        }
-        var userInfo = state.userInfos[account] || {};
-        if (userInfo.isFriend) {
-          return false;
-        }
-        return true;
-      });
-      updateUsers = updateUsers.map(function (item) {
-        return (0, _userInfo.formatUserInfo)(item);
-      });
-      commit('updateUserInfo', updateUsers);
-      if (done instanceof Function) {
-        done(users);
-      }
-    }
-  });
-}
-
-function searchTeam(_ref3, obj) {
-  var state = _ref3.state,
-      commit = _ref3.commit;
-  var teamId = obj.teamId,
-      done = obj.done;
-
-  var nim = state.nim;
-  nim.getTeam({
-    teamId: teamId,
-    done: function searchTeamDone(error, teams) {
-      if (error) {
-        if (error.code === 803) {
-          // 群不存在或未发生变化
-          teams = [];
-        } else {
-          alert(error);
-          return;
-        }
-      }
-      if (!Array.isArray(teams)) {
-        teams = [teams];
-      }
-      teams.forEach(function (team) {
-        if (team.avatar && team.avatar.indexOf('nim.nosdn.127') > 0 && team.avatar.indexOf('?imageView') === -1) {
-          team.avatar = team.avatar + '?imageView&thumbnail=300y300';
-        }
-      });
-      commit('updateSearchlist', {
-        type: 'team',
-        list: teams
-      });
-      if (done instanceof Function) {
-        done(teams);
-      }
-    }
-  });
-}
-
-/***/ }),
-/* 124 */
-/* no static exports found */
-/* all exports used */
-/*!***************************************!*\
-  !*** ./src/store/actions/widgetUi.js ***!
-  \***************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.showLoading = showLoading;
-exports.hideLoading = hideLoading;
-exports.showFullscreenImg = showFullscreenImg;
-exports.hideFullscreenImg = hideFullscreenImg;
-
-var _page = __webpack_require__(/*! ../../utils/page */ 37);
-
-var _page2 = _interopRequireDefault(_page);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// 显示加载中进度条
-function showLoading(_ref) {
-  var state = _ref.state,
-      commit = _ref.commit;
-
-  commit('updateLoading', true);
-}
-
-// 隐藏加载中进度条
-function hideLoading(_ref2) {
-  var state = _ref2.state,
-      commit = _ref2.commit;
-
-  commit('updateLoading', false);
-}
-
-// 显示原图片
-function showFullscreenImg(_ref3, obj) {
-  var state = _ref3.state,
-      commit = _ref3.commit;
-
-  if (obj) {
-    obj.type = 'show';
-    commit('updateFullscreenImage', obj);
-  }
-}
-
-// 隐藏原图片
-function hideFullscreenImg(_ref4) {
-  var state = _ref4.state,
-      commit = _ref4.commit;
-
-  commit('updateFullscreenImage', {
-    type: 'hide'
-  });
-}
-
-/***/ }),
-/* 125 */
-/* no static exports found */
-/* all exports used */
-/*!**************************************!*\
-  !*** ./src/store/mutations/index.js ***!
-  \**************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 8);
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 66);
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
-var _create = __webpack_require__(/*! babel-runtime/core-js/object/create */ 44);
-
-var _create2 = _interopRequireDefault(_create);
-
-var _ = __webpack_require__(/*! ../ */ 1);
-
-var _2 = _interopRequireDefault(_);
-
-var _cookie = __webpack_require__(/*! ../../utils/cookie */ 43);
-
-var _cookie2 = _interopRequireDefault(_cookie);
-
-var _utils = __webpack_require__(/*! ../../utils */ 12);
-
-var _utils2 = _interopRequireDefault(_utils);
-
-var _configs = __webpack_require__(/*! ../../configs */ 3);
-
-var _configs2 = _interopRequireDefault(_configs);
-
-var _Vue = __webpack_require__(/*! Vue */ 114);
-
-var _Vue2 = _interopRequireDefault(_Vue);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  updateRefreshState: function updateRefreshState(state) {
-    state.isRefresh = false;
-  },
-  updateLoading: function updateLoading(state, status) {
-    clearTimeout(state.loadingTimer);
-    state.loadingTimer = setTimeout(function () {
-      state.isLoading = status;
-    }, 20);
-  },
-  updateFullscreenImage: function updateFullscreenImage(state, obj) {
-    obj = obj || {};
-    if (obj.src && obj.type === 'show') {
-      state.fullscreenImgSrc = obj.src;
-      state.isFullscreenImgShow = true;
-    } else if (obj.type === 'hide') {
-      state.fullscreenImgSrc = ' ';
-      state.isFullscreenImgShow = false;
-    }
-  },
-  updateUserUID: function updateUserUID(state, loginInfo) {
-    state.userUID = loginInfo.uid;
-    state.sdktoken = loginInfo.sdktoken;
-    _cookie2.default.setCookie('uid', loginInfo.uid);
-    _cookie2.default.setCookie('sdktoken', loginInfo.sdktoken);
-  },
-  updateMyInfo: function updateMyInfo(state, myInfo) {
-    state.myInfo = _utils2.default.mergeObject(state.myInfo, myInfo);
-  },
-  updateUserInfo: function updateUserInfo(state, users) {
-    var userInfos = state.userInfos;
-    users.forEach(function (user) {
-      var account = user.account;
-      if (account) {
-        userInfos[account] = _utils2.default.mergeObject(userInfos[account], user);
-      }
-    });
-    state.userInfos = _utils2.default.mergeObject(state.userInfos, userInfos);
-  },
-  updateFriends: function updateFriends(state, friends) {
-    var cutFriends = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
-
-    var nim = state.nim;
-    state.friendslist = nim.mergeFriends(state.friendslist, friends);
-    // state.friendslist = nim.cutFriends(state.friendslist, cutFriends)
-    state.friendslist = nim.cutFriends(state.friendslist, friends.invalid);
-  },
-  updateRobots: function updateRobots(state, robots) {
-    var nim = state.nim;
-    robots = robots.map(function (item) {
-      if (item.avatar) {
-        item.originAvatar = item.avatar;
-        item.avatar = nim.viewImageSync({
-          url: item.avatar, // 必填
-          thumbnail: { // 生成缩略图， 可选填
-            width: 40,
-            height: 40,
-            mode: 'cover'
-          }
-        });
-      } else {
-        item.avatar = _configs2.default.defaultUserIcon;
-      }
-      return item;
-    });
-    state.robotslist = robots;
-    state.robotInfos = (0, _create2.default)(null);
-    robots.forEach(function (robot) {
-      state.robotInfos[robot.account] = robot;
-      state.robotInfosByNick[robot.nick] = robot;
-    });
-  },
-  updateBlacklist: function updateBlacklist(state, blacks) {
-    var nim = state.nim;
-    state.blacklist = nim.cutFriends(state.blacklist, blacks.invalid);
-    var addBlacks = blacks.filter(function (item) {
-      return item.isBlack === true;
-    });
-    var remBlacks = blacks.filter(function (item) {
-      return item.isBlack === false;
-    });
-    // 添加黑名单
-    state.blacklist = nim.mergeFriends(state.blacklist, addBlacks);
-    // 解除黑名单
-    state.blacklist = nim.cutFriends(state.blacklist, remBlacks);
-  },
-  updateSearchlist: function updateSearchlist(state, obj) {
-    var type = obj.type;
-    switch (type) {
-      case 'user':
-        if (obj.list.length !== 0 || state.searchedUsers.length !== 0) {
-          state.searchedUsers = obj.list;
-        } else {
-          state.searchedUsers = [];
-        }
-        break;
-      case 'team':
-        if (obj.list.length !== 0 || state.searchedTeams.length !== 0) {
-          state.searchedTeams = obj.list;
-        } else {
-          state.searchedTeams = [];
-        }
-        break;
-    }
-  },
-  updateSessions: function updateSessions(state, sessions) {
-    console.log((0, _stringify2.default)(sessions), 'sessions is :');
-    var nim = state.nim;
-    state.sessionlist = nim.mergeSessions(state.sessionlist, sessions);
-    state.sessionlist.sort(function (a, b) {
-      return b.updateTime - a.updateTime;
-    });
-    state.sessionlist.forEach(function (item) {
-      state.sessionMap[item.id] = item;
-    });
-  },
-  deleteSessions: function deleteSessions(state, sessionIds) {
-    var nim = state.nim;
-    state.sessionlist = nim.cutSessionsByIds(state.sessionlist, sessionIds);
-  },
-
-  // 初始化，收到离线漫游消息时调用
-  updateMsgs: function updateMsgs(state, msgs) {
-    var nim = state.nim;
-    var tempSessionMap = {};
-    msgs.forEach(function (msg) {
-      var sessionId = msg.sessionId;
-      tempSessionMap[sessionId] = true;
-      if (!state.msgs[sessionId]) {
-        state.msgs[sessionId] = [];
-      }
-      // sdk会做消息去重
-      state.msgs[sessionId] = nim.mergeMsgs(state.msgs[sessionId], [msg]);
-      // state.msgs[sessionId].push(msg)
-    });
-    _2.default.commit('updateMsgByIdClient', msgs);
-    for (var sessionId in tempSessionMap) {
-      state.msgs[sessionId].sort(function (a, b) {
-        if (a.time === b.time) {
-          // 机器人消息，回复消息时间和提问消息时间相同，提问在前，回复在后
-          if (a.type === 'robot' && b.type === 'robot') {
-            if (a.content && a.content.msgOut) {
-              return 1;
-            }
-            if (b.content && b.content.msgOut) {
-              return -1;
-            }
-          }
-        }
-        return a.time - b.time;
-      });
-      if (sessionId === state.currSessionId) {
-        _2.default.commit('updateCurrSessionMsgs', {
-          type: 'init'
-        });
-      }
-    }
-  },
-
-  // 更新追加消息，追加一条消息
-  putMsg: function putMsg(state, msg) {
-    var sessionId = msg.sessionId;
-    if (!state.msgs[sessionId]) {
-      state.msgs[sessionId] = [];
-    }
-    _2.default.commit('updateMsgByIdClient', msg);
-    var tempMsgs = state.msgs[sessionId];
-    var lastMsgIndex = tempMsgs.length - 1;
-    if (tempMsgs.length === 0 || msg.time >= tempMsgs[lastMsgIndex].time) {
-      tempMsgs.push(msg);
-    } else {
-      for (var i = lastMsgIndex; i >= 0; i--) {
-        var currMsg = tempMsgs[i];
-        if (msg.time >= currMsg.time) {
-          state.msgs[sessionId].splice(i, 0, msg);
-          break;
-        }
-      }
-    }
-  },
-
-  // 删除消息列表消息
-  deleteMsg: function deleteMsg(state, msg) {
-    var sessionId = msg.sessionId;
-    var tempMsgs = state.msgs[sessionId];
-    if (!tempMsgs || tempMsgs.length === 0) {
-      return;
-    }
-    var lastMsgIndex = tempMsgs.length - 1;
-    for (var i = lastMsgIndex; i >= 0; i--) {
-      var currMsg = tempMsgs[i];
-      if (msg.idClient === currMsg.idClient) {
-        state.msgs[sessionId].splice(i, 1);
-        break;
-      }
-    }
-  },
-
-  // 替换消息列表消息，如消息撤回
-  replaceMsg: function replaceMsg(state, obj) {
-    var sessionId = obj.sessionId,
-        idClient = obj.idClient,
-        msg = obj.msg;
-
-    var tempMsgs = state.msgs[sessionId];
-    if (!tempMsgs || tempMsgs.length === 0) {
-      return;
-    }
-    var lastMsgIndex = tempMsgs.length - 1;
-    for (var i = lastMsgIndex; i >= 0; i--) {
-      var currMsg = tempMsgs[i];
-      console.log(idClient, currMsg.idClient, currMsg.text);
-      if (idClient === currMsg.idClient) {
-        state.msgs[sessionId].splice(i, 1, msg);
-        break;
-      }
-    }
-  },
-
-  // 用idClient 更新消息，目前用于消息撤回
-  updateMsgByIdClient: function updateMsgByIdClient(state, msgs) {
-    if (!Array.isArray(msgs)) {
-      msgs = [msgs];
-    }
-    var tempTime = new Date().getTime();
-    msgs.forEach(function (msg) {
-      // 有idClient 且 5分钟以内的消息
-      if (msg.idClient && tempTime - msg.time < 1000 * 300) {
-        state.msgsMap[msg.idClient] = msg;
-      }
-    });
-  },
-
-  // 更新当前会话id，用于唯一判定是否在current session状态
-  updateCurrSessionId: function updateCurrSessionId(state, obj) {
-    var type = obj.type || '';
-    if (type === 'destroy') {
-      state.currSessionId = null;
-    } else if (type === 'init') {
-      if (obj.sessionId && obj.sessionId !== state.currSessionId) {
-        state.currSessionId = obj.sessionId;
-      }
-    }
-  },
-
-  // 更新当前会话列表的聊天记录，包括历史消息、单聊消息等，不包括聊天室消息
-  // replace: 替换idClient的消息
-  updateCurrSessionMsgs: function updateCurrSessionMsgs(state, obj) {
-    var type = obj.type || '';
-    if (type === 'destroy') {
-      // 清空会话消息
-      state.currSessionMsgs = [];
-      state.currSessionLastMsg = null;
-      _2.default.commit('updateCurrSessionId', {
-        type: 'destroy'
-      });
-    } else if (type === 'init') {
-      // 初始化会话消息列表
-      if (state.currSessionId) {
-        var sessionId = state.currSessionId;
-        var currSessionMsgs = [].concat(state.msgs[sessionId] || []);
-        // 做消息截断
-        var limit = _configs2.default.localMsglimit;
-        var msgLen = currSessionMsgs.length;
-        if (msgLen - limit > 0) {
-          state.currSessionLastMsg = currSessionMsgs[msgLen - limit];
-          currSessionMsgs = currSessionMsgs.slice(msgLen - limit, msgLen);
-        } else if (msgLen > 0) {
-          state.currSessionLastMsg = currSessionMsgs[0];
-        } else {
-          state.currSessionLastMsg = null;
-        }
-        state.currSessionMsgs = [];
-        var lastMsgTime = 0;
-        currSessionMsgs.forEach(function (msg) {
-          if (msg.time - lastMsgTime > 1000 * 60 * 5) {
-            lastMsgTime = msg.time;
-            state.currSessionMsgs.push({
-              type: 'timeTag',
-              text: _utils2.default.formatDate(msg.time, false)
-            });
-          }
-          state.currSessionMsgs.push(msg);
-        });
-        _2.default.dispatch('checkTeamMsgReceipt', state.currSessionMsgs);
-      }
-    } else if (type === 'put') {
-      // 追加一条消息
-      var newMsg = obj.msg;
-      var _lastMsgTime = 0;
-      var lenCurrMsgs = state.currSessionMsgs.length;
-      if (lenCurrMsgs > 0) {
-        _lastMsgTime = state.currSessionMsgs[lenCurrMsgs - 1].time;
-      }
-      if (newMsg) {
-        if (newMsg.time - _lastMsgTime > 1000 * 60 * 5) {
-          state.currSessionMsgs.push({
-            type: 'timeTag',
-            text: _utils2.default.formatDate(newMsg.time, false)
-          });
-        }
-        state.currSessionMsgs.push(newMsg);
-        _2.default.dispatch('checkTeamMsgReceipt', [newMsg]);
-      }
-    } else if (type === 'concat') {
-      // 一般用于历史消息拼接
-      var _currSessionMsgs = [];
-      var _lastMsgTime2 = 0;
-      obj.msgs.forEach(function (msg) {
-        if (msg.time - _lastMsgTime2 > 1000 * 60 * 5) {
-          _lastMsgTime2 = msg.time;
-          _currSessionMsgs.push({
-            type: 'timeTag',
-            text: _utils2.default.formatDate(msg.time, false)
-          });
-        }
-        _currSessionMsgs.push(msg);
-      });
-      _currSessionMsgs.reverse();
-      _currSessionMsgs.forEach(function (msg) {
-        state.currSessionMsgs.unshift(msg);
-      });
-      if (obj.msgs[0]) {
-        state.currSessionLastMsg = obj.msgs[0];
-      }
-      _2.default.dispatch('checkTeamMsgReceipt', _currSessionMsgs);
-    } else if (type === 'replace') {
-      var _msgLen = state.currSessionMsgs.length;
-      var lastMsgIndex = _msgLen - 1;
-      if (_msgLen > 0) {
-        for (var i = lastMsgIndex; i >= 0; i--) {
-          if (state.currSessionMsgs[i].idClient === obj.idClient) {
-            state.currSessionMsgs.splice(i, 1, obj.msg);
-            break;
-          }
-        }
-      }
-    }
-  },
-  updateSysMsgs: function updateSysMsgs(state, sysMsgs) {
-    var nim = state.nim;
-    if (!Array.isArray(sysMsgs)) {
-      sysMsgs = [sysMsgs];
-    }
-    sysMsgs = sysMsgs.map(function (msg) {
-      msg.showTime = _utils2.default.formatDate(msg.time, false);
-      return msg;
-    });
-    // state.sysMsgs = nim.mergeSysMsgs(state.sysMsgs, sysMsgs)
-    state.sysMsgs = [].concat(nim.mergeSysMsgs(state.sysMsgs, sysMsgs));
-    // https://cn.vuejs.org/v2/guide/list.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
-    _Vue2.default.set(state, sysMsgs, state.sysMsgs);
-  },
-
-  // 更新消息的状态，如管理员批准或拒绝入群后，会收到新消息，更新入群申请的状态
-  updateSysMsgState: function updateSysMsgState(state, sysMsg) {
-    var exitMsg = state.sysMsgs.find(function (msg) {
-      return msg.idServer === sysMsg.idServer;
-    });
-    if (exitMsg) {
-      exitMsg.state = sysMsg.state;
-    }
-  },
-  updateSysMsgUnread: function updateSysMsgUnread(state, obj) {
-    state.sysMsgUnread = (0, _assign2.default)({}, obj);
-  },
-  updateCustomSysMsgs: function updateCustomSysMsgs(state, sysMsgs) {
-    var nim = state.nim;
-    if (!Array.isArray(sysMsgs)) {
-      sysMsgs = [sysMsgs];
-    }
-    sysMsgs = sysMsgs.map(function (msg) {
-      msg.showTime = _utils2.default.formatDate(msg.time, false);
-      return msg;
-    });
-    // state.customSysMsgs = nim.mergeSysMsgs(state.customSysMsgs, sysMsgs)
-    state.customSysMsgs = state.customSysMsgs.concat(sysMsgs);
-    // Vue.set(state, customSysMsgs, state.customSysMsgs)
-    _Vue2.default.set(state, sysMsgs, state.customSysMsgs);
-    _2.default.commit('updateCustomSysMsgUnread', {
-      type: 'add',
-      unread: sysMsgs.length
-    });
-    console.log('ttt: updateCustomSysMsgs');
-  },
-  updateCustomSysMsgUnread: function updateCustomSysMsgUnread(state, obj) {
-    var type = obj.type,
-        unread = obj.unread;
-
-    switch (type) {
-      case 'reset':
-        state.customSysMsgUnread = unread || 0;
-        break;
-      case 'add':
-        state.customSysMsgUnread += unread;
-        break;
-    }
-  },
-  resetSysMsgs: function resetSysMsgs(state, obj) {
-    var type = obj.type;
-    switch (type) {
-      case 0:
-        state.sysMsgs = [];
-        break;
-      case 1:
-        state.customSysMsgs = [];
-        _2.default.commit('updateCustomSysMsgUnread', {
-          type: 'reset'
-        });
-        break;
-    }
-  },
-  deleteSysMsgs: function deleteSysMsgs(state, obj) {
-    var type = obj.type;
-    var idServer = obj.idServer;
-    var arr = type === 0 ? state.sysMsgs : state.customSysMsgs;
-    arr = arr.filter(function (msg) {
-      return msg.idServer !== idServer;
-    });
-    _Vue2.default.set(state, 'sysMsgs', arr);
-  },
-  setNoMoreHistoryMsgs: function setNoMoreHistoryMsgs(state) {
-    state.noMoreHistoryMsgs = true;
-  },
-  resetNoMoreHistoryMsgs: function resetNoMoreHistoryMsgs(state) {
-    state.noMoreHistoryMsgs = false;
-  },
-
-  // 继续与机器人会话交互
-  continueRobotMsg: function continueRobotMsg(state, robotAccid) {
-    state.continueRobotAccid = robotAccid;
-  },
-  initChatroomInfos: function initChatroomInfos(state, obj) {
-    state.chatroomInfos = obj;
-  },
-  setCurrChatroom: function setCurrChatroom(state, chatroomId) {
-    state.currChatroomId = chatroomId;
-    state.currChatroom = state.chatroomInsts[chatroomId];
-    state.currChatroomMsgs = [];
-    state.currChatroomInfo = {};
-    state.currChatroomMembers = [];
-  },
-  resetCurrChatroom: function resetCurrChatroom(state) {
-    state.currChatroomId = null;
-    state.currChatroom = null;
-    state.currChatroomMsgs = [];
-    state.currChatroomInfo = {};
-    state.currChatroomMembers = [];
-  },
-
-  // 聊天室相关逻辑
-  updateChatroomInfo: function updateChatroomInfo(state, obj) {
-    state.currChatroomInfo = (0, _assign2.default)(state.currChatroomInfo, obj);
-  },
-  updateCurrChatroomMsgs: function updateCurrChatroomMsgs(state, obj) {
-    var _Object$assign2 = (0, _assign2.default)({}, obj),
-        type = _Object$assign2.type,
-        msgs = _Object$assign2.msgs;
-
-    if (type === 'put') {
-      msgs.forEach(function (msg) {
-        var chatroomId = msg.chatroomId;
-        if (chatroomId === state.currChatroomId) {
-          msgs.forEach(function (msg) {
-            state.currChatroomMsgs.push(msg);
-          });
-        }
-      });
-    } else if (type === 'concat') {
-      // 一般用于历史消息拼接
-      var currSessionMsgs = obj.msgs;
-      currSessionMsgs.reverse();
-      currSessionMsgs.forEach(function (msg) {
-        state.currSessionMsgs.unshift(msg);
-      });
-      if (obj.msgs[0]) {
-        state.currSessionLastMsg = obj.msgs[0];
-      }
-    }
-  },
-  getChatroomInfo: function getChatroomInfo(state, obj) {
-    state.currChatroomInfo = obj;
-  },
-  updateChatroomMembers: function updateChatroomMembers(state, obj) {
-    var type = obj.type,
-        members = obj.members;
-
-    if (type === 'destroy') {
-      state.currChatroomMembers = [];
-    } else if (type === 'put') {
-      members.forEach(function (member) {
-        if (member.online) {
-          state.currChatroomMembers.push(member);
-        }
-      });
-    }
-  },
-  updateTeamList: function updateTeamList(state, teams) {
-    var nim = state.nim;
-    _2.default.state.teamlist = nim.mergeTeams(_2.default.state.teamlist, teams);
-    _2.default.state.teamlist = nim.cutTeams(_2.default.state.teamlist, teams.invalid);
-  },
-  updateTeamMembers: function updateTeamMembers(state, obj) {
-    var nim = state.nim;
-    var teamId = obj.teamId;
-    var members = obj.members;
-    state.teamMembers = state.teamMembers || {};
-    state.teamMembers[teamId] = nim.mergeTeamMembers(state.teamMembers[teamId], members);
-    state.teamMembers[teamId] = nim.cutTeamMembers(state.teamMembers[teamId], members.invalid);
-    state.teamMembers[teamId].sort(function (a, b) {
-      // 将群主和管理员排在队列前方
-      if (a.type === 'owner' || b.type === 'owner') {
-        return a.type === 'owner' ? -1 : 1;
-      }
-      if (a.type === 'manager' || b.type === 'manager') {
-        return a.type === 'manager' ? -1 : b.type === 'manager' ? 1 : 0;
-      }
-      return -1;
-    });
-    state.teamMembers = (0, _assign2.default)({}, state.teamMembers);
-  },
-  removeTeamMembersByAccounts: function removeTeamMembersByAccounts(state, obj) {
-    var teamId = obj.teamId;
-    var invalidAccounts = obj.accounts;
-    if (state.teamMembers[teamId] === undefined) return;
-    state.teamMembers[teamId] = state.teamMembers[teamId].filter(function (member, index) {
-      return invalidAccounts.indexOf(member.account) === -1;
-    });
-    state.teamMembers = (0, _assign2.default)({}, state.teamMembers);
-  },
-  updateTeamInfo: function updateTeamInfo(state, team) {
-    var index = state.teamlist.findIndex(function (item) {
-      return item.teamId === team.teamId;
-    });
-    if (index === -1) return;
-    for (var key in team) {
-      if (key !== 'teamId' && team.hasOwnProperty(key) && team[key]) {
-        state.teamlist[index][key] = team[key];
-      }
-    }
-  },
-  updateTeamSettingConfig: function updateTeamSettingConfig(state, obj) {
-    state.teamSettingConfig = obj;
-  },
-  updateSentReceipedMap: function updateSentReceipedMap(state, obj) {
-    var _state$sentReceipedMa;
-
-    if (!obj || obj.length < 1) {
-      return;
-    }
-    var teamId = obj[0].teamId;
-    if (!state.sentReceipedMap[teamId]) {
-      state.sentReceipedMap[teamId] = [];
-    }
-    (_state$sentReceipedMa = state.sentReceipedMap[teamId]).push.apply(_state$sentReceipedMa, obj.map(function (msg) {
-      return msg.idServer;
-    }));
-  },
-  updateReceiptQueryList: function updateReceiptQueryList(state, obj) {
-    if (state.currReceiptQueryTeamId !== obj.teamId) {
-      state.receiptQueryList = [];
-      state.teamMsgReads = [];
-      state.currReceiptQueryTeamId = obj.teamId;
-    }
-    var needQuery = obj.msgs.filter(function (msg) {
-      return msg.needMsgReceipt && msg.from === state.myInfo.account && !state.receiptQueryList.find(function (item) {
-        return item.idServer === msg.idServer;
-      });
-    }).map(function (msg) {
-      return {
-        teamId: obj.teamId,
-        idServer: msg.idServer
-      };
-    });
-    if (needQuery.length > 0) {
-      var _state$receiptQueryLi;
-
-      (_state$receiptQueryLi = state.receiptQueryList).push.apply(_state$receiptQueryLi, needQuery);
-    }
-    if (needQuery.length > 0) {
-      _2.default.dispatch('getTeamMsgReads', needQuery);
-    }
-  },
-  updateTeamMsgReads: function updateTeamMsgReads(state, obj) {
-    var _state$teamMsgReads;
-
-    (_state$teamMsgReads = state.teamMsgReads).push.apply(_state$teamMsgReads, obj.teamMsgReceipts);
-  },
-  updateSingleTeamMsgReads: function updateSingleTeamMsgReads(state, obj) {
-    state.teamMsgReads.forEach(function (item) {
-      if (item.idServer === obj.idServer) {
-        item.unread = obj.unread;
-        item.read = obj.read;
-      }
-    });
-    // 更新已读未读账号列表
-    var unreadAccounts = state.teamMsgReadsDetail.unreadAccounts;
-    var findIndex = unreadAccounts.findIndex(function (account) {
-      return account === obj.account;
-    });
-    if (findIndex >= 0) {
-      unreadAccounts.splice(findIndex, 1);
-      state.teamMsgReadsDetail.readAccounts.push(obj.account);
-    }
-  },
-  initMsgReceiptDetail: function initMsgReceiptDetail(state, obj) {
-    state.teamMsgReadsDetail.readAccounts = obj.readAccounts;
-    state.teamMsgReadsDetail.unreadAccounts = obj.unreadAccounts;
-  },
-  saveChatName: function saveChatName(state, chatName) {
-    state.chatName = chatName;
-  },
-  isCheckMember: function isCheckMember(state) {
-    state.isCheckMember = !state.isCheckMember;
-  }
-}; // 更改 Vuex 的 store 中的状态的唯一方法是提交 mutation
-// this.$store.commit(method, params)
-
-module.exports = exports['default'];
-
-/***/ }),
-/* 126 */
-/* no static exports found */
-/* all exports used */
-/*!****************************!*\
-  !*** ./src/store/state.js ***!
-  \****************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-/* 内存数据状态 */
-
-exports.default = {
-  // 正在加载中
-  isLoading: true,
-  // 操作是否是刷新页面，刷新初始没有nim实例，会导致时序问题
-  isRefresh: true,
-  // 全屏显示的原图
-  isFullscreenImgShow: false,
-  fullscreenImgSrc: '',
-  // 切页动画 forward，backward
-  transitionName: 'forward',
-
-  // IM相关
-  // NIM SDK 实例
-  nim: null,
-  // 登录账户ID
-  userUID: null,
-  // 用户名片
-  myInfo: {},
-  // 好友/黑名单/陌生人名片, 数据结构如：{cid: {attr: ...}, ...}
-  userInfos: {},
-  // 用户订阅的事件同步, 数据结构如：{cid: {typeid: {...}, ...}, ...}
-  userSubscribes: {},
-
-  // 好友列表
-  friendslist: [],
-  // 机器人列表
-  robotslist: [],
-  // 用于判定帐号是否是robots
-  robotInfos: {},
-  robotInfosByNick: {},
-  // 黑名单列表
-  blacklist: [],
-  // 禁言列表
-  // mutelist: [],
-
-  teamlist: [],
-  // 群自身的属性，数据结构如：{tid: {attr: ...}, ...}
-  // teamAttrs: {},
-  // 群对象的成员列表，数据结构如：{tid: {members: [...], ...}, ...}
-  teamMembers: {},
-  // 关闭群提醒的群id列表
-  muteTeamIds: [],
-  // 群设置传递数据
-  teamSettingConfig: {},
-
-  // 已发送群消息回执Map,key为群Id
-  sentReceipedMap: {},
-  // 当前群消息回执查询的群id
-  currReceiptQueryTeamId: null,
-  // 群消息回执查询的消息列表
-  receiptQueryList: [],
-  // 群消息回执查询结果列表
-  teamMsgReads: [],
-  // 群消息已读未读账号列表
-  teamMsgReadsDetail: {
-    readAccounts: [],
-    unreadAccounts: []
-  },
-
-  // 消息列表
-  msgs: {}, // 以sessionId作为key
-  msgsMap: {}, // 以idClient作为key，诸如消息撤回等的消息查找
-  // 会话列表
-  sessionlist: [],
-  sessionMap: {},
-  // 当前会话ID (即当前聊天列表，TODO计划实现通用)
-  sessionId: null,
-  // 当前会话ID（即当前聊天列表，只有单聊群聊采用，可用于判别）
-  currSessionId: null,
-  currSessionMsgs: [],
-  // 是否有更多历史消息，用于上拉加载更多
-  noMoreHistoryMsgs: false,
-  // 继续对话的机器人id
-  continueRobotAccid: '',
-
-  // 系统消息
-  sysMsgs: [],
-  customSysMsgs: [],
-  sysMsgUnread: {
-    total: 0
-  },
-  customSysMsgUnread: 0,
-
-  // 临时变量
-  // 缓存需要获取的用户信息账号,如searchUser
-  searchedUsers: [],
-  // 缓存需要获取的群组账号
-  searchedTeams: [],
-
-  // 聊天室相关
-  // 聊天室sdk实例
-  chatroomInsts: {},
-  chatroomInfos: {},
-  // 聊天室分房间消息集合
-  chatroomMsgs: {},
-  // 当前聊天室实例及id
-  currChatroom: null,
-  currChatroomId: null,
-  currChatroomMsgs: [],
-  currChatroomInfo: {},
-  // 聊天室成员列表
-  currChatroomMembers: [],
-  // 聊天人或聊天群的名称
-  chatName: '',
-  //查看成员
-  isCheckMember: false
-};
-module.exports = exports['default'];
-
-/***/ }),
-/* 127 */
-/* no static exports found */
-/* all exports used */
-/*!*******************************************!*\
-  !*** ./~/babel-runtime/core-js/symbol.js ***!
-  \*******************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/symbol */ 131), __esModule: true };
-
-/***/ }),
-/* 128 */
-/* no static exports found */
-/* all exports used */
-/*!****************************************************!*\
-  !*** ./~/babel-runtime/core-js/symbol/iterator.js ***!
-  \****************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/symbol/iterator */ 132), __esModule: true };
-
-/***/ }),
-/* 129 */
-/* no static exports found */
-/* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/library/fn/json/stringify.js ***!
-  \************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-var core = __webpack_require__(/*! ../../modules/_core */ 4);
-var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
-module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
-  return $JSON.stringify.apply($JSON, arguments);
-};
-
-
-/***/ }),
-/* 130 */
-/* no static exports found */
-/* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/library/fn/object/keys.js ***!
-  \*********************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es6.object.keys */ 145);
-module.exports = __webpack_require__(/*! ../../modules/_core */ 4).Object.keys;
-
-
-/***/ }),
-/* 131 */
-/* no static exports found */
-/* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/library/fn/symbol/index.js ***!
-  \**********************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es6.symbol */ 146);
-__webpack_require__(/*! ../../modules/es6.object.to-string */ 111);
-__webpack_require__(/*! ../../modules/es7.symbol.async-iterator */ 147);
-__webpack_require__(/*! ../../modules/es7.symbol.observable */ 148);
-module.exports = __webpack_require__(/*! ../../modules/_core */ 4).Symbol;
-
-
-/***/ }),
-/* 132 */
-/* no static exports found */
-/* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/fn/symbol/iterator.js ***!
-  \*************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es6.string.iterator */ 112);
-__webpack_require__(/*! ../../modules/web.dom.iterable */ 113);
-module.exports = __webpack_require__(/*! ../../modules/_wks-ext */ 70).f('iterator');
-
-
-/***/ }),
-/* 133 */
-/* no static exports found */
-/* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/core-js/library/modules/_add-to-unscopables.js ***!
-  \**********************************************************/
-/***/ (function(module, exports) {
-
-module.exports = function () { /* empty */ };
-
-
-/***/ }),
-/* 134 */
-/* no static exports found */
-/* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/modules/_enum-keys.js ***!
-  \*************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-// all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(/*! ./_object-keys */ 24);
-var gOPS = __webpack_require__(/*! ./_object-gops */ 52);
-var pIE = __webpack_require__(/*! ./_object-pie */ 40);
-module.exports = function (it) {
-  var result = getKeys(it);
-  var getSymbols = gOPS.f;
-  if (getSymbols) {
-    var symbols = getSymbols(it);
-    var isEnum = pIE.f;
-    var i = 0;
-    var key;
-    while (symbols.length > i) if (isEnum.call(it, key = symbols[i++])) result.push(key);
-  } return result;
-};
-
-
-/***/ }),
-/* 135 */
-/* no static exports found */
-/* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/library/modules/_is-array.js ***!
-  \************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.2.2 IsArray(argument)
-var cof = __webpack_require__(/*! ./_cof */ 59);
-module.exports = Array.isArray || function isArray(arg) {
-  return cof(arg) == 'Array';
-};
-
-
-/***/ }),
-/* 136 */
-/* no static exports found */
-/* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/library/modules/_iter-create.js ***!
-  \***************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var create = __webpack_require__(/*! ./_object-create */ 51);
-var descriptor = __webpack_require__(/*! ./_property-desc */ 41);
-var setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 61);
-var IteratorPrototype = {};
-
-// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(/*! ./_hide */ 18)(IteratorPrototype, __webpack_require__(/*! ./_wks */ 35)('iterator'), function () { return this; });
-
-module.exports = function (Constructor, NAME, next) {
-  Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
-  setToStringTag(Constructor, NAME + ' Iterator');
-};
-
-
-/***/ }),
-/* 137 */
-/* no static exports found */
-/* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/modules/_iter-step.js ***!
-  \*************************************************/
-/***/ (function(module, exports) {
-
-module.exports = function (done, value) {
-  return { value: value, done: !!done };
-};
-
-
-/***/ }),
-/* 138 */
-/* no static exports found */
-/* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/library/modules/_meta.js ***!
-  \********************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-var META = __webpack_require__(/*! ./_uid */ 42)('meta');
-var isObject = __webpack_require__(/*! ./_is-object */ 17);
-var has = __webpack_require__(/*! ./_has */ 11);
-var setDesc = __webpack_require__(/*! ./_object-dp */ 15).f;
-var id = 0;
-var isExtensible = Object.isExtensible || function () {
-  return true;
-};
-var FREEZE = !__webpack_require__(/*! ./_fails */ 13)(function () {
-  return isExtensible(Object.preventExtensions({}));
-});
-var setMeta = function (it) {
-  setDesc(it, META, { value: {
-    i: 'O' + ++id, // object ID
-    w: {}          // weak collections IDs
-  } });
-};
-var fastKey = function (it, create) {
-  // return primitive with prefix
-  if (!isObject(it)) return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
-  if (!has(it, META)) {
-    // can't set metadata to uncaught frozen object
-    if (!isExtensible(it)) return 'F';
-    // not necessary to add metadata
-    if (!create) return 'E';
-    // add missing metadata
-    setMeta(it);
-  // return object ID
-  } return it[META].i;
-};
-var getWeak = function (it, create) {
-  if (!has(it, META)) {
-    // can't set metadata to uncaught frozen object
-    if (!isExtensible(it)) return true;
-    // not necessary to add metadata
-    if (!create) return false;
-    // add missing metadata
-    setMeta(it);
-  // return hash weak collections IDs
-  } return it[META].w;
-};
-// add metadata on freeze-family methods calling
-var onFreeze = function (it) {
-  if (FREEZE && meta.NEED && isExtensible(it) && !has(it, META)) setMeta(it);
-  return it;
-};
-var meta = module.exports = {
-  KEY: META,
-  NEED: false,
-  fastKey: fastKey,
-  getWeak: getWeak,
-  onFreeze: onFreeze
-};
-
-
-/***/ }),
-/* 139 */
-/* no static exports found */
-/* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/library/modules/_object-gopd.js ***!
-  \***************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-var pIE = __webpack_require__(/*! ./_object-pie */ 40);
-var createDesc = __webpack_require__(/*! ./_property-desc */ 41);
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
-var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 55);
-var has = __webpack_require__(/*! ./_has */ 11);
-var IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 67);
-var gOPD = Object.getOwnPropertyDescriptor;
-
-exports.f = __webpack_require__(/*! ./_descriptors */ 10) ? gOPD : function getOwnPropertyDescriptor(O, P) {
-  O = toIObject(O);
-  P = toPrimitive(P, true);
-  if (IE8_DOM_DEFINE) try {
-    return gOPD(O, P);
-  } catch (e) { /* empty */ }
-  if (has(O, P)) return createDesc(!pIE.f.call(O, P), O[P]);
-};
-
-
-/***/ }),
-/* 140 */
-/* no static exports found */
-/* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/core-js/library/modules/_object-gopn-ext.js ***!
-  \*******************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
-var gOPN = __webpack_require__(/*! ./_object-gopn */ 86).f;
-var toString = {}.toString;
-
-var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
-  ? Object.getOwnPropertyNames(window) : [];
-
-var getWindowNames = function (it) {
-  try {
-    return gOPN(it);
-  } catch (e) {
-    return windowNames.slice();
-  }
-};
-
-module.exports.f = function getOwnPropertyNames(it) {
-  return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
-};
-
-
-/***/ }),
-/* 141 */
-/* no static exports found */
-/* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/library/modules/_object-gpo.js ***!
-  \**************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = __webpack_require__(/*! ./_has */ 11);
-var toObject = __webpack_require__(/*! ./_to-object */ 54);
-var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 47)('IE_PROTO');
-var ObjectProto = Object.prototype;
-
-module.exports = Object.getPrototypeOf || function (O) {
-  O = toObject(O);
-  if (has(O, IE_PROTO)) return O[IE_PROTO];
-  if (typeof O.constructor == 'function' && O instanceof O.constructor) {
-    return O.constructor.prototype;
-  } return O instanceof Object ? ObjectProto : null;
-};
-
-
-/***/ }),
-/* 142 */
-/* no static exports found */
-/* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/library/modules/_object-sap.js ***!
-  \**************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-// most Object methods by ES6 should accept primitives
-var $export = __webpack_require__(/*! ./_export */ 23);
-var core = __webpack_require__(/*! ./_core */ 4);
-var fails = __webpack_require__(/*! ./_fails */ 13);
-module.exports = function (KEY, exec) {
-  var fn = (core.Object || {})[KEY] || Object[KEY];
-  var exp = {};
-  exp[KEY] = exec(fn);
-  $export($export.S + $export.F * fails(function () { fn(1); }), 'Object', exp);
-};
-
-
-/***/ }),
-/* 143 */
-/* no static exports found */
-/* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/modules/_string-at.js ***!
-  \*************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-var toInteger = __webpack_require__(/*! ./_to-integer */ 48);
-var defined = __webpack_require__(/*! ./_defined */ 45);
-// true  -> String#at
-// false -> String#codePointAt
-module.exports = function (TO_STRING) {
-  return function (that, pos) {
-    var s = String(defined(that));
-    var i = toInteger(pos);
-    var l = s.length;
-    var a, b;
-    if (i < 0 || i >= l) return TO_STRING ? '' : undefined;
-    a = s.charCodeAt(i);
-    return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
-      ? TO_STRING ? s.charAt(i) : a
-      : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
-  };
-};
-
-
-/***/ }),
-/* 144 */
-/* no static exports found */
-/* all exports used */
-/*!*********************************************************!*\
-  !*** ./~/core-js/library/modules/es6.array.iterator.js ***!
-  \*********************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var addToUnscopables = __webpack_require__(/*! ./_add-to-unscopables */ 133);
-var step = __webpack_require__(/*! ./_iter-step */ 137);
-var Iterators = __webpack_require__(/*! ./_iterators */ 60);
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
-
-// 22.1.3.4 Array.prototype.entries()
-// 22.1.3.13 Array.prototype.keys()
-// 22.1.3.29 Array.prototype.values()
-// 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(/*! ./_iter-define */ 83)(Array, 'Array', function (iterated, kind) {
-  this._t = toIObject(iterated); // target
-  this._i = 0;                   // next index
-  this._k = kind;                // kind
-// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
-}, function () {
-  var O = this._t;
-  var kind = this._k;
-  var index = this._i++;
-  if (!O || index >= O.length) {
-    this._t = undefined;
-    return step(1);
-  }
-  if (kind == 'keys') return step(0, index);
-  if (kind == 'values') return step(0, O[index]);
-  return step(0, [index, O[index]]);
-}, 'values');
-
-// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
-Iterators.Arguments = Iterators.Array;
-
-addToUnscopables('keys');
-addToUnscopables('values');
-addToUnscopables('entries');
-
-
-/***/ }),
-/* 145 */
-/* no static exports found */
-/* all exports used */
-/*!******************************************************!*\
-  !*** ./~/core-js/library/modules/es6.object.keys.js ***!
-  \******************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.14 Object.keys(O)
-var toObject = __webpack_require__(/*! ./_to-object */ 54);
-var $keys = __webpack_require__(/*! ./_object-keys */ 24);
-
-__webpack_require__(/*! ./_object-sap */ 142)('keys', function () {
-  return function keys(it) {
-    return $keys(toObject(it));
-  };
-});
-
-
-/***/ }),
-/* 146 */
-/* no static exports found */
-/* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/modules/es6.symbol.js ***!
-  \*************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// ECMAScript 6 symbols shim
-var global = __webpack_require__(/*! ./_global */ 7);
-var has = __webpack_require__(/*! ./_has */ 11);
-var DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ 10);
-var $export = __webpack_require__(/*! ./_export */ 23);
-var redefine = __webpack_require__(/*! ./_redefine */ 87);
-var META = __webpack_require__(/*! ./_meta */ 138).KEY;
-var $fails = __webpack_require__(/*! ./_fails */ 13);
-var shared = __webpack_require__(/*! ./_shared */ 53);
-var setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 61);
-var uid = __webpack_require__(/*! ./_uid */ 42);
-var wks = __webpack_require__(/*! ./_wks */ 35);
-var wksExt = __webpack_require__(/*! ./_wks-ext */ 70);
-var wksDefine = __webpack_require__(/*! ./_wks-define */ 69);
-var enumKeys = __webpack_require__(/*! ./_enum-keys */ 134);
-var isArray = __webpack_require__(/*! ./_is-array */ 135);
-var anObject = __webpack_require__(/*! ./_an-object */ 36);
-var isObject = __webpack_require__(/*! ./_is-object */ 17);
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
-var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 55);
-var createDesc = __webpack_require__(/*! ./_property-desc */ 41);
-var _create = __webpack_require__(/*! ./_object-create */ 51);
-var gOPNExt = __webpack_require__(/*! ./_object-gopn-ext */ 140);
-var $GOPD = __webpack_require__(/*! ./_object-gopd */ 139);
-var $DP = __webpack_require__(/*! ./_object-dp */ 15);
-var $keys = __webpack_require__(/*! ./_object-keys */ 24);
-var gOPD = $GOPD.f;
-var dP = $DP.f;
-var gOPN = gOPNExt.f;
-var $Symbol = global.Symbol;
-var $JSON = global.JSON;
-var _stringify = $JSON && $JSON.stringify;
-var PROTOTYPE = 'prototype';
-var HIDDEN = wks('_hidden');
-var TO_PRIMITIVE = wks('toPrimitive');
-var isEnum = {}.propertyIsEnumerable;
-var SymbolRegistry = shared('symbol-registry');
-var AllSymbols = shared('symbols');
-var OPSymbols = shared('op-symbols');
-var ObjectProto = Object[PROTOTYPE];
-var USE_NATIVE = typeof $Symbol == 'function';
-var QObject = global.QObject;
-// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
-var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
-
-// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
-var setSymbolDesc = DESCRIPTORS && $fails(function () {
-  return _create(dP({}, 'a', {
-    get: function () { return dP(this, 'a', { value: 7 }).a; }
-  })).a != 7;
-}) ? function (it, key, D) {
-  var protoDesc = gOPD(ObjectProto, key);
-  if (protoDesc) delete ObjectProto[key];
-  dP(it, key, D);
-  if (protoDesc && it !== ObjectProto) dP(ObjectProto, key, protoDesc);
-} : dP;
-
-var wrap = function (tag) {
-  var sym = AllSymbols[tag] = _create($Symbol[PROTOTYPE]);
-  sym._k = tag;
-  return sym;
-};
-
-var isSymbol = USE_NATIVE && typeof $Symbol.iterator == 'symbol' ? function (it) {
-  return typeof it == 'symbol';
-} : function (it) {
-  return it instanceof $Symbol;
-};
-
-var $defineProperty = function defineProperty(it, key, D) {
-  if (it === ObjectProto) $defineProperty(OPSymbols, key, D);
-  anObject(it);
-  key = toPrimitive(key, true);
-  anObject(D);
-  if (has(AllSymbols, key)) {
-    if (!D.enumerable) {
-      if (!has(it, HIDDEN)) dP(it, HIDDEN, createDesc(1, {}));
-      it[HIDDEN][key] = true;
-    } else {
-      if (has(it, HIDDEN) && it[HIDDEN][key]) it[HIDDEN][key] = false;
-      D = _create(D, { enumerable: createDesc(0, false) });
-    } return setSymbolDesc(it, key, D);
-  } return dP(it, key, D);
-};
-var $defineProperties = function defineProperties(it, P) {
-  anObject(it);
-  var keys = enumKeys(P = toIObject(P));
-  var i = 0;
-  var l = keys.length;
-  var key;
-  while (l > i) $defineProperty(it, key = keys[i++], P[key]);
-  return it;
-};
-var $create = function create(it, P) {
-  return P === undefined ? _create(it) : $defineProperties(_create(it), P);
-};
-var $propertyIsEnumerable = function propertyIsEnumerable(key) {
-  var E = isEnum.call(this, key = toPrimitive(key, true));
-  if (this === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key)) return false;
-  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
-};
-var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key) {
-  it = toIObject(it);
-  key = toPrimitive(key, true);
-  if (it === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key)) return;
-  var D = gOPD(it, key);
-  if (D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key])) D.enumerable = true;
-  return D;
-};
-var $getOwnPropertyNames = function getOwnPropertyNames(it) {
-  var names = gOPN(toIObject(it));
-  var result = [];
-  var i = 0;
-  var key;
-  while (names.length > i) {
-    if (!has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META) result.push(key);
-  } return result;
-};
-var $getOwnPropertySymbols = function getOwnPropertySymbols(it) {
-  var IS_OP = it === ObjectProto;
-  var names = gOPN(IS_OP ? OPSymbols : toIObject(it));
-  var result = [];
-  var i = 0;
-  var key;
-  while (names.length > i) {
-    if (has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectProto, key) : true)) result.push(AllSymbols[key]);
-  } return result;
-};
-
-// 19.4.1.1 Symbol([description])
-if (!USE_NATIVE) {
-  $Symbol = function Symbol() {
-    if (this instanceof $Symbol) throw TypeError('Symbol is not a constructor!');
-    var tag = uid(arguments.length > 0 ? arguments[0] : undefined);
-    var $set = function (value) {
-      if (this === ObjectProto) $set.call(OPSymbols, value);
-      if (has(this, HIDDEN) && has(this[HIDDEN], tag)) this[HIDDEN][tag] = false;
-      setSymbolDesc(this, tag, createDesc(1, value));
-    };
-    if (DESCRIPTORS && setter) setSymbolDesc(ObjectProto, tag, { configurable: true, set: $set });
-    return wrap(tag);
-  };
-  redefine($Symbol[PROTOTYPE], 'toString', function toString() {
-    return this._k;
-  });
-
-  $GOPD.f = $getOwnPropertyDescriptor;
-  $DP.f = $defineProperty;
-  __webpack_require__(/*! ./_object-gopn */ 86).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(/*! ./_object-pie */ 40).f = $propertyIsEnumerable;
-  __webpack_require__(/*! ./_object-gops */ 52).f = $getOwnPropertySymbols;
-
-  if (DESCRIPTORS && !__webpack_require__(/*! ./_library */ 38)) {
-    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
-  }
-
-  wksExt.f = function (name) {
-    return wrap(wks(name));
-  };
-}
-
-$export($export.G + $export.W + $export.F * !USE_NATIVE, { Symbol: $Symbol });
-
-for (var es6Symbols = (
-  // 19.4.2.2, 19.4.2.3, 19.4.2.4, 19.4.2.6, 19.4.2.8, 19.4.2.9, 19.4.2.10, 19.4.2.11, 19.4.2.12, 19.4.2.13, 19.4.2.14
-  'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'
-).split(','), j = 0; es6Symbols.length > j;)wks(es6Symbols[j++]);
-
-for (var wellKnownSymbols = $keys(wks.store), k = 0; wellKnownSymbols.length > k;) wksDefine(wellKnownSymbols[k++]);
-
-$export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
-  // 19.4.2.1 Symbol.for(key)
-  'for': function (key) {
-    return has(SymbolRegistry, key += '')
-      ? SymbolRegistry[key]
-      : SymbolRegistry[key] = $Symbol(key);
-  },
-  // 19.4.2.5 Symbol.keyFor(sym)
-  keyFor: function keyFor(sym) {
-    if (!isSymbol(sym)) throw TypeError(sym + ' is not a symbol!');
-    for (var key in SymbolRegistry) if (SymbolRegistry[key] === sym) return key;
-  },
-  useSetter: function () { setter = true; },
-  useSimple: function () { setter = false; }
-});
-
-$export($export.S + $export.F * !USE_NATIVE, 'Object', {
-  // 19.1.2.2 Object.create(O [, Properties])
-  create: $create,
-  // 19.1.2.4 Object.defineProperty(O, P, Attributes)
-  defineProperty: $defineProperty,
-  // 19.1.2.3 Object.defineProperties(O, Properties)
-  defineProperties: $defineProperties,
-  // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
-  getOwnPropertyDescriptor: $getOwnPropertyDescriptor,
-  // 19.1.2.7 Object.getOwnPropertyNames(O)
-  getOwnPropertyNames: $getOwnPropertyNames,
-  // 19.1.2.8 Object.getOwnPropertySymbols(O)
-  getOwnPropertySymbols: $getOwnPropertySymbols
-});
-
-// 24.3.2 JSON.stringify(value [, replacer [, space]])
-$JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function () {
-  var S = $Symbol();
-  // MS Edge converts symbol values to JSON as {}
-  // WebKit converts symbol values to JSON as null
-  // V8 throws on boxed symbols
-  return _stringify([S]) != '[null]' || _stringify({ a: S }) != '{}' || _stringify(Object(S)) != '{}';
-})), 'JSON', {
-  stringify: function stringify(it) {
-    var args = [it];
-    var i = 1;
-    var replacer, $replacer;
-    while (arguments.length > i) args.push(arguments[i++]);
-    $replacer = replacer = args[1];
-    if (!isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
-    if (!isArray(replacer)) replacer = function (key, value) {
-      if (typeof $replacer == 'function') value = $replacer.call(this, key, value);
-      if (!isSymbol(value)) return value;
-    };
-    args[1] = replacer;
-    return _stringify.apply($JSON, args);
-  }
-});
-
-// 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(/*! ./_hide */ 18)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
-// 19.4.3.5 Symbol.prototype[@@toStringTag]
-setToStringTag($Symbol, 'Symbol');
-// 20.2.1.9 Math[@@toStringTag]
-setToStringTag(Math, 'Math', true);
-// 24.3.3 JSON[@@toStringTag]
-setToStringTag(global.JSON, 'JSON', true);
-
-
-/***/ }),
-/* 147 */
-/* no static exports found */
-/* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/core-js/library/modules/es7.symbol.async-iterator.js ***!
-  \****************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ./_wks-define */ 69)('asyncIterator');
-
-
-/***/ }),
-/* 148 */
-/* no static exports found */
-/* all exports used */
-/*!************************************************************!*\
-  !*** ./~/core-js/library/modules/es7.symbol.observable.js ***!
-  \************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ./_wks-define */ 69)('observable');
-
-
-/***/ }),
-/* 149 */,
 /* 150 */,
 /* 151 */,
 /* 152 */,

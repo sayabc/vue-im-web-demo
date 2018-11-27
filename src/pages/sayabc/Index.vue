@@ -20,7 +20,6 @@
 import Session from './Session'
 import Chat from './Chat'
 import Search from './search'
-import ChatHeader from './ChatHeader'
 import Info from './Info'
 
 export default {
@@ -28,7 +27,6 @@ export default {
     Session,
     Chat,
     Search,
-    ChatHeader,
     Info
   },
   computed: {

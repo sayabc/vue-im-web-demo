@@ -8,23 +8,23 @@ webpackJsonp([4],{
   \****************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 2)(
+var Component = __webpack_require__(/*! ../../~/_vue-loader@11.3.4@vue-loader/lib/component-normalizer */ 2)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./Room.vue */ 470),
+  __webpack_require__(/*! !babel-loader!../../~/_vux-loader@1.2.9@vux-loader/src/script-loader.js!../../~/_vue-loader@11.3.4@vue-loader/lib/selector?type=script&index=0!./Room.vue */ 470),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-23058ba0"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./Room.vue */ 541),
+  __webpack_require__(/*! !../../~/_vue-loader@11.3.4@vue-loader/lib/template-compiler/index?{"id":"data-v-23058ba0"}!../../~/_vux-loader@1.2.9@vux-loader/src/before-template-compiler-loader.js!../../~/_vux-loader@1.2.9@vux-loader/src/template-loader.js!../../~/_vue-loader@11.3.4@vue-loader/lib/selector?type=template&index=0!./Room.vue */ 539),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/Room.vue"
+Component.options.__file = "/Users/lijianjian/Desktop/workspace/vue-im-web-demo/src/pages/Room.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Room.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
   module.hot.accept()
@@ -43,9 +43,9 @@ module.exports = Component.exports
 /***/ 369:
 /* no static exports found */
 /* all exports used */
-/*!******************************!*\
-  !*** ./~/axios/lib/utils.js ***!
-  \******************************/
+/*!********************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/utils.js ***!
+  \********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -355,9 +355,9 @@ module.exports = {
 /***/ 371:
 /* no static exports found */
 /* all exports used */
-/*!*********************************!*\
-  !*** ./~/axios/lib/defaults.js ***!
-  \*********************************/
+/*!***********************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/defaults.js ***!
+  \***********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -455,16 +455,16 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 22)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../_process@0.11.10@process/browser.js */ 22)))
 
 /***/ }),
 
 /***/ 372:
 /* no static exports found */
 /* all exports used */
-/*!*************************************!*\
-  !*** ./~/axios/lib/adapters/xhr.js ***!
-  \*************************************/
+/*!***************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/adapters/xhr.js ***!
+  \***************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -646,16 +646,16 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../process/browser.js */ 22)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../_process@0.11.10@process/browser.js */ 22)))
 
 /***/ }),
 
 /***/ 373:
 /* no static exports found */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./~/axios/lib/cancel/Cancel.js ***!
-  \**************************************/
+/*!****************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/cancel/Cancel.js ***!
+  \****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -685,9 +685,9 @@ module.exports = Cancel;
 /***/ 374:
 /* no static exports found */
 /* all exports used */
-/*!****************************************!*\
-  !*** ./~/axios/lib/cancel/isCancel.js ***!
-  \****************************************/
+/*!******************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/cancel/isCancel.js ***!
+  \******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -703,9 +703,9 @@ module.exports = function isCancel(value) {
 /***/ 375:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/axios/lib/core/createError.js ***!
-  \*****************************************/
+/*!*******************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/core/createError.js ***!
+  \*******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -733,9 +733,9 @@ module.exports = function createError(message, config, code, response) {
 /***/ 376:
 /* no static exports found */
 /* all exports used */
-/*!*************************************!*\
-  !*** ./~/axios/lib/helpers/bind.js ***!
-  \*************************************/
+/*!***************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/helpers/bind.js ***!
+  \***************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -757,9 +757,9 @@ module.exports = function bind(fn, thisArg) {
 /***/ 392:
 /* no static exports found */
 /* all exports used */
-/*!**************************!*\
-  !*** ./~/axios/index.js ***!
-  \**************************/
+/*!****************************************!*\
+  !*** ./~/_axios@0.15.3@axios/index.js ***!
+  \****************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! ./lib/axios */ 393);
@@ -769,9 +769,9 @@ module.exports = __webpack_require__(/*! ./lib/axios */ 393);
 /***/ 393:
 /* no static exports found */
 /* all exports used */
-/*!******************************!*\
-  !*** ./~/axios/lib/axios.js ***!
-  \******************************/
+/*!********************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/axios.js ***!
+  \********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -834,9 +834,9 @@ module.exports.default = axios;
 /***/ 394:
 /* no static exports found */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/axios/lib/cancel/CancelToken.js ***!
-  \*******************************************/
+/*!*********************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/cancel/CancelToken.js ***!
+  \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -904,9 +904,9 @@ module.exports = CancelToken;
 /***/ 395:
 /* no static exports found */
 /* all exports used */
-/*!***********************************!*\
-  !*** ./~/axios/lib/core/Axios.js ***!
-  \***********************************/
+/*!*************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/core/Axios.js ***!
+  \*************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1002,9 +1002,9 @@ module.exports = Axios;
 /***/ 396:
 /* no static exports found */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/axios/lib/core/InterceptorManager.js ***!
-  \************************************************/
+/*!**************************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/core/InterceptorManager.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1067,9 +1067,9 @@ module.exports = InterceptorManager;
 /***/ 397:
 /* no static exports found */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/axios/lib/core/dispatchRequest.js ***!
-  \*********************************************/
+/*!***********************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/core/dispatchRequest.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1159,9 +1159,9 @@ module.exports = function dispatchRequest(config) {
 /***/ 398:
 /* no static exports found */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/axios/lib/core/enhanceError.js ***!
-  \******************************************/
+/*!********************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/core/enhanceError.js ***!
+  \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1191,9 +1191,9 @@ module.exports = function enhanceError(error, config, code, response) {
 /***/ 399:
 /* no static exports found */
 /* all exports used */
-/*!************************************!*\
-  !*** ./~/axios/lib/core/settle.js ***!
-  \************************************/
+/*!**************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/core/settle.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1229,9 +1229,9 @@ module.exports = function settle(resolve, reject, response) {
 /***/ 400:
 /* no static exports found */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/axios/lib/core/transformData.js ***!
-  \*******************************************/
+/*!*********************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/core/transformData.js ***!
+  \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1262,9 +1262,9 @@ module.exports = function transformData(data, headers, fns) {
 /***/ 401:
 /* no static exports found */
 /* all exports used */
-/*!*************************************!*\
-  !*** ./~/axios/lib/helpers/btoa.js ***!
-  \*************************************/
+/*!***************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/helpers/btoa.js ***!
+  \***************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1311,9 +1311,9 @@ module.exports = btoa;
 /***/ 402:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/axios/lib/helpers/buildURL.js ***!
-  \*****************************************/
+/*!*******************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/helpers/buildURL.js ***!
+  \*******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1392,9 +1392,9 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 /***/ 403:
 /* no static exports found */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/axios/lib/helpers/combineURLs.js ***!
-  \********************************************/
+/*!**********************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/helpers/combineURLs.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1417,9 +1417,9 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 /***/ 404:
 /* no static exports found */
 /* all exports used */
-/*!****************************************!*\
-  !*** ./~/axios/lib/helpers/cookies.js ***!
-  \****************************************/
+/*!******************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/helpers/cookies.js ***!
+  \******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1483,9 +1483,9 @@ module.exports = (
 /***/ 405:
 /* no static exports found */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/axios/lib/helpers/isAbsoluteURL.js ***!
-  \**********************************************/
+/*!************************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/helpers/isAbsoluteURL.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1510,9 +1510,9 @@ module.exports = function isAbsoluteURL(url) {
 /***/ 406:
 /* no static exports found */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/axios/lib/helpers/isURLSameOrigin.js ***!
-  \************************************************/
+/*!**************************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/helpers/isURLSameOrigin.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1591,9 +1591,9 @@ module.exports = (
 /***/ 407:
 /* no static exports found */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/axios/lib/helpers/normalizeHeaderName.js ***!
-  \****************************************************/
+/*!******************************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/helpers/normalizeHeaderName.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1616,9 +1616,9 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 /***/ 408:
 /* no static exports found */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/axios/lib/helpers/parseHeaders.js ***!
-  \*********************************************/
+/*!***********************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/helpers/parseHeaders.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1666,9 +1666,9 @@ module.exports = function parseHeaders(headers) {
 /***/ 409:
 /* no static exports found */
 /* all exports used */
-/*!***************************************!*\
-  !*** ./~/axios/lib/helpers/spread.js ***!
-  \***************************************/
+/*!*****************************************************!*\
+  !*** ./~/_axios@0.15.3@axios/lib/helpers/spread.js ***!
+  \*****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1706,9 +1706,9 @@ module.exports = function spread(callback) {
 /***/ 470:
 /* exports provided: default */
 /* all exports used */
-/*!****************************************************************************************************************************************!*\
-  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/Room.vue ***!
-  \****************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./~/_babel-loader@6.4.1@babel-loader/lib!./~/_vux-loader@1.2.9@vux-loader/src/script-loader.js!./~/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=script&index=0!./src/pages/Room.vue ***!
+  \*************************************************************************************************************************************************************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1793,12 +1793,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 541:
+/***/ 539:
 /* no static exports found */
 /* all exports used */
-/*!*******************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-23058ba0"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/Room.vue ***!
-  \*******************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/_vue-loader@11.3.4@vue-loader/lib/template-compiler?{"id":"data-v-23058ba0"}!./~/_vux-loader@1.2.9@vux-loader/src/before-template-compiler-loader.js!./~/_vux-loader@1.2.9@vux-loader/src/template-loader.js!./~/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=template&index=0!./src/pages/Room.vue ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1832,7 +1832,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-23058ba0", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-23058ba0", module.exports)
   }
 }
 
