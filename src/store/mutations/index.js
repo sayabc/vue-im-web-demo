@@ -111,6 +111,7 @@ export default {
     }
   },
   updateSessions (state, sessions) {
+    console.log(JSON.stringify(sessions),'sessions is :')
     const nim = state.nim
     state.sessionlist = nim.mergeSessions(state.sessionlist, sessions)
     state.sessionlist.sort((a, b) => {
@@ -579,4 +580,10 @@ export default {
     state.teamMsgReadsDetail.readAccounts = obj.readAccounts
     state.teamMsgReadsDetail.unreadAccounts =  obj.unreadAccounts
   },
+  saveChatName(state, chatName) {
+    state.chatName = chatName
+  },
+  isCheckMember(state) {
+    state.isCheckMember = !state.isCheckMember
+  }
 }

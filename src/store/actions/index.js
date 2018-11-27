@@ -21,6 +21,7 @@ import { delegateTeamFunction, onTeamNotificationMsg, enterSettingPage, getTeamM
         checkTeamMsgReceipt, getTeamMsgReads} from './team'
 
 function connectNim ({state, commit, dispatch}, obj) {
+  console.log('22222')
   let {force} = Object.assign({}, obj)
   // 操作为内容页刷新页面，此时无nim实例
   if (!state.nim || force) {
@@ -72,6 +73,7 @@ export default {
 
   // 连接sdk请求，false表示强制重连
   connect (store, obj) {
+    console.log()
     let {type} = Object.assign({}, obj)
     // type 可为 nim chatroom
     type = type || 'nim'

@@ -10,13 +10,13 @@ webpackJsonp([15],{
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-0ed13920","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./TeamList.vue */ 531)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-0ed13920","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./TeamList.vue */ 565)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 2)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./TeamList.vue */ 473),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./TeamList.vue */ 480),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0ed13920"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./TeamList.vue */ 506),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0ed13920"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./TeamList.vue */ 537),
   /* scopeId */
   "data-v-0ed13920",
   /* cssModules */
@@ -44,7 +44,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 473:
+/***/ 480:
 /* exports provided: default */
 /* all exports used */
 /*!********************************************************************************************************************************************!*\
@@ -97,7 +97,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 484:
+/***/ 512:
 /* no static exports found */
 /* all exports used */
 /*!***********************************************************************************************************************************************************************************************************************************************!*\
@@ -117,7 +117,7 @@ exports.push([module.i, "\n.p-teamlist .m-list[data-v-0ed13920] {\n    padding-t
 
 /***/ }),
 
-/***/ 506:
+/***/ 537:
 /* no static exports found */
 /* all exports used */
 /*!***********************************************************************************************************************************************************************************************************************************************!*\
@@ -173,7 +173,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 531:
+/***/ 565:
 /* no static exports found */
 /* all exports used */
 /*!********************************************************************************************************************************************************************************************************************************************************************!*\
@@ -184,7 +184,7 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-0ed13920","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./TeamList.vue */ 484);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-0ed13920","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./TeamList.vue */ 512);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM

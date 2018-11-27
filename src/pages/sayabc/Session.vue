@@ -129,6 +129,7 @@ export default {
         // location.href = `#/chat/${session.id}`
         // 通知state 更新sessionId 显示出chatbox
         this.$store.dispatch('setCurrSession', session.id)
+        this.$store.commit('saveChatName',session.name)
     },
     enterMyChat () {
       // 我的手机页面

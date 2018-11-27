@@ -102,5 +102,8 @@ export default {
   currChatroomInfo: {},
   // 聊天室成员列表
   currChatroomMembers: [],
-
+  // 聊天人或聊天群的名称
+  chatName: '',
+  //查看成员
+  isCheckMember: false
 }
