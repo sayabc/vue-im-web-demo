@@ -13,7 +13,8 @@
 
 <script>
 import Vue from 'vue'
-import {Group, Cell, XHeader, XInput, XTextarea, XButton, XSwitch, Datetime, ViewBox, Search, ButtonTab, ButtonTabItem, Divider, Actionsheet, AlertPlugin, ConfirmPlugin} from 'vux'
+import {Group, Cell, XHeader, XInput, XTextarea, XButton, XSwitch, Datetime, ViewBox, Search,
+        ButtonTab, ButtonTabItem, Divider, Actionsheet, AlertPlugin, ConfirmPlugin} from 'vux'
 import Loading from './pages/components/Loading'
 import FullscreenImg from './pages/components/FullscreenImg'
 // ToastPlugin是对vux中的ToastPlugin在使用上的简单封装。
@@ -95,8 +96,8 @@ export default {
   computed: {
     // 是否显示导航条
     showNav () {
-      // return pageUtil.showNav(this.$route.path)
-      return false
+      return pageUtil.showNav(this.$route.path)
+      // return false
     }
   }
 }
