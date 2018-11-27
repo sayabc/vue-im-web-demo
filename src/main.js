@@ -19,7 +19,11 @@ import router from './router'
 
 require('./utils/polyfill')
 
-require('./sdk/rtcSupport')
+// require('./sdk/rtcSupport')
+
+// require('./sdk/NIM_Web_Netcall_v5.6.0')
+
+// console.warn("NetcallBridge", window.NetcallBridge)
 
 new Vue({
   router,

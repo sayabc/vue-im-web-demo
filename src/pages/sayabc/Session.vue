@@ -120,7 +120,7 @@ export default {
     enterSysMsgs () {
       if (this.hideDelBtn())
         return
-      location.href = '#/sysmsgs'
+      location.href = '#/sayabc/sysmsgs'
     },
     enterChat (session) {
       if (this.hideDelBtn())
@@ -133,7 +133,7 @@ export default {
     },
     enterMyChat () {
       // 我的手机页面
-      location.href = `#/chat/p2p-${this.myPhoneId}`
+      location.href = `#/sayabc/chat/p2p-${this.myPhoneId}`
     },
     deleteSession () {
       if (this.delSessionId !== null) {

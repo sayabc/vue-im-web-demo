@@ -25,7 +25,11 @@
           <i class="u-icon-img"><img :src="icon2"></i>
           <input type="file" ref="fileToSent">
         </span>
-        <span v-if="!isRobot && !advancedTeam" class="u-editor-icon" @click.stop="sendPlayMsg">
+        <!-- <span v-if="!isRobot && !advancedTeam" class="u-editor-icon" @click.stop="sendPlayMsg">
+          <i class="u-icon-img"><img :src="icon3"></i>
+        </span> -->
+        <!-- <span v-if="!isRobot && !advancedTeam" class="u-editor-icon" id="showNetcallVideoLink" @click.stop="sendPlayMsg"> -->
+        <span v-if="!isRobot && !advancedTeam" class="u-editor-icon" id="showNetcallVideoLink" @click.stop="netcallVideoLink">
           <i class="u-icon-img"><img :src="icon3"></i>
         </span>
         <span v-if='advancedTeam' class="u-editor-send u-editor-receipt" @click="turnToMsgReceipt">回执</span>
@@ -289,6 +293,14 @@ export default {
           })
         }
       }
+    },
+    netcallVideoLink () { // 点击开始视频
+      if (this.invalid) {
+        this.$toast(this.invalidHint)
+        return
+      }
+      console.warn('开始视频通话 begin')
+      console.warn('视频通话',window.WebRTC)
     },
     showEmoji () {
       this.isEmojiShown = true

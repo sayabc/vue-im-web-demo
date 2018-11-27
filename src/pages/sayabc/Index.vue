@@ -34,7 +34,6 @@ export default {
   computed: {
     sessionId () {
       let sessionId = this.$route.params.sessionId || this.$store.state.currSessionId
-      console.warn('INDEX sessionId ', sessionId)
       return sessionId
     },
   }

@@ -148,7 +148,6 @@ Utils.formatDate = function (datetime, simple = false) {
 }
 
 Utils.parseSession = function (sessionId) {
-  console.warn('util.parseSession: ', sessionId) // undefined ?
   if (/^p2p-/.test(sessionId)) {
     return {
       scene: 'p2p',
