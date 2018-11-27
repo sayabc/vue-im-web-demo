@@ -1,6 +1,6 @@
 webpackJsonp([10],{
 
-/***/ 347:
+/***/ 349:
 /* no static exports found */
 /* all exports used */
 /*!**************************************!*\
@@ -10,13 +10,13 @@ webpackJsonp([10],{
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-5d017adc","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./SysMsgs.vue */ 536)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-5d017adc","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./SysMsgs.vue */ 545)
 
 var Component = __webpack_require__(/*! ../../../~/vue-loader/lib/component-normalizer */ 2)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./SysMsgs.vue */ 472),
+  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./SysMsgs.vue */ 481),
   /* template */
-  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-5d017adc"}!../../../~/vux-loader/src/before-template-compiler-loader.js!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./SysMsgs.vue */ 511),
+  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-5d017adc"}!../../../~/vux-loader/src/before-template-compiler-loader.js!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./SysMsgs.vue */ 520),
   /* scopeId */
   null,
   /* cssModules */
@@ -44,7 +44,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 472:
+/***/ 481:
 /* exports provided: default */
 /* all exports used */
 /*!**************************************************************************************************************************************************!*\
@@ -54,7 +54,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-throw new Error("Cannot find module \"../configs\"");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__configs__ = __webpack_require__(/*! @/configs */ 3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__configs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__configs__);
 //
 //
 //
@@ -276,7 +277,7 @@ throw new Error("Cannot find module \"../configs\"");
 
 /***/ }),
 
-/***/ 489:
+/***/ 498:
 /* no static exports found */
 /* all exports used */
 /*!******************************************************************************************************************************************************************************************************************************************************!*\
@@ -289,14 +290,14 @@ exports = module.exports = __webpack_require__(/*! ../../../~/css-loader/lib/css
 
 
 // module
-exports.push([module.i, "\n.p-sysmsgs .u-list {\n    height: 100%;\n    overflow-y: scroll;\n}\n.p-sysmsgs p {\n    word-wrap: normal;\n    word-break: break-all;\n    color: #333;\n}\n.p-sysmsgs .g-teamSys {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-flex: 100;\n    -webkit-flex-grow: 100;\n       -moz-box-flex: 100;\n        -ms-flex-positive: 100;\n            flex-grow: 100;\n    -webkit-box-pack: justify;\n    -webkit-justify-content: space-between;\n       -moz-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n       -moz-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    overflow: hidden;\n}\n.p-sysmsgs .g-teamSys .m-info {\n    -webkit-flex-shrink: 1;\n        -ms-flex-negative: 1;\n            flex-shrink: 1;\n    overflow: hidden;\n}\n.p-sysmsgs .g-teamSys .m-info .u-time {\n    color: #aaa;\n}\n.p-sysmsgs .g-teamSys .m-info .u-desc {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    color: #aaa;\n    font-size: 1rem;\n}\n.p-sysmsgs .g-teamSys .m-options{\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n       -moz-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.p-sysmsgs .g-teamSys .m-options .weui-btn.weui-btn_mini {\n    padding: 0;\n    width: 3rem;\n    height: 2rem;\n}\n.p-sysmsgs .g-teamSys .m-options .weui-btn + .weui-btn {\n    margin-top: 0;\n    margin-left: 0.5rem;\n}\n.p-sysmsgs .u-msg-state {\n    color: #aaa;\n    font-size: .9rem;\n}\n.p-sysmsgs .empty-hint{\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: 5rem;\n    margin: auto;\n    text-align: center;\n}\n", "", {"version":3,"sources":["/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/sayabc/SysMsgs.vue"],"names":[],"mappings":";AA8NE;IACE,aAAa;IACb,mBAAmB;CACpB;AACD;IACE,kBAAkB;IAClB,sBAAsB;IACtB,YAAY;CACb;AAED;IACE,qBAAc;IAAd,sBAAc;IAAd,kBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,sBAAe;IAAf,uBAAe;OAAf,mBAAe;QAAf,uBAAe;YAAf,eAAe;IACf,0BAA+B;IAA/B,uCAA+B;OAA/B,uBAA+B;QAA/B,uBAA+B;YAA/B,+BAA+B;IAC/B,0BAAoB;IAApB,4BAAoB;OAApB,uBAAoB;QAApB,uBAAoB;YAApB,oBAAoB;IACpB,iBAAiB;CAiClB;AA/BC;IACE,uBAAe;QAAf,qBAAe;YAAf,eAAe;IACf,iBAAiB;CAYlB;AAVC;IACE,YAAY;CACb;AACD;IACE,iBAAiB;IACjB,wBAAwB;IACxB,oBAAoB;IACpB,YAAY;IACZ,gBAAgB;CACjB;AAGH;IACE,qBAAc;IAAd,sBAAc;IAAd,kBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,0BAAoB;IAApB,4BAAoB;OAApB,uBAAoB;QAApB,uBAAoB;YAApB,oBAAoB;CAYrB;AAVC;IACE,WAAW;IACX,YAAY;IACZ,aAAa;CACd;AAED;IACE,cAAc;IACd,oBAAoB;CACrB;AAGL;IACE,YAAY;IACZ,iBAAiB;CAClB;AACD;IACE,mBAAmB;IACnB,QAAQ;IACR,SAAS;IACT,UAAU;IACV,aAAa;IACb,mBAAmB;CACpB","file":"SysMsgs.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-sysmsgs {\n  .u-list {\n    height: 100%;\n    overflow-y: scroll;\n  }\n  p {\n    word-wrap: normal;\n    word-break: break-all;\n    color: #333;\n  }\n  \n  .g-teamSys {\n    display: flex;\n    flex-grow: 100;\n    justify-content: space-between;\n    align-items: center;\n    overflow: hidden;\n    \n    .m-info {\n      flex-shrink: 1;\n      overflow: hidden;\n\n      .u-time {\n        color: #aaa;\n      }\n      .u-desc {\n        overflow: hidden;\n        text-overflow: ellipsis;\n        white-space: nowrap;\n        color: #aaa;\n        font-size: 1rem;\n      }\n    }\n\n    .m-options{\n      display: flex;\n      align-items: center;\n      \n      .weui-btn.weui-btn_mini {\n        padding: 0;\n        width: 3rem;\n        height: 2rem;\n      }\n      \n      .weui-btn + .weui-btn {\n        margin-top: 0;\n        margin-left: 0.5rem;\n      }\n    }\n  }\n  .u-msg-state {\n    color: #aaa;\n    font-size: .9rem;\n  }\n  .empty-hint{\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: 5rem;  \n    margin: auto;\n    text-align: center;\n  }\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.p-sysmsgs .u-list {\n    height: 100%;\n    overflow-y: scroll;\n}\n.p-sysmsgs p {\n    word-wrap: normal;\n    word-break: break-all;\n    color: #333;\n}\n.p-sysmsgs .g-teamSys {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-flex: 100;\n    -webkit-flex-grow: 100;\n       -moz-box-flex: 100;\n        -ms-flex-positive: 100;\n            flex-grow: 100;\n    -webkit-box-pack: justify;\n    -webkit-justify-content: space-between;\n       -moz-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n       -moz-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    overflow: hidden;\n}\n.p-sysmsgs .g-teamSys .m-info {\n    -webkit-flex-shrink: 1;\n        -ms-flex-negative: 1;\n            flex-shrink: 1;\n    overflow: hidden;\n}\n.p-sysmsgs .g-teamSys .m-info .u-time {\n    color: #aaa;\n}\n.p-sysmsgs .g-teamSys .m-info .u-desc {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    color: #aaa;\n    font-size: 1rem;\n}\n.p-sysmsgs .g-teamSys .m-options{\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n       -moz-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.p-sysmsgs .g-teamSys .m-options .weui-btn.weui-btn_mini {\n    padding: 0;\n    width: 3rem;\n    height: 2rem;\n}\n.p-sysmsgs .g-teamSys .m-options .weui-btn + .weui-btn {\n    margin-top: 0;\n    margin-left: 0.5rem;\n}\n.p-sysmsgs .u-msg-state {\n    color: #aaa;\n    font-size: .9rem;\n}\n.p-sysmsgs .empty-hint{\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: 5rem;\n    margin: auto;\n    text-align: center;\n}\n", "", {"version":3,"sources":["/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/sayabc/SysMsgs.vue"],"names":[],"mappings":";AA8NE;IACE,aAAa;IACb,mBAAmB;CACpB;AACD;IACE,kBAAkB;IAClB,sBAAsB;IACtB,YAAY;CACb;AAED;IACE,qBAAc;IAAd,sBAAc;IAAd,kBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,sBAAe;IAAf,uBAAe;OAAf,mBAAe;QAAf,uBAAe;YAAf,eAAe;IACf,0BAA+B;IAA/B,uCAA+B;OAA/B,uBAA+B;QAA/B,uBAA+B;YAA/B,+BAA+B;IAC/B,0BAAoB;IAApB,4BAAoB;OAApB,uBAAoB;QAApB,uBAAoB;YAApB,oBAAoB;IACpB,iBAAiB;CAiClB;AA/BC;IACE,uBAAe;QAAf,qBAAe;YAAf,eAAe;IACf,iBAAiB;CAYlB;AAVC;IACE,YAAY;CACb;AACD;IACE,iBAAiB;IACjB,wBAAwB;IACxB,oBAAoB;IACpB,YAAY;IACZ,gBAAgB;CACjB;AAGH;IACE,qBAAc;IAAd,sBAAc;IAAd,kBAAc;IAAd,qBAAc;IAAd,cAAc;IACd,0BAAoB;IAApB,4BAAoB;OAApB,uBAAoB;QAApB,uBAAoB;YAApB,oBAAoB;CAYrB;AAVC;IACE,WAAW;IACX,YAAY;IACZ,aAAa;CACd;AAED;IACE,cAAc;IACd,oBAAoB;CACrB;AAGL;IACE,YAAY;IACZ,iBAAiB;CAClB;AACD;IACE,mBAAmB;IACnB,QAAQ;IACR,SAAS;IACT,UAAU;IACV,aAAa;IACb,mBAAmB;CACpB","file":"SysMsgs.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-sysmsgs {\n  .u-list {\n    height: 100%;\n    overflow-y: scroll;\n  }\n  p {\n    word-wrap: normal;\n    word-break: break-all;\n    color: #333;\n  }\n\n  .g-teamSys {\n    display: flex;\n    flex-grow: 100;\n    justify-content: space-between;\n    align-items: center;\n    overflow: hidden;\n\n    .m-info {\n      flex-shrink: 1;\n      overflow: hidden;\n\n      .u-time {\n        color: #aaa;\n      }\n      .u-desc {\n        overflow: hidden;\n        text-overflow: ellipsis;\n        white-space: nowrap;\n        color: #aaa;\n        font-size: 1rem;\n      }\n    }\n\n    .m-options{\n      display: flex;\n      align-items: center;\n\n      .weui-btn.weui-btn_mini {\n        padding: 0;\n        width: 3rem;\n        height: 2rem;\n      }\n\n      .weui-btn + .weui-btn {\n        margin-top: 0;\n        margin-left: 0.5rem;\n      }\n    }\n  }\n  .u-msg-state {\n    color: #aaa;\n    font-size: .9rem;\n  }\n  .empty-hint{\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: 5rem;\n    margin: auto;\n    text-align: center;\n  }\n}\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 511:
+/***/ 520:
 /* no static exports found */
 /* all exports used */
 /*!*****************************************************************************************************************************************************************************************************************************************************!*\
@@ -486,7 +487,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 536:
+/***/ 545:
 /* no static exports found */
 /* all exports used */
 /*!***************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -497,7 +498,7 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-5d017adc","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./SysMsgs.vue */ 489);
+var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-5d017adc","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./SysMsgs.vue */ 498);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM

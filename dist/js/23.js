@@ -1,6 +1,6 @@
 webpackJsonp([23],{
 
-/***/ 329:
+/***/ 331:
 /* no static exports found */
 /* all exports used */
 /*!*******************************!*\
@@ -10,9 +10,9 @@ webpackJsonp([23],{
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 2)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./General.vue */ 451),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./General.vue */ 460),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-63925623"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./General.vue */ 514),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-63925623"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./General.vue */ 523),
   /* scopeId */
   null,
   /* cssModules */
@@ -40,7 +40,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 451:
+/***/ 460:
 /* exports provided: default */
 /* all exports used */
 /*!*******************************************************************************************************************************************!*\
@@ -50,9 +50,9 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vux_src_components_group_index_vue__ = __webpack_require__(/*! vux/src/components/group/index.vue */ 148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vux_src_components_group_index_vue__ = __webpack_require__(/*! vux/src/components/group/index.vue */ 150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vux_src_components_group_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vux_src_components_group_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vux_src_components_cell_index_vue__ = __webpack_require__(/*! vux/src/components/cell/index.vue */ 168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vux_src_components_cell_index_vue__ = __webpack_require__(/*! vux/src/components/cell/index.vue */ 169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vux_src_components_cell_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vux_src_components_cell_index_vue__);
 
 
@@ -83,7 +83,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 514:
+/***/ 523:
 /* no static exports found */
 /* all exports used */
 /*!**********************************************************************************************************************************************************************************************************************************************!*\
