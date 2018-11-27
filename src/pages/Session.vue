@@ -66,6 +66,7 @@ export default {
       return `${this.$store.state.userUID}`
     },
     sessionlist () {
+      console.log()
       let sessionlist = this.$store.state.sessionlist.filter(item => {
         item.name = ''
         item.avatar = ''

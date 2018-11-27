@@ -40,7 +40,7 @@
     "cssnano": "^3.10.0",
     "globby": "^6.1.0",
     "iscroll": "^5.2.0",
-    "less": "^2.7.2",
+    "less": "^2.7.3",
     "less-loader": "^3.0.0",
     "lodash": "^4.17.4",
     "npm-run-all": "^4.0.2",
@@ -70,6 +70,8 @@
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.6",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "less": "^2.7.3",
+    "less-loader": "^3.0.0"
   }
 }
