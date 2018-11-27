@@ -1,10 +1,6 @@
 webpackJsonp([22],{
 
-<<<<<<< HEAD
-/***/ 324:
-=======
-/***/ 331:
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+/***/ 333:
 /* no static exports found */
 /* all exports used */
 /*!**************************************!*\
@@ -12,33 +8,23 @@ webpackJsonp([22],{
   \**************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(/*! ../../~/_vue-loader@11.3.4@vue-loader/lib/component-normalizer */ 2)(
+var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 2)(
   /* script */
-<<<<<<< HEAD
-  __webpack_require__(/*! !babel-loader!../../~/_vux-loader@1.2.9@vux-loader/src/script-loader.js!../../~/_vue-loader@11.3.4@vue-loader/lib/selector?type=script&index=0!./General.vue */ 452),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./NameCardRemark.vue */ 469),
   /* template */
-  __webpack_require__(/*! !../../~/_vue-loader@11.3.4@vue-loader/lib/template-compiler/index?{"id":"data-v-63925623"}!../../~/_vux-loader@1.2.9@vux-loader/src/before-template-compiler-loader.js!../../~/_vux-loader@1.2.9@vux-loader/src/template-loader.js!../../~/_vue-loader@11.3.4@vue-loader/lib/selector?type=template&index=0!./General.vue */ 539),
-=======
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./NameCardRemark.vue */ 453),
-  /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-7bab74b0"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./NameCardRemark.vue */ 516),
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-7bab74b0"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./NameCardRemark.vue */ 558),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-<<<<<<< HEAD
-Component.options.__file = "/Users/lijianjian/Desktop/workspace/vue-im-web-demo/src/pages/General.vue"
-=======
 Component.options.__file = "/Users/wangxudong/me/sayabc/vue-im-web-demo/src/pages/NameCardRemark.vue"
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NameCardRemark.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
   module.hot.accept()
@@ -54,33 +40,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 452:
-/* exports provided: default */
-/* all exports used */
-/*!****************************************************************************************************************************************************************************************************!*\
-  !*** ./~/_babel-loader@6.4.1@babel-loader/lib!./~/_vux-loader@1.2.9@vux-loader/src/script-loader.js!./~/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=script&index=0!./src/pages/General.vue ***!
-  \****************************************************************************************************************************************************************************************************/
-=======
-/***/ 453:
+/***/ 469:
 /* exports provided: default */
 /* all exports used */
 /*!**************************************************************************************************************************************************!*\
   !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/NameCardRemark.vue ***!
   \**************************************************************************************************************************************************/
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vux_src_components_group_index_vue__ = __webpack_require__(/*! vux/src/components/group/index.vue */ 143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vux_src_components_group_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vux_src_components_group_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vux_src_components_cell_index_vue__ = __webpack_require__(/*! vux/src/components/cell/index.vue */ 162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vux_src_components_cell_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vux_src_components_cell_index_vue__);
-
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(/*! ../utils */ 16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(/*! ../utils */ 12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__utils__);
 //
 //
@@ -105,7 +75,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
 
 
 
@@ -146,21 +115,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 539:
-/* no static exports found */
-/* all exports used */
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/_vue-loader@11.3.4@vue-loader/lib/template-compiler?{"id":"data-v-63925623"}!./~/_vux-loader@1.2.9@vux-loader/src/before-template-compiler-loader.js!./~/_vux-loader@1.2.9@vux-loader/src/template-loader.js!./~/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=template&index=0!./src/pages/General.vue ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************/
-=======
-/***/ 516:
+/***/ 558:
 /* no static exports found */
 /* all exports used */
 /*!*****************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-7bab74b0"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/NameCardRemark.vue ***!
   \*****************************************************************************************************************************************************************************************************************************************************/
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -218,11 +178,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-<<<<<<< HEAD
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-63925623", module.exports)
-=======
      require("vue-hot-reload-api").rerender("data-v-7bab74b0", module.exports)
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
   }
 }
 

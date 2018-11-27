@@ -58,7 +58,6 @@ export default {
         enterChat (session) {
            if (session && session.id)
               this.$store.dispatch('setCurrSession', session.id)
-              this.$store.commit('saveChatName',session.to)
         }
     }
 }

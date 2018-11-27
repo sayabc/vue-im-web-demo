@@ -42,6 +42,16 @@
         :invalidHint="sendInvalidHint"
         :advancedTeam="teamInfo && teamInfo.type === 'advanced'"
       ></chat-editor>
+      <!-- 叫与被叫页面 -->
+      <div class="m-chat-call-main">
+        <!-- 被叫页面 -->
+        <be-call
+          :sysMsgs='sysMsgs'
+        ></be-call>
+        <!-- 主叫页面 -->
+        <call></call>
+      </div>
+
       <div id="container">
         #container
       </div>
@@ -55,14 +65,19 @@
 <script>
 import ChatEditor from '@/pages/sayabc/components/ChatEditor'
 import ChatList from '@/pages/sayabc/components/ChatList'
+import BeCall from '@/pages/sayabc/videoChat/Becall'
+import Call from '@/pages/sayabc/videoChat/Call'
 import util from '@/utils'
 import pageUtil from '@/utils/page'
 
+import { mapState } from "vuex"
 
 export default {
   components: {
     ChatEditor,
-    ChatList
+    ChatList,
+    BeCall,
+    Call
   },
   // 进入该页面，文档被挂载
   mounted () {
@@ -102,7 +117,15 @@ export default {
       }
     }
   },
+  // watch: {
+  //   sysMsgs(cur,pre) {
+  //     return cur
+  //   }
+  // },
   computed: {
+    // ...mapState({
+    //     sysMsgs: state => state.sysMsgs
+    // }),
     sessionId () {
       console.log('1234567890000')
       let sessionId = this.$route.params.sessionId || this.$store.state.currSessionId
@@ -166,6 +189,11 @@ export default {
       let msgs = this.$store.state.currSessionMsgs
       return msgs
     },
+    // sysMsgs () {
+    //   let sysMsgs = this.$store.state.sysMsgs
+    //   console.log('变化了么', sysMsgs)
+    //   return sysMsgs
+    // },
     teamInfo() {
       if (this.scene==='team') {
         var teamId =  this.sessionId.replace('team-','')

@@ -63,171 +63,1132 @@
 /******/ 	__webpack_require__.p = "dist/js/";
 /******/
 /******/ 	// Load entry module and return exports
-<<<<<<< HEAD
-/******/ 	return __webpack_require__(__webpack_require__.s = 211);
-=======
-/******/ 	return __webpack_require__(__webpack_require__.s = 217);
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+/******/ 	return __webpack_require__(__webpack_require__.s = 218);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */
+/******/ ({
+
+/***/ 10:
 /* no static exports found */
 /* all exports used */
-<<<<<<< HEAD
-/*!***********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_core.js ***!
-  \***********************************************************/
-/***/ (function(module, exports) {
+/*!***************************************************!*\
+  !*** ./~/core-js/library/modules/_descriptors.js ***!
+  \***************************************************/
+/***/ (function(module, exports, __webpack_require__) {
 
-var core = module.exports = { version: '2.5.7' };
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+// Thank's IE8 for his funny defineProperty
+module.exports = !__webpack_require__(/*! ./_fails */ 13)(function () {
+  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+});
 
 
 /***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */
+
+/***/ 103:
 /* no static exports found */
 /* all exports used */
-=======
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-/*!******************************!*\
-  !*** ./src/configs/index.js ***!
-  \******************************/
+/*!**************************!*\
+  !*** ./src/utils/md5.js ***!
+  \**************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 exports.__esModule = true;
+/**
+*
+*  MD5 (Message-Digest Algorithm)
+*  http://www.webtoolkit.info/
+*
+**/
 
-var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 8);
+var MD5 = function MD5(string) {
 
-var _assign2 = _interopRequireDefault(_assign);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var config = {
-  // sdk: 'NIM_Web_SDK_v5.6.0',
-  sdk: 'NIM_Web_SDK_v5.8.0',
-  webrtcSDK: 'NIM_Web_WebRTC_v5.8.0',
-  // 用户自定义的登录注册地址
-  loginUrl: '/webdemo/h5/login.html',
-  registUrl: '/webdemo/h5/regist.html',
-  homeUrl: '/webdemo/h5/index.html#/session',
-
-  // 资源路径根目录，为了方便用户部署在二级以上URL路径上
-  resourceUrl: 'http://yx-web.nos.netease.com/webdoc/h5',
-  // 用户logo地址
-  logo: 'http://yx-web.nos.netease.com/webdoc/h5/im/logo.png',
-  // 默认用户头像
-  defaultUserIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/default-icon.png',
-  // 默认普通群头像
-  defaultGroupIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/default-group.png',
-  // 默认高级群头像
-  defaultAdvancedIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/default-advanced.png',
-  // 系统通知图标
-  noticeIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/notice-icon.png',
-  // 我的手机图标
-  myPhoneIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/my-phone.png',
-  // 本地消息显示数量，会影响性能
-  localMsglimit: 36
-};
-
-var env = 'online';
-
-var appConfig = {
-  // 用户的appkey
-  // 用于在web demo中注册账号异步请求demo 服务器中使用
-  test: {
-    appkey: 'fe416640c8e8a72734219e1847ad2547',
-    postUrl: 'https://apptest.netease.im'
-  },
-  online: {
-    appkey: '45c6af3c98409b18a84451215d0bdd6e',
-    postUrl: 'https://app.netease.im'
+  function RotateLeft(lValue, iShiftBits) {
+    return lValue << iShiftBits | lValue >>> 32 - iShiftBits;
   }
+
+  function AddUnsigned(lX, lY) {
+    var lX4, lY4, lX8, lY8, lResult;
+    lX8 = lX & 0x80000000;
+    lY8 = lY & 0x80000000;
+    lX4 = lX & 0x40000000;
+    lY4 = lY & 0x40000000;
+    lResult = (lX & 0x3FFFFFFF) + (lY & 0x3FFFFFFF);
+    if (lX4 & lY4) {
+      return lResult ^ 0x80000000 ^ lX8 ^ lY8;
+    }
+    if (lX4 | lY4) {
+      if (lResult & 0x40000000) {
+        return lResult ^ 0xC0000000 ^ lX8 ^ lY8;
+      } else {
+        return lResult ^ 0x40000000 ^ lX8 ^ lY8;
+      }
+    } else {
+      return lResult ^ lX8 ^ lY8;
+    }
+  }
+
+  function F(x, y, z) {
+    return x & y | ~x & z;
+  }
+  function G(x, y, z) {
+    return x & z | y & ~z;
+  }
+  function H(x, y, z) {
+    return x ^ y ^ z;
+  }
+  function I(x, y, z) {
+    return y ^ (x | ~z);
+  }
+
+  function FF(a, b, c, d, x, s, ac) {
+    a = AddUnsigned(a, AddUnsigned(AddUnsigned(F(b, c, d), x), ac));
+    return AddUnsigned(RotateLeft(a, s), b);
+  };
+
+  function GG(a, b, c, d, x, s, ac) {
+    a = AddUnsigned(a, AddUnsigned(AddUnsigned(G(b, c, d), x), ac));
+    return AddUnsigned(RotateLeft(a, s), b);
+  };
+
+  function HH(a, b, c, d, x, s, ac) {
+    a = AddUnsigned(a, AddUnsigned(AddUnsigned(H(b, c, d), x), ac));
+    return AddUnsigned(RotateLeft(a, s), b);
+  };
+
+  function II(a, b, c, d, x, s, ac) {
+    a = AddUnsigned(a, AddUnsigned(AddUnsigned(I(b, c, d), x), ac));
+    return AddUnsigned(RotateLeft(a, s), b);
+  };
+
+  function ConvertToWordArray(string) {
+    var lWordCount;
+    var lMessageLength = string.length;
+    var lNumberOfWords_temp1 = lMessageLength + 8;
+    var lNumberOfWords_temp2 = (lNumberOfWords_temp1 - lNumberOfWords_temp1 % 64) / 64;
+    var lNumberOfWords = (lNumberOfWords_temp2 + 1) * 16;
+    var lWordArray = Array(lNumberOfWords - 1);
+    var lBytePosition = 0;
+    var lByteCount = 0;
+    while (lByteCount < lMessageLength) {
+      lWordCount = (lByteCount - lByteCount % 4) / 4;
+      lBytePosition = lByteCount % 4 * 8;
+      lWordArray[lWordCount] = lWordArray[lWordCount] | string.charCodeAt(lByteCount) << lBytePosition;
+      lByteCount++;
+    }
+    lWordCount = (lByteCount - lByteCount % 4) / 4;
+    lBytePosition = lByteCount % 4 * 8;
+    lWordArray[lWordCount] = lWordArray[lWordCount] | 0x80 << lBytePosition;
+    lWordArray[lNumberOfWords - 2] = lMessageLength << 3;
+    lWordArray[lNumberOfWords - 1] = lMessageLength >>> 29;
+    return lWordArray;
+  };
+
+  function WordToHex(lValue) {
+    var WordToHexValue = "",
+        WordToHexValue_temp = "",
+        lByte,
+        lCount;
+    for (lCount = 0; lCount <= 3; lCount++) {
+      lByte = lValue >>> lCount * 8 & 255;
+      WordToHexValue_temp = "0" + lByte.toString(16);
+      WordToHexValue = WordToHexValue + WordToHexValue_temp.substr(WordToHexValue_temp.length - 2, 2);
+    }
+    return WordToHexValue;
+  };
+
+  function Utf8Encode(string) {
+    string = string.replace(/\r\n/g, "\n");
+    var utftext = "";
+
+    for (var n = 0; n < string.length; n++) {
+
+      var c = string.charCodeAt(n);
+
+      if (c < 128) {
+        utftext += String.fromCharCode(c);
+      } else if (c > 127 && c < 2048) {
+        utftext += String.fromCharCode(c >> 6 | 192);
+        utftext += String.fromCharCode(c & 63 | 128);
+      } else {
+        utftext += String.fromCharCode(c >> 12 | 224);
+        utftext += String.fromCharCode(c >> 6 & 63 | 128);
+        utftext += String.fromCharCode(c & 63 | 128);
+      }
+    }
+
+    return utftext;
+  };
+
+  var x = Array();
+  var k, AA, BB, CC, DD, a, b, c, d;
+  var S11 = 7,
+      S12 = 12,
+      S13 = 17,
+      S14 = 22;
+  var S21 = 5,
+      S22 = 9,
+      S23 = 14,
+      S24 = 20;
+  var S31 = 4,
+      S32 = 11,
+      S33 = 16,
+      S34 = 23;
+  var S41 = 6,
+      S42 = 10,
+      S43 = 15,
+      S44 = 21;
+
+  string = Utf8Encode(string);
+
+  x = ConvertToWordArray(string);
+
+  a = 0x67452301;b = 0xEFCDAB89;c = 0x98BADCFE;d = 0x10325476;
+
+  for (k = 0; k < x.length; k += 16) {
+    AA = a;BB = b;CC = c;DD = d;
+    a = FF(a, b, c, d, x[k + 0], S11, 0xD76AA478);
+    d = FF(d, a, b, c, x[k + 1], S12, 0xE8C7B756);
+    c = FF(c, d, a, b, x[k + 2], S13, 0x242070DB);
+    b = FF(b, c, d, a, x[k + 3], S14, 0xC1BDCEEE);
+    a = FF(a, b, c, d, x[k + 4], S11, 0xF57C0FAF);
+    d = FF(d, a, b, c, x[k + 5], S12, 0x4787C62A);
+    c = FF(c, d, a, b, x[k + 6], S13, 0xA8304613);
+    b = FF(b, c, d, a, x[k + 7], S14, 0xFD469501);
+    a = FF(a, b, c, d, x[k + 8], S11, 0x698098D8);
+    d = FF(d, a, b, c, x[k + 9], S12, 0x8B44F7AF);
+    c = FF(c, d, a, b, x[k + 10], S13, 0xFFFF5BB1);
+    b = FF(b, c, d, a, x[k + 11], S14, 0x895CD7BE);
+    a = FF(a, b, c, d, x[k + 12], S11, 0x6B901122);
+    d = FF(d, a, b, c, x[k + 13], S12, 0xFD987193);
+    c = FF(c, d, a, b, x[k + 14], S13, 0xA679438E);
+    b = FF(b, c, d, a, x[k + 15], S14, 0x49B40821);
+    a = GG(a, b, c, d, x[k + 1], S21, 0xF61E2562);
+    d = GG(d, a, b, c, x[k + 6], S22, 0xC040B340);
+    c = GG(c, d, a, b, x[k + 11], S23, 0x265E5A51);
+    b = GG(b, c, d, a, x[k + 0], S24, 0xE9B6C7AA);
+    a = GG(a, b, c, d, x[k + 5], S21, 0xD62F105D);
+    d = GG(d, a, b, c, x[k + 10], S22, 0x2441453);
+    c = GG(c, d, a, b, x[k + 15], S23, 0xD8A1E681);
+    b = GG(b, c, d, a, x[k + 4], S24, 0xE7D3FBC8);
+    a = GG(a, b, c, d, x[k + 9], S21, 0x21E1CDE6);
+    d = GG(d, a, b, c, x[k + 14], S22, 0xC33707D6);
+    c = GG(c, d, a, b, x[k + 3], S23, 0xF4D50D87);
+    b = GG(b, c, d, a, x[k + 8], S24, 0x455A14ED);
+    a = GG(a, b, c, d, x[k + 13], S21, 0xA9E3E905);
+    d = GG(d, a, b, c, x[k + 2], S22, 0xFCEFA3F8);
+    c = GG(c, d, a, b, x[k + 7], S23, 0x676F02D9);
+    b = GG(b, c, d, a, x[k + 12], S24, 0x8D2A4C8A);
+    a = HH(a, b, c, d, x[k + 5], S31, 0xFFFA3942);
+    d = HH(d, a, b, c, x[k + 8], S32, 0x8771F681);
+    c = HH(c, d, a, b, x[k + 11], S33, 0x6D9D6122);
+    b = HH(b, c, d, a, x[k + 14], S34, 0xFDE5380C);
+    a = HH(a, b, c, d, x[k + 1], S31, 0xA4BEEA44);
+    d = HH(d, a, b, c, x[k + 4], S32, 0x4BDECFA9);
+    c = HH(c, d, a, b, x[k + 7], S33, 0xF6BB4B60);
+    b = HH(b, c, d, a, x[k + 10], S34, 0xBEBFBC70);
+    a = HH(a, b, c, d, x[k + 13], S31, 0x289B7EC6);
+    d = HH(d, a, b, c, x[k + 0], S32, 0xEAA127FA);
+    c = HH(c, d, a, b, x[k + 3], S33, 0xD4EF3085);
+    b = HH(b, c, d, a, x[k + 6], S34, 0x4881D05);
+    a = HH(a, b, c, d, x[k + 9], S31, 0xD9D4D039);
+    d = HH(d, a, b, c, x[k + 12], S32, 0xE6DB99E5);
+    c = HH(c, d, a, b, x[k + 15], S33, 0x1FA27CF8);
+    b = HH(b, c, d, a, x[k + 2], S34, 0xC4AC5665);
+    a = II(a, b, c, d, x[k + 0], S41, 0xF4292244);
+    d = II(d, a, b, c, x[k + 7], S42, 0x432AFF97);
+    c = II(c, d, a, b, x[k + 14], S43, 0xAB9423A7);
+    b = II(b, c, d, a, x[k + 5], S44, 0xFC93A039);
+    a = II(a, b, c, d, x[k + 12], S41, 0x655B59C3);
+    d = II(d, a, b, c, x[k + 3], S42, 0x8F0CCC92);
+    c = II(c, d, a, b, x[k + 10], S43, 0xFFEFF47D);
+    b = II(b, c, d, a, x[k + 1], S44, 0x85845DD1);
+    a = II(a, b, c, d, x[k + 8], S41, 0x6FA87E4F);
+    d = II(d, a, b, c, x[k + 15], S42, 0xFE2CE6E0);
+    c = II(c, d, a, b, x[k + 6], S43, 0xA3014314);
+    b = II(b, c, d, a, x[k + 13], S44, 0x4E0811A1);
+    a = II(a, b, c, d, x[k + 4], S41, 0xF7537E82);
+    d = II(d, a, b, c, x[k + 11], S42, 0xBD3AF235);
+    c = II(c, d, a, b, x[k + 2], S43, 0x2AD7D2BB);
+    b = II(b, c, d, a, x[k + 9], S44, 0xEB86D391);
+    a = AddUnsigned(a, AA);
+    b = AddUnsigned(b, BB);
+    c = AddUnsigned(c, CC);
+    d = AddUnsigned(d, DD);
+  }
+
+  var temp = WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
+
+  return temp.toLowerCase();
 };
 
-config = (0, _assign2.default)(config, appConfig[env]);
-
-exports.default = config;
-module.exports = exports['default'];
+exports.default = MD5;
+module.exports = exports["default"];
 
 /***/ }),
-/* 4 */
+
+/***/ 104:
 /* no static exports found */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/library/modules/_core.js ***!
-  \********************************************/
-/***/ (function(module, exports) {
-
-var core = module.exports = { version: '2.5.7' };
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
-
-
-/***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */
-/* no static exports found */
-/* all exports used */
-/*!*************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_global.js ***!
-  \*************************************************************/
-/***/ (function(module, exports) {
-
-// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-var global = module.exports = typeof window != 'undefined' && window.Math == Math
-  ? window : typeof self != 'undefined' && self.Math == Math ? self
-  // eslint-disable-next-line no-new-func
-  : Function('return this')();
-if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
-
-
-/***/ }),
-/* 8 */
-/* no static exports found */
-/* all exports used */
-/*!************************************************************************!*\
-  !*** ./~/_babel-runtime@6.26.0@babel-runtime/core-js/object/assign.js ***!
-  \************************************************************************/
+/*!**************************************!*\
+  !*** ./~/fastclick/lib/fastclick.js ***!
+  \**************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/assign */ 78), __esModule: true };
-=======
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/assign */ 75), __esModule: true };
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
+	'use strict';
+
+	/**
+	 * @preserve FastClick: polyfill to remove click delays on browsers with touch UIs.
+	 *
+	 * @codingstandard ftlabs-jsv2
+	 * @copyright The Financial Times Limited [All Rights Reserved]
+	 * @license MIT License (see LICENSE.txt)
+	 */
+
+	/*jslint browser:true, node:true*/
+	/*global define, Event, Node*/
+
+
+	/**
+	 * Instantiate fast-clicking listeners on the specified layer.
+	 *
+	 * @constructor
+	 * @param {Element} layer The layer to listen on
+	 * @param {Object} [options={}] The options to override the defaults
+	 */
+	function FastClick(layer, options) {
+		var oldOnClick;
+
+		options = options || {};
+
+		/**
+		 * Whether a click is currently being tracked.
+		 *
+		 * @type boolean
+		 */
+		this.trackingClick = false;
+
+
+		/**
+		 * Timestamp for when click tracking started.
+		 *
+		 * @type number
+		 */
+		this.trackingClickStart = 0;
+
+
+		/**
+		 * The element being tracked for a click.
+		 *
+		 * @type EventTarget
+		 */
+		this.targetElement = null;
+
+
+		/**
+		 * X-coordinate of touch start event.
+		 *
+		 * @type number
+		 */
+		this.touchStartX = 0;
+
+
+		/**
+		 * Y-coordinate of touch start event.
+		 *
+		 * @type number
+		 */
+		this.touchStartY = 0;
+
+
+		/**
+		 * ID of the last touch, retrieved from Touch.identifier.
+		 *
+		 * @type number
+		 */
+		this.lastTouchIdentifier = 0;
+
+
+		/**
+		 * Touchmove boundary, beyond which a click will be cancelled.
+		 *
+		 * @type number
+		 */
+		this.touchBoundary = options.touchBoundary || 10;
+
+
+		/**
+		 * The FastClick layer.
+		 *
+		 * @type Element
+		 */
+		this.layer = layer;
+
+		/**
+		 * The minimum time between tap(touchstart and touchend) events
+		 *
+		 * @type number
+		 */
+		this.tapDelay = options.tapDelay || 200;
+
+		/**
+		 * The maximum time for a tap
+		 *
+		 * @type number
+		 */
+		this.tapTimeout = options.tapTimeout || 700;
+
+		if (FastClick.notNeeded(layer)) {
+			return;
+		}
+
+		// Some old versions of Android don't have Function.prototype.bind
+		function bind(method, context) {
+			return function() { return method.apply(context, arguments); };
+		}
+
+
+		var methods = ['onMouse', 'onClick', 'onTouchStart', 'onTouchMove', 'onTouchEnd', 'onTouchCancel'];
+		var context = this;
+		for (var i = 0, l = methods.length; i < l; i++) {
+			context[methods[i]] = bind(context[methods[i]], context);
+		}
+
+		// Set up event handlers as required
+		if (deviceIsAndroid) {
+			layer.addEventListener('mouseover', this.onMouse, true);
+			layer.addEventListener('mousedown', this.onMouse, true);
+			layer.addEventListener('mouseup', this.onMouse, true);
+		}
+
+		layer.addEventListener('click', this.onClick, true);
+		layer.addEventListener('touchstart', this.onTouchStart, false);
+		layer.addEventListener('touchmove', this.onTouchMove, false);
+		layer.addEventListener('touchend', this.onTouchEnd, false);
+		layer.addEventListener('touchcancel', this.onTouchCancel, false);
+
+		// Hack is required for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
+		// which is how FastClick normally stops click events bubbling to callbacks registered on the FastClick
+		// layer when they are cancelled.
+		if (!Event.prototype.stopImmediatePropagation) {
+			layer.removeEventListener = function(type, callback, capture) {
+				var rmv = Node.prototype.removeEventListener;
+				if (type === 'click') {
+					rmv.call(layer, type, callback.hijacked || callback, capture);
+				} else {
+					rmv.call(layer, type, callback, capture);
+				}
+			};
+
+			layer.addEventListener = function(type, callback, capture) {
+				var adv = Node.prototype.addEventListener;
+				if (type === 'click') {
+					adv.call(layer, type, callback.hijacked || (callback.hijacked = function(event) {
+						if (!event.propagationStopped) {
+							callback(event);
+						}
+					}), capture);
+				} else {
+					adv.call(layer, type, callback, capture);
+				}
+			};
+		}
+
+		// If a handler is already declared in the element's onclick attribute, it will be fired before
+		// FastClick's onClick handler. Fix this by pulling out the user-defined handler function and
+		// adding it as listener.
+		if (typeof layer.onclick === 'function') {
+
+			// Android browser on at least 3.2 requires a new reference to the function in layer.onclick
+			// - the old one won't work if passed to addEventListener directly.
+			oldOnClick = layer.onclick;
+			layer.addEventListener('click', function(event) {
+				oldOnClick(event);
+			}, false);
+			layer.onclick = null;
+		}
+	}
+
+	/**
+	* Windows Phone 8.1 fakes user agent string to look like Android and iPhone.
+	*
+	* @type boolean
+	*/
+	var deviceIsWindowsPhone = navigator.userAgent.indexOf("Windows Phone") >= 0;
+
+	/**
+	 * Android requires exceptions.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsAndroid = navigator.userAgent.indexOf('Android') > 0 && !deviceIsWindowsPhone;
+
+
+	/**
+	 * iOS requires exceptions.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsIOS = /iP(ad|hone|od)/.test(navigator.userAgent) && !deviceIsWindowsPhone;
+
+
+	/**
+	 * iOS 4 requires an exception for select elements.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsIOS4 = deviceIsIOS && (/OS 4_\d(_\d)?/).test(navigator.userAgent);
+
+
+	/**
+	 * iOS 6.0-7.* requires the target element to be manually derived
+	 *
+	 * @type boolean
+	 */
+	var deviceIsIOSWithBadTarget = deviceIsIOS && (/OS [6-7]_\d/).test(navigator.userAgent);
+
+	/**
+	 * BlackBerry requires exceptions.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsBlackBerry10 = navigator.userAgent.indexOf('BB10') > 0;
+
+	/**
+	 * Determine whether a given element requires a native click.
+	 *
+	 * @param {EventTarget|Element} target Target DOM element
+	 * @returns {boolean} Returns true if the element needs a native click
+	 */
+	FastClick.prototype.needsClick = function(target) {
+		switch (target.nodeName.toLowerCase()) {
+
+		// Don't send a synthetic click to disabled inputs (issue #62)
+		case 'button':
+		case 'select':
+		case 'textarea':
+			if (target.disabled) {
+				return true;
+			}
+
+			break;
+		case 'input':
+
+			// File inputs need real clicks on iOS 6 due to a browser bug (issue #68)
+			if ((deviceIsIOS && target.type === 'file') || target.disabled) {
+				return true;
+			}
+
+			break;
+		case 'label':
+		case 'iframe': // iOS8 homescreen apps can prevent events bubbling into frames
+		case 'video':
+			return true;
+		}
+
+		return (/\bneedsclick\b/).test(target.className);
+	};
+
+
+	/**
+	 * Determine whether a given element requires a call to focus to simulate click into element.
+	 *
+	 * @param {EventTarget|Element} target Target DOM element
+	 * @returns {boolean} Returns true if the element requires a call to focus to simulate native click.
+	 */
+	FastClick.prototype.needsFocus = function(target) {
+		switch (target.nodeName.toLowerCase()) {
+		case 'textarea':
+			return true;
+		case 'select':
+			return !deviceIsAndroid;
+		case 'input':
+			switch (target.type) {
+			case 'button':
+			case 'checkbox':
+			case 'file':
+			case 'image':
+			case 'radio':
+			case 'submit':
+				return false;
+			}
+
+			// No point in attempting to focus disabled inputs
+			return !target.disabled && !target.readOnly;
+		default:
+			return (/\bneedsfocus\b/).test(target.className);
+		}
+	};
+
+
+	/**
+	 * Send a click event to the specified element.
+	 *
+	 * @param {EventTarget|Element} targetElement
+	 * @param {Event} event
+	 */
+	FastClick.prototype.sendClick = function(targetElement, event) {
+		var clickEvent, touch;
+
+		// On some Android devices activeElement needs to be blurred otherwise the synthetic click will have no effect (#24)
+		if (document.activeElement && document.activeElement !== targetElement) {
+			document.activeElement.blur();
+		}
+
+		touch = event.changedTouches[0];
+
+		// Synthesise a click event, with an extra attribute so it can be tracked
+		clickEvent = document.createEvent('MouseEvents');
+		clickEvent.initMouseEvent(this.determineEventType(targetElement), true, true, window, 1, touch.screenX, touch.screenY, touch.clientX, touch.clientY, false, false, false, false, 0, null);
+		clickEvent.forwardedTouchEvent = true;
+		targetElement.dispatchEvent(clickEvent);
+	};
+
+	FastClick.prototype.determineEventType = function(targetElement) {
+
+		//Issue #159: Android Chrome Select Box does not open with a synthetic click event
+		if (deviceIsAndroid && targetElement.tagName.toLowerCase() === 'select') {
+			return 'mousedown';
+		}
+
+		return 'click';
+	};
+
+
+	/**
+	 * @param {EventTarget|Element} targetElement
+	 */
+	FastClick.prototype.focus = function(targetElement) {
+		var length;
+
+		// Issue #160: on iOS 7, some input elements (e.g. date datetime month) throw a vague TypeError on setSelectionRange. These elements don't have an integer value for the selectionStart and selectionEnd properties, but unfortunately that can't be used for detection because accessing the properties also throws a TypeError. Just check the type instead. Filed as Apple bug #15122724.
+		if (deviceIsIOS && targetElement.setSelectionRange && targetElement.type.indexOf('date') !== 0 && targetElement.type !== 'time' && targetElement.type !== 'month') {
+			length = targetElement.value.length;
+			targetElement.setSelectionRange(length, length);
+		} else {
+			targetElement.focus();
+		}
+	};
+
+
+	/**
+	 * Check whether the given target element is a child of a scrollable layer and if so, set a flag on it.
+	 *
+	 * @param {EventTarget|Element} targetElement
+	 */
+	FastClick.prototype.updateScrollParent = function(targetElement) {
+		var scrollParent, parentElement;
+
+		scrollParent = targetElement.fastClickScrollParent;
+
+		// Attempt to discover whether the target element is contained within a scrollable layer. Re-check if the
+		// target element was moved to another parent.
+		if (!scrollParent || !scrollParent.contains(targetElement)) {
+			parentElement = targetElement;
+			do {
+				if (parentElement.scrollHeight > parentElement.offsetHeight) {
+					scrollParent = parentElement;
+					targetElement.fastClickScrollParent = parentElement;
+					break;
+				}
+
+				parentElement = parentElement.parentElement;
+			} while (parentElement);
+		}
+
+		// Always update the scroll top tracker if possible.
+		if (scrollParent) {
+			scrollParent.fastClickLastScrollTop = scrollParent.scrollTop;
+		}
+	};
+
+
+	/**
+	 * @param {EventTarget} targetElement
+	 * @returns {Element|EventTarget}
+	 */
+	FastClick.prototype.getTargetElementFromEventTarget = function(eventTarget) {
+
+		// On some older browsers (notably Safari on iOS 4.1 - see issue #56) the event target may be a text node.
+		if (eventTarget.nodeType === Node.TEXT_NODE) {
+			return eventTarget.parentNode;
+		}
+
+		return eventTarget;
+	};
+
+
+	/**
+	 * On touch start, record the position and scroll offset.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onTouchStart = function(event) {
+		var targetElement, touch, selection;
+
+		// Ignore multiple touches, otherwise pinch-to-zoom is prevented if both fingers are on the FastClick element (issue #111).
+		if (event.targetTouches.length > 1) {
+			return true;
+		}
+
+		targetElement = this.getTargetElementFromEventTarget(event.target);
+		touch = event.targetTouches[0];
+
+		if (deviceIsIOS) {
+
+			// Only trusted events will deselect text on iOS (issue #49)
+			selection = window.getSelection();
+			if (selection.rangeCount && !selection.isCollapsed) {
+				return true;
+			}
+
+			if (!deviceIsIOS4) {
+
+				// Weird things happen on iOS when an alert or confirm dialog is opened from a click event callback (issue #23):
+				// when the user next taps anywhere else on the page, new touchstart and touchend events are dispatched
+				// with the same identifier as the touch event that previously triggered the click that triggered the alert.
+				// Sadly, there is an issue on iOS 4 that causes some normal touch events to have the same identifier as an
+				// immediately preceeding touch event (issue #52), so this fix is unavailable on that platform.
+				// Issue 120: touch.identifier is 0 when Chrome dev tools 'Emulate touch events' is set with an iOS device UA string,
+				// which causes all touch events to be ignored. As this block only applies to iOS, and iOS identifiers are always long,
+				// random integers, it's safe to to continue if the identifier is 0 here.
+				if (touch.identifier && touch.identifier === this.lastTouchIdentifier) {
+					event.preventDefault();
+					return false;
+				}
+
+				this.lastTouchIdentifier = touch.identifier;
+
+				// If the target element is a child of a scrollable layer (using -webkit-overflow-scrolling: touch) and:
+				// 1) the user does a fling scroll on the scrollable layer
+				// 2) the user stops the fling scroll with another tap
+				// then the event.target of the last 'touchend' event will be the element that was under the user's finger
+				// when the fling scroll was started, causing FastClick to send a click event to that layer - unless a check
+				// is made to ensure that a parent layer was not scrolled before sending a synthetic click (issue #42).
+				this.updateScrollParent(targetElement);
+			}
+		}
+
+		this.trackingClick = true;
+		this.trackingClickStart = event.timeStamp;
+		this.targetElement = targetElement;
+
+		this.touchStartX = touch.pageX;
+		this.touchStartY = touch.pageY;
+
+		// Prevent phantom clicks on fast double-tap (issue #36)
+		if ((event.timeStamp - this.lastClickTime) < this.tapDelay) {
+			event.preventDefault();
+		}
+
+		return true;
+	};
+
+
+	/**
+	 * Based on a touchmove event object, check whether the touch has moved past a boundary since it started.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.touchHasMoved = function(event) {
+		var touch = event.changedTouches[0], boundary = this.touchBoundary;
+
+		if (Math.abs(touch.pageX - this.touchStartX) > boundary || Math.abs(touch.pageY - this.touchStartY) > boundary) {
+			return true;
+		}
+
+		return false;
+	};
+
+
+	/**
+	 * Update the last position.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onTouchMove = function(event) {
+		if (!this.trackingClick) {
+			return true;
+		}
+
+		// If the touch has moved, cancel the click tracking
+		if (this.targetElement !== this.getTargetElementFromEventTarget(event.target) || this.touchHasMoved(event)) {
+			this.trackingClick = false;
+			this.targetElement = null;
+		}
+
+		return true;
+	};
+
+
+	/**
+	 * Attempt to find the labelled control for the given label element.
+	 *
+	 * @param {EventTarget|HTMLLabelElement} labelElement
+	 * @returns {Element|null}
+	 */
+	FastClick.prototype.findControl = function(labelElement) {
+
+		// Fast path for newer browsers supporting the HTML5 control attribute
+		if (labelElement.control !== undefined) {
+			return labelElement.control;
+		}
+
+		// All browsers under test that support touch events also support the HTML5 htmlFor attribute
+		if (labelElement.htmlFor) {
+			return document.getElementById(labelElement.htmlFor);
+		}
+
+		// If no for attribute exists, attempt to retrieve the first labellable descendant element
+		// the list of which is defined here: http://www.w3.org/TR/html5/forms.html#category-label
+		return labelElement.querySelector('button, input:not([type=hidden]), keygen, meter, output, progress, select, textarea');
+	};
+
+
+	/**
+	 * On touch end, determine whether to send a click event at once.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onTouchEnd = function(event) {
+		var forElement, trackingClickStart, targetTagName, scrollParent, touch, targetElement = this.targetElement;
+
+		if (!this.trackingClick) {
+			return true;
+		}
+
+		// Prevent phantom clicks on fast double-tap (issue #36)
+		if ((event.timeStamp - this.lastClickTime) < this.tapDelay) {
+			this.cancelNextClick = true;
+			return true;
+		}
+
+		if ((event.timeStamp - this.trackingClickStart) > this.tapTimeout) {
+			return true;
+		}
+
+		// Reset to prevent wrong click cancel on input (issue #156).
+		this.cancelNextClick = false;
+
+		this.lastClickTime = event.timeStamp;
+
+		trackingClickStart = this.trackingClickStart;
+		this.trackingClick = false;
+		this.trackingClickStart = 0;
+
+		// On some iOS devices, the targetElement supplied with the event is invalid if the layer
+		// is performing a transition or scroll, and has to be re-detected manually. Note that
+		// for this to function correctly, it must be called *after* the event target is checked!
+		// See issue #57; also filed as rdar://13048589 .
+		if (deviceIsIOSWithBadTarget) {
+			touch = event.changedTouches[0];
+
+			// In certain cases arguments of elementFromPoint can be negative, so prevent setting targetElement to null
+			targetElement = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset) || targetElement;
+			targetElement.fastClickScrollParent = this.targetElement.fastClickScrollParent;
+		}
+
+		targetTagName = targetElement.tagName.toLowerCase();
+		if (targetTagName === 'label') {
+			forElement = this.findControl(targetElement);
+			if (forElement) {
+				this.focus(targetElement);
+				if (deviceIsAndroid) {
+					return false;
+				}
+
+				targetElement = forElement;
+			}
+		} else if (this.needsFocus(targetElement)) {
+
+			// Case 1: If the touch started a while ago (best guess is 100ms based on tests for issue #36) then focus will be triggered anyway. Return early and unset the target element reference so that the subsequent click will be allowed through.
+			// Case 2: Without this exception for input elements tapped when the document is contained in an iframe, then any inputted text won't be visible even though the value attribute is updated as the user types (issue #37).
+			if ((event.timeStamp - trackingClickStart) > 100 || (deviceIsIOS && window.top !== window && targetTagName === 'input')) {
+				this.targetElement = null;
+				return false;
+			}
+
+			this.focus(targetElement);
+			this.sendClick(targetElement, event);
+
+			// Select elements need the event to go through on iOS 4, otherwise the selector menu won't open.
+			// Also this breaks opening selects when VoiceOver is active on iOS6, iOS7 (and possibly others)
+			if (!deviceIsIOS || targetTagName !== 'select') {
+				this.targetElement = null;
+				event.preventDefault();
+			}
+
+			return false;
+		}
+
+		if (deviceIsIOS && !deviceIsIOS4) {
+
+			// Don't send a synthetic click event if the target element is contained within a parent layer that was scrolled
+			// and this tap is being used to stop the scrolling (usually initiated by a fling - issue #42).
+			scrollParent = targetElement.fastClickScrollParent;
+			if (scrollParent && scrollParent.fastClickLastScrollTop !== scrollParent.scrollTop) {
+				return true;
+			}
+		}
+
+		// Prevent the actual click from going though - unless the target node is marked as requiring
+		// real clicks or if it is in the whitelist in which case only non-programmatic clicks are permitted.
+		if (!this.needsClick(targetElement)) {
+			event.preventDefault();
+			this.sendClick(targetElement, event);
+		}
+
+		return false;
+	};
+
+
+	/**
+	 * On touch cancel, stop tracking the click.
+	 *
+	 * @returns {void}
+	 */
+	FastClick.prototype.onTouchCancel = function() {
+		this.trackingClick = false;
+		this.targetElement = null;
+	};
+
+
+	/**
+	 * Determine mouse events which should be permitted.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onMouse = function(event) {
+
+		// If a target element was never set (because a touch event was never fired) allow the event
+		if (!this.targetElement) {
+			return true;
+		}
+
+		if (event.forwardedTouchEvent) {
+			return true;
+		}
+
+		// Programmatically generated events targeting a specific element should be permitted
+		if (!event.cancelable) {
+			return true;
+		}
+
+		// Derive and check the target element to see whether the mouse event needs to be permitted;
+		// unless explicitly enabled, prevent non-touch click events from triggering actions,
+		// to prevent ghost/doubleclicks.
+		if (!this.needsClick(this.targetElement) || this.cancelNextClick) {
+
+			// Prevent any user-added listeners declared on FastClick element from being fired.
+			if (event.stopImmediatePropagation) {
+				event.stopImmediatePropagation();
+			} else {
+
+				// Part of the hack for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
+				event.propagationStopped = true;
+			}
+
+			// Cancel the event
+			event.stopPropagation();
+			event.preventDefault();
+
+			return false;
+		}
+
+		// If the mouse event is permitted, return true for the action to go through.
+		return true;
+	};
+
+
+	/**
+	 * On actual clicks, determine whether this is a touch-generated click, a click action occurring
+	 * naturally after a delay after a touch (which needs to be cancelled to avoid duplication), or
+	 * an actual click which should be permitted.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onClick = function(event) {
+		var permitted;
+
+		// It's possible for another FastClick-like library delivered with third-party code to fire a click event before FastClick does (issue #44). In that case, set the click-tracking flag back to false and return early. This will cause onTouchEnd to return early.
+		if (this.trackingClick) {
+			this.targetElement = null;
+			this.trackingClick = false;
+			return true;
+		}
+
+		// Very odd behaviour on iOS (issue #18): if a submit element is present inside a form and the user hits enter in the iOS simulator or clicks the Go button on the pop-up OS keyboard the a kind of 'fake' click event will be triggered with the submit-type input element as the target.
+		if (event.target.type === 'submit' && event.detail === 0) {
+			return true;
+		}
+
+		permitted = this.onMouse(event);
+
+		// Only unset targetElement if the click is not permitted. This will ensure that the check for !targetElement in onMouse fails and the browser's click doesn't go through.
+		if (!permitted) {
+			this.targetElement = null;
+		}
+
+		// If clicks are permitted, return true for the action to go through.
+		return permitted;
+	};
+
+
+	/**
+	 * Remove all FastClick's event listeners.
+	 *
+	 * @returns {void}
+	 */
+	FastClick.prototype.destroy = function() {
+		var layer = this.layer;
+
+		if (deviceIsAndroid) {
+			layer.removeEventListener('mouseover', this.onMouse, true);
+			layer.removeEventListener('mousedown', this.onMouse, true);
+			layer.removeEventListener('mouseup', this.onMouse, true);
+		}
+
+		layer.removeEventListener('click', this.onClick, true);
+		layer.removeEventListener('touchstart', this.onTouchStart, false);
+		layer.removeEventListener('touchmove', this.onTouchMove, false);
+		layer.removeEventListener('touchend', this.onTouchEnd, false);
+		layer.removeEventListener('touchcancel', this.onTouchCancel, false);
+	};
+
+
+	/**
+	 * Check whether FastClick is needed.
+	 *
+	 * @param {Element} layer The layer to listen on
+	 */
+	FastClick.notNeeded = function(layer) {
+		var metaViewport;
+		var chromeVersion;
+		var blackberryVersion;
+		var firefoxVersion;
+
+		// Devices that don't support touch don't need FastClick
+		if (typeof window.ontouchstart === 'undefined') {
+			return true;
+		}
+
+		// Chrome version - zero for other browsers
+		chromeVersion = +(/Chrome\/([0-9]+)/.exec(navigator.userAgent) || [,0])[1];
+
+		if (chromeVersion) {
+
+			if (deviceIsAndroid) {
+				metaViewport = document.querySelector('meta[name=viewport]');
+
+				if (metaViewport) {
+					// Chrome on Android with user-scalable="no" doesn't need FastClick (issue #89)
+					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
+						return true;
+					}
+					// Chrome 32 and above with width=device-width or less don't need FastClick
+					if (chromeVersion > 31 && document.documentElement.scrollWidth <= window.outerWidth) {
+						return true;
+					}
+				}
+
+			// Chrome desktop doesn't need FastClick (issue #15)
+			} else {
+				return true;
+			}
+		}
+
+		if (deviceIsBlackBerry10) {
+			blackberryVersion = navigator.userAgent.match(/Version\/([0-9]*)\.([0-9]*)/);
+
+			// BlackBerry 10.3+ does not require Fastclick library.
+			// https://github.com/ftlabs/fastclick/issues/251
+			if (blackberryVersion[1] >= 10 && blackberryVersion[2] >= 3) {
+				metaViewport = document.querySelector('meta[name=viewport]');
+
+				if (metaViewport) {
+					// user-scalable=no eliminates click delay.
+					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
+						return true;
+					}
+					// width=device-width (or less than device-width) eliminates click delay.
+					if (document.documentElement.scrollWidth <= window.outerWidth) {
+						return true;
+					}
+				}
+			}
+		}
+
+		// IE10 with -ms-touch-action: none or manipulation, which disables double-tap-to-zoom (issue #97)
+		if (layer.style.msTouchAction === 'none' || layer.style.touchAction === 'manipulation') {
+			return true;
+		}
+
+		// Firefox version - zero for other browsers
+		firefoxVersion = +(/Firefox\/([0-9]+)/.exec(navigator.userAgent) || [,0])[1];
+
+		if (firefoxVersion >= 27) {
+			// Firefox 27+ does not have tap delay if the content is not zoomable - https://bugzilla.mozilla.org/show_bug.cgi?id=922896
+
+			metaViewport = document.querySelector('meta[name=viewport]');
+			if (metaViewport && (metaViewport.content.indexOf('user-scalable=no') !== -1 || document.documentElement.scrollWidth <= window.outerWidth)) {
+				return true;
+			}
+		}
+
+		// IE11: prefixed -ms-touch-action is no longer supported and it's recomended to use non-prefixed version
+		// http://msdn.microsoft.com/en-us/library/windows/apps/Hh767313.aspx
+		if (layer.style.touchAction === 'none' || layer.style.touchAction === 'manipulation') {
+			return true;
+		}
+
+		return false;
+	};
+
+
+	/**
+	 * Factory method for creating a FastClick object
+	 *
+	 * @param {Element} layer The layer to listen on
+	 * @param {Object} [options={}] The options to override the defaults
+	 */
+	FastClick.attach = function(layer, options) {
+		return new FastClick(layer, options);
+	};
+
+
+	if (true) {
+
+		// AMD. Register as an anonymous module.
+		!(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
+			return FastClick;
+		}.call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else if (typeof module !== 'undefined' && module.exports) {
+		module.exports = FastClick.attach;
+		module.exports.FastClick = FastClick;
+	} else {
+		window.FastClick = FastClick;
+	}
+}());
+
 
 /***/ }),
-/* 9 */,
-/* 10 */
+
+/***/ 11:
 /* no static exports found */
 /* all exports used */
-/*!******************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_descriptors.js ***!
-  \******************************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-// Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(/*! ./_fails */ 12)(function () {
-  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
-});
-
-
-/***/ }),
-/* 11 */
-/* no static exports found */
-/* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_has.js ***!
-  \**********************************************************/
+/*!*******************************************!*\
+  !*** ./~/core-js/library/modules/_has.js ***!
+  \*******************************************/
 /***/ (function(module, exports) {
 
 var hasOwnProperty = {}.hasOwnProperty;
@@ -237,12 +1198,13 @@ module.exports = function (it, key) {
 
 
 /***/ }),
-/* 12 */
+
+/***/ 13:
 /* no static exports found */
 /* all exports used */
-/*!************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_fails.js ***!
-  \************************************************************/
+/*!*********************************************!*\
+  !*** ./~/core-js/library/modules/_fails.js ***!
+  \*********************************************/
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -255,12 +1217,13 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 13 */
+
+/***/ 14:
 /* no static exports found */
 /* all exports used */
-/*!***************************************!*\
-  !*** ./~/_vue@2.5.17@vue/dist/vue.js ***!
-  \***************************************/
+/*!***************************!*\
+  !*** ./~/vue/dist/vue.js ***!
+  \***************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
@@ -11211,20 +12174,21 @@ return Vue;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../_webpack@2.7.0@webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../../_timers-browserify@2.0.10@timers-browserify/main.js */ 67).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../../timers-browserify/main.js */ 71).setImmediate))
 
 /***/ }),
-/* 14 */
+
+/***/ 15:
 /* no static exports found */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-dp.js ***!
-  \****************************************************************/
+/*!*************************************************!*\
+  !*** ./~/core-js/library/modules/_object-dp.js ***!
+  \*************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(/*! ./_an-object */ 36);
-var IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 63);
-var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 53);
+var IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 67);
+var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 55);
 var dP = Object.defineProperty;
 
 exports.f = __webpack_require__(/*! ./_descriptors */ 10) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
@@ -11241,30 +12205,31 @@ exports.f = __webpack_require__(/*! ./_descriptors */ 10) ? Object.definePropert
 
 
 /***/ }),
-/* 15 */
+
+/***/ 16:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-iobject.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_to-iobject.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(/*! ./_iobject */ 55);
-var defined = __webpack_require__(/*! ./_defined */ 44);
+var IObject = __webpack_require__(/*! ./_iobject */ 57);
+var defined = __webpack_require__(/*! ./_defined */ 45);
 module.exports = function (it) {
   return IObject(defined(it));
 };
 
 
 /***/ }),
-/* 16 */,
-/* 17 */
+
+/***/ 17:
 /* no static exports found */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_is-object.js ***!
-  \****************************************************************/
+/*!*************************************************!*\
+  !*** ./~/core-js/library/modules/_is-object.js ***!
+  \*************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -11273,16 +12238,17 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 18 */
+
+/***/ 18:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_hide.js ***!
-  \***********************************************************/
+/*!********************************************!*\
+  !*** ./~/core-js/library/modules/_hide.js ***!
+  \********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(/*! ./_object-dp */ 14);
-var createDesc = __webpack_require__(/*! ./_property-desc */ 39);
+var dP = __webpack_require__(/*! ./_object-dp */ 15);
+var createDesc = __webpack_require__(/*! ./_property-desc */ 41);
 module.exports = __webpack_require__(/*! ./_descriptors */ 10) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
@@ -11292,9 +12258,8 @@ module.exports = __webpack_require__(/*! ./_descriptors */ 10) ? function (objec
 
 
 /***/ }),
-/* 19 */,
-/* 20 */,
-/* 21 */
+
+/***/ 21:
 /* no static exports found */
 /* all exports used */
 /*!***********************************!*\
@@ -11326,12 +12291,100 @@ module.exports = g;
 
 
 /***/ }),
-/* 22 */
+
+/***/ 218:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/_process@0.11.10@process/browser.js ***!
-  \***********************************************/
+/*!**********************!*\
+  !*** ./src/login.js ***!
+  \**********************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _vue = __webpack_require__(/*! vue */ 14);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _fastclick = __webpack_require__(/*! fastclick */ 104);
+
+var _fastclick2 = _interopRequireDefault(_fastclick);
+
+var _touchEvent = __webpack_require__(/*! ./plugins/touchEvent */ 58);
+
+var _touchEvent2 = _interopRequireDefault(_touchEvent);
+
+var _md = __webpack_require__(/*! ./utils/md5 */ 103);
+
+var _md2 = _interopRequireDefault(_md);
+
+var _cookie = __webpack_require__(/*! ./utils/cookie */ 43);
+
+var _cookie2 = _interopRequireDefault(_cookie);
+
+var _configs = __webpack_require__(/*! ./configs */ 3);
+
+var _configs2 = _interopRequireDefault(_configs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_fastclick2.default.attach(document.body);
+
+// 添加手势触摸事件，使用方法如 v-touch:swipeleft
+
+
+// 添加Fastclick移除移动端点击延迟
+
+_vue2.default.use(_touchEvent2.default);
+
+var formData = new _vue2.default({
+  el: '#form-data',
+  data: {
+    logo: _configs2.default.logo,
+    account: '',
+    password: '',
+    errorMsg: ''
+  },
+  mounted: function mounted() {
+    this.$el.style.display = "";
+  },
+
+  methods: {
+    login: function login() {
+      if (this.account === '') {
+        this.errorMsg = '帐号不能为空';
+        return;
+      } else if (this.password === '') {
+        this.errorMsg = '密码不能为空';
+        return;
+      } else if (this.password.length < 6) {
+        this.errorMsg = '密码至少需要6位';
+        return;
+      }
+      this.errorMsg = '';
+      // 本demo做一次假登录
+      // 真实场景应在此向服务器发起ajax请求
+      var sdktoken = (0, _md2.default)(this.password);
+      // 服务端帐号均为小写
+      _cookie2.default.setCookie('uid', this.account.toLowerCase());
+      _cookie2.default.setCookie('sdktoken', sdktoken);
+      location.href = _configs2.default.homeUrl;
+    },
+    regist: function regist() {
+      location.href = _configs2.default.registUrl;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ 22:
+/* no static exports found */
+/* all exports used */
+/*!******************************!*\
+  !*** ./~/process/browser.js ***!
+  \******************************/
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -11521,24 +12574,19 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 23 */
+
+/***/ 23:
 /* no static exports found */
 /* all exports used */
-/*!*************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_export.js ***!
-  \*************************************************************/
+/*!**********************************************!*\
+  !*** ./~/core-js/library/modules/_export.js ***!
+  \**********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(/*! ./_global */ 7);
-<<<<<<< HEAD
-var core = __webpack_require__(/*! ./_core */ 3);
-var ctx = __webpack_require__(/*! ./_ctx */ 70);
-var hide = __webpack_require__(/*! ./_hide */ 18);
-=======
 var core = __webpack_require__(/*! ./_core */ 4);
-var ctx = __webpack_require__(/*! ./_ctx */ 79);
-var hide = __webpack_require__(/*! ./_hide */ 17);
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+var ctx = __webpack_require__(/*! ./_ctx */ 75);
+var hide = __webpack_require__(/*! ./_hide */ 18);
 var has = __webpack_require__(/*! ./_has */ 11);
 var PROTOTYPE = 'prototype';
 
@@ -11600,17 +12648,18 @@ module.exports = $export;
 
 
 /***/ }),
-/* 24 */
+
+/***/ 24:
 /* no static exports found */
 /* all exports used */
-/*!******************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-keys.js ***!
-  \******************************************************************/
+/*!***************************************************!*\
+  !*** ./~/core-js/library/modules/_object-keys.js ***!
+  \***************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(/*! ./_object-keys-internal */ 64);
-var enumBugKeys = __webpack_require__(/*! ./_enum-bug-keys */ 45);
+var $keys = __webpack_require__(/*! ./_object-keys-internal */ 68);
+var enumBugKeys = __webpack_require__(/*! ./_enum-bug-keys */ 46);
 
 module.exports = Object.keys || function keys(O) {
   return $keys(O, enumBugKeys);
@@ -11618,23 +12667,81 @@ module.exports = Object.keys || function keys(O) {
 
 
 /***/ }),
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */
+
+/***/ 3:
 /* no static exports found */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_an-object.js ***!
-  \****************************************************************/
+/*!******************************!*\
+  !*** ./src/configs/index.js ***!
+  \******************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 8);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var config = {
+  // sdk: 'NIM_Web_SDK_v5.6.0',
+  sdk: 'NIM_Web_SDK_v5.8.0',
+  webrtcSDK: 'NIM_Web_WebRTC_v5.8.0',
+  // 用户自定义的登录注册地址
+  loginUrl: '/webdemo/h5/login.html',
+  registUrl: '/webdemo/h5/regist.html',
+  homeUrl: '/webdemo/h5/index.html#/session',
+
+  // 资源路径根目录，为了方便用户部署在二级以上URL路径上
+  resourceUrl: 'http://yx-web.nos.netease.com/webdoc/h5',
+  // 用户logo地址
+  logo: 'http://yx-web.nos.netease.com/webdoc/h5/im/logo.png',
+  // 默认用户头像
+  defaultUserIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/default-icon.png',
+  // 默认普通群头像
+  defaultGroupIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/default-group.png',
+  // 默认高级群头像
+  defaultAdvancedIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/default-advanced.png',
+  // 系统通知图标
+  noticeIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/notice-icon.png',
+  // 我的手机图标
+  myPhoneIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/my-phone.png',
+  // 本地消息显示数量，会影响性能
+  localMsglimit: 36
+};
+
+var env = 'online';
+
+var appConfig = {
+  // 用户的appkey
+  // 用于在web demo中注册账号异步请求demo 服务器中使用
+  test: {
+    appkey: 'fe416640c8e8a72734219e1847ad2547',
+    postUrl: 'https://apptest.netease.im'
+  },
+  online: {
+    appkey: '45c6af3c98409b18a84451215d0bdd6e',
+    postUrl: 'https://app.netease.im'
+  }
+};
+
+config = (0, _assign2.default)(config, appConfig[env]);
+
+exports.default = config;
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ 36:
+/* no static exports found */
+/* all exports used */
+/*!*************************************************!*\
+  !*** ./~/core-js/library/modules/_an-object.js ***!
+  \*************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(/*! ./_is-object */ 17);
@@ -11645,36 +12752,53 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 37 */
+
+/***/ 38:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_library.js ***!
-  \**************************************************************/
+/*!***********************************************!*\
+  !*** ./~/core-js/library/modules/_library.js ***!
+  \***********************************************/
 /***/ (function(module, exports) {
 
 module.exports = true;
 
 
 /***/ }),
-/* 38 */
+
+/***/ 4:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-pie.js ***!
-  \*****************************************************************/
+/*!********************************************!*\
+  !*** ./~/core-js/library/modules/_core.js ***!
+  \********************************************/
+/***/ (function(module, exports) {
+
+var core = module.exports = { version: '2.5.7' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+
+/***/ }),
+
+/***/ 40:
+/* no static exports found */
+/* all exports used */
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_object-pie.js ***!
+  \**************************************************/
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 39 */
+
+/***/ 41:
 /* no static exports found */
 /* all exports used */
-/*!********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_property-desc.js ***!
-  \********************************************************************/
+/*!*****************************************************!*\
+  !*** ./~/core-js/library/modules/_property-desc.js ***!
+  \*****************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -11688,12 +12812,13 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 40 */
+
+/***/ 42:
 /* no static exports found */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_uid.js ***!
-  \**********************************************************/
+/*!*******************************************!*\
+  !*** ./~/core-js/library/modules/_uid.js ***!
+  \*******************************************/
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -11704,7 +12829,8 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 41 */
+
+/***/ 43:
 /* no static exports found */
 /* all exports used */
 /*!*****************************!*\
@@ -11748,28 +12874,25 @@ exports.default = cookie;
 module.exports = exports['default'];
 
 /***/ }),
-/* 42 */,
-/* 43 */
+
+/***/ 44:
 /* no static exports found */
 /* all exports used */
-/*!************************************************************************!*\
-  !*** ./~/_babel-runtime@6.26.0@babel-runtime/core-js/object/create.js ***!
-  \************************************************************************/
+/*!**************************************************!*\
+  !*** ./~/babel-runtime/core-js/object/create.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/create */ 79), __esModule: true };
-=======
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/create */ 76), __esModule: true };
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/create */ 81), __esModule: true };
 
 /***/ }),
-/* 44 */
+
+/***/ 45:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_defined.js ***!
-  \**************************************************************/
+/*!***********************************************!*\
+  !*** ./~/core-js/library/modules/_defined.js ***!
+  \***********************************************/
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -11780,12 +12903,13 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 45 */
+
+/***/ 46:
 /* no static exports found */
 /* all exports used */
-/*!********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_enum-bug-keys.js ***!
-  \********************************************************************/
+/*!*****************************************************!*\
+  !*** ./~/core-js/library/modules/_enum-bug-keys.js ***!
+  \*****************************************************/
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -11795,28 +12919,30 @@ module.exports = (
 
 
 /***/ }),
-/* 46 */
+
+/***/ 47:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_shared-key.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_shared-key.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(/*! ./_shared */ 51)('keys');
-var uid = __webpack_require__(/*! ./_uid */ 40);
+var shared = __webpack_require__(/*! ./_shared */ 53)('keys');
+var uid = __webpack_require__(/*! ./_uid */ 42);
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
 
 
 /***/ }),
-/* 47 */
+
+/***/ 48:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-integer.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_to-integer.js ***!
+  \**************************************************/
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -11828,41 +12954,33 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 48 */,
-/* 49 */
+
+/***/ 51:
 /* no static exports found */
 /* all exports used */
-/*!********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-create.js ***!
-  \********************************************************************/
+/*!*****************************************************!*\
+  !*** ./~/core-js/library/modules/_object-create.js ***!
+  \*****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-<<<<<<< HEAD
 var anObject = __webpack_require__(/*! ./_an-object */ 36);
-=======
-var anObject = __webpack_require__(/*! ./_an-object */ 35);
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-var dPs = __webpack_require__(/*! ./_object-dps */ 83);
-var enumBugKeys = __webpack_require__(/*! ./_enum-bug-keys */ 45);
-var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 46)('IE_PROTO');
+var dPs = __webpack_require__(/*! ./_object-dps */ 85);
+var enumBugKeys = __webpack_require__(/*! ./_enum-bug-keys */ 46);
+var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 47)('IE_PROTO');
 var Empty = function () { /* empty */ };
 var PROTOTYPE = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function () {
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(/*! ./_dom-create */ 54)('iframe');
+  var iframe = __webpack_require__(/*! ./_dom-create */ 56)('iframe');
   var i = enumBugKeys.length;
   var lt = '<';
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-<<<<<<< HEAD
-  __webpack_require__(/*! ./_html */ 71).appendChild(iframe);
-=======
-  __webpack_require__(/*! ./_html */ 80).appendChild(iframe);
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+  __webpack_require__(/*! ./_html */ 76).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -11889,24 +13007,26 @@ module.exports = Object.create || function create(O, Properties) {
 
 
 /***/ }),
-/* 50 */
+
+/***/ 52:
 /* no static exports found */
 /* all exports used */
-/*!******************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-gops.js ***!
-  \******************************************************************/
+/*!***************************************************!*\
+  !*** ./~/core-js/library/modules/_object-gops.js ***!
+  \***************************************************/
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 51 */
+
+/***/ 53:
 /* no static exports found */
 /* all exports used */
-/*!*************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_shared.js ***!
-  \*************************************************************/
+/*!**********************************************!*\
+  !*** ./~/core-js/library/modules/_shared.js ***!
+  \**********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var core = __webpack_require__(/*! ./_core */ 4);
@@ -11918,34 +13038,36 @@ var store = global[SHARED] || (global[SHARED] = {});
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
   version: core.version,
-  mode: __webpack_require__(/*! ./_library */ 37) ? 'pure' : 'global',
+  mode: __webpack_require__(/*! ./_library */ 38) ? 'pure' : 'global',
   copyright: '© 2018 Denis Pushkarev (zloirock.ru)'
 });
 
 
 /***/ }),
-/* 52 */
+
+/***/ 54:
 /* no static exports found */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-object.js ***!
-  \****************************************************************/
+/*!*************************************************!*\
+  !*** ./~/core-js/library/modules/_to-object.js ***!
+  \*************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
-var defined = __webpack_require__(/*! ./_defined */ 44);
+var defined = __webpack_require__(/*! ./_defined */ 45);
 module.exports = function (it) {
   return Object(defined(it));
 };
 
 
 /***/ }),
-/* 53 */
+
+/***/ 55:
 /* no static exports found */
 /* all exports used */
-/*!*******************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-primitive.js ***!
-  \*******************************************************************/
+/*!****************************************************!*\
+  !*** ./~/core-js/library/modules/_to-primitive.js ***!
+  \****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -11963,12 +13085,13 @@ module.exports = function (it, S) {
 
 
 /***/ }),
-/* 54 */
+
+/***/ 56:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_dom-create.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_dom-create.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(/*! ./_is-object */ 17);
@@ -11981,16 +13104,17 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 55 */
+
+/***/ 57:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_iobject.js ***!
-  \**************************************************************/
+/*!***********************************************!*\
+  !*** ./~/core-js/library/modules/_iobject.js ***!
+  \***********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(/*! ./_cof */ 57);
+var cof = __webpack_require__(/*! ./_cof */ 59);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -11998,7 +13122,8 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 
 /***/ }),
-/* 56 */
+
+/***/ 58:
 /* no static exports found */
 /* all exports used */
 /*!***********************************!*\
@@ -12011,11 +13136,11 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 exports.__esModule = true;
 
-var _create = __webpack_require__(/*! babel-runtime/core-js/object/create */ 43);
+var _create = __webpack_require__(/*! babel-runtime/core-js/object/create */ 44);
 
 var _create2 = _interopRequireDefault(_create);
 
-var _vue = __webpack_require__(/*! vue */ 13);
+var _vue = __webpack_require__(/*! vue */ 14);
 
 var _vue2 = _interopRequireDefault(_vue);
 
@@ -12144,12 +13269,13 @@ exports.default = TouchEventPlugin;
 module.exports = exports['default'];
 
 /***/ }),
-/* 57 */
+
+/***/ 59:
 /* no static exports found */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_cof.js ***!
-  \**********************************************************/
+/*!*******************************************!*\
+  !*** ./~/core-js/library/modules/_cof.js ***!
+  \*******************************************/
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -12160,41 +13286,34 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */
+
+/***/ 67:
 /* no static exports found */
 /* all exports used */
-/*!*********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_ie8-dom-define.js ***!
-  \*********************************************************************/
+/*!******************************************************!*\
+  !*** ./~/core-js/library/modules/_ie8-dom-define.js ***!
+  \******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = !__webpack_require__(/*! ./_descriptors */ 10) && !__webpack_require__(/*! ./_fails */ 12)(function () {
-  return Object.defineProperty(__webpack_require__(/*! ./_dom-create */ 54)('div'), 'a', { get: function () { return 7; } }).a != 7;
+module.exports = !__webpack_require__(/*! ./_descriptors */ 10) && !__webpack_require__(/*! ./_fails */ 13)(function () {
+  return Object.defineProperty(__webpack_require__(/*! ./_dom-create */ 56)('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
 
 /***/ }),
-/* 64 */
+
+/***/ 68:
 /* no static exports found */
 /* all exports used */
-/*!***************************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-keys-internal.js ***!
-  \***************************************************************************/
+/*!************************************************************!*\
+  !*** ./~/core-js/library/modules/_object-keys-internal.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var has = __webpack_require__(/*! ./_has */ 11);
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 15);
-<<<<<<< HEAD
-var arrayIndexOf = __webpack_require__(/*! ./_array-includes */ 80)(false);
-=======
-var arrayIndexOf = __webpack_require__(/*! ./_array-includes */ 78)(false);
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 46)('IE_PROTO');
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
+var arrayIndexOf = __webpack_require__(/*! ./_array-includes */ 82)(false);
+var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 47)('IE_PROTO');
 
 module.exports = function (object, names) {
   var O = toIObject(object);
@@ -12211,14 +13330,31 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 65 */,
-/* 66 */,
-/* 67 */
+
+/***/ 7:
 /* no static exports found */
 /* all exports used */
-/*!***************************************************************!*\
-  !*** ./~/_timers-browserify@2.0.10@timers-browserify/main.js ***!
-  \***************************************************************/
+/*!**********************************************!*\
+  !*** ./~/core-js/library/modules/_global.js ***!
+  \**********************************************/
+/***/ (function(module, exports) {
+
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math
+  ? window : typeof self != 'undefined' && self.Math == Math ? self
+  // eslint-disable-next-line no-new-func
+  : Function('return this')();
+if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
+
+
+/***/ }),
+
+/***/ 71:
+/* no static exports found */
+/* all exports used */
+/*!*************************************!*\
+  !*** ./~/timers-browserify/main.js ***!
+  \*************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -12274,11 +13410,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-<<<<<<< HEAD
-__webpack_require__(/*! setimmediate */ 90);
-=======
-__webpack_require__(/*! setimmediate */ 91);
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+__webpack_require__(/*! setimmediate */ 92);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -12289,29 +13421,18 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../_webpack@2.7.0@webpack/buildin/global.js */ 21)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 21)))
 
 /***/ }),
-/* 68 */,
-<<<<<<< HEAD
-/* 69 */
-=======
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+
+/***/ 74:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_a-function.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_a-function.js ***!
+  \**************************************************/
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = function (it) {
   if (typeof it != 'function') throw TypeError(it + ' is not a function!');
   return it;
@@ -12319,25 +13440,17 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 70 */
-=======
-__webpack_require__(/*! ../../modules/es6.object.assign */ 88);
-module.exports = __webpack_require__(/*! ../../modules/_core */ 4).Object.assign;
 
-
-/***/ }),
-/* 76 */
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+/***/ 75:
 /* no static exports found */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_ctx.js ***!
-  \**********************************************************/
+/*!*******************************************!*\
+  !*** ./~/core-js/library/modules/_ctx.js ***!
+  \*******************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 // optional / simple context binding
-var aFunction = __webpack_require__(/*! ./_a-function */ 69);
+var aFunction = __webpack_require__(/*! ./_a-function */ 74);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -12355,26 +13468,17 @@ module.exports = function (fn, that, length) {
   return function (/* ...args */) {
     return fn.apply(that, arguments);
   };
-=======
-__webpack_require__(/*! ../../modules/es6.object.create */ 89);
-var $Object = __webpack_require__(/*! ../../modules/_core */ 4).Object;
-module.exports = function create(P, D) {
-  return $Object.create(P, D);
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
 };
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 71 */
-=======
-/* 77 */
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+
+/***/ 76:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_html.js ***!
-  \***********************************************************/
+/*!********************************************!*\
+  !*** ./~/core-js/library/modules/_html.js ***!
+  \********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var document = __webpack_require__(/*! ./_global */ 7).document;
@@ -12382,16 +13486,17 @@ module.exports = document && document.documentElement;
 
 
 /***/ }),
-/* 72 */
+
+/***/ 77:
 /* no static exports found */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-length.js ***!
-  \****************************************************************/
+/*!*************************************************!*\
+  !*** ./~/core-js/library/modules/_to-length.js ***!
+  \*************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(/*! ./_to-integer */ 47);
+var toInteger = __webpack_require__(/*! ./_to-integer */ 48);
 var min = Math.min;
 module.exports = function (it) {
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -12399,61 +13504,63 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */
+
+/***/ 8:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/fn/object/assign.js ***!
-  \**************************************************************/
+/*!**************************************************!*\
+  !*** ./~/babel-runtime/core-js/object/assign.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../../modules/es6.object.assign */ 87);
-module.exports = __webpack_require__(/*! ../../modules/_core */ 3).Object.assign;
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/assign */ 80), __esModule: true };
+
+/***/ }),
+
+/***/ 80:
+/* no static exports found */
+/* all exports used */
+/*!***********************************************!*\
+  !*** ./~/core-js/library/fn/object/assign.js ***!
+  \***********************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es6.object.assign */ 89);
+module.exports = __webpack_require__(/*! ../../modules/_core */ 4).Object.assign;
 
 
 /***/ }),
-/* 79 */
+
+/***/ 81:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/fn/object/create.js ***!
-  \**************************************************************/
+/*!***********************************************!*\
+  !*** ./~/core-js/library/fn/object/create.js ***!
+  \***********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../../modules/es6.object.create */ 88);
-var $Object = __webpack_require__(/*! ../../modules/_core */ 3).Object;
+__webpack_require__(/*! ../../modules/es6.object.create */ 90);
+var $Object = __webpack_require__(/*! ../../modules/_core */ 4).Object;
 module.exports = function create(P, D) {
   return $Object.create(P, D);
 };
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 80 */
-=======
-/* 78 */
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+
+/***/ 82:
 /* no static exports found */
 /* all exports used */
-/*!*********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_array-includes.js ***!
-  \*********************************************************************/
+/*!******************************************************!*\
+  !*** ./~/core-js/library/modules/_array-includes.js ***!
+  \******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 15);
-<<<<<<< HEAD
-var toLength = __webpack_require__(/*! ./_to-length */ 72);
-=======
-var toLength = __webpack_require__(/*! ./_to-length */ 87);
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-var toAbsoluteIndex = __webpack_require__(/*! ./_to-absolute-index */ 86);
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
+var toLength = __webpack_require__(/*! ./_to-length */ 77);
+var toAbsoluteIndex = __webpack_require__(/*! ./_to-absolute-index */ 88);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -12475,81 +13582,27 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 81 */,
-/* 82 */
-/* no static exports found */
-/* all exports used */
-/*!********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-assign.js ***!
-  \********************************************************************/
-=======
-/* 79 */
-/* no static exports found */
-/* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/library/modules/_ctx.js ***!
-  \*******************************************/
-/***/ (function(module, exports, __webpack_require__) {
 
-// optional / simple context binding
-var aFunction = __webpack_require__(/*! ./_a-function */ 77);
-module.exports = function (fn, that, length) {
-  aFunction(fn);
-  if (that === undefined) return fn;
-  switch (length) {
-    case 1: return function (a) {
-      return fn.call(that, a);
-    };
-    case 2: return function (a, b) {
-      return fn.call(that, a, b);
-    };
-    case 3: return function (a, b, c) {
-      return fn.call(that, a, b, c);
-    };
-  }
-  return function (/* ...args */) {
-    return fn.apply(that, arguments);
-  };
-};
-
-
-/***/ }),
-/* 80 */
-/* no static exports found */
-/* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/library/modules/_html.js ***!
-  \********************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-var document = __webpack_require__(/*! ./_global */ 7).document;
-module.exports = document && document.documentElement;
-
-
-/***/ }),
-/* 81 */,
-/* 82 */
+/***/ 84:
 /* no static exports found */
 /* all exports used */
 /*!*****************************************************!*\
   !*** ./~/core-js/library/modules/_object-assign.js ***!
   \*****************************************************/
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
 var getKeys = __webpack_require__(/*! ./_object-keys */ 24);
-var gOPS = __webpack_require__(/*! ./_object-gops */ 50);
-var pIE = __webpack_require__(/*! ./_object-pie */ 38);
-var toObject = __webpack_require__(/*! ./_to-object */ 52);
-var IObject = __webpack_require__(/*! ./_iobject */ 55);
+var gOPS = __webpack_require__(/*! ./_object-gops */ 52);
+var pIE = __webpack_require__(/*! ./_object-pie */ 40);
+var toObject = __webpack_require__(/*! ./_to-object */ 54);
+var IObject = __webpack_require__(/*! ./_iobject */ 57);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(/*! ./_fails */ 12)(function () {
+module.exports = !$assign || __webpack_require__(/*! ./_fails */ 13)(function () {
   var A = {};
   var B = {};
   // eslint-disable-next-line no-undef
@@ -12576,15 +13629,16 @@ module.exports = !$assign || __webpack_require__(/*! ./_fails */ 12)(function ()
 
 
 /***/ }),
-/* 83 */
+
+/***/ 85:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-dps.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_object-dps.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(/*! ./_object-dp */ 14);
+var dP = __webpack_require__(/*! ./_object-dp */ 15);
 var anObject = __webpack_require__(/*! ./_an-object */ 36);
 var getKeys = __webpack_require__(/*! ./_object-keys */ 24);
 
@@ -12600,17 +13654,16 @@ module.exports = __webpack_require__(/*! ./_descriptors */ 10) ? Object.definePr
 
 
 /***/ }),
-/* 84 */,
-/* 85 */,
-/* 86 */
+
+/***/ 88:
 /* no static exports found */
 /* all exports used */
-/*!************************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-absolute-index.js ***!
-  \************************************************************************/
+/*!*********************************************************!*\
+  !*** ./~/core-js/library/modules/_to-absolute-index.js ***!
+  \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(/*! ./_to-integer */ 47);
+var toInteger = __webpack_require__(/*! ./_to-integer */ 48);
 var max = Math.max;
 var min = Math.min;
 module.exports = function (index, length) {
@@ -12620,71 +13673,44 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 87 */
-<<<<<<< HEAD
-=======
+
+/***/ 89:
 /* no static exports found */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/library/modules/_to-length.js ***!
-  \*************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.1.15 ToLength
-var toInteger = __webpack_require__(/*! ./_to-integer */ 47);
-var min = Math.min;
-module.exports = function (it) {
-  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
-};
-
-
-/***/ }),
-/* 88 */
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-/* no static exports found */
-/* all exports used */
-/*!***********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/es6.object.assign.js ***!
-  \***********************************************************************/
+/*!********************************************************!*\
+  !*** ./~/core-js/library/modules/es6.object.assign.js ***!
+  \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(/*! ./_export */ 23);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(/*! ./_object-assign */ 82) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(/*! ./_object-assign */ 84) });
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 88 */
-=======
-/* 89 */
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+
+/***/ 90:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/es6.object.create.js ***!
-  \***********************************************************************/
+/*!********************************************************!*\
+  !*** ./~/core-js/library/modules/es6.object.create.js ***!
+  \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(/*! ./_export */ 23);
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-$export($export.S, 'Object', { create: __webpack_require__(/*! ./_object-create */ 49) });
+$export($export.S, 'Object', { create: __webpack_require__(/*! ./_object-create */ 51) });
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 89 */,
-/* 90 */
-=======
-/* 90 */,
-/* 91 */
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
+
+/***/ 92:
 /* no static exports found */
 /* all exports used */
-/*!************************************************************!*\
-  !*** ./~/_setimmediate@1.0.5@setimmediate/setImmediate.js ***!
-  \************************************************************/
+/*!****************************************!*\
+  !*** ./~/setimmediate/setImmediate.js ***!
+  \****************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -12874,1345 +13900,9 @@ $export($export.S, 'Object', { create: __webpack_require__(/*! ./_object-create 
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../_webpack@2.7.0@webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../_process@0.11.10@process/browser.js */ 22)))
-
-/***/ }),
-<<<<<<< HEAD
-/* 91 */,
-=======
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-<<<<<<< HEAD
-/* 96 */
-=======
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-/* no static exports found */
-/* all exports used */
-/*!**************************!*\
-  !*** ./src/utils/md5.js ***!
-  \**************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-/**
-*
-*  MD5 (Message-Digest Algorithm)
-*  http://www.webtoolkit.info/
-*
-**/
-
-var MD5 = function MD5(string) {
-
-  function RotateLeft(lValue, iShiftBits) {
-    return lValue << iShiftBits | lValue >>> 32 - iShiftBits;
-  }
-
-  function AddUnsigned(lX, lY) {
-    var lX4, lY4, lX8, lY8, lResult;
-    lX8 = lX & 0x80000000;
-    lY8 = lY & 0x80000000;
-    lX4 = lX & 0x40000000;
-    lY4 = lY & 0x40000000;
-    lResult = (lX & 0x3FFFFFFF) + (lY & 0x3FFFFFFF);
-    if (lX4 & lY4) {
-      return lResult ^ 0x80000000 ^ lX8 ^ lY8;
-    }
-    if (lX4 | lY4) {
-      if (lResult & 0x40000000) {
-        return lResult ^ 0xC0000000 ^ lX8 ^ lY8;
-      } else {
-        return lResult ^ 0x40000000 ^ lX8 ^ lY8;
-      }
-    } else {
-      return lResult ^ lX8 ^ lY8;
-    }
-  }
-
-  function F(x, y, z) {
-    return x & y | ~x & z;
-  }
-  function G(x, y, z) {
-    return x & z | y & ~z;
-  }
-  function H(x, y, z) {
-    return x ^ y ^ z;
-  }
-  function I(x, y, z) {
-    return y ^ (x | ~z);
-  }
-
-  function FF(a, b, c, d, x, s, ac) {
-    a = AddUnsigned(a, AddUnsigned(AddUnsigned(F(b, c, d), x), ac));
-    return AddUnsigned(RotateLeft(a, s), b);
-  };
-
-  function GG(a, b, c, d, x, s, ac) {
-    a = AddUnsigned(a, AddUnsigned(AddUnsigned(G(b, c, d), x), ac));
-    return AddUnsigned(RotateLeft(a, s), b);
-  };
-
-  function HH(a, b, c, d, x, s, ac) {
-    a = AddUnsigned(a, AddUnsigned(AddUnsigned(H(b, c, d), x), ac));
-    return AddUnsigned(RotateLeft(a, s), b);
-  };
-
-  function II(a, b, c, d, x, s, ac) {
-    a = AddUnsigned(a, AddUnsigned(AddUnsigned(I(b, c, d), x), ac));
-    return AddUnsigned(RotateLeft(a, s), b);
-  };
-
-  function ConvertToWordArray(string) {
-    var lWordCount;
-    var lMessageLength = string.length;
-    var lNumberOfWords_temp1 = lMessageLength + 8;
-    var lNumberOfWords_temp2 = (lNumberOfWords_temp1 - lNumberOfWords_temp1 % 64) / 64;
-    var lNumberOfWords = (lNumberOfWords_temp2 + 1) * 16;
-    var lWordArray = Array(lNumberOfWords - 1);
-    var lBytePosition = 0;
-    var lByteCount = 0;
-    while (lByteCount < lMessageLength) {
-      lWordCount = (lByteCount - lByteCount % 4) / 4;
-      lBytePosition = lByteCount % 4 * 8;
-      lWordArray[lWordCount] = lWordArray[lWordCount] | string.charCodeAt(lByteCount) << lBytePosition;
-      lByteCount++;
-    }
-    lWordCount = (lByteCount - lByteCount % 4) / 4;
-    lBytePosition = lByteCount % 4 * 8;
-    lWordArray[lWordCount] = lWordArray[lWordCount] | 0x80 << lBytePosition;
-    lWordArray[lNumberOfWords - 2] = lMessageLength << 3;
-    lWordArray[lNumberOfWords - 1] = lMessageLength >>> 29;
-    return lWordArray;
-  };
-
-  function WordToHex(lValue) {
-    var WordToHexValue = "",
-        WordToHexValue_temp = "",
-        lByte,
-        lCount;
-    for (lCount = 0; lCount <= 3; lCount++) {
-      lByte = lValue >>> lCount * 8 & 255;
-      WordToHexValue_temp = "0" + lByte.toString(16);
-      WordToHexValue = WordToHexValue + WordToHexValue_temp.substr(WordToHexValue_temp.length - 2, 2);
-    }
-    return WordToHexValue;
-  };
-
-  function Utf8Encode(string) {
-    string = string.replace(/\r\n/g, "\n");
-    var utftext = "";
-
-    for (var n = 0; n < string.length; n++) {
-
-      var c = string.charCodeAt(n);
-
-      if (c < 128) {
-        utftext += String.fromCharCode(c);
-      } else if (c > 127 && c < 2048) {
-        utftext += String.fromCharCode(c >> 6 | 192);
-        utftext += String.fromCharCode(c & 63 | 128);
-      } else {
-        utftext += String.fromCharCode(c >> 12 | 224);
-        utftext += String.fromCharCode(c >> 6 & 63 | 128);
-        utftext += String.fromCharCode(c & 63 | 128);
-      }
-    }
-
-    return utftext;
-  };
-
-  var x = Array();
-  var k, AA, BB, CC, DD, a, b, c, d;
-  var S11 = 7,
-      S12 = 12,
-      S13 = 17,
-      S14 = 22;
-  var S21 = 5,
-      S22 = 9,
-      S23 = 14,
-      S24 = 20;
-  var S31 = 4,
-      S32 = 11,
-      S33 = 16,
-      S34 = 23;
-  var S41 = 6,
-      S42 = 10,
-      S43 = 15,
-      S44 = 21;
-
-  string = Utf8Encode(string);
-
-  x = ConvertToWordArray(string);
-
-  a = 0x67452301;b = 0xEFCDAB89;c = 0x98BADCFE;d = 0x10325476;
-
-  for (k = 0; k < x.length; k += 16) {
-    AA = a;BB = b;CC = c;DD = d;
-    a = FF(a, b, c, d, x[k + 0], S11, 0xD76AA478);
-    d = FF(d, a, b, c, x[k + 1], S12, 0xE8C7B756);
-    c = FF(c, d, a, b, x[k + 2], S13, 0x242070DB);
-    b = FF(b, c, d, a, x[k + 3], S14, 0xC1BDCEEE);
-    a = FF(a, b, c, d, x[k + 4], S11, 0xF57C0FAF);
-    d = FF(d, a, b, c, x[k + 5], S12, 0x4787C62A);
-    c = FF(c, d, a, b, x[k + 6], S13, 0xA8304613);
-    b = FF(b, c, d, a, x[k + 7], S14, 0xFD469501);
-    a = FF(a, b, c, d, x[k + 8], S11, 0x698098D8);
-    d = FF(d, a, b, c, x[k + 9], S12, 0x8B44F7AF);
-    c = FF(c, d, a, b, x[k + 10], S13, 0xFFFF5BB1);
-    b = FF(b, c, d, a, x[k + 11], S14, 0x895CD7BE);
-    a = FF(a, b, c, d, x[k + 12], S11, 0x6B901122);
-    d = FF(d, a, b, c, x[k + 13], S12, 0xFD987193);
-    c = FF(c, d, a, b, x[k + 14], S13, 0xA679438E);
-    b = FF(b, c, d, a, x[k + 15], S14, 0x49B40821);
-    a = GG(a, b, c, d, x[k + 1], S21, 0xF61E2562);
-    d = GG(d, a, b, c, x[k + 6], S22, 0xC040B340);
-    c = GG(c, d, a, b, x[k + 11], S23, 0x265E5A51);
-    b = GG(b, c, d, a, x[k + 0], S24, 0xE9B6C7AA);
-    a = GG(a, b, c, d, x[k + 5], S21, 0xD62F105D);
-    d = GG(d, a, b, c, x[k + 10], S22, 0x2441453);
-    c = GG(c, d, a, b, x[k + 15], S23, 0xD8A1E681);
-    b = GG(b, c, d, a, x[k + 4], S24, 0xE7D3FBC8);
-    a = GG(a, b, c, d, x[k + 9], S21, 0x21E1CDE6);
-    d = GG(d, a, b, c, x[k + 14], S22, 0xC33707D6);
-    c = GG(c, d, a, b, x[k + 3], S23, 0xF4D50D87);
-    b = GG(b, c, d, a, x[k + 8], S24, 0x455A14ED);
-    a = GG(a, b, c, d, x[k + 13], S21, 0xA9E3E905);
-    d = GG(d, a, b, c, x[k + 2], S22, 0xFCEFA3F8);
-    c = GG(c, d, a, b, x[k + 7], S23, 0x676F02D9);
-    b = GG(b, c, d, a, x[k + 12], S24, 0x8D2A4C8A);
-    a = HH(a, b, c, d, x[k + 5], S31, 0xFFFA3942);
-    d = HH(d, a, b, c, x[k + 8], S32, 0x8771F681);
-    c = HH(c, d, a, b, x[k + 11], S33, 0x6D9D6122);
-    b = HH(b, c, d, a, x[k + 14], S34, 0xFDE5380C);
-    a = HH(a, b, c, d, x[k + 1], S31, 0xA4BEEA44);
-    d = HH(d, a, b, c, x[k + 4], S32, 0x4BDECFA9);
-    c = HH(c, d, a, b, x[k + 7], S33, 0xF6BB4B60);
-    b = HH(b, c, d, a, x[k + 10], S34, 0xBEBFBC70);
-    a = HH(a, b, c, d, x[k + 13], S31, 0x289B7EC6);
-    d = HH(d, a, b, c, x[k + 0], S32, 0xEAA127FA);
-    c = HH(c, d, a, b, x[k + 3], S33, 0xD4EF3085);
-    b = HH(b, c, d, a, x[k + 6], S34, 0x4881D05);
-    a = HH(a, b, c, d, x[k + 9], S31, 0xD9D4D039);
-    d = HH(d, a, b, c, x[k + 12], S32, 0xE6DB99E5);
-    c = HH(c, d, a, b, x[k + 15], S33, 0x1FA27CF8);
-    b = HH(b, c, d, a, x[k + 2], S34, 0xC4AC5665);
-    a = II(a, b, c, d, x[k + 0], S41, 0xF4292244);
-    d = II(d, a, b, c, x[k + 7], S42, 0x432AFF97);
-    c = II(c, d, a, b, x[k + 14], S43, 0xAB9423A7);
-    b = II(b, c, d, a, x[k + 5], S44, 0xFC93A039);
-    a = II(a, b, c, d, x[k + 12], S41, 0x655B59C3);
-    d = II(d, a, b, c, x[k + 3], S42, 0x8F0CCC92);
-    c = II(c, d, a, b, x[k + 10], S43, 0xFFEFF47D);
-    b = II(b, c, d, a, x[k + 1], S44, 0x85845DD1);
-    a = II(a, b, c, d, x[k + 8], S41, 0x6FA87E4F);
-    d = II(d, a, b, c, x[k + 15], S42, 0xFE2CE6E0);
-    c = II(c, d, a, b, x[k + 6], S43, 0xA3014314);
-    b = II(b, c, d, a, x[k + 13], S44, 0x4E0811A1);
-    a = II(a, b, c, d, x[k + 4], S41, 0xF7537E82);
-    d = II(d, a, b, c, x[k + 11], S42, 0xBD3AF235);
-    c = II(c, d, a, b, x[k + 2], S43, 0x2AD7D2BB);
-    b = II(b, c, d, a, x[k + 9], S44, 0xEB86D391);
-    a = AddUnsigned(a, AA);
-    b = AddUnsigned(b, BB);
-    c = AddUnsigned(c, CC);
-    d = AddUnsigned(d, DD);
-  }
-
-  var temp = WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
-
-  return temp.toLowerCase();
-};
-
-exports.default = MD5;
-module.exports = exports["default"];
-
-/***/ }),
-<<<<<<< HEAD
-/* 97 */
-=======
-/* 101 */
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-/* no static exports found */
-/* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/_fastclick@1.0.6@fastclick/lib/fastclick.js ***!
-  \*******************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
-	'use strict';
-
-	/**
-	 * @preserve FastClick: polyfill to remove click delays on browsers with touch UIs.
-	 *
-	 * @codingstandard ftlabs-jsv2
-	 * @copyright The Financial Times Limited [All Rights Reserved]
-	 * @license MIT License (see LICENSE.txt)
-	 */
-
-	/*jslint browser:true, node:true*/
-	/*global define, Event, Node*/
-
-
-	/**
-	 * Instantiate fast-clicking listeners on the specified layer.
-	 *
-	 * @constructor
-	 * @param {Element} layer The layer to listen on
-	 * @param {Object} [options={}] The options to override the defaults
-	 */
-	function FastClick(layer, options) {
-		var oldOnClick;
-
-		options = options || {};
-
-		/**
-		 * Whether a click is currently being tracked.
-		 *
-		 * @type boolean
-		 */
-		this.trackingClick = false;
-
-
-		/**
-		 * Timestamp for when click tracking started.
-		 *
-		 * @type number
-		 */
-		this.trackingClickStart = 0;
-
-
-		/**
-		 * The element being tracked for a click.
-		 *
-		 * @type EventTarget
-		 */
-		this.targetElement = null;
-
-
-		/**
-		 * X-coordinate of touch start event.
-		 *
-		 * @type number
-		 */
-		this.touchStartX = 0;
-
-
-		/**
-		 * Y-coordinate of touch start event.
-		 *
-		 * @type number
-		 */
-		this.touchStartY = 0;
-
-
-		/**
-		 * ID of the last touch, retrieved from Touch.identifier.
-		 *
-		 * @type number
-		 */
-		this.lastTouchIdentifier = 0;
-
-
-		/**
-		 * Touchmove boundary, beyond which a click will be cancelled.
-		 *
-		 * @type number
-		 */
-		this.touchBoundary = options.touchBoundary || 10;
-
-
-		/**
-		 * The FastClick layer.
-		 *
-		 * @type Element
-		 */
-		this.layer = layer;
-
-		/**
-		 * The minimum time between tap(touchstart and touchend) events
-		 *
-		 * @type number
-		 */
-		this.tapDelay = options.tapDelay || 200;
-
-		/**
-		 * The maximum time for a tap
-		 *
-		 * @type number
-		 */
-		this.tapTimeout = options.tapTimeout || 700;
-
-		if (FastClick.notNeeded(layer)) {
-			return;
-		}
-
-		// Some old versions of Android don't have Function.prototype.bind
-		function bind(method, context) {
-			return function() { return method.apply(context, arguments); };
-		}
-
-
-		var methods = ['onMouse', 'onClick', 'onTouchStart', 'onTouchMove', 'onTouchEnd', 'onTouchCancel'];
-		var context = this;
-		for (var i = 0, l = methods.length; i < l; i++) {
-			context[methods[i]] = bind(context[methods[i]], context);
-		}
-
-		// Set up event handlers as required
-		if (deviceIsAndroid) {
-			layer.addEventListener('mouseover', this.onMouse, true);
-			layer.addEventListener('mousedown', this.onMouse, true);
-			layer.addEventListener('mouseup', this.onMouse, true);
-		}
-
-		layer.addEventListener('click', this.onClick, true);
-		layer.addEventListener('touchstart', this.onTouchStart, false);
-		layer.addEventListener('touchmove', this.onTouchMove, false);
-		layer.addEventListener('touchend', this.onTouchEnd, false);
-		layer.addEventListener('touchcancel', this.onTouchCancel, false);
-
-		// Hack is required for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
-		// which is how FastClick normally stops click events bubbling to callbacks registered on the FastClick
-		// layer when they are cancelled.
-		if (!Event.prototype.stopImmediatePropagation) {
-			layer.removeEventListener = function(type, callback, capture) {
-				var rmv = Node.prototype.removeEventListener;
-				if (type === 'click') {
-					rmv.call(layer, type, callback.hijacked || callback, capture);
-				} else {
-					rmv.call(layer, type, callback, capture);
-				}
-			};
-
-			layer.addEventListener = function(type, callback, capture) {
-				var adv = Node.prototype.addEventListener;
-				if (type === 'click') {
-					adv.call(layer, type, callback.hijacked || (callback.hijacked = function(event) {
-						if (!event.propagationStopped) {
-							callback(event);
-						}
-					}), capture);
-				} else {
-					adv.call(layer, type, callback, capture);
-				}
-			};
-		}
-
-		// If a handler is already declared in the element's onclick attribute, it will be fired before
-		// FastClick's onClick handler. Fix this by pulling out the user-defined handler function and
-		// adding it as listener.
-		if (typeof layer.onclick === 'function') {
-
-			// Android browser on at least 3.2 requires a new reference to the function in layer.onclick
-			// - the old one won't work if passed to addEventListener directly.
-			oldOnClick = layer.onclick;
-			layer.addEventListener('click', function(event) {
-				oldOnClick(event);
-			}, false);
-			layer.onclick = null;
-		}
-	}
-
-	/**
-	* Windows Phone 8.1 fakes user agent string to look like Android and iPhone.
-	*
-	* @type boolean
-	*/
-	var deviceIsWindowsPhone = navigator.userAgent.indexOf("Windows Phone") >= 0;
-
-	/**
-	 * Android requires exceptions.
-	 *
-	 * @type boolean
-	 */
-	var deviceIsAndroid = navigator.userAgent.indexOf('Android') > 0 && !deviceIsWindowsPhone;
-
-
-	/**
-	 * iOS requires exceptions.
-	 *
-	 * @type boolean
-	 */
-	var deviceIsIOS = /iP(ad|hone|od)/.test(navigator.userAgent) && !deviceIsWindowsPhone;
-
-
-	/**
-	 * iOS 4 requires an exception for select elements.
-	 *
-	 * @type boolean
-	 */
-	var deviceIsIOS4 = deviceIsIOS && (/OS 4_\d(_\d)?/).test(navigator.userAgent);
-
-
-	/**
-	 * iOS 6.0-7.* requires the target element to be manually derived
-	 *
-	 * @type boolean
-	 */
-	var deviceIsIOSWithBadTarget = deviceIsIOS && (/OS [6-7]_\d/).test(navigator.userAgent);
-
-	/**
-	 * BlackBerry requires exceptions.
-	 *
-	 * @type boolean
-	 */
-	var deviceIsBlackBerry10 = navigator.userAgent.indexOf('BB10') > 0;
-
-	/**
-	 * Determine whether a given element requires a native click.
-	 *
-	 * @param {EventTarget|Element} target Target DOM element
-	 * @returns {boolean} Returns true if the element needs a native click
-	 */
-	FastClick.prototype.needsClick = function(target) {
-		switch (target.nodeName.toLowerCase()) {
-
-		// Don't send a synthetic click to disabled inputs (issue #62)
-		case 'button':
-		case 'select':
-		case 'textarea':
-			if (target.disabled) {
-				return true;
-			}
-
-			break;
-		case 'input':
-
-			// File inputs need real clicks on iOS 6 due to a browser bug (issue #68)
-			if ((deviceIsIOS && target.type === 'file') || target.disabled) {
-				return true;
-			}
-
-			break;
-		case 'label':
-		case 'iframe': // iOS8 homescreen apps can prevent events bubbling into frames
-		case 'video':
-			return true;
-		}
-
-		return (/\bneedsclick\b/).test(target.className);
-	};
-
-
-	/**
-	 * Determine whether a given element requires a call to focus to simulate click into element.
-	 *
-	 * @param {EventTarget|Element} target Target DOM element
-	 * @returns {boolean} Returns true if the element requires a call to focus to simulate native click.
-	 */
-	FastClick.prototype.needsFocus = function(target) {
-		switch (target.nodeName.toLowerCase()) {
-		case 'textarea':
-			return true;
-		case 'select':
-			return !deviceIsAndroid;
-		case 'input':
-			switch (target.type) {
-			case 'button':
-			case 'checkbox':
-			case 'file':
-			case 'image':
-			case 'radio':
-			case 'submit':
-				return false;
-			}
-
-			// No point in attempting to focus disabled inputs
-			return !target.disabled && !target.readOnly;
-		default:
-			return (/\bneedsfocus\b/).test(target.className);
-		}
-	};
-
-
-	/**
-	 * Send a click event to the specified element.
-	 *
-	 * @param {EventTarget|Element} targetElement
-	 * @param {Event} event
-	 */
-	FastClick.prototype.sendClick = function(targetElement, event) {
-		var clickEvent, touch;
-
-		// On some Android devices activeElement needs to be blurred otherwise the synthetic click will have no effect (#24)
-		if (document.activeElement && document.activeElement !== targetElement) {
-			document.activeElement.blur();
-		}
-
-		touch = event.changedTouches[0];
-
-		// Synthesise a click event, with an extra attribute so it can be tracked
-		clickEvent = document.createEvent('MouseEvents');
-		clickEvent.initMouseEvent(this.determineEventType(targetElement), true, true, window, 1, touch.screenX, touch.screenY, touch.clientX, touch.clientY, false, false, false, false, 0, null);
-		clickEvent.forwardedTouchEvent = true;
-		targetElement.dispatchEvent(clickEvent);
-	};
-
-	FastClick.prototype.determineEventType = function(targetElement) {
-
-		//Issue #159: Android Chrome Select Box does not open with a synthetic click event
-		if (deviceIsAndroid && targetElement.tagName.toLowerCase() === 'select') {
-			return 'mousedown';
-		}
-
-		return 'click';
-	};
-
-
-	/**
-	 * @param {EventTarget|Element} targetElement
-	 */
-	FastClick.prototype.focus = function(targetElement) {
-		var length;
-
-		// Issue #160: on iOS 7, some input elements (e.g. date datetime month) throw a vague TypeError on setSelectionRange. These elements don't have an integer value for the selectionStart and selectionEnd properties, but unfortunately that can't be used for detection because accessing the properties also throws a TypeError. Just check the type instead. Filed as Apple bug #15122724.
-		if (deviceIsIOS && targetElement.setSelectionRange && targetElement.type.indexOf('date') !== 0 && targetElement.type !== 'time' && targetElement.type !== 'month') {
-			length = targetElement.value.length;
-			targetElement.setSelectionRange(length, length);
-		} else {
-			targetElement.focus();
-		}
-	};
-
-
-	/**
-	 * Check whether the given target element is a child of a scrollable layer and if so, set a flag on it.
-	 *
-	 * @param {EventTarget|Element} targetElement
-	 */
-	FastClick.prototype.updateScrollParent = function(targetElement) {
-		var scrollParent, parentElement;
-
-		scrollParent = targetElement.fastClickScrollParent;
-
-		// Attempt to discover whether the target element is contained within a scrollable layer. Re-check if the
-		// target element was moved to another parent.
-		if (!scrollParent || !scrollParent.contains(targetElement)) {
-			parentElement = targetElement;
-			do {
-				if (parentElement.scrollHeight > parentElement.offsetHeight) {
-					scrollParent = parentElement;
-					targetElement.fastClickScrollParent = parentElement;
-					break;
-				}
-
-				parentElement = parentElement.parentElement;
-			} while (parentElement);
-		}
-
-		// Always update the scroll top tracker if possible.
-		if (scrollParent) {
-			scrollParent.fastClickLastScrollTop = scrollParent.scrollTop;
-		}
-	};
-
-
-	/**
-	 * @param {EventTarget} targetElement
-	 * @returns {Element|EventTarget}
-	 */
-	FastClick.prototype.getTargetElementFromEventTarget = function(eventTarget) {
-
-		// On some older browsers (notably Safari on iOS 4.1 - see issue #56) the event target may be a text node.
-		if (eventTarget.nodeType === Node.TEXT_NODE) {
-			return eventTarget.parentNode;
-		}
-
-		return eventTarget;
-	};
-
-
-	/**
-	 * On touch start, record the position and scroll offset.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.onTouchStart = function(event) {
-		var targetElement, touch, selection;
-
-		// Ignore multiple touches, otherwise pinch-to-zoom is prevented if both fingers are on the FastClick element (issue #111).
-		if (event.targetTouches.length > 1) {
-			return true;
-		}
-
-		targetElement = this.getTargetElementFromEventTarget(event.target);
-		touch = event.targetTouches[0];
-
-		if (deviceIsIOS) {
-
-			// Only trusted events will deselect text on iOS (issue #49)
-			selection = window.getSelection();
-			if (selection.rangeCount && !selection.isCollapsed) {
-				return true;
-			}
-
-			if (!deviceIsIOS4) {
-
-				// Weird things happen on iOS when an alert or confirm dialog is opened from a click event callback (issue #23):
-				// when the user next taps anywhere else on the page, new touchstart and touchend events are dispatched
-				// with the same identifier as the touch event that previously triggered the click that triggered the alert.
-				// Sadly, there is an issue on iOS 4 that causes some normal touch events to have the same identifier as an
-				// immediately preceeding touch event (issue #52), so this fix is unavailable on that platform.
-				// Issue 120: touch.identifier is 0 when Chrome dev tools 'Emulate touch events' is set with an iOS device UA string,
-				// which causes all touch events to be ignored. As this block only applies to iOS, and iOS identifiers are always long,
-				// random integers, it's safe to to continue if the identifier is 0 here.
-				if (touch.identifier && touch.identifier === this.lastTouchIdentifier) {
-					event.preventDefault();
-					return false;
-				}
-
-				this.lastTouchIdentifier = touch.identifier;
-
-				// If the target element is a child of a scrollable layer (using -webkit-overflow-scrolling: touch) and:
-				// 1) the user does a fling scroll on the scrollable layer
-				// 2) the user stops the fling scroll with another tap
-				// then the event.target of the last 'touchend' event will be the element that was under the user's finger
-				// when the fling scroll was started, causing FastClick to send a click event to that layer - unless a check
-				// is made to ensure that a parent layer was not scrolled before sending a synthetic click (issue #42).
-				this.updateScrollParent(targetElement);
-			}
-		}
-
-		this.trackingClick = true;
-		this.trackingClickStart = event.timeStamp;
-		this.targetElement = targetElement;
-
-		this.touchStartX = touch.pageX;
-		this.touchStartY = touch.pageY;
-
-		// Prevent phantom clicks on fast double-tap (issue #36)
-		if ((event.timeStamp - this.lastClickTime) < this.tapDelay) {
-			event.preventDefault();
-		}
-
-		return true;
-	};
-
-
-	/**
-	 * Based on a touchmove event object, check whether the touch has moved past a boundary since it started.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.touchHasMoved = function(event) {
-		var touch = event.changedTouches[0], boundary = this.touchBoundary;
-
-		if (Math.abs(touch.pageX - this.touchStartX) > boundary || Math.abs(touch.pageY - this.touchStartY) > boundary) {
-			return true;
-		}
-
-		return false;
-	};
-
-
-	/**
-	 * Update the last position.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.onTouchMove = function(event) {
-		if (!this.trackingClick) {
-			return true;
-		}
-
-		// If the touch has moved, cancel the click tracking
-		if (this.targetElement !== this.getTargetElementFromEventTarget(event.target) || this.touchHasMoved(event)) {
-			this.trackingClick = false;
-			this.targetElement = null;
-		}
-
-		return true;
-	};
-
-
-	/**
-	 * Attempt to find the labelled control for the given label element.
-	 *
-	 * @param {EventTarget|HTMLLabelElement} labelElement
-	 * @returns {Element|null}
-	 */
-	FastClick.prototype.findControl = function(labelElement) {
-
-		// Fast path for newer browsers supporting the HTML5 control attribute
-		if (labelElement.control !== undefined) {
-			return labelElement.control;
-		}
-
-		// All browsers under test that support touch events also support the HTML5 htmlFor attribute
-		if (labelElement.htmlFor) {
-			return document.getElementById(labelElement.htmlFor);
-		}
-
-		// If no for attribute exists, attempt to retrieve the first labellable descendant element
-		// the list of which is defined here: http://www.w3.org/TR/html5/forms.html#category-label
-		return labelElement.querySelector('button, input:not([type=hidden]), keygen, meter, output, progress, select, textarea');
-	};
-
-
-	/**
-	 * On touch end, determine whether to send a click event at once.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.onTouchEnd = function(event) {
-		var forElement, trackingClickStart, targetTagName, scrollParent, touch, targetElement = this.targetElement;
-
-		if (!this.trackingClick) {
-			return true;
-		}
-
-		// Prevent phantom clicks on fast double-tap (issue #36)
-		if ((event.timeStamp - this.lastClickTime) < this.tapDelay) {
-			this.cancelNextClick = true;
-			return true;
-		}
-
-		if ((event.timeStamp - this.trackingClickStart) > this.tapTimeout) {
-			return true;
-		}
-
-		// Reset to prevent wrong click cancel on input (issue #156).
-		this.cancelNextClick = false;
-
-		this.lastClickTime = event.timeStamp;
-
-		trackingClickStart = this.trackingClickStart;
-		this.trackingClick = false;
-		this.trackingClickStart = 0;
-
-		// On some iOS devices, the targetElement supplied with the event is invalid if the layer
-		// is performing a transition or scroll, and has to be re-detected manually. Note that
-		// for this to function correctly, it must be called *after* the event target is checked!
-		// See issue #57; also filed as rdar://13048589 .
-		if (deviceIsIOSWithBadTarget) {
-			touch = event.changedTouches[0];
-
-			// In certain cases arguments of elementFromPoint can be negative, so prevent setting targetElement to null
-			targetElement = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset) || targetElement;
-			targetElement.fastClickScrollParent = this.targetElement.fastClickScrollParent;
-		}
-
-		targetTagName = targetElement.tagName.toLowerCase();
-		if (targetTagName === 'label') {
-			forElement = this.findControl(targetElement);
-			if (forElement) {
-				this.focus(targetElement);
-				if (deviceIsAndroid) {
-					return false;
-				}
-
-				targetElement = forElement;
-			}
-		} else if (this.needsFocus(targetElement)) {
-
-			// Case 1: If the touch started a while ago (best guess is 100ms based on tests for issue #36) then focus will be triggered anyway. Return early and unset the target element reference so that the subsequent click will be allowed through.
-			// Case 2: Without this exception for input elements tapped when the document is contained in an iframe, then any inputted text won't be visible even though the value attribute is updated as the user types (issue #37).
-			if ((event.timeStamp - trackingClickStart) > 100 || (deviceIsIOS && window.top !== window && targetTagName === 'input')) {
-				this.targetElement = null;
-				return false;
-			}
-
-			this.focus(targetElement);
-			this.sendClick(targetElement, event);
-
-			// Select elements need the event to go through on iOS 4, otherwise the selector menu won't open.
-			// Also this breaks opening selects when VoiceOver is active on iOS6, iOS7 (and possibly others)
-			if (!deviceIsIOS || targetTagName !== 'select') {
-				this.targetElement = null;
-				event.preventDefault();
-			}
-
-			return false;
-		}
-
-		if (deviceIsIOS && !deviceIsIOS4) {
-
-			// Don't send a synthetic click event if the target element is contained within a parent layer that was scrolled
-			// and this tap is being used to stop the scrolling (usually initiated by a fling - issue #42).
-			scrollParent = targetElement.fastClickScrollParent;
-			if (scrollParent && scrollParent.fastClickLastScrollTop !== scrollParent.scrollTop) {
-				return true;
-			}
-		}
-
-		// Prevent the actual click from going though - unless the target node is marked as requiring
-		// real clicks or if it is in the whitelist in which case only non-programmatic clicks are permitted.
-		if (!this.needsClick(targetElement)) {
-			event.preventDefault();
-			this.sendClick(targetElement, event);
-		}
-
-		return false;
-	};
-
-
-	/**
-	 * On touch cancel, stop tracking the click.
-	 *
-	 * @returns {void}
-	 */
-	FastClick.prototype.onTouchCancel = function() {
-		this.trackingClick = false;
-		this.targetElement = null;
-	};
-
-
-	/**
-	 * Determine mouse events which should be permitted.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.onMouse = function(event) {
-
-		// If a target element was never set (because a touch event was never fired) allow the event
-		if (!this.targetElement) {
-			return true;
-		}
-
-		if (event.forwardedTouchEvent) {
-			return true;
-		}
-
-		// Programmatically generated events targeting a specific element should be permitted
-		if (!event.cancelable) {
-			return true;
-		}
-
-		// Derive and check the target element to see whether the mouse event needs to be permitted;
-		// unless explicitly enabled, prevent non-touch click events from triggering actions,
-		// to prevent ghost/doubleclicks.
-		if (!this.needsClick(this.targetElement) || this.cancelNextClick) {
-
-			// Prevent any user-added listeners declared on FastClick element from being fired.
-			if (event.stopImmediatePropagation) {
-				event.stopImmediatePropagation();
-			} else {
-
-				// Part of the hack for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
-				event.propagationStopped = true;
-			}
-
-			// Cancel the event
-			event.stopPropagation();
-			event.preventDefault();
-
-			return false;
-		}
-
-		// If the mouse event is permitted, return true for the action to go through.
-		return true;
-	};
-
-
-	/**
-	 * On actual clicks, determine whether this is a touch-generated click, a click action occurring
-	 * naturally after a delay after a touch (which needs to be cancelled to avoid duplication), or
-	 * an actual click which should be permitted.
-	 *
-	 * @param {Event} event
-	 * @returns {boolean}
-	 */
-	FastClick.prototype.onClick = function(event) {
-		var permitted;
-
-		// It's possible for another FastClick-like library delivered with third-party code to fire a click event before FastClick does (issue #44). In that case, set the click-tracking flag back to false and return early. This will cause onTouchEnd to return early.
-		if (this.trackingClick) {
-			this.targetElement = null;
-			this.trackingClick = false;
-			return true;
-		}
-
-		// Very odd behaviour on iOS (issue #18): if a submit element is present inside a form and the user hits enter in the iOS simulator or clicks the Go button on the pop-up OS keyboard the a kind of 'fake' click event will be triggered with the submit-type input element as the target.
-		if (event.target.type === 'submit' && event.detail === 0) {
-			return true;
-		}
-
-		permitted = this.onMouse(event);
-
-		// Only unset targetElement if the click is not permitted. This will ensure that the check for !targetElement in onMouse fails and the browser's click doesn't go through.
-		if (!permitted) {
-			this.targetElement = null;
-		}
-
-		// If clicks are permitted, return true for the action to go through.
-		return permitted;
-	};
-
-
-	/**
-	 * Remove all FastClick's event listeners.
-	 *
-	 * @returns {void}
-	 */
-	FastClick.prototype.destroy = function() {
-		var layer = this.layer;
-
-		if (deviceIsAndroid) {
-			layer.removeEventListener('mouseover', this.onMouse, true);
-			layer.removeEventListener('mousedown', this.onMouse, true);
-			layer.removeEventListener('mouseup', this.onMouse, true);
-		}
-
-		layer.removeEventListener('click', this.onClick, true);
-		layer.removeEventListener('touchstart', this.onTouchStart, false);
-		layer.removeEventListener('touchmove', this.onTouchMove, false);
-		layer.removeEventListener('touchend', this.onTouchEnd, false);
-		layer.removeEventListener('touchcancel', this.onTouchCancel, false);
-	};
-
-
-	/**
-	 * Check whether FastClick is needed.
-	 *
-	 * @param {Element} layer The layer to listen on
-	 */
-	FastClick.notNeeded = function(layer) {
-		var metaViewport;
-		var chromeVersion;
-		var blackberryVersion;
-		var firefoxVersion;
-
-		// Devices that don't support touch don't need FastClick
-		if (typeof window.ontouchstart === 'undefined') {
-			return true;
-		}
-
-		// Chrome version - zero for other browsers
-		chromeVersion = +(/Chrome\/([0-9]+)/.exec(navigator.userAgent) || [,0])[1];
-
-		if (chromeVersion) {
-
-			if (deviceIsAndroid) {
-				metaViewport = document.querySelector('meta[name=viewport]');
-
-				if (metaViewport) {
-					// Chrome on Android with user-scalable="no" doesn't need FastClick (issue #89)
-					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
-						return true;
-					}
-					// Chrome 32 and above with width=device-width or less don't need FastClick
-					if (chromeVersion > 31 && document.documentElement.scrollWidth <= window.outerWidth) {
-						return true;
-					}
-				}
-
-			// Chrome desktop doesn't need FastClick (issue #15)
-			} else {
-				return true;
-			}
-		}
-
-		if (deviceIsBlackBerry10) {
-			blackberryVersion = navigator.userAgent.match(/Version\/([0-9]*)\.([0-9]*)/);
-
-			// BlackBerry 10.3+ does not require Fastclick library.
-			// https://github.com/ftlabs/fastclick/issues/251
-			if (blackberryVersion[1] >= 10 && blackberryVersion[2] >= 3) {
-				metaViewport = document.querySelector('meta[name=viewport]');
-
-				if (metaViewport) {
-					// user-scalable=no eliminates click delay.
-					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
-						return true;
-					}
-					// width=device-width (or less than device-width) eliminates click delay.
-					if (document.documentElement.scrollWidth <= window.outerWidth) {
-						return true;
-					}
-				}
-			}
-		}
-
-		// IE10 with -ms-touch-action: none or manipulation, which disables double-tap-to-zoom (issue #97)
-		if (layer.style.msTouchAction === 'none' || layer.style.touchAction === 'manipulation') {
-			return true;
-		}
-
-		// Firefox version - zero for other browsers
-		firefoxVersion = +(/Firefox\/([0-9]+)/.exec(navigator.userAgent) || [,0])[1];
-
-		if (firefoxVersion >= 27) {
-			// Firefox 27+ does not have tap delay if the content is not zoomable - https://bugzilla.mozilla.org/show_bug.cgi?id=922896
-
-			metaViewport = document.querySelector('meta[name=viewport]');
-			if (metaViewport && (metaViewport.content.indexOf('user-scalable=no') !== -1 || document.documentElement.scrollWidth <= window.outerWidth)) {
-				return true;
-			}
-		}
-
-		// IE11: prefixed -ms-touch-action is no longer supported and it's recomended to use non-prefixed version
-		// http://msdn.microsoft.com/en-us/library/windows/apps/Hh767313.aspx
-		if (layer.style.touchAction === 'none' || layer.style.touchAction === 'manipulation') {
-			return true;
-		}
-
-		return false;
-	};
-
-
-	/**
-	 * Factory method for creating a FastClick object
-	 *
-	 * @param {Element} layer The layer to listen on
-	 * @param {Object} [options={}] The options to override the defaults
-	 */
-	FastClick.attach = function(layer, options) {
-		return new FastClick(layer, options);
-	};
-
-
-	if (true) {
-
-		// AMD. Register as an anonymous module.
-		!(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
-			return FastClick;
-		}.call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else if (typeof module !== 'undefined' && module.exports) {
-		module.exports = FastClick.attach;
-		module.exports.FastClick = FastClick;
-	} else {
-		window.FastClick = FastClick;
-	}
-}());
-
-
-/***/ }),
-<<<<<<< HEAD
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-=======
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-<<<<<<< HEAD
-/* 211 */
-=======
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-/* no static exports found */
-/* all exports used */
-/*!**********************!*\
-  !*** ./src/login.js ***!
-  \**********************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _vue = __webpack_require__(/*! vue */ 13);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-<<<<<<< HEAD
-var _fastclick = __webpack_require__(/*! fastclick */ 97);
-=======
-var _fastclick = __webpack_require__(/*! fastclick */ 101);
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-
-var _fastclick2 = _interopRequireDefault(_fastclick);
-
-var _touchEvent = __webpack_require__(/*! ./plugins/touchEvent */ 56);
-
-var _touchEvent2 = _interopRequireDefault(_touchEvent);
-
-<<<<<<< HEAD
-var _md = __webpack_require__(/*! ./utils/md5 */ 96);
-=======
-var _md = __webpack_require__(/*! ./utils/md5 */ 100);
->>>>>>> f13db2cbf7455f9174af6b28f29edc07a0d35aec
-
-var _md2 = _interopRequireDefault(_md);
-
-var _cookie = __webpack_require__(/*! ./utils/cookie */ 41);
-
-var _cookie2 = _interopRequireDefault(_cookie);
-
-var _configs = __webpack_require__(/*! ./configs */ 3);
-
-var _configs2 = _interopRequireDefault(_configs);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_fastclick2.default.attach(document.body);
-
-// 添加手势触摸事件，使用方法如 v-touch:swipeleft
-
-
-// 添加Fastclick移除移动端点击延迟
-
-_vue2.default.use(_touchEvent2.default);
-
-var formData = new _vue2.default({
-  el: '#form-data',
-  data: {
-    logo: _configs2.default.logo,
-    account: '',
-    password: '',
-    errorMsg: ''
-  },
-  mounted: function mounted() {
-    this.$el.style.display = "";
-  },
-
-  methods: {
-    login: function login() {
-      if (this.account === '') {
-        this.errorMsg = '帐号不能为空';
-        return;
-      } else if (this.password === '') {
-        this.errorMsg = '密码不能为空';
-        return;
-      } else if (this.password.length < 6) {
-        this.errorMsg = '密码至少需要6位';
-        return;
-      }
-      this.errorMsg = '';
-      // 本demo做一次假登录
-      // 真实场景应在此向服务器发起ajax请求
-      var sdktoken = (0, _md2.default)(this.password);
-      // 服务端帐号均为小写
-      _cookie2.default.setCookie('uid', this.account.toLowerCase());
-      _cookie2.default.setCookie('sdktoken', sdktoken);
-      location.href = _configs2.default.homeUrl;
-    },
-    regist: function regist() {
-      location.href = _configs2.default.registUrl;
-    }
-  }
-});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../process/browser.js */ 22)))
 
 /***/ })
-/******/ ]);
+
+/******/ });
 //# sourceMappingURL=login.js.map

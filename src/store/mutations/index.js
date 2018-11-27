@@ -342,6 +342,7 @@ export default {
     })
     // state.sysMsgs = nim.mergeSysMsgs(state.sysMsgs, sysMsgs)
     state.sysMsgs = [].concat(nim.mergeSysMsgs(state.sysMsgs, sysMsgs))
+    // https://cn.vuejs.org/v2/guide/list.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9
     Vue.set(state, sysMsgs, state.sysMsgs)
   },
   // 更新消息的状态，如管理员批准或拒绝入群后，会收到新消息，更新入群申请的状态
@@ -578,9 +579,6 @@ export default {
   initMsgReceiptDetail(state, obj) {
     state.teamMsgReadsDetail.readAccounts = obj.readAccounts
     state.teamMsgReadsDetail.unreadAccounts =  obj.unreadAccounts
-  },
-  saveChatName(state, chatName) {
-    state.chatName = chatName
   },
   isCheckMember(state) {
     state.isCheckMember = !state.isCheckMember
