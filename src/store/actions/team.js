@@ -149,6 +149,7 @@ export function getTeamMembers({ state }, teamId) {
   nim.getTeamMembers({
     teamId: teamId,
     done: (err, obj) => {
+      console.log(obj,'members is :')
       if (obj.members) {
         onTeamMembers({
           teamId: obj.teamId,

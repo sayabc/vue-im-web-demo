@@ -580,7 +580,7 @@ export default {
     state.teamMsgReadsDetail.readAccounts = obj.readAccounts
     state.teamMsgReadsDetail.unreadAccounts =  obj.unreadAccounts
   },
-  isCheckMember(state) {
-    state.isCheckMember = !state.isCheckMember
+  isCheckMember(state, boolean) {
+    state.isCheckMember = boolean
   }
 }

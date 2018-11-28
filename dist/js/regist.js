@@ -13939,6 +13939,7 @@ function getTeamMembers(_ref6, teamId) {
   nim.getTeamMembers({
     teamId: teamId,
     done: function done(err, obj) {
+      console.log(obj, 'members is :');
       if (obj.members) {
         onTeamMembers({
           teamId: obj.teamId,
@@ -20860,8 +20861,8 @@ exports.default = {
     state.teamMsgReadsDetail.readAccounts = obj.readAccounts;
     state.teamMsgReadsDetail.unreadAccounts = obj.unreadAccounts;
   },
-  isCheckMember: function isCheckMember(state) {
-    state.isCheckMember = !state.isCheckMember;
+  isCheckMember: function isCheckMember(state, boolean) {
+    state.isCheckMember = boolean;
   }
 }; // 更改 Vuex 的 store 中的状态的唯一方法是提交 mutation
 // this.$store.commit(method, params)
