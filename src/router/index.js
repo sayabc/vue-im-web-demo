@@ -64,7 +64,7 @@ const routes = [
     path: '/session',
     name: 'session',
     component (resolve) {
-      require(['../pages/Session'], resolve)
+      require(['../pages/old/Session'], resolve)
     }
   },
   // 系统消息
@@ -72,7 +72,7 @@ const routes = [
     path: '/sysmsgs',
     name: 'sysmsgs',
     component (resolve) {
-      require(['../pages/SysMsgs'], resolve)
+      require(['../pages/old/SysMsgs'], resolve)
     }
   },
   // 聊天记录
@@ -80,7 +80,7 @@ const routes = [
     path: '/chat/:sessionId',
     name: 'chat',
     component (resolve) {
-      require(['../pages/Chat'], resolve)
+      require(['../pages/old/Chat'], resolve)
     }
   },
   // 聊天历史记录
@@ -88,7 +88,7 @@ const routes = [
     path: '/chathistory/:sessionId',
     name: 'chathistory',
     component (resolve) {
-      require(['../pages/ChatHistory'], resolve)
+      require(['../pages/old/ChatHistory'], resolve)
     }
   },
   // 直播间
@@ -96,7 +96,7 @@ const routes = [
     path: '/room',
     name: 'room',
     component (resolve) {
-      require(['../pages/Room'], resolve)
+      require(['../pages/old/Room'], resolve)
     }
   },
   // 直播聊天页
@@ -104,7 +104,7 @@ const routes = [
     path: '/roomChat/:chatroomId',
     name: 'roomChat',
     component (resolve) {
-      require(['../pages/RoomChat'], resolve)
+      require(['../pages/old/RoomChat'], resolve)
     }
   },
   // 通讯录
@@ -112,7 +112,7 @@ const routes = [
     path: '/contacts',
     name: 'contacts',
     component (resolve) {
-      require(['../pages/Contacts'], resolve)
+      require(['../pages/old/Contacts'], resolve)
     }
   },
   // 好友名片
@@ -120,7 +120,7 @@ const routes = [
     path: '/namecard/:userId',
     name: 'namecard',
     component (resolve) {
-      require(['../pages/NameCard'], resolve)
+      require(['../pages/old/NameCard'], resolve)
     }
   },
   // 好友名片-设置备注
@@ -128,7 +128,7 @@ const routes = [
     path: '/namecardremark/:userId',
     name: 'namecardremark',
     component (resolve) {
-      require(['../pages/NameCardRemark'], resolve)
+      require(['../pages/old/NameCardRemark'], resolve)
     }
   },
   // 好友名片-搜索好友/群
@@ -136,7 +136,7 @@ const routes = [
     path: '/searchuser/:searchType',
     name: 'searchuser',
     component (resolve) {
-      require(['../pages/SearchUser'], resolve)
+      require(['../pages/old/SearchUser'], resolve)
     }
   },
   // 邀请好友-加入群
@@ -144,7 +144,7 @@ const routes = [
     path: '/teaminvite/:teamId',
     name: 'teaminvite',
     component (resolve) {
-      require(['../pages/TeamInvite'], resolve)
+      require(['../pages/old/TeamInvite'], resolve)
     }
   },
   // 通用页面
@@ -152,7 +152,7 @@ const routes = [
     path: '/general',
     name: 'general',
     component (resolve) {
-      require(['../pages/General'], resolve)
+      require(['../pages/old/General'], resolve)
     }
   },
   // 群列表
@@ -160,7 +160,7 @@ const routes = [
     path: '/teamlist/:teamType',
     name: 'teamlist',
     component (resolve) {
-      require(['../pages/TeamList'], resolve)
+      require(['../pages/old/TeamList'], resolve)
     }
   },
   // 群名片
@@ -168,7 +168,7 @@ const routes = [
     path: '/teamcard/:teamId',
     name: 'teamcard',
     component (resolve) {
-      require(['../pages/TeamCard'], resolve)
+      require(['../pages/old/TeamCard'], resolve)
     }
   },
   // 群管理
@@ -176,7 +176,7 @@ const routes = [
     path: '/teammanage/:teamId',
     name: 'teammanage',
     component(resolve) {
-      require(['../pages/TeamManage'], resolve)
+      require(['../pages/old/TeamManage'], resolve)
     }
   },
   // 群设置
@@ -184,7 +184,7 @@ const routes = [
     path: '/teamsetting',
     name: 'teamsetting',
     component(resolve) {
-      require(['../pages/TeamSetting'], resolve)
+      require(['../pages/old/TeamSetting'], resolve)
     }
   },
   // 群成员列表
@@ -192,7 +192,7 @@ const routes = [
     path: '/teammembers/:teamId',
     name: 'teammembers',
     component(resolve) {
-      require(['../pages/TeamMembers'], resolve)
+      require(['../pages/old/TeamMembers'], resolve)
     }
   },
   // 群成员名片
@@ -200,7 +200,7 @@ const routes = [
     path: '/teammembercard/:member',
     name: 'teammembercard',
     component(resolve) {
-      require(['../pages/TeamMemberCard'], resolve)
+      require(['../pages/old/TeamMemberCard'], resolve)
     }
   },
   // 发送群消息回执页
@@ -208,7 +208,7 @@ const routes = [
     path: '/teamSendMsgReceipt/:teamId',
     name: 'TeamSeamMsgReceipt',
     component(resolve) {
-      require(['../pages/TeamSendMsgReceipt'], resolve)
+      require(['../pages/old/TeamSendMsgReceipt'], resolve)
     }
   },
   // 群消息回执详情页
@@ -216,7 +216,7 @@ const routes = [
     path: '/msgReceiptDetail/:msgInfo',
     name: 'msgReceiptDetail',
     component(resolve) {
-      require(['../pages/TeamMsgReceiptDetail'], resolve)
+      require(['../pages/old/TeamMsgReceiptDetail'], resolve)
     }
   }
 ]

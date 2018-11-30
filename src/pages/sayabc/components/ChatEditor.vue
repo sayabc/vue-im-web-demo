@@ -34,6 +34,8 @@
         </span>
         <span v-if='advancedTeam' class="u-editor-send u-editor-receipt" @click="turnToMsgReceipt">回执</span>
         <span class="u-editor-send" @click="sendTextMsg">发 送</span>
+        <span class="u-editor-send u-editor-receipt" @click="leaveRoom">离开房间</span>
+
       </span>
     </div>
   </div>
@@ -294,13 +296,87 @@ export default {
         }
       }
     },
+    leaveRoom () {
+      netcall.leaveChannel().then(() => {
+        // 清除上层UI逻辑
+        console.log('离开房间成功')
+      });
+    },
     netcallVideoLink () { // 点击开始视频
       if (this.invalid) {
         this.$toast(this.invalidHint)
         return
       }
       console.warn('开始视频通话 begin')
-      console.warn('视频通话',window.WebRTC)
+      console.log('音频通话开始', netcall)
+
+      // 创建房间
+      netcall.createChannel({
+        channelName: new Date().getTime().toString(), //必填 TODO 退出时候记得销毁
+        custom: '测试自定义数据', //可选
+        webrtcEnable: true // 是否支持WebRTC方式接入，可选，默认为不开启
+      }).then(function(obj) {
+        // 预定房间成功后的上层逻辑操作
+        // eg: 初始化房间UI显示
+        // eg: 加入房间
+        console.log('初始化成功',obj) // obj 返回发送的数据
+        console.log('正在加入房间')
+        netcall.joinChannel({
+          // 这里需要注意从这里https://yunxin.163.com/im-demo下载的SDK仅仅是参考，官方文档更正确一些。比如type 而不是 mode在5.9.0的webrtc中
+            channelName: obj.channelName, //必填，请确保此房间已被创建
+            // mode: 0, // 模式，0音视频，1纯音频，2纯视频，3静默
+            type: 1, // 模式，0音视频，1纯音频，2纯视频，3静默
+            role: 0 // 角色，0-主播 1-观众
+          })
+          .then(function(obj) {
+            // obj结构 => {account,cid,uid}
+            console.error('加入房间成功', obj)
+            // 加入房间成功后的上层逻辑操作
+              // eg: 开启摄像头
+              // eg: 开启麦克风
+              // eg: 开启本地流
+              // eg: 设置音量采集、播放
+              // eg: 设置视频画面尺寸等等，具体请参照p2p呼叫模式
+              // 开始呼叫?
+                // 发起通话请求
+                netcall.call({
+                  // type: netcall.NETCALL_TYPE_VIDEO,
+                  type: 1,
+                  account: 'a81', // 账号 TODO 多点的时候封装后分批处理
+                  webrtcEnable: true,
+                  pushConfig: {},
+                  sessionConfig:{
+                    recordVideo: true,
+                    recordAudio: true
+                  }
+                }).then(function(obj){
+                  console.log('call', obj)
+                })
+              // const netcall = this.netcall;
+              // 开启麦克风
+              // netcall
+              //   .startDevice({
+              //     type: netcall.DEVICE_TYPE_AUDIO_IN
+              //   })
+              //   .then(function() {
+              //     // 通知对方自己开启了麦克风
+              //     console.log('通知对方自己开启了麦克风')
+              //     netcall.control({
+              //       command: netcall.NETCALL_CONTROL_COMMAND_NOTIFY_AUDIO_ON
+              //     });
+              //   })
+              //   .catch(function(err) {
+              //     console.log('启动麦克风失败');
+              //     console.log(err);
+              //   });
+          })
+          .catch(function(err){
+            console.log('加入房间失败', err)
+          })
+      }).catch(function(err){
+        console.log('初始化失败', err)
+      })
+
     },
     showEmoji () {
       this.isEmojiShown = true

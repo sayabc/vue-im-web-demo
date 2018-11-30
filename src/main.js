@@ -18,6 +18,7 @@ import store from './store'
 import router from './router'
 
 require('./utils/polyfill')
+require('./sdk/netcall')
 
 // require('./sdk/rtcSupport')
 

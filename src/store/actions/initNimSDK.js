@@ -17,6 +17,8 @@ import { onTeams, onSynCreateTeam, onCreateTeam, onUpdateTeam, onTeamMembers, on
   onRemoveTeamMembers, onUpdateTeamManagers, onDismissTeam, onUpdateTeamMembersMute, onTeamMsgReceipt} from './team'
 
 const SDK = require('@/sdk/' + config.sdk)
+const WebRTCSDK = require('@/sdk/' + config.webrtcSDK)
+
 
 // 重新初始化 NIM SDK
 export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
@@ -25,6 +27,7 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
   }
   dispatch('showLoading')
   // 初始化SDK
+  SDK.NIM.use(WebRTCSDK) // 初始化IM时候加载音视频插件 然后再初始化音视频
   window.nim = state.nim = SDK.NIM.getInstance({
     //debug: true,
     appKey: config.appkey,

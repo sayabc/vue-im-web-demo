@@ -21,7 +21,6 @@ import { delegateTeamFunction, onTeamNotificationMsg, enterSettingPage, getTeamM
         checkTeamMsgReceipt, getTeamMsgReads} from './team'
 
 function connectNim ({state, commit, dispatch}, obj) {
-  console.log('22222')
   let {force} = Object.assign({}, obj)
   // 操作为内容页刷新页面，此时无nim实例
   if (!state.nim || force) {
@@ -35,7 +34,7 @@ function connectNim ({state, commit, dispatch}, obj) {
     } else {
       // 有cookie，重新登录
       dispatch('initNimSDK', loginInfo)
-      dispatch('initWebRTC')
+      dispatch('initWebRTC') // 初始化nim时候 rtc也同时进行
     }
   }
 }
@@ -99,6 +98,8 @@ export default {
 
   // 初始化 重新连接SDK
   initNimSDK,
+  // 初始化 initWebRTC 音视频
+  initWebRTC,
   // 清空所有搜索历史纪录
   resetSearchResult,
   // 搜索用户信息
@@ -158,8 +159,5 @@ export default {
   checkTeamMsgReceipt,
   // 查询群消息回执已读列表
   getTeamMsgReads,
-
-  // 音视频
-  initWebRTC,
 
 }

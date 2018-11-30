@@ -20,23 +20,13 @@ const WebRTCSDK = require('@/sdk/' + config.webrtcSDK)
 
 // 重写 begin
 
-/** 初始化webrtc事件 */
-
 
 // 重写 end
-
 
 // 重新初始化 web rtc SDK
 // export function initWebRTC ({ state, commit, dispatch }, loginInfo) {
 export function initWebRTC() {
-  // window.WebRTC = state.WebRTC = SDK.WebRTC.getInstance({
-  //   nim: window.nim,
-  //   container: document.getElementById('container'),
-  //   remoteContainer: document.getElementById('remoteContainer'),
-  //   chromeId: '',
-  //   // 是否开启日志打印
-  //   debug: true
-  // })
+
   const netcall = WebRTCSDK.getInstance({
     nim: window.nim,
     container: document.getElementById('container'),
@@ -44,7 +34,7 @@ export function initWebRTC() {
     // 是否开启日志打印
     debug: true
   });
-
+  let Netcall = netcall // 哈哈 这个地方
   // 是否被叫中
   let beCalling = false;
   // 呼叫类型
@@ -53,6 +43,9 @@ export function initWebRTC() {
   let beCalledInfo = null;
   // 是否正忙
   let busy = false;
+
+  // 发起音视频呼叫 无
+
   // 开启监听
   netcall.on('beCalling', function (obj) {
     console.warn('on beCalling', obj);
@@ -76,7 +69,7 @@ export function initWebRTC() {
       if (busy) {
         netcall.control({
           channelId: channelId,
-          command: Netcall.NETCALL_CONTROL_COMMAND_BUSY
+          command: netcall.NETCALL_CONTROL_COMMAND_BUSY
         });
         // 拒绝通话
         netcall.response({
@@ -268,8 +261,13 @@ export function initWebRTC() {
 
 
 
+  // var NIM = config.sdk
+  // // var Netcall = window.Netcall;
+  // var WebRTC = WebRTCSDK;
 
+  // NIM.use(WebRTCSDK);
 
-
+  window.netcall = netcall
   console.warn('WebRTC netcall', netcall)
+
 }

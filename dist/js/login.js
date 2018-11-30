@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "dist/js/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 218);
+/******/ 	return __webpack_require__(__webpack_require__.s = 221);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -71,9 +71,9 @@
 /***/ 10:
 /* no static exports found */
 /* all exports used */
-/*!******************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_descriptors.js ***!
-  \******************************************************************/
+/*!***************************************************!*\
+  !*** ./~/core-js/library/modules/_descriptors.js ***!
+  \***************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // Thank's IE8 for his funny defineProperty
@@ -84,7 +84,7 @@ module.exports = !__webpack_require__(/*! ./_fails */ 13)(function () {
 
 /***/ }),
 
-/***/ 103:
+/***/ 106:
 /* no static exports found */
 /* all exports used */
 /*!**************************!*\
@@ -329,12 +329,12 @@ module.exports = exports["default"];
 
 /***/ }),
 
-/***/ 104:
+/***/ 107:
 /* no static exports found */
 /* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/_fastclick@1.0.6@fastclick/lib/fastclick.js ***!
-  \*******************************************************/
+/*!**************************************!*\
+  !*** ./~/fastclick/lib/fastclick.js ***!
+  \**************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
@@ -1186,9 +1186,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
 /***/ 11:
 /* no static exports found */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_has.js ***!
-  \**********************************************************/
+/*!*******************************************!*\
+  !*** ./~/core-js/library/modules/_has.js ***!
+  \*******************************************/
 /***/ (function(module, exports) {
 
 var hasOwnProperty = {}.hasOwnProperty;
@@ -1202,9 +1202,9 @@ module.exports = function (it, key) {
 /***/ 13:
 /* no static exports found */
 /* all exports used */
-/*!************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_fails.js ***!
-  \************************************************************/
+/*!*********************************************!*\
+  !*** ./~/core-js/library/modules/_fails.js ***!
+  \*********************************************/
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -1221,9 +1221,9 @@ module.exports = function (exec) {
 /***/ 14:
 /* no static exports found */
 /* all exports used */
-/*!***************************************!*\
-  !*** ./~/_vue@2.5.17@vue/dist/vue.js ***!
-  \***************************************/
+/*!***************************!*\
+  !*** ./~/vue/dist/vue.js ***!
+  \***************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
@@ -12174,16 +12174,16 @@ return Vue;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../_webpack@2.7.0@webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../../_timers-browserify@2.0.10@timers-browserify/main.js */ 71).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../../timers-browserify/main.js */ 71).setImmediate))
 
 /***/ }),
 
 /***/ 15:
 /* no static exports found */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-dp.js ***!
-  \****************************************************************/
+/*!*************************************************!*\
+  !*** ./~/core-js/library/modules/_object-dp.js ***!
+  \*************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(/*! ./_an-object */ 36);
@@ -12209,13 +12209,13 @@ exports.f = __webpack_require__(/*! ./_descriptors */ 10) ? Object.definePropert
 /***/ 16:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-iobject.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_to-iobject.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(/*! ./_iobject */ 57);
+var IObject = __webpack_require__(/*! ./_iobject */ 58);
 var defined = __webpack_require__(/*! ./_defined */ 45);
 module.exports = function (it) {
   return IObject(defined(it));
@@ -12227,9 +12227,9 @@ module.exports = function (it) {
 /***/ 17:
 /* no static exports found */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_is-object.js ***!
-  \****************************************************************/
+/*!*************************************************!*\
+  !*** ./~/core-js/library/modules/_is-object.js ***!
+  \*************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -12242,9 +12242,9 @@ module.exports = function (it) {
 /***/ 18:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_hide.js ***!
-  \***********************************************************/
+/*!********************************************!*\
+  !*** ./~/core-js/library/modules/_hide.js ***!
+  \********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(/*! ./_object-dp */ 15);
@@ -12292,99 +12292,12 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 218:
-/* no static exports found */
-/* all exports used */
-/*!**********************!*\
-  !*** ./src/login.js ***!
-  \**********************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _vue = __webpack_require__(/*! vue */ 14);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _fastclick = __webpack_require__(/*! fastclick */ 104);
-
-var _fastclick2 = _interopRequireDefault(_fastclick);
-
-var _touchEvent = __webpack_require__(/*! ./plugins/touchEvent */ 58);
-
-var _touchEvent2 = _interopRequireDefault(_touchEvent);
-
-var _md = __webpack_require__(/*! ./utils/md5 */ 103);
-
-var _md2 = _interopRequireDefault(_md);
-
-var _cookie = __webpack_require__(/*! ./utils/cookie */ 43);
-
-var _cookie2 = _interopRequireDefault(_cookie);
-
-var _configs = __webpack_require__(/*! ./configs */ 3);
-
-var _configs2 = _interopRequireDefault(_configs);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_fastclick2.default.attach(document.body);
-
-// 添加手势触摸事件，使用方法如 v-touch:swipeleft
-
-
-// 添加Fastclick移除移动端点击延迟
-
-_vue2.default.use(_touchEvent2.default);
-
-var formData = new _vue2.default({
-  el: '#form-data',
-  data: {
-    logo: _configs2.default.logo,
-    account: '',
-    password: '',
-    errorMsg: ''
-  },
-  mounted: function mounted() {
-    this.$el.style.display = "";
-  },
-
-  methods: {
-    login: function login() {
-      if (this.account === '') {
-        this.errorMsg = '帐号不能为空';
-        return;
-      } else if (this.password === '') {
-        this.errorMsg = '密码不能为空';
-        return;
-      } else if (this.password.length < 6) {
-        this.errorMsg = '密码至少需要6位';
-        return;
-      }
-      this.errorMsg = '';
-      // 本demo做一次假登录
-      // 真实场景应在此向服务器发起ajax请求
-      var sdktoken = (0, _md2.default)(this.password);
-      // 服务端帐号均为小写
-      _cookie2.default.setCookie('uid', this.account.toLowerCase());
-      _cookie2.default.setCookie('sdktoken', sdktoken);
-      location.href = _configs2.default.homeUrl;
-    },
-    regist: function regist() {
-      location.href = _configs2.default.registUrl;
-    }
-  }
-});
-
-/***/ }),
-
 /***/ 22:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/_process@0.11.10@process/browser.js ***!
-  \***********************************************/
+/*!******************************!*\
+  !*** ./~/process/browser.js ***!
+  \******************************/
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -12575,17 +12488,104 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ 221:
+/* no static exports found */
+/* all exports used */
+/*!**********************!*\
+  !*** ./src/login.js ***!
+  \**********************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _vue = __webpack_require__(/*! vue */ 14);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _fastclick = __webpack_require__(/*! fastclick */ 107);
+
+var _fastclick2 = _interopRequireDefault(_fastclick);
+
+var _touchEvent = __webpack_require__(/*! ./plugins/touchEvent */ 59);
+
+var _touchEvent2 = _interopRequireDefault(_touchEvent);
+
+var _md = __webpack_require__(/*! ./utils/md5 */ 106);
+
+var _md2 = _interopRequireDefault(_md);
+
+var _cookie = __webpack_require__(/*! ./utils/cookie */ 43);
+
+var _cookie2 = _interopRequireDefault(_cookie);
+
+var _configs = __webpack_require__(/*! ./configs */ 3);
+
+var _configs2 = _interopRequireDefault(_configs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_fastclick2.default.attach(document.body);
+
+// 添加手势触摸事件，使用方法如 v-touch:swipeleft
+
+
+// 添加Fastclick移除移动端点击延迟
+
+_vue2.default.use(_touchEvent2.default);
+
+var formData = new _vue2.default({
+  el: '#form-data',
+  data: {
+    logo: _configs2.default.logo,
+    account: '',
+    password: '',
+    errorMsg: ''
+  },
+  mounted: function mounted() {
+    this.$el.style.display = "";
+  },
+
+  methods: {
+    login: function login() {
+      if (this.account === '') {
+        this.errorMsg = '帐号不能为空';
+        return;
+      } else if (this.password === '') {
+        this.errorMsg = '密码不能为空';
+        return;
+      } else if (this.password.length < 6) {
+        this.errorMsg = '密码至少需要6位';
+        return;
+      }
+      this.errorMsg = '';
+      // 本demo做一次假登录
+      // 真实场景应在此向服务器发起ajax请求
+      var sdktoken = (0, _md2.default)(this.password);
+      // 服务端帐号均为小写
+      _cookie2.default.setCookie('uid', this.account.toLowerCase());
+      _cookie2.default.setCookie('sdktoken', sdktoken);
+      location.href = _configs2.default.homeUrl;
+    },
+    regist: function regist() {
+      location.href = _configs2.default.registUrl;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ 23:
 /* no static exports found */
 /* all exports used */
-/*!*************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_export.js ***!
-  \*************************************************************/
+/*!**********************************************!*\
+  !*** ./~/core-js/library/modules/_export.js ***!
+  \**********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(/*! ./_global */ 7);
 var core = __webpack_require__(/*! ./_core */ 4);
-var ctx = __webpack_require__(/*! ./_ctx */ 75);
+var ctx = __webpack_require__(/*! ./_ctx */ 76);
 var hide = __webpack_require__(/*! ./_hide */ 18);
 var has = __webpack_require__(/*! ./_has */ 11);
 var PROTOTYPE = 'prototype';
@@ -12652,9 +12652,9 @@ module.exports = $export;
 /***/ 24:
 /* no static exports found */
 /* all exports used */
-/*!******************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-keys.js ***!
-  \******************************************************************/
+/*!***************************************************!*\
+  !*** ./~/core-js/library/modules/_object-keys.js ***!
+  \***************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
@@ -12689,8 +12689,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var config = {
   // sdk: 'NIM_Web_SDK_v5.6.0',
-  sdk: 'NIM_Web_SDK_v5.8.0',
-  webrtcSDK: 'NIM_Web_WebRTC_v5.8.0',
+  // sdk: 'NIM_Web_NIM_v5.9.0.js',
+  sdk: 'NIM_Web_SDK_v5.9.0.js',
+  // webrtcSDK: 'NIM_Web_WebRTC_v5.8.0',
+  webrtcSDK: 'NIM_Web_WebRTC_v5.9.0',
   // 用户自定义的登录注册地址
   loginUrl: '/webdemo/h5/login.html',
   registUrl: '/webdemo/h5/regist.html',
@@ -12739,9 +12741,9 @@ module.exports = exports['default'];
 /***/ 36:
 /* no static exports found */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_an-object.js ***!
-  \****************************************************************/
+/*!*************************************************!*\
+  !*** ./~/core-js/library/modules/_an-object.js ***!
+  \*************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(/*! ./_is-object */ 17);
@@ -12756,9 +12758,9 @@ module.exports = function (it) {
 /***/ 38:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_library.js ***!
-  \**************************************************************/
+/*!***********************************************!*\
+  !*** ./~/core-js/library/modules/_library.js ***!
+  \***********************************************/
 /***/ (function(module, exports) {
 
 module.exports = true;
@@ -12769,9 +12771,9 @@ module.exports = true;
 /***/ 4:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_core.js ***!
-  \***********************************************************/
+/*!********************************************!*\
+  !*** ./~/core-js/library/modules/_core.js ***!
+  \********************************************/
 /***/ (function(module, exports) {
 
 var core = module.exports = { version: '2.5.7' };
@@ -12783,9 +12785,9 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 /***/ 40:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-pie.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_object-pie.js ***!
+  \**************************************************/
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
@@ -12796,9 +12798,9 @@ exports.f = {}.propertyIsEnumerable;
 /***/ 41:
 /* no static exports found */
 /* all exports used */
-/*!********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_property-desc.js ***!
-  \********************************************************************/
+/*!*****************************************************!*\
+  !*** ./~/core-js/library/modules/_property-desc.js ***!
+  \*****************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -12816,9 +12818,9 @@ module.exports = function (bitmap, value) {
 /***/ 42:
 /* no static exports found */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_uid.js ***!
-  \**********************************************************/
+/*!*******************************************!*\
+  !*** ./~/core-js/library/modules/_uid.js ***!
+  \*******************************************/
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -12878,21 +12880,21 @@ module.exports = exports['default'];
 /***/ 44:
 /* no static exports found */
 /* all exports used */
-/*!************************************************************************!*\
-  !*** ./~/_babel-runtime@6.26.0@babel-runtime/core-js/object/create.js ***!
-  \************************************************************************/
+/*!**************************************************!*\
+  !*** ./~/babel-runtime/core-js/object/create.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/create */ 81), __esModule: true };
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/create */ 83), __esModule: true };
 
 /***/ }),
 
 /***/ 45:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_defined.js ***!
-  \**************************************************************/
+/*!***********************************************!*\
+  !*** ./~/core-js/library/modules/_defined.js ***!
+  \***********************************************/
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -12907,9 +12909,9 @@ module.exports = function (it) {
 /***/ 46:
 /* no static exports found */
 /* all exports used */
-/*!********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_enum-bug-keys.js ***!
-  \********************************************************************/
+/*!*****************************************************!*\
+  !*** ./~/core-js/library/modules/_enum-bug-keys.js ***!
+  \*****************************************************/
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -12923,9 +12925,9 @@ module.exports = (
 /***/ 47:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_shared-key.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_shared-key.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var shared = __webpack_require__(/*! ./_shared */ 53)('keys');
@@ -12940,9 +12942,9 @@ module.exports = function (key) {
 /***/ 48:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-integer.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_to-integer.js ***!
+  \**************************************************/
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -12958,14 +12960,14 @@ module.exports = function (it) {
 /***/ 51:
 /* no static exports found */
 /* all exports used */
-/*!********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-create.js ***!
-  \********************************************************************/
+/*!*****************************************************!*\
+  !*** ./~/core-js/library/modules/_object-create.js ***!
+  \*****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = __webpack_require__(/*! ./_an-object */ 36);
-var dPs = __webpack_require__(/*! ./_object-dps */ 85);
+var dPs = __webpack_require__(/*! ./_object-dps */ 87);
 var enumBugKeys = __webpack_require__(/*! ./_enum-bug-keys */ 46);
 var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 47)('IE_PROTO');
 var Empty = function () { /* empty */ };
@@ -12974,13 +12976,13 @@ var PROTOTYPE = 'prototype';
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function () {
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(/*! ./_dom-create */ 56)('iframe');
+  var iframe = __webpack_require__(/*! ./_dom-create */ 57)('iframe');
   var i = enumBugKeys.length;
   var lt = '<';
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(/*! ./_html */ 76).appendChild(iframe);
+  __webpack_require__(/*! ./_html */ 77).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -13011,9 +13013,9 @@ module.exports = Object.create || function create(O, Properties) {
 /***/ 52:
 /* no static exports found */
 /* all exports used */
-/*!******************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-gops.js ***!
-  \******************************************************************/
+/*!***************************************************!*\
+  !*** ./~/core-js/library/modules/_object-gops.js ***!
+  \***************************************************/
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
@@ -13024,9 +13026,9 @@ exports.f = Object.getOwnPropertySymbols;
 /***/ 53:
 /* no static exports found */
 /* all exports used */
-/*!*************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_shared.js ***!
-  \*************************************************************/
+/*!**********************************************!*\
+  !*** ./~/core-js/library/modules/_shared.js ***!
+  \**********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var core = __webpack_require__(/*! ./_core */ 4);
@@ -13048,9 +13050,9 @@ var store = global[SHARED] || (global[SHARED] = {});
 /***/ 54:
 /* no static exports found */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-object.js ***!
-  \****************************************************************/
+/*!*************************************************!*\
+  !*** ./~/core-js/library/modules/_to-object.js ***!
+  \*************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
@@ -13065,9 +13067,9 @@ module.exports = function (it) {
 /***/ 55:
 /* no static exports found */
 /* all exports used */
-/*!*******************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-primitive.js ***!
-  \*******************************************************************/
+/*!****************************************************!*\
+  !*** ./~/core-js/library/modules/_to-primitive.js ***!
+  \****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -13086,12 +13088,12 @@ module.exports = function (it, S) {
 
 /***/ }),
 
-/***/ 56:
+/***/ 57:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_dom-create.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_dom-create.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(/*! ./_is-object */ 17);
@@ -13105,16 +13107,16 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ 57:
+/***/ 58:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_iobject.js ***!
-  \**************************************************************/
+/*!***********************************************!*\
+  !*** ./~/core-js/library/modules/_iobject.js ***!
+  \***********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(/*! ./_cof */ 59);
+var cof = __webpack_require__(/*! ./_cof */ 60);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -13123,7 +13125,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 /***/ }),
 
-/***/ 58:
+/***/ 59:
 /* no static exports found */
 /* all exports used */
 /*!***********************************!*\
@@ -13270,12 +13272,12 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 59:
+/***/ 60:
 /* no static exports found */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_cof.js ***!
-  \**********************************************************/
+/*!*******************************************!*\
+  !*** ./~/core-js/library/modules/_cof.js ***!
+  \*******************************************/
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -13290,13 +13292,13 @@ module.exports = function (it) {
 /***/ 67:
 /* no static exports found */
 /* all exports used */
-/*!*********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_ie8-dom-define.js ***!
-  \*********************************************************************/
+/*!******************************************************!*\
+  !*** ./~/core-js/library/modules/_ie8-dom-define.js ***!
+  \******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(/*! ./_descriptors */ 10) && !__webpack_require__(/*! ./_fails */ 13)(function () {
-  return Object.defineProperty(__webpack_require__(/*! ./_dom-create */ 56)('div'), 'a', { get: function () { return 7; } }).a != 7;
+  return Object.defineProperty(__webpack_require__(/*! ./_dom-create */ 57)('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
 
@@ -13305,14 +13307,14 @@ module.exports = !__webpack_require__(/*! ./_descriptors */ 10) && !__webpack_re
 /***/ 68:
 /* no static exports found */
 /* all exports used */
-/*!***************************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-keys-internal.js ***!
-  \***************************************************************************/
+/*!************************************************************!*\
+  !*** ./~/core-js/library/modules/_object-keys-internal.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var has = __webpack_require__(/*! ./_has */ 11);
 var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
-var arrayIndexOf = __webpack_require__(/*! ./_array-includes */ 82)(false);
+var arrayIndexOf = __webpack_require__(/*! ./_array-includes */ 84)(false);
 var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 47)('IE_PROTO');
 
 module.exports = function (object, names) {
@@ -13334,9 +13336,9 @@ module.exports = function (object, names) {
 /***/ 7:
 /* no static exports found */
 /* all exports used */
-/*!*************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_global.js ***!
-  \*************************************************************/
+/*!**********************************************!*\
+  !*** ./~/core-js/library/modules/_global.js ***!
+  \**********************************************/
 /***/ (function(module, exports) {
 
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -13352,9 +13354,9 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 /***/ 71:
 /* no static exports found */
 /* all exports used */
-/*!***************************************************************!*\
-  !*** ./~/_timers-browserify@2.0.10@timers-browserify/main.js ***!
-  \***************************************************************/
+/*!*************************************!*\
+  !*** ./~/timers-browserify/main.js ***!
+  \*************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -13410,7 +13412,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(/*! setimmediate */ 92);
+__webpack_require__(/*! setimmediate */ 94);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -13421,16 +13423,16 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../_webpack@2.7.0@webpack/buildin/global.js */ 21)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 21)))
 
 /***/ }),
 
-/***/ 74:
+/***/ 75:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_a-function.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_a-function.js ***!
+  \**************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -13441,16 +13443,16 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /* no static exports found */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_ctx.js ***!
-  \**********************************************************/
+/*!*******************************************!*\
+  !*** ./~/core-js/library/modules/_ctx.js ***!
+  \*******************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(/*! ./_a-function */ 74);
+var aFunction = __webpack_require__(/*! ./_a-function */ 75);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -13473,12 +13475,12 @@ module.exports = function (fn, that, length) {
 
 /***/ }),
 
-/***/ 76:
+/***/ 77:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_html.js ***!
-  \***********************************************************/
+/*!********************************************!*\
+  !*** ./~/core-js/library/modules/_html.js ***!
+  \********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var document = __webpack_require__(/*! ./_global */ 7).document;
@@ -13487,12 +13489,12 @@ module.exports = document && document.documentElement;
 
 /***/ }),
 
-/***/ 77:
+/***/ 78:
 /* no static exports found */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-length.js ***!
-  \****************************************************************/
+/*!*************************************************!*\
+  !*** ./~/core-js/library/modules/_to-length.js ***!
+  \*************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
@@ -13508,38 +13510,38 @@ module.exports = function (it) {
 /***/ 8:
 /* no static exports found */
 /* all exports used */
-/*!************************************************************************!*\
-  !*** ./~/_babel-runtime@6.26.0@babel-runtime/core-js/object/assign.js ***!
-  \************************************************************************/
+/*!**************************************************!*\
+  !*** ./~/babel-runtime/core-js/object/assign.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/assign */ 80), __esModule: true };
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/assign */ 82), __esModule: true };
 
 /***/ }),
 
-/***/ 80:
+/***/ 82:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/fn/object/assign.js ***!
-  \**************************************************************/
+/*!***********************************************!*\
+  !*** ./~/core-js/library/fn/object/assign.js ***!
+  \***********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../../modules/es6.object.assign */ 89);
+__webpack_require__(/*! ../../modules/es6.object.assign */ 91);
 module.exports = __webpack_require__(/*! ../../modules/_core */ 4).Object.assign;
 
 
 /***/ }),
 
-/***/ 81:
+/***/ 83:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/fn/object/create.js ***!
-  \**************************************************************/
+/*!***********************************************!*\
+  !*** ./~/core-js/library/fn/object/create.js ***!
+  \***********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../../modules/es6.object.create */ 90);
+__webpack_require__(/*! ../../modules/es6.object.create */ 92);
 var $Object = __webpack_require__(/*! ../../modules/_core */ 4).Object;
 module.exports = function create(P, D) {
   return $Object.create(P, D);
@@ -13548,19 +13550,19 @@ module.exports = function create(P, D) {
 
 /***/ }),
 
-/***/ 82:
+/***/ 84:
 /* no static exports found */
 /* all exports used */
-/*!*********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_array-includes.js ***!
-  \*********************************************************************/
+/*!******************************************************!*\
+  !*** ./~/core-js/library/modules/_array-includes.js ***!
+  \******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(/*! ./_to-iobject */ 16);
-var toLength = __webpack_require__(/*! ./_to-length */ 77);
-var toAbsoluteIndex = __webpack_require__(/*! ./_to-absolute-index */ 88);
+var toLength = __webpack_require__(/*! ./_to-length */ 78);
+var toAbsoluteIndex = __webpack_require__(/*! ./_to-absolute-index */ 90);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -13583,12 +13585,12 @@ module.exports = function (IS_INCLUDES) {
 
 /***/ }),
 
-/***/ 84:
+/***/ 86:
 /* no static exports found */
 /* all exports used */
-/*!********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-assign.js ***!
-  \********************************************************************/
+/*!*****************************************************!*\
+  !*** ./~/core-js/library/modules/_object-assign.js ***!
+  \*****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13598,7 +13600,7 @@ var getKeys = __webpack_require__(/*! ./_object-keys */ 24);
 var gOPS = __webpack_require__(/*! ./_object-gops */ 52);
 var pIE = __webpack_require__(/*! ./_object-pie */ 40);
 var toObject = __webpack_require__(/*! ./_to-object */ 54);
-var IObject = __webpack_require__(/*! ./_iobject */ 57);
+var IObject = __webpack_require__(/*! ./_iobject */ 58);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
@@ -13630,12 +13632,12 @@ module.exports = !$assign || __webpack_require__(/*! ./_fails */ 13)(function ()
 
 /***/ }),
 
-/***/ 85:
+/***/ 87:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_object-dps.js ***!
-  \*****************************************************************/
+/*!**************************************************!*\
+  !*** ./~/core-js/library/modules/_object-dps.js ***!
+  \**************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(/*! ./_object-dp */ 15);
@@ -13655,12 +13657,12 @@ module.exports = __webpack_require__(/*! ./_descriptors */ 10) ? Object.definePr
 
 /***/ }),
 
-/***/ 88:
+/***/ 90:
 /* no static exports found */
 /* all exports used */
-/*!************************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/_to-absolute-index.js ***!
-  \************************************************************************/
+/*!*********************************************************!*\
+  !*** ./~/core-js/library/modules/_to-absolute-index.js ***!
+  \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(/*! ./_to-integer */ 48);
@@ -13674,28 +13676,28 @@ module.exports = function (index, length) {
 
 /***/ }),
 
-/***/ 89:
+/***/ 91:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/es6.object.assign.js ***!
-  \***********************************************************************/
+/*!********************************************************!*\
+  !*** ./~/core-js/library/modules/es6.object.assign.js ***!
+  \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(/*! ./_export */ 23);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(/*! ./_object-assign */ 84) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(/*! ./_object-assign */ 86) });
 
 
 /***/ }),
 
-/***/ 90:
+/***/ 92:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************************!*\
-  !*** ./~/_core-js@2.5.7@core-js/library/modules/es6.object.create.js ***!
-  \***********************************************************************/
+/*!********************************************************!*\
+  !*** ./~/core-js/library/modules/es6.object.create.js ***!
+  \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(/*! ./_export */ 23);
@@ -13705,12 +13707,12 @@ $export($export.S, 'Object', { create: __webpack_require__(/*! ./_object-create 
 
 /***/ }),
 
-/***/ 92:
+/***/ 94:
 /* no static exports found */
 /* all exports used */
-/*!************************************************************!*\
-  !*** ./~/_setimmediate@1.0.5@setimmediate/setImmediate.js ***!
-  \************************************************************/
+/*!****************************************!*\
+  !*** ./~/setimmediate/setImmediate.js ***!
+  \****************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -13900,7 +13902,7 @@ $export($export.S, 'Object', { create: __webpack_require__(/*! ./_object-create 
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../_webpack@2.7.0@webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../_process@0.11.10@process/browser.js */ 22)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 21), __webpack_require__(/*! ./../process/browser.js */ 22)))
 
 /***/ })
 

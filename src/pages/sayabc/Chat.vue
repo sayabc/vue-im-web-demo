@@ -13,13 +13,13 @@
       <div class='chat-name'>
          {{sessionName}}
       </div>
-      <div class='handle'>
+      <!-- <div class='handle'>
         <button class='follow-up-btn'>跟进</button>
         <span
           @click='checkMember'
           class='check-member'
         >{{isCheckMember ? '查看成员' : '关闭查看'}}</span>
-      </div>
+      </div> -->
     </div>
     <div class="m-chat-main">
       <div class='invalidHint' v-if='scene==="team" && teamInvalid'>
@@ -45,19 +45,13 @@
       <!-- 叫与被叫页面 -->
       <div class="m-chat-call-main">
         <!-- 被叫页面 -->
-        <be-call
+        <!-- <be-call
           :sysMsgs='sysMsgs'
-        ></be-call>
+        ></be-call> -->
         <!-- 主叫页面 -->
-        <call></call>
+        <!-- <call></call> -->
       </div>
 
-      <div id="container">
-        #container
-      </div>
-      <div id="remoteContainer">
-        #remoteContainer
-      </div>
     </div>
   </div>
 </template>
@@ -127,7 +121,6 @@ export default {
     //     sysMsgs: state => state.sysMsgs
     // }),
     sessionId () {
-      console.log('1234567890000')
       let sessionId = this.$route.params.sessionId || this.$store.state.currSessionId
       return sessionId
     },

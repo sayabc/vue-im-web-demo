@@ -1,7 +1,7 @@
 <template>
   <div id="sayabc-im">
     <div id="im-list">
-      <search />
+      <!-- <search /> -->
       <session />
     </div>
     <div id="im-chat-box">
@@ -9,10 +9,11 @@
       <!-- 要显示聊天界面要有sessionId  通过store传递 -->
       <chat v-if="sessionId"/>
     </div>
-    <div id="im-info-box">
-      <!-- 显示群成员信息 -->
+
+    <!-- 显示群成员信息 -->
+    <!-- <div id="im-info-box">
       <info />
-    </div>
+    </div> -->
   </div>
 </template>
 

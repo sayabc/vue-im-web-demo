@@ -111,7 +111,7 @@ export default {
     }
   },
   updateSessions (state, sessions) {
-    console.log(JSON.stringify(sessions),'sessions is :')
+    console.log('session: ',sessions)
     const nim = state.nim
     state.sessionlist = nim.mergeSessions(state.sessionlist, sessions)
     state.sessionlist.sort((a, b) => {
