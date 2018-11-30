@@ -9,7 +9,7 @@
         <span v-if="scene==='team'" class='icon-team' @click="onTeamManageClick"></span>
       </div>
     </x-header> -->
-    <div>
+    <div class='chat-header'>
       <div class='chat-name'>
          {{sessionName}}
       </div>
@@ -253,7 +253,7 @@ export default {
       }
     },
     checkMember() {
-      this.$store.commit("isCheckMember");
+      this.$store.commit("isCheckMember",!this.isCheckMember);
       let { isCheckMember } = this.$store.state;
       if (isCheckMember) {
         //获取成员
@@ -264,7 +264,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang='less'>
 .g-window .m-tab .m-tab-right{
   width: 5rem;
   right: -1rem;
@@ -295,12 +295,51 @@ export default {
   color: burlywood;
 }
 </style>
-<style>
+<style lang='less' scoped>
 .g-window .vux-header .m-tab-top {
   width: 80%;
   margin: 0 10%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.g-window{
+  .chat-header{
+    position: absolute;
+    z-index:100;
+    background:#fff;
+    box-sizing: border-box;
+    width: 50%;
+    height:40px;
+    border-bottom:1px solid #ccc;
+    .chat-name{
+      float:left;
+      height:40px;
+      line-height:40px;
+      padding-left:10px;
+      font-size:14px;
+    }
+    .handle{
+      float:right;
+      height:40px;
+      padding-right:10px;
+      .follow-up-btn{
+        width:60px;
+        height:30px;
+        background:#fff;
+        border-radius:5px;
+        outline:none;
+        margin-top:5px;
+      }
+      .check-member{
+        display: inline-block;
+        line-height:40px;
+        font-size:14px;
+      }
+    }
+  }
+  .m-chat-main {
+    padding-top:40px;
+  }
 }
 </style>

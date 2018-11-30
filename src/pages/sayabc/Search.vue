@@ -66,7 +66,7 @@ export default {
 .search {
   box-sizing: border-box;
   height: 40px;
-  border-bottom: 1px solid #ccc;
+//   border-bottom: 1px solid #ccc;
   .input-box {
     padding-top:5px;
     padding-left:20px;
