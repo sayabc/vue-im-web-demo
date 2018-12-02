@@ -300,20 +300,25 @@ export default {
       netcall.leaveChannel().then(() => {
         // 清除上层UI逻辑
         console.log('离开房间成功')
-      });
+      }).catch(function(err){
+        console.log('离开房间发生异常', err.code)
+      })
     },
     netcallVideoLink () { // 点击开始视频
       if (this.invalid) {
         this.$toast(this.invalidHint)
         return
       }
+      let that = this
       console.warn('开始视频通话 begin')
       console.log('音频通话开始', netcall)
-
+      // 先挂断通话?
+      // netcall.hangup()
       // 创建房间
       netcall.createChannel({
-        channelName: new Date().getTime().toString(), //必填 TODO 退出时候记得销毁
-        custom: '测试自定义数据', //可选
+        channelName: new Date().getTime().toString(), //必填 TODO 退出时候记得销毁 实际使用的时候 这个按照老师id进行创建房间，TODO做重复校验
+        // channelName: 'Sunday a80-a81秘密通话2', //必填 TODO 退出时候记得销毁
+        custom: 'a80-a81秘密通话~~~', //可选
         webrtcEnable: true // 是否支持WebRTC方式接入，可选，默认为不开启
       }).then(function(obj) {
         // 预定房间成功后的上层逻辑操作
@@ -330,7 +335,7 @@ export default {
           })
           .then(function(obj) {
             // obj结构 => {account,cid,uid}
-            console.error('加入房间成功', obj)
+            console.error('本人加入房间成功', obj)
             // 加入房间成功后的上层逻辑操作
               // eg: 开启摄像头
               // eg: 开启麦克风
@@ -339,6 +344,7 @@ export default {
               // eg: 设置视频画面尺寸等等，具体请参照p2p呼叫模式
               // 开始呼叫?
                 // 发起通话请求
+              console.error('主人开始发起通话请求')
                 netcall.call({
                   // type: netcall.NETCALL_TYPE_VIDEO,
                   type: 1,
@@ -346,11 +352,12 @@ export default {
                   webrtcEnable: true,
                   pushConfig: {},
                   sessionConfig:{
-                    recordVideo: true,
-                    recordAudio: true
+                    recordVideo: false,
+                    recordAudio: false
                   }
-                }).then(function(obj){
-                  console.log('call', obj)
+                }).then(function(){
+                  console.log('主人发起请求call成功')
+                  that.$store.commit('updateCallState', true)
                 })
               // const netcall = this.netcall;
               // 开启麦克风

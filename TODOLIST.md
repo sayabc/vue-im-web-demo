@@ -45,3 +45,6 @@
         mac: 配置 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --unsafely-treat-insecure-origin-as-secure="115.159.17.49:443" --user-data-dir=/Users/wangxudong/me/sayabc/vue-im-web-demo
 
         <!-- https://app.netease.im:port -->
+
+7. 音视频通话步骤: 创建房间 -->
+8. 两种通信方式 webrtc和vuex

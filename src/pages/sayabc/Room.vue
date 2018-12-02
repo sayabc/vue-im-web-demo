@@ -1,7 +1,7 @@
 <template>
   <div class="g-inherit m-main">
     <div class="m-room-entry g-flex-c">
-      <span class="u-box" v-for="item in roomList" @click="enterRoom(item.roomid)">
+      <span class="u-box" v-for="item in roomList" @click="enterRoom(item.roomid)" :key="item">
         <div class="album">
           <img class="pic" :src="item.album">
           <div class="status">

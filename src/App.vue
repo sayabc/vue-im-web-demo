@@ -10,10 +10,14 @@
     <loading></loading>
 
     <div id="container">
-      #container
+      <show-call-page
+        v-if="chatVoiceShowCall && !isHandUp"
+      />
     </div>
     <div id="remoteContainer">
-      #remoteContainer
+      <show-be-call-page
+        v-if="chatVoiceShowBeCall && !isHandUp"
+      />
     </div>
 
   </div>
@@ -50,13 +54,12 @@ Vue.use(ToastPlugin)
 import NavBar from './pages/components/NavBar'
 import cookie from './utils/cookie'
 import pageUtil from './utils/page'
+import ShowCallPage from './pages/sayabc/components/ShowCallPage'
+import ShowBeCallPage from './pages/sayabc/components/ShowBeCallPage'
 
 const sessionHistory = window.sessionStorage
 
-// require('./sdk/rtcSupport')
-// require('./sdk/NIM_Web_Netcall_v5.6.0')
 require('./sdk/NIM_Web_SDK_v5.8.0.js')
-// import WebRTC from './sdk/NIM_Web_WebRTC_v5.8.0'
 require('./sdk/NIM_Web_WebRTC_v5.8.0.js')
 
 
@@ -108,14 +111,26 @@ export default {
     NavBar,
     ViewBox,
     Loading,
-    FullscreenImg
+    FullscreenImg,
+    ShowCallPage,
+    ShowBeCallPage
   },
   computed: {
     // 是否显示导航条
     showNav () {
       return pageUtil.showNav(this.$route.path)
       // return false
+    },
+    chatVoiceShowCall () {
+      return this.$store.state.chatVoiceShowCall
+    },
+    chatVoiceShowBeCall  () {
+      return this.$store.state.chatVoiceShowBeCall
+    },
+    isHandUp () {
+      return this.$store.state.isHandUp
     }
+
   }
 }
 </script>
@@ -131,6 +146,11 @@ export default {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+#container, #remoteContainer {
+  position: absolute;
+  top: 0;
+  z-index: 999;
 }
 </style>
 

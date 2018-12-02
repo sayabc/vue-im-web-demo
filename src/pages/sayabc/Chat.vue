@@ -59,8 +59,8 @@
 <script>
 import ChatEditor from '@/pages/sayabc/components/ChatEditor'
 import ChatList from '@/pages/sayabc/components/ChatList'
-import BeCall from '@/pages/sayabc/videoChat/Becall'
-import Call from '@/pages/sayabc/videoChat/Call'
+// import BeCall from '@/pages/sayabc/videoChat/Becall'
+// import Call from '@/pages/sayabc/videoChat/Call'
 import util from '@/utils'
 import pageUtil from '@/utils/page'
 
@@ -70,8 +70,8 @@ export default {
   components: {
     ChatEditor,
     ChatList,
-    BeCall,
-    Call
+    // BeCall,
+    // Call
   },
   // 进入该页面，文档被挂载
   mounted () {

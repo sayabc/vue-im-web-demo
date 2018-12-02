@@ -24,8 +24,8 @@ const WebRTCSDK = require('@/sdk/' + config.webrtcSDK)
 // 重写 end
 
 // 重新初始化 web rtc SDK
-// export function initWebRTC ({ state, commit, dispatch }, loginInfo) {
-export function initWebRTC() {
+export function initWebRTC ({ state, commit, dispatch }) {
+// export function initWebRTC() {
 
   const netcall = WebRTCSDK.getInstance({
     nim: window.nim,
@@ -48,10 +48,10 @@ export function initWebRTC() {
 
   // 开启监听
   netcall.on('beCalling', function (obj) {
-    console.warn('on beCalling', obj);
+    console.warn('接收到了 on beCalling', obj);
     const channelId = obj.channelId;
     // 被叫回应主叫自己已经收到了通话请求
-    netcall.control({
+    netcall.control({ // 这个有延迟的 开发不要着急...
       channelId: channelId,
       command: Netcall.NETCALL_CONTROL_COMMAND_START_NOTIFY_RECEIVED
     });
@@ -60,6 +60,8 @@ export function initWebRTC() {
       type = obj.type;
       beCalling = true;
       beCalledInfo = obj;
+      // 可选择是否接听逻辑放在弹出的界面里面 see ShowBeCallPage.vue
+      commit('updateBeCallState', true)
     } else {
       if (netcall.calling) {
         busy = netcall.notCurrentChannelId(obj);
@@ -83,20 +85,28 @@ export function initWebRTC() {
   // 被叫接受的通知
   netcall.on('callAccepted', function (obj) {
     console.warn('on callAccepted', obj);
+    // 异步
+    commit('updateBeCallHasRecept', true)
     // 如果呼叫之前，启动了超时倒计时，这里可以取消呼叫倒计时
-    clearCallTimer();
+    // clearCallTimer(); TODO
     // 可以开启音视频连接操作。。。
+    console.log('同意通话，开始设备检测...')
+
   });
 
   // 被叫拒绝的通知
   netcall.on('callRejected', function (obj) {
     console.log('on callRejected', obj);
+    commit('updateBeCallHasReject', true)
+    console.log('拒绝链接，开始做挂断和清理工作')
     // 如果呼叫之前，启动了超时倒计时，这里可以取消呼叫倒计时
-    clearCallTimer();
+    // clearCallTimer(); TODO
     // 挂断
-    hangup();
+    // hangup();
+    netcall.hangup()
     // 做清理工作
-    resetWhenHangup();
+    // resetWhenHangup();
+    netcall.resetWhenHangup();
   });
 
   netcall.on('control', function (obj) {
@@ -106,10 +116,11 @@ export function initWebRTC() {
 
   netcall.on('hangup', function (obj) {
     console.warn('on hangup', obj);
+    commit('netcallHandleUp')
     // 判断需要挂断的通话是否是当前正在进行中的通话
     if (!beCalledInfo || beCalledInfo.channelId === obj.channelId) {
       // 清理工作
-      resetWhenHangup();
+      netcall.resetWhenHangup();
     }
   });
 
@@ -159,7 +170,7 @@ export function initWebRTC() {
 
   netcall.on('leaveChannel', function (obj) {
     // 通知上层有其他用户离开了会议，上层做相应逻辑和UI处理
-
+    commit('updateOnCallUserInfos', obj, false) // false 删除人指令 更新离开列表
     // 停止预览该同伴的视频流
     netcall.stopRemoteStream({
       account: obj.account
@@ -261,11 +272,9 @@ export function initWebRTC() {
 
 
 
-  // var NIM = config.sdk
-  // // var Netcall = window.Netcall;
-  // var WebRTC = WebRTCSDK;
 
-  // NIM.use(WebRTCSDK);
+
+  // 变量挂在在netcall上面
 
   window.netcall = netcall
   console.warn('WebRTC netcall', netcall)

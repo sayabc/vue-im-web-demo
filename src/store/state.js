@@ -93,6 +93,16 @@ export default {
   // 聊天室sdk实例
   chatroomInsts: {},
   chatroomInfos: {},
+
+  // 聊天语音相关信息
+  isHandUp: false,
+  chatVoiceShowCall: false,
+  chatVoiceShowBeCall: false,
+  becallHasRecept: false, // 被叫接受语音通话
+  becallHasReject: false, // 被叫拒绝语音通话
+  onCallUserInfos: [], // 参加语音通话的人员(实时更新)
+  sbLeaveInfo: [], // 通话期间推出频道的人员信息
+
   // 聊天室分房间消息集合
   chatroomMsgs: {},
   // 当前聊天室实例及id
