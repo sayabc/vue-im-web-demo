@@ -1,7 +1,7 @@
 <template>
   <div class="netcall-becalling-box becall">
     <div v-if="beforeAccept && (!becallHasRecept && !becallHasReject)">
-      <p>有人叫你啊，接听不听？</p>
+      <p>hi, {{myInfo.nick}} 有人叫你啊，接听不听？</p>
       <div class="btns">
         <span class="btn btn_yes" @click="handleYes">接听</span>
         <span class="btn btn_no" @click="handleNo">不想听</span>
@@ -32,6 +32,21 @@ export default {
   }),
   methods: {
     handleYes () {
+
+      // netcall.joinChannel()
+      //   .then(()=>{
+      //     netcall.response({
+      //       accepted: true
+      //     }).then(()=>{
+      //       this.beforeAccept = false
+      //     }).catch((err)=>{
+      //       console.log('becall接受失败', err)
+      //     })
+      //   })
+      //   .catch((err)=>{
+      //     console.log('进入群语音失败了..', err)
+      //   })
+      netcall.joinChannel()
       // 告诉对方要接听了
       netcall.response({
         accepted: true,
@@ -60,7 +75,7 @@ export default {
     handleLeaveChannel () {
       // 结束语音聊天
       console.log('请求通话方挂断电话了')
-      netcall.leaveChannel(myInfo)
+      netcall.leaveChannel()
     }
   }
 }

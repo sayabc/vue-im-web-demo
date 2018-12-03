@@ -37,7 +37,7 @@ export default {
   methods: {
     handleLeaveChannel () {
       console.log('请求通话方挂断电话了')
-      netcall.leaveChannel(myInfo)
+      netcall.leaveChannel()
     }
   },
   mounted() {

@@ -59,6 +59,7 @@ app.post('/webdemo/h5/getlogger', (req, res) => {
 
 // 修改侦听服务器端口
 const port = 2001
+// const port = 8887
 app.listen(port)
 console.info(`Listen on Port ${port}`)
 console.info(`访问地址:  http://localhost:2001/webdemo/h5/index.html`)

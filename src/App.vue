@@ -61,6 +61,8 @@ const sessionHistory = window.sessionStorage
 
 require('./sdk/NIM_Web_SDK_v5.8.0.js')
 require('./sdk/NIM_Web_WebRTC_v5.8.0.js')
+// 检查rtc支持情况 挂在了window.rtcSupport
+require('./sdk/rtcSupport.js')
 
 
 export default {
