@@ -7,8 +7,24 @@ const vueLoaderConfig = require('./vue-loader.conf')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
+const getPath = (_) => {
+  if (_ === 'production') return config.build.assetsPublicPath
+  if (_ === 'pre') return config.pre.assetsPublicPath
+  if (_ === 'measurement') return config.measurement.assetsPublicPath
 
+  return config.dev.assetsPublicPath
+}
 
+// const createLintingRule = () => ({
+//   test: /\.(js|vue)$/,
+//   loader: 'eslint-loader',
+//   enforce: 'pre',
+//   include: [resolve('src'), resolve('test')],
+//   options: {
+//     formatter: require('eslint-friendly-formatter'),
+//     emitWarning: !config.dev.showEslintErrorsInOverlay
+//   }
+// })
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -18,9 +34,10 @@ module.exports = {
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+    publicPath: getPath(process.env.NODE_ENV)
+    // publicPath: process.env.NODE_ENV === 'production'
+    //   ? config.build.assetsPublicPath
+    //   : config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -31,6 +48,7 @@ module.exports = {
   },
   module: {
     rules: [
+      // ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -39,9 +57,12 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        // exclude: /NIM_Web_SDK.*\.js/,
         exclude: resolve('/src/sdk'),
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+      },
+      {
+        test: /\.(css|scss)$/,
+        loader:"style-loader!css-loader!sass-loader!postcss-loader"
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -66,16 +87,7 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      },
-      // {
-      //   test: /\.css$/,
-      //   loader: 'style!css!postcss!postcss-cssnext',
-      //   include: [resolve('src/assets')]
-      // },
-      {
-        test: /\.less$/,
-        loader: "style-loader!css-loader!less-loader"
-      },
+      }
     ]
   },
   node: {

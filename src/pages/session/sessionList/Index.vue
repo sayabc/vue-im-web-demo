@@ -1,43 +1,62 @@
 <template>
-  <div class='session'>
-    <Search />
-    <ul class='session-list'>
+  <div class='session-list' id='session-list' >
+    <!-- <Search /> -->
+    <ul>
       <li
         v-for='session in sessionlist'
+        :key="session.id"
+        :id='session.id'
         class='session-item'
         @click="enterChat(session)"
+        :class='{"active-item":sessionId === session.id}'
+        v-if='session.scene === "team"'
       >
-        <p >
-          <span>{{session.name}}</span>
-          <span>{{session.updateTimeShow}}</span>
-        </p>
-        <p>{{session.unread !== 0 && session.isAtMe ? '有人@我' : session.lastMsgShow}}</p>
-        <p>{{session.unread}}</p>
+        <div class='follow' v-show='followList[session.id]===1'>
+          <img src="../../../assets/images/follow.png" alt="">
+        </div>
+        <div class='msg'>
+          <p class='session-name' :class='{"active":session.id === sessionId}'>
+            <!-- <img :src="" alt=""> -->
+            {{session.name}}
+          </p>
+          <p class='last-msg' :class='{"at":session.unread !== 0 && session.isAtMe}'>{{session.unread !== 0 && session.isAtMe ? '有人@我' : session.lastMsgShow}}</p>
+        </div>
+        <div class='msg-tip'>
+          <div class='unread'>
+            <span  v-show='session.unread' :class='{"more":session.unread > 99}'>{{session.unread > 99 ? '99+' : session.unread}}</span>
+          </div>
+          <div class='last-msg-time'>{{session.updateTimeShow}}</div>
+        </div>
+
       </li>
     </ul>
   </div>
 </template>
 <script>
-import Search from "./Search.vue";
 import util from "@/utils";
-let hasUnreadSession = [];
+import {mapState, mapGetters} from 'vuex';
+import {getAllFollowStatus,getSingFollowStatus} from '@/api/index.js'
+let isGetFollowState = false;
 export default {
-  components: { Search },
+  data() {
+    return {
+    }
+  },
   computed: {
-    myInfo() {
-      return this.$store.state.myInfo
-    },
-    msgs() {
-      return this.$store.state.msgs
-    },
+    ...mapState([
+      'myInfo',
+      'msgs',
+      'userInfos',
+      'teamMsgReadsDetail',
+      'curChatTeamId',
+      'followList'
+    ]),
+    ...mapGetters(['sessionId']),
     myPhoneId() {
       return `${this.$store.state.userUID}`;
     },
-    userInfos() {
-      return this.$store.state.userInfos;
-    },
     sessionlist() {
-      hasUnreadSession = [];
+      console.log(this.$store.state.sessionlist,'this.$store.state.sessionlist')
       let sessionlist = this.$store.state.sessionlist.filter(item => {
         item.name = "";
         if (item.scene === "p2p") {
@@ -79,19 +98,13 @@ export default {
         if (item.updateTime) {
           item.updateTimeShow = util.formatDate(item.updateTime, true);
         }
+        //如果有未读消息，查找未读中是否有@我的消息，如果有，需要标识出来用作展示
         if(item.unread !== 0) {
           let {id,unread} = item;
-          let msgList = this.msgs[item.id];
-          console.log(msgList,'msgList +++++++++')
-          console.log(msgList.length-unread,'length +++++++++')
+          let msgList = this.msgs[id];
           let unreadMsg = msgList.slice(msgList.length-unread)
-          console.log(unreadMsg,'unreadMsg +++++++++')
           unreadMsg.forEach((msg) => {
-            if(msg.custom) {
-              console.log(JSON.parse(msg.custom),this.myInfo.account,JSON.parse(msg.custom).includes(this.myInfo.account),
-              'custom +++++++++')
-            }
-            if(msg.custom && JSON.parse(msg.custom).includes(this.myInfo.account)) { 
+            if(msg.custom && JSON.parse(msg.custom).includes(this.myInfo.account)) {
               item.isAtMe = true;
             }
           })
@@ -99,51 +112,142 @@ export default {
         return item;
       });
       return sessionlist;
-    },
-    teamMsgReadsDetail() {
-      console.log(this.$store.state.teamMsgReadsDetail,'this.$store.state.teamMsgReadsDetail')
-      return this.$store.state.teamMsgReadsDetail
     }
   },
   methods: {
     enterChat(session) {
+      //获取最新跟进状态
+      this.getSingFollow(session);
+      //console.log(document.getElementById(session.id).offsetTop,'offsetTop')
       if (session && session.id)
         this.$store.dispatch("setCurrSession", session.id);
         this.$store.commit("isCheckMember", false);
     },
-    getSessionMsg(item) {
-      let {sessionId,unread} = item;
-      this.$store.commit('updateCurrSessionMsgs', {
-          type: 'init',
-          sessionId
-        })
-        console.log(this.$store.state.currSessionMsgs,'msg ++++++++++111111')
-        let msgList = this.$store.state.currSessionMsgs;
-        let unreadMsg = this.msgList.slice(msgList.length-unread)
-        unreadMsg.forEach((item) => {
-           if(item.custom && JSON.parse(item.custom).includes(this.myInfo.account)) { 
-                item.isAtMe = true;
-           }
-        })
+    // scrollSessionList() {
+    //   console.log(document.getElementById('session-list').scrollTop)
+    // }
+    getSingFollow({id}) {
+      if(id) {
+        getSingFollowStatus({groupId: id.replace('team-','')})
+          .then((res) => {
+            if(res.followStatus || res.followStatus === 0) {
+              let newFollowList = Object.assign({},this.followList);
+              for(let key in newFollowList) {
+                if(key === id) {
+                  newFollowList[key] = res.followStatus;
+                }
+              }
+              this.$store.commit('followStatus',newFollowList);
+              this.$store.commit('updateFollowStaff',res.followStaff||'')
+            }
+          })
       }
+    },
+    getFollowState() {
+      isGetFollowState = true
+      let data = {};
+      data.groupIds = this.sessionlist.map((item) => {
+        return item.id.replace('team-','')
+      })
+      getAllFollowStatus(data)
+      .then((res) => {
+        let followList = res.res.data.data || {};
+        let newFollowList = {};
+        for(let key in followList){
+          newFollowList['team-' + key] = followList[key];
+        }
+        console.log(this.followList,'this followList is')
+        this.$store.commit('followStatus',newFollowList)
+      }).catch((e) => {
+        console.log(e.message,'获取跟进状态失败')
+      })
     }
+  },
+  updated() {
+    console.log(this.sessionlist,isGetFollowState,'isGetFollowState is :')
+    if(this.sessionlist.length && !isGetFollowState) {
+      this.getFollowState();
+    }
+  }
 };
 </script>
 <style lang='less' scoped>
-.session {
-  // position:relative;
+.session-list {
   height:100%;
-  .session-list {
-    // width: 25%;
-    // position: absolute;
-    // top:40px;
-    // bottom:0;
-    // left:0;
-    // right:0;
-    overflow: auto;
+  overflow: auto;
+  ul {
     .session-item {
-      height: 40px;
-      border-bottom: 1px solid #ccc;
+      height: 80px;
+      border-bottom: 1px solid #EEEEEE;
+      padding:16px 70px 10px 28px;
+      position: relative;
+      box-sizing: border-box;
+      &.active-item {
+        background:#F6F6F6;
+      }
+      .msg {
+        .session-name {
+          font-size:16px;
+          font-weight: 500;
+          height:30px;
+          line-height:30px;
+        }
+        .session-name.active{
+          color:#03A9F4;
+        }
+        .last-msg {
+          font-size:14px;
+          color:#999;
+          height:16px;
+          line-height: 16px;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+        }
+        .last-msg.at {
+          color:#f00;
+        }
+      }
+      .follow {
+        position: absolute;
+        left:0;
+        top:0;
+        height:100%;
+        box-sizing: border-box;
+        padding-left:5px;
+        padding-top:30px;
+        img{
+          width:20px;
+        }
+      }
+      .msg-tip{
+        position: absolute;
+        right:0;
+        top:0;
+        height:100%;
+        padding-top:16px;
+        padding-right:10px;
+        box-sizing: border-box;
+        font-size:14px;
+        .unread {
+          height:30px;
+          line-height:30px;
+          span{
+            display: inline-block;
+            padding:3px 6px;
+            border-radius: 50%;
+            background:#f00;
+            text-align: center;
+            line-height: 15px;
+            color:#fff;
+          }
+          span.more{
+            padding:3px 5px;
+            border-radius: 10px;
+          }
+        }
+      }
+
     }
   }
 }

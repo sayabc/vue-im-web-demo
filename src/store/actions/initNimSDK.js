@@ -25,6 +25,7 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
   if (state.nim) {
     state.nim.disconnect()
   }
+  console.log('init is :=====')
   dispatch('showLoading')
   // 初始化SDK
   SDK.NIM.use(WebRTCSDK) // 初始化IM时候加载音视频插件 然后再初始化音视频

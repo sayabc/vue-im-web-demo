@@ -1,15 +1,6 @@
 <template>
   <div class="chat-item">
-    <!-- header -->
-    <div class="header">
-      <div class="session-name">{{sessionName}}</div>
-      <div class="session-handle">
-        <button class="follow-up-btn">跟进</button>
-        <span class="check-member" @click="checkInfo">{{isCheckMember?'关闭查看':'查看成员'}}</span>
-      </div>
-    </div>
-    <!-- chatbox -->
-    <div class="chat-box" v-if="sessionId">
+    <div class="chat-box">
       <div class="chat-list" id="chat-list">
         <chat-list
           :msglist="msglist"
@@ -45,6 +36,7 @@ import util from "@/utils";
 import ChatList from "./ChatList";
 import ChatEditor from "./ChatEditor";
 import SelectMembers from './SelectMemers'
+import {mapState, mapMutations, mapGetters} from 'vuex';
 
 export default {
   components: {
@@ -53,52 +45,23 @@ export default {
     SelectMembers
   },
   computed: {
-    showSelectMember () {
-      return this.$store.state.showSelectMember
-    },
-    isCheckMember() {
-      return this.$store.state.isCheckMember;
-    },
-    sessionId() {
-      return this.$store.state.currSessionId;
-    },
-    userInfos() {
-      return this.$store.state.userInfos;
-    },
-    robotInfos() {
-      return this.$store.state.robotInfos;
-    },
-    sessionName() {
-      let sessionId = this.sessionId;
-      let user = null;
-      if (/^p2p-/.test(sessionId)) {
-        user = sessionId.replace(/^p2p-/, "");
-        if (user === this.$store.state.userUID) {
-          return "我的手机";
-        } else if (this.isRobot) {
-          return this.robotInfos[user].nick;
-        } else {
-          let userInfo = this.userInfos[user] || {};
-          return util.getFriendAlias(userInfo);
-        }
-      } else if (/^team-/.test(sessionId)) {
-        return this.teamInfo.owner || "";
-      }
-    },
-    scene() {
+    ...mapState([
+      'showSelectMember',
+      'isCheckMember',
+      'userInfos',
+      'robotInfos',
+      'myInfo'
+    ]),
+    ...mapGetters([
+      'sessionId',
+      'teamInfo',
+    ]),
+    scene(state) {
+      if(!this.sessionId) return false;
       return util.parseSession(this.sessionId).scene;
     },
     to() {
       return util.parseSession(this.sessionId).to;
-    },
-    teamInfo() {
-      if (this.scene === "team") {
-        var teamId = this.sessionId.replace("team-", "");
-        return this.$store.state.teamlist.find(team => {
-          return team.teamId === teamId;
-        });
-      }
-      return undefined;
     },
     members() {
       if (this.teamInfo) {
@@ -124,8 +87,7 @@ export default {
       }
     },
     msglist() {
-      let msgs = this.$store.state.currSessionMsgs;
-      return msgs;
+      return this.$store.state.currSessionMsgs;
     },
     isRobot() {
       let sessionId = this.sessionId;
@@ -165,14 +127,6 @@ export default {
       }
       return "无权限发送消息";
     },
-    myInfo() {
-      return this.$store.state.myInfo;
-    }
-  },
-  methods: {
-    checkInfo() {
-      this.$store.commit("isCheckMember", !this.isCheckMember);
-    }
   }
 };
 </script>
@@ -180,60 +134,27 @@ export default {
 .chat-item {
   width: 100%;
   height: 100%;
-  // position: relative;
-  .header {
-    width: 100%;
-    height: 40px;
-    border-bottom: 1px solid #ccc;
-    box-sizing: border-box;
-    overflow: hidden;
-    .session-name {
-      float: left;
-      height: 40px;
-      line-height: 40px;
-      padding-left: 10px;
-    }
-    .session-handle {
-      float: right;
-      line-height: 40px;
-      padding-right: 10px;
-      .follow-up-btn {
-        width: 60px;
-        height: 30px;
-        background: #fff;
-        border-radius: 5px;
-        outline: none;
-        margin-left: 10px;
-      }
-    }
-  }
+  background: #F6F6F6;
+  position: relative;
   .chat-box {
-    // position: absolute;
-    // top: 40px;
-    // left: 0;
-    // right: 0;
-    // bottom: 0;
-    height: 88%;
-    overflow-y: auto;
+    height: 100%;
+    width:100%;
     .chat-edit {
-      position: absolute;
+      // position: absolute;
       width: 100%;
-      height: 50px;
-      bottom: 0;
-      left: 25%; // 群组列表的宽度
-      width: 55%; // 当前列表的宽度
+      height: 20%;
+      // left: 25%; // 群组列表的宽度
+      // width: 55%; // 当前列表的宽度
       box-sizing: border-box;
-      border-top: 1px solid #ccc;
     }
     .chat-list {
-      // position: absolute;
-      // top: 0;
-      // bottom: 100px;
+      width:100%;
+      height:80%;
+      box-sizing: border-box;
       // left: 25%; // 群组列表的宽度
-      // right: 0;
       // width: 55%; // 当前列表的宽度
-      // overflow-x: hidden;
-      // overflow-y: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
   }
   .inviteTeamVoice {

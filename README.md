@@ -1,4 +1,4 @@
-# sayabc-im
+# vue-im-demo
 
 > A Vue.js project
 

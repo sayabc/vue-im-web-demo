@@ -1,6 +1,6 @@
 <template>
   <li
-    class="u-msg session-chat"
+    class="u-msg"
     :class="{
       'item-me': msg.flow==='out',
       'item-you': msg.flow==='in',
@@ -8,153 +8,139 @@
       'item-tip': msg.type==='tip'
     }"
   >
-    <div v-if="msg.type==='timeTag'">---- {{msg.showText}} ----</div>
-    <div
-      v-else-if="msg.type==='tip'"
-      class="tip"
-    >{{msg.showText}}</div>
-    <div
-      v-else-if="msg.type==='notification' && msg.scene==='team'"
-      class="notification"
-    >{{msg.showText}}</div>
-    <div
-      v-else-if="msg.flow==='in' || msg.flow==='out'"
-      :idClient="msg.idClient"
-      :time="msg.time"
-      :flow="msg.flow"
-      :type="msg.type"
-    >
-      <a
-        class="msg-head"
-        v-if="msg.avatar"
-      >
-        <img
-          class="icon u-circle"
-          :src="msg.avatar"
-        >
-      </a>
-      <p
-        class="msg-user"
-        v-else-if="msg.type!=='notification'"
-      ><em>{{msg.showTime}}</em>{{msg.from}}</p>
-
-      <span
-        v-if="msg.type==='text'"
-        class="msg-text"
-        v-html="msg.showText"
-      ></span>
-      <span
-        v-else-if="msg.type==='image'"
-        class="msg-text"
-        ref="mediaMsg"
-        @click.stop="showFullImg(msg.originLink)"
-      ></span>
-      <span
-        v-else-if="msg.type==='video'"
-        class="msg-text"
-        ref="mediaMsg"
-      ></span>
-      <span
-        v-else-if="msg.type==='audio'"
-        class="msg-text"
-        @click="playAudio(msg.audioSrc)"
-      >{{msg.showText}}</span>
-      <span
-        v-else-if="msg.type==='file'"
-        class="msg-text"
-      ><a
-          :href="msg.fileLink"
-          target="_blank"
-        ><i class="u-icon icon-file"></i>{{msg.showText}}</a></span>
-      <span
-        v-else-if="msg.type==='robot'"
-        class="msg-text"
-        :class="{'msg-robot': msg.robotFlow!=='out' && !isRobot}"
-      >
-        <div v-if="msg.robotFlow==='out'">{{msg.showText}}</div>
-        <div v-else-if="msg.subType==='bot'">
-          <!-- 多次下发的机器人消息 -->
-          <div v-for="tmsgs in msg.message">
-            <!-- 多个机器人模板 -->
-            <div v-for="tmsg in tmsgs">
-              <div v-if="tmsg.type==='text'">
-                <p>{{tmsg.text}}</p>
+   <div class='msg-item'>
+     <div class='msg-time' v-if='msg.type==="timeTag"'>
+       <span>{{msg.text}}</span>
+     </div>
+     <!-- 消息为文本为系统通知类的消息  在 @utils/index.js进行粗糙处理: 系统下群相关操作设置为空  Utils.generateTeamSysmMsg -->
+     <div v-else-if="msg.type==='text' && msg.showText!==''">
+       <!-- 头像 -->
+      <div v-if='msg.avatar' class='msg-avatar'>
+          <img :src="msg.avatar" alt="用户头像">
+      </div>
+      <!-- 信息 -->
+      <div class='msg-content'>
+          <!--用户名  -->
+          <div class='user-name'>{{msg.formNick||msg.from}}</div>
+          <!-- 消息 -->
+          <div class='msg-box'>
+            <div class='arrow'></div>
+            <span v-if="msg.type==='text'" class="msg-text" v-html="msg.showText"></span>
+            <span v-else-if="msg.type==='image'" class="msg-text" ref="mediaMsg" @click.stop="showFullImg(msg.originLink)"></span>
+            <span v-else-if="msg.type==='video'" class="msg-text" ref="mediaMsg"></span>
+            <span
+              v-else-if="msg.type==='audio'"
+              class="msg-text"
+              @click="playAudio(msg.audioSrc)"
+            >{{msg.showText}}</span>
+            <span
+              v-else-if="msg.type==='file'"
+              class="msg-text"
+            ><a
+                :href="msg.fileLink"
+                target="_blank"
+              ><i class="u-icon icon-file"></i>{{msg.showText}}</a></span>
+            <span
+              v-else-if="msg.type==='robot'"
+              class="msg-text"
+              :class="{'msg-robot': msg.robotFlow!=='out' && !isRobot}"
+            >
+              <div v-if="msg.robotFlow==='out'">{{msg.showText}}</div>
+              <div v-else-if="msg.subType==='bot'">
+                <!-- 多次下发的机器人消息 -->
+                <div v-for="tmsgs in msg.message">
+                  <!-- 多个机器人模板 -->
+                  <div v-for="tmsg in tmsgs">
+                    <div v-if="tmsg.type==='text'">
+                      <p>{{tmsg.text}}</p>
+                    </div>
+                    <div v-else-if="tmsg.type==='image'">
+                      <p>
+                        <img :src="tmsg.url">
+                      </p>
+                    </div>
+                    <div v-else-if="tmsg.type==='url'">
+                      <a
+                        :class="tmsg.style"
+                        :href="tmsg.target"
+                        target="_blank"
+                      >
+                        <div v-if="tmsg.image">
+                          <p v-for="tmsg2 in tmsg.image">
+                            <img :src="tmsg2.url">
+                          </p>
+                        </div>
+                        <div v-if="tmsg.text">
+                          <p v-for="tmsg2 in tmsg.text">{{tmsg2.text}}</p>
+                        </div>
+                      </a>
+                    </div>
+                    <div v-else-if="tmsg.type==='block'">
+                      <a
+                        :class="tmsg.style"
+                        :params="tmsg.params"
+                        :target="tmsg.target"
+                        @click="sendRobotBlockMsg(tmsg, msg)"
+                      >
+                        <div v-if="tmsg.image">
+                          <p v-for="tmsg2 in tmsg.image">
+                            <img :src="tmsg2.url">
+                          </p>
+                        </div>
+                        <div v-if="tmsg.text">
+                          <p v-for="tmsg2 in tmsg.text">{{tmsg2.text}}</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div v-else-if="tmsg.type==='image'">
-                <p>
-                  <img :src="tmsg.url">
-                </p>
+              <div v-else-if="msg.subType==='faq'">
+                <!--p>{{msg.message.question}}</p-->
+                <p>{{msg.message.answer}}</p>
               </div>
-              <div v-else-if="tmsg.type==='url'">
+              <span
+                v-if="msg.robotFlow!=='out' && !isRobot"
+                class="msg-link"
+              >
                 <a
-                  :class="tmsg.style"
-                  :href="tmsg.target"
-                  target="_blank"
-                >
-                  <div v-if="tmsg.image">
-                    <p v-for="tmsg2 in tmsg.image">
-                      <img :src="tmsg2.url">
-                    </p>
-                  </div>
-                  <div v-if="tmsg.text">
-                    <p v-for="tmsg2 in tmsg.text">{{tmsg2.text}}</p>
-                  </div>
-                </a>
-              </div>
-              <div v-else-if="tmsg.type==='block'">
-                <a
-                  :class="tmsg.style"
-                  :params="tmsg.params"
-                  :target="tmsg.target"
-                  @click="sendRobotBlockMsg(tmsg, msg)"
-                >
-                  <div v-if="tmsg.image">
-                    <p v-for="tmsg2 in tmsg.image">
-                      <img :src="tmsg2.url">
-                    </p>
-                  </div>
-                  <div v-if="tmsg.text">
-                    <p v-for="tmsg2 in tmsg.text">{{tmsg2.text}}</p>
-                  </div>
-                </a>
-              </div>
+                  class="link-right"
+                  @click="continueRobotMsg(msg.content.robotAccid)"
+                >继续对话</a>
+              </span>
+            </span>
+            <span
+              v-else-if="msg.type==='notification'"
+              class="msg-text notify"
+            >{{msg.showText}}</span>
+            <span
+              v-else
+              class="msg-text"
+              v-html="msg.showText"
+            ></span>
+            <span
+              v-if="msg.status==='fail'"
+              class="msg-failed"
+            ><i class="weui-icon-warn"></i></span>
+            <!-- <div class='msg' v-if='msg.type==="text"'>
+              {{msg.text}}
             </div>
+            <div class='msg' v-else-if='msg.type="image"'>
+              <a :href="msg.originLink" target="_blank">
+                <img :src="msg.originLink || msg.imgUrl" alt="图片">
+              </a>
+            </div> -->
           </div>
-        </div>
-        <div v-else-if="msg.subType==='faq'">
-          <!--p>{{msg.message.question}}</p-->
-          <p>{{msg.message.answer}}</p>
-        </div>
-        <span
-          v-if="msg.robotFlow!=='out' && !isRobot"
-          class="msg-link"
-        >
-          <a
-            class="link-right"
-            @click="continueRobotMsg(msg.content.robotAccid)"
-          >继续对话</a>
-        </span>
-      </span>
-      <span
-        v-else-if="msg.type==='notification'"
-        class="msg-text notify"
-      >{{msg.showText}}</span>
-      <span
-        v-else
-        class="msg-text"
-        v-html="msg.showText"
-      ></span>
-      <span
-        v-if="msg.status==='fail'"
-        class="msg-failed"
-      ><i class="weui-icon-warn"></i></span>
-    </div>
+      </div>
+     </div>
+   </div>
   </li>
 </template>
 <script>
 import util from "@/utils";
 import emojiObj from "@/configs/emoji";
 import config from "@/configs";
+import {mapState} from 'vuex';
 export default {
   props: {
     rawMsg: {
@@ -183,9 +169,7 @@ export default {
     }
   },
   computed: {
-    robotInfos() {
-      return this.$store.state.robotInfos;
-    }
+    ...mapState(['robotInfos'])
   },
   data() {
     return {
@@ -215,6 +199,7 @@ export default {
     } else if (item.flow === "out") {
       item.avatar = this.myInfo.avatar;
     }
+
     if (item.type === "timeTag") {
       // 标记发送的时间
       item.showText = item.text;
@@ -252,6 +237,7 @@ export default {
           item.type = "custom-type3";
           item.imgUrl = `${emojiCnt.img}`;
         }
+        // content.type === 6 为群组语音消息通知
       } else {
         item.showText = util.parseCustomMsg(item);
         if (item.showText !== "[自定义消息]") {
@@ -362,6 +348,7 @@ export default {
         }
       }
       if (media) {
+        media.style.maxWidth = '100%';
         if (this.$refs.mediaMsg) {
           this.$refs.mediaMsg.appendChild(media);
         }
@@ -422,198 +409,89 @@ export default {
 };
 </script>
 <style lang='less' scoped>
-/* 消息记录 */
-.u-msg {
-  position: relative;
-  padding: 5px 0;
-  clear: both;
-  /* 用户头像 */
-  .msg-head {
-    position: relative;
-    display: inline-block;
-    top: 5px;
-    margin: 0 5px;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    vertical-align: top;
-    img {
-      position: relative;
-      display: inline-block;
-      margin: 0;
-      width: inherit;
-      height: inherit;
-    }
-  }
-  .msg-user {
-    font-style: italic;
-    color: #999;
-    em {
-      font-weight: normal;
-      margin-right: 10px;
-    }
-  }
-  .msg-text {
-    position: relative;
-    display: inline-block;
-    max-width: 54%;
-    height: 20px;
-    word-break: break-word;
-    height: auto;
-    line-height: 20px;
-    font-size: 16px;
-    border: none;
-    img {
-      position: relative;
-      display: inline-block;
-      margin: 0;
-      padding: 0;
-      max-width: 100%;
-      vertical-align: bottom;
-      &.emoji-small {
-        width: 30px;
-        height: px;
-        vertical-align: bottom;
+  .u-msg {
+    .msg-item {
+      overflow:hidden;
+      padding:10px;
+      .msg-time {
+        text-align: center;
+        span{
+          padding:0 8px;
+          font-size:12px;
+          background:#ECECEC;
+          border-radius:20px;
+          color:#444D58;
+        }
       }
-      &.emoji-big {
-        width: 60px;
-        height: 60px;
-        vertical-align: middle;
+      .msg-avatar {
+        width:40px;
+        height:40px;
+        img{
+          width:40px;
+          height:40px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
       }
-      &.emoji-big {
-        width: 40px;
-        height: 40px;
-        vertical-align: middle;
-      }
-    }
-    embed,
-    video {
-      position: relative;
-      display: inline-block;
-      max-width: 100%;
-      max-height: 30px;
-      vertical-align: bottom;
-      background-color: #000;
-      text-align: center;
-      color: #fff;
-    }
-    &::before,
-    &::after {
-      content: " ";
-      position: absolute;
-      top: 15px;
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      width: 0;
-      height: 0;
-    }
-    &.notify {
-      max-width: 100%;
-    }
-    .button {
-      margin: 5px 0;
-      padding: 5px 10px;
-      border: 1px solid #fff;
-      border-radius: 5px;
-      background-color: #e5f4ff;
-      color: #666;
-    }
-  }
-  .msg-failed {
-    position: relative;
-    float: right;
-    margin-right: 10px;
-    vertical-align: top;
-    font-size: 16px;
-    line-height: 20px;
-  }
-  .msg-link {
-    display: block;
-    position: absolute;
-    bottom: -10px;
-    right: 0;
-    min-width: 20px;
-    min-height: 16px;
-    word-break: normal;
-    height: auto;
-    line-height: 20px;
-    font-size: 16px;
-    border: none;
-    a {
-      color: #0091e4;
-      text-decoration: underline;
-      float: right;
-    }
-  }
-  &.session-chat .msg-text {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
-  &.session-chat .msg-robot {
-    min-width: 60px;
-    margin-bottom: 20px;
-  }
-  &.session-chat.item-you {
-    .msg-head,
-    .msg-text {
-      float: left;
-    }
-    .msg-text {
-      background-color: #5cacde;
-      color: #fff;
-      &::before {
-        right: 99%;
-        border-right: 5px solid #5cacde;
-      }
-      &::after {
-        background: none;
+      .msg-content {
+        margin-left:10px;
+        .user-name {
+          color:#C1C1C1;
+          font-size:12px;
+          padding-top:5px;
+        }
+        .msg-box {
+          margin-top:10px;
+          position: relative;
+          .msg-text {
+            display: inline-block;
+            max-width: 350px;
+            padding:5px 20px;
+            background:#fff;
+            border-radius: 20px;
+            color: #444D58;
+            font-weight: 600;
+            font-size:16px;
+            box-shadow:0px 2px 8px 0px rgba(0,0,0,0.08);
+            line-height:20px;
+            word-wrap: break-word; word-break: normal;
+            text-align:left;
+          }
+          .arrow {
+            width:0;
+            height:0;
+            border:8px solid #fff;
+            border-left-color:transparent;
+            border-right-color:transparent;
+            border-bottom-color:transparent;
+            position:absolute;
+          }
+        }
       }
     }
   }
-  &.session-chat.item-me {
-    .msg-head,
-    .msg-text {
-      float: right;
+ .item-me {
+    .msg-avatar,.msg-content {
+      float:right;
     }
-    .msg-text {
-      color: #666;
-      background-color: #e5f4ff;
-      &::before {
-        background: none;
-      }
-      &::after {
-        left: 99%;
-        border-left: 5px solid #e5f4ff;
-      }
+    .msg-content {
+      text-align: right;
+      margin-right:10px;
+    }
+    .arrow {
+      right:0;
+      top:0;
     }
   }
-  &.item-time {
-    font-size: 14px;
-    text-align: center;
-    color: #ccc;
-  }
-  &.item-tip {
-    font-size: 14px;
-    text-align: center;
-    .tip {
-      margin: 0 auto;
-      width: 100px;
-      padding: 10pz;
-      background-color: #e0e0e0;
-      border-radius: 5px;
+  .item-you {
+    .msg-avatar,.msg-content {
+      float:left;
+    }
+    .arrow {
+      left:0;
+      top:0;
     }
   }
-  .notification {
-    font-size: 16px;
-    text-align: center;
-    color: #ccc;
-  }
-  .notify {
-    color: #f50;
-    font-size: 16px;
-  }
-}
 </style>
 
 

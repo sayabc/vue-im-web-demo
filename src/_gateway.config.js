@@ -1,4 +1,6 @@
 
+// 接口配置
 export default {
-    session: '//gateway.sayabc-dev.com:8000/panamera-a2-domain'
+    a: 'url1',
+    b: 'url2'
 }

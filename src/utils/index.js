@@ -246,60 +246,71 @@ Utils.generateTeamSysmMsg = function (data) {
       break;
     case 'addTeamMembers': {
       let op = nicks.pop()
-      text = `${op}邀请${nicks.join()}加入群`
+      // text = `${op}邀请${nicks.join()}加入群`
+      text = ''
       break;
     }
     case 'removeTeamMembers': {
       let op = nicks.pop()
-      text = `${nicks.join()}被${op}移出群`
+      // text = `${nicks.join()}被${op}移出群`
+      text = ''
       break;
     }
     case 'acceptTeamInvite': {
       let op = nicks.pop()
-      text = `${nicks.join()}接受了${op}入群邀请`
+      // text = `${nicks.join()}接受了${op}入群邀请`
+      text = ''
       break;
     }
     case 'passTeamApply': {
       let op = nicks.shift()
       if (nicks.length===1 && op===nicks[0]) {
         // 此情况为高级群设置不需要验证，用户申请入群后，收到的群消息提示
-        text = `${op}加入群`
+        // text = `${op}加入群`
+        text = ''
       } else {
-        text = `${op}通过了${nicks}入群邀请`
+        // text = `${op}通过了${nicks}入群邀请`
+        text = ''
       }
       break;
     }
     case 'addTeamManagers': {
       // todo test
       let op = nicks.pop()
-      text = `${op}新增了${nicks}为管理员`
+      // text = `${op}新增了${nicks}为管理员`
+      text = ''
       break;
     }
     case 'removeTeamManagers': {
       // todo test
       let op = nicks.pop()
-      text = `${op}移除了${nicks}的管理员权限`
+      // text = `${op}移除了${nicks}的管理员权限`
+      text = ''
       break;
     }
     case 'leaveTeam': {
-      text = `${nicks.join()}退出了群`
+      // text = `${nicks.join()}退出了群`
+      text = ''
       break;
     }
     case 'dismissTeam': {
-      text = `${nicks.join()}解散了群`
+      // text = `${nicks.join()}解散了群`
+      text = ''
       break;
     }
     case 'transferTeam': {
       // todo test
       let nicks = this.getNickNames(data.attach.users)
       let op = nicks.shift()
-      text = `${op}转让群主给${nicks}`
+      // text = `${op}转让群主给${nicks}`
+      text = ''
       break;
     }
     case 'updateTeamMute':{
       let nicks = this.getNickNames(data.attach.users)
       let op = nicks.shift()
-      text = `${nicks}被管理员${data.attach.mute ? '禁言' : '解除禁言'}`
+      // text = `${nicks}被管理员${data.attach.mute ? '禁言' : '解除禁言'}`
+      text = ''
       break;
     }
     default:
@@ -375,6 +386,14 @@ Utils.getPosition = function (element) {
       cursorPos = element.selectionStart;
   }
   return cursorPos;
+}
+
+// 截取url params
+Utils.getUrlParam = function (name) {
+  var reg = new RegExp('(^|\\?|&|#)' + name + '=([^&#]*)(&|\x24|#)', ''),
+    url = window.location.href,
+    match = url.match(reg)
+  return match ? decodeURIComponent(match[2]) : ''
 }
 
 export default Utils

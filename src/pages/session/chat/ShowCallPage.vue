@@ -1,15 +1,16 @@
 <template>
   <div class="call">
-    <div v-if="waittingAccept && (!becallHasRecept && !becallHasReject)">
+    <div v-if="!becallHasRecept && !becallHasReject">
       <p>正在等待对方接听...</p>
+      <chat-room />
     </div>
     <div v-if="becallHasRecept">
       <p>对方已接受您的语音通话请求</p>
       <p @click="handleLeaveChannel">请求方挂断</p>
       <div>
         <h2>参与通话有</h2>
-        <p v-for="(people) in onCallUserInfos" :key="people">
-          {{people.nick}}
+        <p v-for="(people) in onCallUserInfos" :key="people.account">
+          {{people.account}}
         </p>
       </div>
     </div>
@@ -21,28 +22,27 @@
 
 <script>
 import { mapState } from 'vuex'
-import state from '../../../store/state';
+import state from '../../../store/state'
+import ChatRoom from './ChatRoom'
+
 export default {
-  data () {
-    return {
-      waittingAccept: true
-    }
+  components: {
+    ChatRoom
   },
   computed: mapState({
     becallHasRecept: state => state.becallHasRecept,
     becallHasReject: state => state.becallHasReject,
     myInfo: state => state.myInfo,
-    onCallUserInfos: state => state.onCallUserInfos
+    onCallUserInfos: state => state.onCallUserInfos  // 当前加入语音通道的用户
   }),
   methods: {
     handleLeaveChannel () {
-      console.log('请求通话方挂断电话了')
-      netcall.leaveChannel()
+      netcall.leaveChannel().then(obj => {
+        console.log('主叫方挂断电话了')
+        this.$store.commit('updateCallState', false) // 关闭主叫页面
+      })
     }
-  },
-  mounted() {
-
-  },
+  }
 }
 </script>
 
@@ -50,10 +50,7 @@ export default {
 <style scoped>
 .call {
   top: 0;
-  /* width: 500px; */
-  height: 300px;
-  background-color: gray;
-  border: 2px solid yellow;
+  height:310px;
   text-align: center;
 }
 </style>

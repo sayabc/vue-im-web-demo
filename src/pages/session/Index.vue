@@ -5,17 +5,32 @@
       <input type="text" placeholder="请输入账号" v-model="account">
       <button @click="handleLogin">登录</button>
     </div>
+    <!-- <div class='teacher-header'>
+      teacher header
+    </div> -->
     <!-- 登录伪造页面 end-->
-    <div class="session-list">
-      <session-list /> 
-    </div>
-    <div class='chat'>
-      <!-- 要显示聊天界面要有sessionId  通过store传递 -->
-      <chat />
-    </div>
-    <div class='team-info'>
-      <!-- 显示群成员信息 -->
-      <team-info />
+    <div class='content'>
+       <div class='header'>
+           <div v-if='isTeacher'>
+              <teacher-header />
+           </div>
+           <div v-else>
+              <management-header />
+           </div>
+       </div>
+       <div class='session'>
+          <div class="session-list">
+            <session-list /> 
+          </div>
+          <div class='chat'>
+            <!-- 要显示聊天界面要有sessionId  通过store传递 -->
+            <chat v-if='sessionId'/>
+          </div>
+          <div class='team-info' v-if='!isTeacher'>
+            <!-- 显示群成员信息 -->
+            <team-info />
+          </div>
+       </div>
     </div>
     <!-- 一些全局蒙层模块 begin -->
     <!-- 需要将各个部分拆分成组件 全屏需要更新 showMask 字段 -->
@@ -31,6 +46,8 @@
 import SessionList from "./sessionList/Index.vue";
 import Chat from "./chat/Index.vue";
 import TeamInfo from "./teamInfo/Index.vue";
+import TeacherHeader from './header/TeacherHeader.vue';
+import ManagementHeader from './header/managementHeader/Index.vue'
 // import SelectMembers from './chat/SelectMemers'
 
 import cookie from "@/utils/cookie";
@@ -40,35 +57,34 @@ import md5 from "@/utils/md5";
 export default {
   data () {
     return {
-      account: ''
+      account: '',
+      isTeacher:false
     }
   },
   components: {
     SessionList,
     Chat,
     TeamInfo,
-    // SelectMembers
+    ManagementHeader,
+    TeacherHeader
   },
   computed: {
     sessionId() {
       return this.$store.state.currSessionId;
     },
-    temAccountName () {
+    temAccountName() {
       return this.$store.state.temAccountName
     },
     showMask() {
       return this.$store.state.showMask;
     },
-    // showSelectMember () {
-    //   return this.$store.state.showSelectMember
-    // }
   },
   methods: {
     handleLogin () {
       console.log('denglu', this.account)
       if(!this.account) return
 
-      let sdktoken = md5("123456");
+      let sdktoken = '33773';
       cookie.setCookie("uid", this.account.toLowerCase());
       cookie.setCookie("sdktoken", sdktoken);
 
@@ -89,8 +105,48 @@ export default {
 .sayabc-session{
     width:100%;
     height:100%;
-    background:#e5e5e5;
     overflow: hidden;
+    .content {
+      width:100%;
+      height:100%;
+      position: relative;
+      .header{
+        height:40px;
+      }
+      .session {
+        position: absolute;
+        top:40px;
+        bottom:0;
+        left:0;
+        right:0;
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        // align-content: stretch;
+        .session-list, .chat, .team-info {
+          box-sizing: border-box
+        }
+        .session-list {
+          width:350px;
+          flex-basis:350px;
+          flex-grow: 0;
+          flex-shrink: 1;
+          border-right:1px solid #ccc;
+        }
+        .team-info {
+          border-left:1px solid #ccc;
+          width:250px;
+          flex-basis:250px;
+          flex-grow: 0;
+          flex-shrink: 1;
+        }
+        .chat {
+          width:300px;
+          flex-basis: 300px;
+          flex-grow: 1;
+          flex-shrink: 0;
+        }
+      }
+    }
     .login {
       position: absolute;
       top: 0;
@@ -102,28 +158,10 @@ export default {
       text-align: center;
       background: rgba(0, 0, 0, 1)
     }
-    .session-list, .chat, .team-info {
-        float: left;
-        height:100%;
-        box-sizing: border-box
-    }
-    .session-list {
-        width:25%;
-        min-width: 200px;
-        border-right:1px solid #ccc;
-    }
-    .chat {
-        width:55%;
-    }
-    .team-info {
-        width:20%;
-        min-width:200px;
-        border-left:1px solid #ccc;
-    }
     .sayabc-mask {
       width: 100%;
       height: 100%;
-      position: relative;
+      position: absolute;
       top: 0;
       left: 0;
       background: rgba(0, 0, 0, .4);

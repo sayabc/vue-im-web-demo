@@ -107,12 +107,16 @@ export default {
 
   // 聊天语音相关信息
   isHandUp: false,
+  currChannelInfo: [],
   chatVoiceShowCall: false,
   chatVoiceShowBeCall: false,
   becallHasRecept: false, // 被叫接受语音通话
   becallHasReject: false, // 被叫拒绝语音通话
-  onCallUserInfos: [], // 参加语音通话的人员(实时更新)
-  sbLeaveInfo: [], // 通话期间推出频道的人员信息
+  curChatTeamId: '', // 创建语音房间的 teamId TODO 如果都没有在语音了 及时更新！！！
+  curChannelName: '', // 创建语音房间的 channel name 同上 TODO
+  curChannelAllMember: [], // 发起者邀请通话的成员列表，用于在通话页面展示 // 进入房间的要加标识  hasEnter
+  onCallUserInfos: [], // 参加语音通话在线的人员(实时更新)
+  sbLeaveInfo: [], // 通话期间退出频道的人员信息
 
   // 临时登录账号
   temAccountName: '',
@@ -120,6 +124,6 @@ export default {
   //全局mask
   showMask: false,
   showSelectMember: false, // 选择语音通话成员
-
-
+  followList: {}, //群的跟进状态
+  followStaff: '' //当前群的跟进人
 }

@@ -29,6 +29,7 @@ export function onSessions (sessions) {
 }
 
 export function onUpdateSession (session) {
+  console.log(sessions,'sessions is :========')
   let sessions = [session]
   updateSessionAccount(sessions)
   store.commit('updateSessions', sessions)

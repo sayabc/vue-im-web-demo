@@ -5,7 +5,7 @@ import store from '../'
 import cookie from '../../utils/cookie'
 import util from '../../utils'
 import config from '@/configs'
-import Vue from 'Vue'
+import Vue from 'vue'
 
 export default {
   updateRefreshState(state) {
@@ -587,8 +587,31 @@ export default {
   netcallHandleUp(state, boolean) {
     state.isHandUp = true
   },
+  updateCurrChannelInfo(state, obj) { // 更新当前已创建聊天房间的信息
+    state.currChannelInfo = obj
+  },
   updateCallState(state, boolean) { // call的界面
     state.chatVoiceShowCall = boolean
+  },
+  updateCurCallTeamId(state, id) { // 发起语音的teamId
+    state.curChatTeamId = id
+  },
+  updateCurChannelAllMembers(state, obj) { // 当前channel的所有成员
+    state.curChannelAllMember = obj
+  },
+  updateCurChannelAllMembersOnlineStatus(state, obj) { // 更新当前channel的所有成员的一些状态: 比如在线离线
+    let temAllMembers = state.curChannelAllMember
+    temAllMembers = temAllMembers.map(v=>{
+      if(v.account === obj.account) {
+        v.hasEnter = obj.hasEnter
+      }
+      return v
+    })
+
+    state.curChannelAllMember = temAllMembers
+  },
+  updateCurChannelName(state, name) { // 发起语音创建的 房间名  channelname
+    state.curChannelName = name
   },
   updateBeCallState(state, boolean) { // 被call的界面
     state.chatVoiceShowBeCall = boolean
@@ -599,18 +622,21 @@ export default {
   updateBeCallHasReject(state, boolean) { // 被叫拒绝语音通话
     state.becallHasReject = boolean
   },
-  updateOnCallUserInfos(state, obj, flag) { // 维护加入通话的用户
+  updateOnCallUserInfos(state, obj) { // 维护当前通话的用户(在线)
     // 加入flag:true添加; flag: false删除  会话列表 离开 都要更新下列表
-    if(flag) { // 添加成员前去重
-      let temArr = state.onCallUserInfos
-       // ...去重操作
-       state.onCallUserInfos = temArr
-    }else{
-      let temArr = state.sbLeaveInfo
-      // ... 去重操作
-      state.sbLeaveInfo = temArr
+    let temOnCallUsersArr = state.onCallUserInfos
+    // let obj = obj.obj
+    let temOnCallIndex = temOnCallUsersArr.indexOf(obj.obj)
+    if (obj.flag && temOnCallIndex<0) { // 需要添加并且不存当前语音通话列表
+      temOnCallUsersArr.push(obj.obj)
+      console.log('commit 更新雷彪了吗 进来了没', temOnCallUsersArr)
     }
-
+    if (!obj.flag && temOnCallIndex>-1) { // 需要从当前语音通话列表删除 并且在列表中
+      temOnCallUsersArr.splice(temOnCallIndex, 1)
+    }
+    // 更新
+    console.log('commit 更新雷彪了吗', temOnCallUsersArr, obj, obj.flag, temOnCallIndex)
+    state.onCallUserInfos = temOnCallUsersArr
   },
 
   // 临时登录
@@ -626,5 +652,11 @@ export default {
   },
   updateSelectMemberDiaState(state, boolean) {
     state.showSelectMember = boolean
+  },
+  followStatus(state, followList) {
+    state.followList = followList;
+  },
+  updateFollowStaff(state, staff) {
+    state.followStaff = staff;
   }
 }

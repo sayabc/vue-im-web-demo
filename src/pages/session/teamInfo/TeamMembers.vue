@@ -14,6 +14,9 @@
 </template>
 <script>
 import util from "@/utils";
+import {mapGetters} from 'vuex';
+import {getChangeMembers} from '@/api/index';
+
 export default {
   methods: {
     searchUsers(Accounts) {
@@ -36,34 +39,41 @@ export default {
       });
     },
     getMembers(teamInfo) {
-      if (!teamInfo) {
-        return false;
-      }
+      if(!teamInfo){return false;}
       var teamMembers = this.$store.state.teamMembers[teamInfo.teamId];
       if (teamMembers === undefined) {
         this.$store.dispatch("getTeamMembers", teamInfo.teamId);
       }
+    },
+    getChangedMembers() {
+      if(!this.members.length) return false;
+      let data = {};
+      data.groupId = this.teamInfo.teamId;
+      
+      data.accountIds = this.members.map((item) => {
+        return item.account
+      })
+      getChangeMembers(data)
+      .then((res) => {
+        console.log('更新群成员成功')
+      })
+      .catch((e) => {
+        console.log(e.message,'更新群成员失败')
+      })
     }
   },
   computed: {
-    sessionId() {
-      console.log("lalalalala change");
-      return this.$store.state.currSessionId;
-    },
+    ...mapGetters([
+      'sessionId'
+    ]),
     scene() {
       return this.sessionId ? util.parseSession(this.sessionId).scene : "";
     },
     teamInfo() {
-      if (this.scene === "team") {
-        var teamId = this.sessionId.replace("team-", "");
-        let teamInfo = this.$store.state.teamlist.find(team => {
-          return team.teamId === teamId;
-        });
-        //获取群成员
-        this.getMembers(teamInfo);
-        return teamInfo;
-      }
-      return undefined;
+      let teamInfo = this.$store.getters.teamInfo;
+      //获取群成员
+      this.getMembers(teamInfo);
+      return teamInfo;
     },
     members() {
       if (this.teamInfo) {
@@ -102,6 +112,9 @@ export default {
         return [];
       }
     }
+  },
+  updated() {
+    this.getChangedMembers();
   }
 };
 </script>

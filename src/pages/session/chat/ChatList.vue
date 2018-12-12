@@ -1,14 +1,23 @@
 <template>
-  <div>
+  <div class='class-list-box'>
     <!-- 两个container需要判断是否在当前的会话窗口中 -->
+    <!-- 2018.12.8 更新: 所有的聊天人员使用公共的聊天窗口  ChatRoom.vue -->
     <div id="container">
-      <show-call-page
-        v-if="chatVoiceShowCall && !isHandUp"
+      <!-- <show-call-page
+        v-if="curChatTeamId === sessionId.replace('team-', '') && chatVoiceShowCall && !isHandUp"
+      /> -->
+      <!-- 当所有人都不在channel的时候 关掉这个弹窗 TODO  -->
+        <!-- v-if="curChatTeamId === sessionId.replace('team-', '') && chatVoiceShowCall" -->
+        <!-- 使用 v-show 而不是 v-if -->
+      <chat-room
+        v-show="curChatTeamId === sessionId.replace('team-', '') && chatVoiceShowCall"
       />
     </div>
     <div id="remoteContainer">
+        <!-- v-if="curChatTeamId === sessionId.replace('team-', '') && chatVoiceShowBeCall" -->
+        <!-- 需要一个 chatroom的代理，TODO -->
       <show-be-call-page
-        v-if="chatVoiceShowBeCall && !isHandUp"
+        v-if="curChatTeamId === sessionId.replace('team-', '') && chatVoiceShowBeCall && !chatVoiceShowCall"
       />
     </div>
     <ul>
@@ -27,12 +36,14 @@
 import ChatItem from "./ChatItem";
 import ShowCallPage from './ShowCallPage'
 import ShowBeCallPage from './ShowBeCallPage'
-
+import ChatRoom from './ChatRoom'
+import {mapState} from 'vuex';
 export default {
   components: {
     ChatItem,
     ShowCallPage,
-    ShowBeCallPage
+    ShowBeCallPage,
+    ChatRoom
   },
   props: {
     msglist: {
@@ -68,34 +79,26 @@ export default {
     sessionId: String
   },
   computed: {
-    chatVoiceShowCall () {
-      return this.$store.state.chatVoiceShowCall
-    },
-    chatVoiceShowBeCall  () {
-      return this.$store.state.chatVoiceShowBeCall
-    },
-    isHandUp () {
-      return this.$store.state.isHandUp
-    },
-    sessionlist () {
-      return this.$store.state.sessionlist
-    }
-  },
-  mounted() {
-    setTimeout(() => {
-      console.log(this.msglist, "msglist is :======");
-    });
-    // console.log('teamInfo',this.teamInfo)
-    // TODO 获取当前会话和发起通话teamID是否一致，不一致则不显示call和becall页面
+    ...mapState([
+      'chatVoiceShowCall',
+      'chatVoiceShowBeCall',
+      'isHandUp',
+      'sessionlist',
+      'curChatTeamId'
+    ])
   }
 };
 </script>
 <style lang='less' scoped>
+.class-list-box {
+  // position: relative;
+}
 #container, #remoteContainer {
   position: absolute;
   top: 0;
   z-index: 2;
-  width: 55%;
+  width: 100%;
+  background:linear-gradient(180deg,rgba(95,86,86,1) 0%,rgba(44,44,45,1) 100%);
 }
 </style>
 

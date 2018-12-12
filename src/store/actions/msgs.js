@@ -239,6 +239,7 @@ export function sendRobotMsg ({state, commit}, obj) {
 export function sendMsgReceipt ({state, commit}) {
   // 如果有当前会话
   let currSessionId = store.state.currSessionId
+  console.log(currSessionId,'currSessionId is :=====')
   if (currSessionId) {
     // 只有点对点消息才发已读回执
     if (util.parseSession(currSessionId).scene === 'p2p') {
