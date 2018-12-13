@@ -65,6 +65,7 @@ export default {
       microLight: false,
       voiceLight: false,
       timer: null, // 通话时长，以房间创建者开始计时，所有人都退出房间为结束
+      overTimeCount: 1, // 本组件使用v-show并没有销毁，不使用v-if是因为切换窗口的时候，时间会重置 TODO 当前时间显示不合理
       timeCount: 0,
       showTime: 0
     }
@@ -75,6 +76,13 @@ export default {
   }),
   watch: {
     timeCount: function(cur) {
+      let _this = this
+      if(cur>30 && this.onCallUserInfos.length<2 && this.overTimeCount<2) { // 发起会话30s内无人接听则挂断
+        utilMusic.clearRingPlay()
+        _this.overTimeCount ++
+        _this.$toast.center('会话超时')
+        _this.handleLeaveChannel()
+      }
       return this.showTime = this.getNetcallDurationText(cur)
     },
     microValue: function(cur) {
@@ -139,7 +147,6 @@ export default {
       return result;
     },
     handleLeaveChannel () {
-
       netcall.leaveChannel().then(obj => {
         this.$store.commit('updateCallState', false) // 关闭主叫页面
         this.$store.commit('updateBeCallState', false)  // 关闭被叫页面

@@ -1,32 +1,18 @@
 <template>
   <div class='sayabc-session'>
-    <!-- 登录伪造页面  begin-->
-    <div class="login" v-if="!temAccountName">
-      <input type="text" placeholder="请输入账号" v-model="account">
-      <button @click="handleLogin">登录</button>
-    </div>
-    <!-- <div class='teacher-header'>
-      teacher header
-    </div> -->
-    <!-- 登录伪造页面 end-->
     <div class='content'>
        <div class='header'>
-           <div v-if='isTeacher'>
-              <teacher-header />
-           </div>
-           <div v-else>
-              <management-header />
-           </div>
+          <teacher-header />
        </div>
        <div class='session'>
           <div class="session-list">
-            <session-list /> 
+            <session-list />
           </div>
           <div class='chat'>
             <!-- 要显示聊天界面要有sessionId  通过store传递 -->
             <chat v-if='sessionId'/>
           </div>
-          <div class='team-info' v-if='!isTeacher'>
+          <div class='team-info'>
             <!-- 显示群成员信息 -->
             <team-info />
           </div>
@@ -53,14 +39,7 @@ import ManagementHeader from './header/managementHeader/Index.vue'
 import cookie from "@/utils/cookie";
 import md5 from "@/utils/md5";
 
-
 export default {
-  data () {
-    return {
-      account: '',
-      isTeacher:false
-    }
-  },
   components: {
     SessionList,
     Chat,
@@ -71,27 +50,8 @@ export default {
   computed: {
     sessionId() {
       return this.$store.state.currSessionId;
-    },
-    temAccountName() {
-      return this.$store.state.temAccountName
-    },
-    showMask() {
-      return this.$store.state.showMask;
-    },
-  },
-  methods: {
-    handleLogin () {
-      console.log('denglu', this.account)
-      if(!this.account) return
-
-      let sdktoken = '33773';
-      cookie.setCookie("uid", this.account.toLowerCase());
-      cookie.setCookie("sdktoken", sdktoken);
-
-      this.$store.commit('updateAccount', this.account)
-      this.$store.dispatch('connect')
     }
-  }
+  },
 };
 </script>
 

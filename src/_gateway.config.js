@@ -1,6 +1,6 @@
 
 // 接口配置
 export default {
-    a: 'url1',
-    b: 'url2'
+    test: 'url1',
+    test2: 'url2'
 }

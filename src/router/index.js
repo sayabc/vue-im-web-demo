@@ -5,14 +5,15 @@ import Session from '@/pages/session/Index'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/teacherim',
       name: 'HelloWorld',
       component: HelloWorld
     },
     {
-      path: '/sayabc/session',
+      path: '/teacherim/sayabc/session',
       name: 'Session',
       component: Session
     }

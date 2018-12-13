@@ -15,7 +15,7 @@
               <label>
                 <input type="checkbox" @click="handleSelectMember(item)"/>
                 <span>
-                  <img class='member-avatar' :src="item.avatar" alt="群成员头像">
+                  <img class='member-avatar' :src="item.avatar" >
                   <span class='member-name'>{{item.alias}}</span>
                 </span>
               </label>
@@ -104,7 +104,7 @@ export default {
 
       // 呼叫声音开启
       let afterPlayRingA = function () {
-        utilMusic.playRing("E", 30);
+        utilMusic.playRing("E", 15);
       }
       utilMusic.playRing("A", 1, function () {
         afterPlayRingA && afterPlayRingA();

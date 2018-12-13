@@ -198,7 +198,6 @@ export default {
         return;
       }
       // this.msgToSent = this.msgToSent.trim();
-      console.log(this.msgToSent,'msgToSent is :')
       let sendData = {
            type: "text",
            scene: this.scene,
@@ -274,7 +273,6 @@ export default {
       this.set_focus(editTextArea);
     },
     at(item) {
-      console.log('11111111111111111')
       this.isAt = false;
       //@xxx后面加空格
       this.msgToSent += item.alias;

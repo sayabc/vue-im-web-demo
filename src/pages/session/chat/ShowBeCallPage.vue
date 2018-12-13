@@ -31,9 +31,10 @@ export default {
   mounted () {
     let _this = this
     // 呼叫声音开启
-    utilMusic.playRing("E", 30, function () {
+    utilMusic.playRing("E", 15, function () { // E 每个2s持续时间
       utilMusic.clearRingPlay()
       // 如果响铃结束后还没有接 视为handleNo 自动挂断
+      _this.$toast.center('会话超时')
       _this.handleNo()
     })
 
