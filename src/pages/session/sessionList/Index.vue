@@ -16,7 +16,6 @@
         </div>
         <div class='msg'>
           <p class='session-name' :class='{"active":session.id === sessionId}'>
-            <!-- <img :src="" alt=""> -->
             {{session.name}}
           </p>
           <p class='last-msg' :class='{"at":session.unread !== 0 && session.isAtMe}'>{{session.unread !== 0 && session.isAtMe ? '有人@我' : session.lastMsgShow}}</p>
@@ -33,10 +32,8 @@
   </div>
 </template>
 <script>
-import util from "@/utils";
-import {mapState, mapGetters} from 'vuex';
-import {getAllFollowStatus,getSingFollowStatus} from '@/api/index.js'
-let isGetFollowState = false;
+import util from "@/utils"
+import {mapState, mapGetters} from 'vuex'
 export default {
   data() {
     return {
@@ -116,57 +113,9 @@ export default {
   },
   methods: {
     enterChat(session) {
-      //获取最新跟进状态
-      this.getSingFollow(session);
-      //console.log(document.getElementById(session.id).offsetTop,'offsetTop')
       if (session && session.id)
         this.$store.dispatch("setCurrSession", session.id);
         this.$store.commit("isCheckMember", false);
-    },
-    // scrollSessionList() {
-    //   console.log(document.getElementById('session-list').scrollTop)
-    // }
-    getSingFollow({id}) {
-      if(id) {
-        getSingFollowStatus({groupId: id.replace('team-','')})
-          .then((res) => {
-            if(res.followStatus || res.followStatus === 0) {
-              let newFollowList = Object.assign({},this.followList);
-              for(let key in newFollowList) {
-                if(key === id) {
-                  newFollowList[key] = res.followStatus;
-                }
-              }
-              this.$store.commit('followStatus',newFollowList);
-              this.$store.commit('updateFollowStaff',res.followStaff||'')
-            }
-          })
-      }
-    },
-    getFollowState() {
-      isGetFollowState = true
-      let data = {};
-      data.groupIds = this.sessionlist.map((item) => {
-        return item.id.replace('team-','')
-      })
-      getAllFollowStatus(data)
-      .then((res) => {
-        let followList = res.res.data.data || {};
-        let newFollowList = {};
-        for(let key in followList){
-          newFollowList['team-' + key] = followList[key];
-        }
-        console.log(this.followList,'this followList is')
-        this.$store.commit('followStatus',newFollowList)
-      }).catch((e) => {
-        console.log(e.message,'获取跟进状态失败')
-      })
-    }
-  },
-  updated() {
-    console.log(this.sessionlist,isGetFollowState,'isGetFollowState is :')
-    if(this.sessionlist.length && !isGetFollowState) {
-      this.getFollowState();
     }
   }
 };

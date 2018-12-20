@@ -25,7 +25,6 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
   if (state.nim) {
     state.nim.disconnect()
   }
-  console.log('init is :=====')
   dispatch('showLoading')
   // 初始化SDK
   SDK.NIM.use(WebRTCSDK) // 初始化IM时候加载音视频插件 然后再初始化音视频
@@ -37,10 +36,6 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
     token: loginInfo.sdktoken,
     transports: ['websocket'],
     db: false,
-    // logFunc: new SDK.NIM.LoggerPlugin({
-    //   url: '/webdemo/h5/getlogger',
-    //   level: 'info'
-    // }),
     syncSessionUnread: true,
     syncRobots: true,
     autoMarkRead: true, // 默认为true

@@ -11,30 +11,18 @@ import Utils from "./utils/index";
 
 export default {
   name: "App",
-  async mounted() {
-    // 从url params 取值  accountId 为当前登录人的id，isTeacher 是否是老师端登陆
-    let accountId = Utils.getUrlParam('accountId');
-    let isTeacher = Utils.getUrlParam('isTeacher');
-    let token = Utils.getUrlParam('token');
-    this.$store.commit('isTeacher',isTeacher);
-    this.$store.commit('accountId',accountId);
+  mounted() {
+    let accountId = 'a81'
+    // 存cookie当前的uid和sdktoken
+    cookie.delCookie('uid')
+    cookie.delCookie('sdktoken')
 
-    //let cookieUid = cookie.readCookie('uid')
+    cookie.setCookie("uid", accountId);
+    cookie.setCookie("sdktoken", md5('123456'));
 
-    if(accountId) {
-
-      // 存cookie当前的uid和sdktoken
-      cookie.setCookie("uid", accountId);
-      cookie.setCookie("sdktoken", accountId);
-      cookie.setCookie("token", token);
-
-      // 同步updateAccount 并且开始 SDK 连接工作
-      this.$store.commit('updateAccount', accountId)
-      this.$store.dispatch('connect')
-    }else{
-      this.$toast && this.$toast.center('Check the current url is correct!')
-      console.error('Url with accountId or cookie should has uid!')
-    }
+    // 同步updateAccount 并且开始 SDK 连接工作
+    // this.$store.commit('updateAccount', accountId)
+    this.$store.dispatch('connect')
   }
 };
 </script>

@@ -13,7 +13,7 @@
        <span>{{msg.text}}</span>
      </div>
      <!-- 消息为文本为系统通知类的消息  在 @utils/index.js进行粗糙处理: 系统下群相关操作设置为空  Utils.generateTeamSysmMsg -->
-     <div v-else-if="msg.type==='text' && msg.showText!==''">
+     <div v-else>
        <!-- 头像 -->
       <div v-if='msg.avatar' class='msg-avatar'>
           <img :src="msg.avatar" alt="用户头像">

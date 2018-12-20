@@ -3,9 +3,6 @@
     <!-- 两个container需要判断是否在当前的会话窗口中 -->
     <!-- 2018.12.8 更新: 所有的聊天人员使用公共的聊天窗口  ChatRoom.vue -->
     <div id="container">
-      <!-- <show-call-page
-        v-if="curChatTeamId === sessionId.replace('team-', '') && chatVoiceShowCall && !isHandUp"
-      /> -->
       <!-- 当所有人都不在channel的时候 关掉这个弹窗 TODO  -->
         <!-- v-if="curChatTeamId === sessionId.replace('team-', '') && chatVoiceShowCall" -->
         <!-- 使用 v-show 而不是 v-if -->
@@ -14,7 +11,6 @@
       />
     </div>
     <div id="remoteContainer">
-        <!-- v-if="curChatTeamId === sessionId.replace('team-', '') && chatVoiceShowBeCall" -->
         <!-- 需要一个 chatroom的代理，TODO -->
       <show-be-call-page
         v-if="curChatTeamId === sessionId.replace('team-', '') && chatVoiceShowBeCall && !chatVoiceShowCall"
@@ -90,9 +86,6 @@ export default {
 };
 </script>
 <style lang='less' scoped>
-.class-list-box {
-  // position: relative;
-}
 #container, #remoteContainer {
   position: absolute;
   top: 0;

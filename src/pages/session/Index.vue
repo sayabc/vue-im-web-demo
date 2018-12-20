@@ -1,9 +1,6 @@
 <template>
   <div class='sayabc-session'>
     <div class='content'>
-       <div class='header'>
-          <teacher-header />
-       </div>
        <div class='session'>
           <div class="session-list">
             <session-list />
@@ -22,30 +19,24 @@
     <!-- 需要将各个部分拆分成组件 全屏需要更新 showMask 字段 -->
     <div class="sayabc-mask" v-if="showMask">
       <!-- TODO这部分将会放在 SelectMemers.vue -->
-      <!-- <select-members v-if="showSelectMember"/> -->
     </div>
     <!-- 一些全局蒙层模块 end -->
   </div>
 </template>
 
 <script>
-import SessionList from "./sessionList/Index.vue";
-import Chat from "./chat/Index.vue";
-import TeamInfo from "./teamInfo/Index.vue";
-import TeacherHeader from './header/TeacherHeader.vue';
-import ManagementHeader from './header/managementHeader/Index.vue'
-// import SelectMembers from './chat/SelectMemers'
+import SessionList from "./sessionList/Index.vue"
+import Chat from "./chat/Index.vue"
+import TeamInfo from "./teamInfo/Index.vue"
 
-import cookie from "@/utils/cookie";
-import md5 from "@/utils/md5";
+import cookie from "@/utils/cookie"
+import md5 from "@/utils/md5"
 
 export default {
   components: {
     SessionList,
     Chat,
-    TeamInfo,
-    ManagementHeader,
-    TeacherHeader
+    TeamInfo
   },
   computed: {
     sessionId() {
@@ -75,7 +66,7 @@ export default {
       }
       .session {
         position: absolute;
-        top:40px;
+        top: 0;
         bottom:0;
         left:0;
         right:0;

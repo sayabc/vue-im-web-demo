@@ -374,7 +374,6 @@ export default {
       type: 'add',
       unread: sysMsgs.length
     })
-    console.log('ttt: updateCustomSysMsgs')
   },
   updateCustomSysMsgUnread(state, obj) {
     let { type, unread } = obj

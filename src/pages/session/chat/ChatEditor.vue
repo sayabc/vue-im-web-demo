@@ -19,7 +19,7 @@
       </div>
       <div class='input-box'>
         <div @blur="blur" @keydown="keyDown" ref='editTextArea' class='msg-textarea' contenteditable="true" @click='onInputFocus' @input="editMsg">
-            
+
         </div>
         <div class='send'>
           <span class="u-editor-send" @click="sendTextMsg">发 送</span>
@@ -27,7 +27,7 @@
       </div>
       <div class='ait-list' v-show='isAt' :style="{left:left+'px'}">
         <ul >
-          <li id='at'  data-name='at' @click='at(item)' v-for='(item,index) in members' :class='{active:index === activeIndex}'>
+          <li id='at'  data-name='at' @click='at(item)' v-for='(item,index) in members' :key="index" :class='{active:index === activeIndex}'>
             <span id='atAvatar' data-name='at' class='avatar'><img :src="item.avatar" alt=""></span>
             <span id='atAlias' data-name='at' class='alias'>{{item.alias}}</span>
           </li>
@@ -394,7 +394,7 @@ export default {
          padding:5px;
          box-sizing: border-box;
        }
-       
+
       .send {
         float:right;
         width:20%;
@@ -448,6 +448,6 @@ export default {
       }
     }
   }
-  
+
 }
 </style>
